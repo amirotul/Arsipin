@@ -31,13 +31,13 @@ $getGrup = $this->session->userdata('session_grup');
                         </li>
 
                         <li>
-                                <a href="dashboard.html" class="waves-effect waves-light"><i
+                                <a href="<?php echo base_url('Mahasiswa/dashboard')?>" class="waves-effect waves-light"><i
                                     class="mdi mdi-view-dashboard"></i><span> Dashboard </span></a>
                             </li>
 
 
                         <li class="has_sub">
-                            <a href="javascript:void(0);" class="waves-effect waves-light"><i
+                            <a href="#" class="waves-effect waves-light"><i
                                     class="mdi mdi-file-document-box"></i><span> Data Dokumen </span><span
                                     class="float-right"><i class="mdi mdi-chevron-right"></i></span></a>
                             <ul class="list-unstyled">
