@@ -68,5 +68,11 @@ class Mahasiswa extends CI_Controller{ //membuat controller Mahasiswa
 		$this->Mahasiswa_model->hapus_data($where, 'tm_user');
 		redirect('Mahasiswa/index');
 	}
+
+	public function dashboard() { 
+		$this->template->views('Admin2/dashboard');
+		//untuk mengakses file views 'crud/tambah_mahasiswa' pada halaman template
+	}
+
 }
 ?>
