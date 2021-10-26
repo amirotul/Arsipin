@@ -38,17 +38,17 @@ $getGrup = $this->session->userdata('session_grup');
 
                         <li class="has_sub">
                             <a href="#" class="waves-effect waves-light"><i
-                                    class="mdi mdi-file-document-box"></i><span> Data Dokumen </span><span
+                                    class="mdi mdi-file-document-box"></i><span> Data Arsip </span><span
                                     class="float-right"><i class="mdi mdi-chevron-right"></i></span></a>
                             <ul class="list-unstyled">
-                                <li><a href="jenis-dokumen.html">Jenis Data</a></li>
-                                <li><a href="data-dokumen.html">Data Dokumen</a></li>
+                                <li><a href="<?php echo base_url('Mahasiswa/jenis-arsip')?>Jenis Arsip</a></li>
+                                <li><a href="data-dokumen.html">Data Arsip</a></li>
                             </ul>
                         </li>
 
                         <li class="has_sub">
                             <a href="javascript:void(0);" class="waves-effect"><i
-                                    class="mdi mdi-file-document"></i><span> Data Arsip </span> <span
+                                    class="mdi mdi-file-document"></i><span> Data Dokumen</span> <span
                                     class="float-right"><i class="mdi mdi-chevron-right"></i></span></a>
                             <ul class="list-unstyled">
                                 <li><a href="surat-masuk.html">Surat Masuk</a></li>

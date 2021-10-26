@@ -64,8 +64,8 @@ $getGrup = $this->session->userdata('session_grup');
                                     class="mdi mdi-file-document-box"></i><span> Data Dokumen </span><span
                                     class="float-right"><i class="mdi mdi-chevron-right"></i></span></a>
                             <ul class="list-unstyled">
-                                <li><a href="jenis-dokumen.html">Jenis Data</a></li>
-                                <li><a href="data-dokumen.html">Data Dokumen</a></li>
+                                <li><a href="Admin2/jenis-arsip.php">Jenis Arsip</a></li>
+                                <li><a href="Admin2/data-arsip.php">Data Arsip</a></li>
                             </ul>
                         </li>
 
