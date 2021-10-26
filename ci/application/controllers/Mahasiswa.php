@@ -74,5 +74,13 @@ class Mahasiswa extends CI_Controller{ //membuat controller Mahasiswa
 		//untuk mengakses file views 'crud/tambah_mahasiswa' pada halaman template
 	}
 
+	public function data_divisi() { 
+		$this->template->views('Admin2/divisi-divisi');
+		//untuk mengakses file views 'crud/tambah_mahasiswa' pada halaman template
+	}
+public function jenis_arsip() { 
+		$this->template->views('Admin2/jenis-arsip');
+		//untuk mengakses file views 'crud/tambah_mahasiswa' pada halaman template
+	}
 }
 ?>
