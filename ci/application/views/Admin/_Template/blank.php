@@ -54,7 +54,7 @@ $getGrup = $this->session->userdata('session_grup');
                         </li>
 
                         <li>
-                                <a href="Admin2/dashboard.php" class="waves-effect waves-light"><i
+                                <a href="#" class="waves-effect waves-light"><i
                                     class="mdi mdi-view-dashboard"></i><span> Dashboard </span></a>
                             </li>
 

@@ -1,4 +1,4 @@
-    <form class="user" action="<?php echo base_url('Mahasiswa/dashboard');?>" method="POST">
+    <form class="user" action="<?php echo base_url('Dashboard/dashboard');?>" method="POST">
 
                     <div class="page-content-wrapper">
 

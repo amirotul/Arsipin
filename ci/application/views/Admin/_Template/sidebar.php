@@ -31,7 +31,7 @@ $getGrup = $this->session->userdata('session_grup');
                         </li>
 
                         <li>
-                                <a href="<?php echo base_url('Mahasiswa/dashboard')?>" class="waves-effect waves-light"><i
+                                <a href="<?php echo base_url('Admin/dashboard')?>" class="waves-effect waves-light"><i
                                     class="mdi mdi-view-dashboard"></i><span> Dashboard </span></a>
                             </li>
 
@@ -41,44 +41,67 @@ $getGrup = $this->session->userdata('session_grup');
                                     class="mdi mdi-file-document-box"></i><span> Data Arsip </span><span
                                     class="float-right"><i class="mdi mdi-chevron-right"></i></span></a>
                             <ul class="list-unstyled">
-                                <li><a href="<?php echo base_url('Mahasiswa/jenis-arsip')?>Jenis Arsip</a></li>
-                                <li><a href="data-dokumen.html">Data Arsip</a></li>
+                                <li><a href="<?php echo base_url('Admin/jenis_arsip')?>">Jenis Arsip</a></li>
+                                <li><a href="<?php echo base_url('Admin/data_arsip')?>">Data Arsip</a></li>
                             </ul>
                         </li>
 
                         <li class="has_sub">
-                            <a href="javascript:void(0);" class="waves-effect"><i
-                                    class="mdi mdi-file-document"></i><span> Data Dokumen</span> <span
+                            <a href="<?php echo base_url();?>javascript:void(0);" class="waves-effect"><i
+                                    class="mdi mdi-file-document"></i><span> Data Dokumen </span> <span
                                     class="float-right"><i class="mdi mdi-chevron-right"></i></span></a>
                             <ul class="list-unstyled">
-                                <li><a href="surat-masuk.html">Surat Masuk</a></li>
-                                <li><a href="surat-keluar.html">Surat Keluar</a></li>
-                                <li><a href="disposisi.html">Disposisi</a></li>
+                                <li><a href="<?php echo base_url('Admin/surat_masuk')?>">Surat Masuk</a></li>
+                                <li><a href="<?php echo base_url('Admin/surat_keluar')?>">Surat Keluar</a></li>
+                                <li><a href="<?php echo base_url('Admin/disposisi')?>">Disposisi</a></li>
+                            </ul>
+                        </li>
+
+                            <li class="has_sub">
+                            <a href="javascript:void(0);" class="waves-effect waves-light"><i
+                                    class="mdi mdi-folder-account"></i><span> Data Divisi </span><span
+                                    class="float-right"><i class="mdi mdi-chevron-right"></i></span></a>
+                            <ul class="list-unstyled">
+                                <li><a href="<?php echo base_url('Admin/jenis_divisi')?>">Jenis Divisi</a></li>
+                                <li><a href="<?php echo base_url('Admin/data_divisi')?>">Data Divisi</a></li>
                             </ul>
                         </li>
 
                         <li class="has_sub">
-                           </li>
-                            </a>
+                            <a href="javascript:void(0);" class="waves-effect waves-light"><i
+                                    class="mdi mdi-folder-account"></i><span> Data Pengguna </span><span
+                                    class="float-right"><i class="mdi mdi-chevron-right"></i></span></a>
+                            <ul class="list-unstyled">
+                                <li><a href="<?php echo base_url('Admin/data_pengguna')?>">Pengguna</a></li>
+                                <li><a href="<?php echo base_url('Admin/master_user')?>">Master User</a></li>
+                            </ul>
                         </li>
-
-                        <li>
-                                <a href="divisi-divisi.html" class="waves-effect waves-light"><i class="mdi mdi-division-box"></i><span> Data Divisi </span></a>
-                            </li>
-
-                        <li class="has_sub">
-                           </li>
-                            </a>
-                        </li>
-
-                        <li>
-                                <a href="pengguna-pengguna.html" class="waves-effect waves-light"><i class="mdi mdi-folder-account"></i><span> Data Pengguna </span></a>
-                            </li>
-
-
                         </ul>
                     </div>
                     <div class="clearfix"></div>
                 </div> <!-- end sidebarinner -->
             </div>
             <!-- Left Sidebar End -->
+            <!-- jQuery  -->
+        <script src="<?php echo base_url();?>assets/js/jquery.min.js"></script>
+        <script src="<?php echo base_url();?>assets/js/bootstrap.bundle.min.js"></script>
+        <script src="<?php echo base_url();?>assets/js/modernizr.min.js"></script>
+        <script src="<?php echo base_url();?>assets/js/detect.js"></script>
+        <script src="<?php echo base_url();?>assets/js/fastclick.js"></script>
+        <script src="<?php echo base_url();?>assets/js/jquery.slimscroll.js"></script>
+        <script src="<?php echo base_url();?>assets/js/jquery.blockUI.js"></script>
+        <script src="<?php echo base_url();?>assets/js/waves.js"></script>
+        <script src="<?php echo base_url();?>assets/js/jquery.nicescroll.js"></script>
+        <script src="<?php echo base_url();?>assets/js/jquery.scrollTo.min.js"></script>
+
+        <script src="<?php echo base_url();?>assets/plugins/metro/MetroJs.min.js"></script>
+        <script src="<?php echo base_url();?>assets/plugins/jvectormap/jquery-jvectormap-2.0.2.min.js"></script>
+        <script src="<?php echo base_url();?>assets/plugins/jvectormap/jquery-jvectormap-world-mill-en.js"></script>
+        <script src="<?php echo base_url();?>assets/plugins/sparkline-chart/jquery.sparkline.min.js"></script>
+        <script src="<?php echo base_url();?>assets/plugins/morris/morris.min.js"></script>
+        <script src="<?php echo base_url();?>assets/plugins/raphael/raphael-min.js"></script>
+        <script src="<?php echo base_url();?>assets/pages/dashboard.js"></script>
+        <!-- App js -->
+        <script src="<?php echo base_url();?>assets/js/app.js"></script>
+
+    </body>
