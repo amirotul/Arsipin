@@ -1,27 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
-        <title>Arsipin - Dashboard</title>
-        <meta content="Admin Dashboard" name="description" />
-        <meta content="themesdesign" name="author" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-
-        <link rel="shortcut icon" href="assets/images/favicon.ico">
-
-        <link rel="stylesheet" href="assets/plugins/metro/MetroJs.min.css">
-        <link rel="stylesheet" href="assets/plugins/morris/morris.css">
-        <link href="assets/plugins/jvectormap/jquery-jvectormap-2.0.2.css" rel="stylesheet">
-
-        <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css">
-        <link href="assets/plugins/animate/animate.css" rel="stylesheet" type="text/css">
-        <link href="assets/css/icons.css" rel="stylesheet" type="text/css">
-        <link href="assets/css/style.css" rel="stylesheet" type="text/css">
-
-    </head>
-    <form class="user" action="<?php echo base_url('Mahasiswa/dashboard');?>" method="POST">
+    <form class="user" action="<?php echo base_url('Dashboard/dashboard');?>" method="POST">
 
                     <div class="page-content-wrapper">
 
@@ -159,40 +136,27 @@
                                     </div>
                                 </div>                  
                             </div><!-- end row -->
-
-
-                <footer class="footer">
-                    © 2018 - 2020 Dashor by Themesdesign.
-                </footer>
-
-            </div>
-            <!-- End Right content here -->
-
-        </div>
-        <!-- END wrapper -->
-
-
         <!-- jQuery  -->
-        <script src="assets/js/jquery.min.js"></script>
-        <script src="assets/js/bootstrap.bundle.min.js"></script>
-        <script src="assets/js/modernizr.min.js"></script>
-        <script src="assets/js/detect.js"></script>
-        <script src="assets/js/fastclick.js"></script>
-        <script src="assets/js/jquery.slimscroll.js"></script>
-        <script src="assets/js/jquery.blockUI.js"></script>
-        <script src="assets/js/waves.js"></script>
-        <script src="assets/js/jquery.nicescroll.js"></script>
-        <script src="assets/js/jquery.scrollTo.min.js"></script>
+        <script src="<?php echo base_url();?>assets/js/jquery.min.js"></script>
+        <script src="<?php echo base_url();?>assets/js/bootstrap.bundle.min.js"></script>
+        <script src="<?php echo base_url();?>assets/js/modernizr.min.js"></script>
+        <script src="<?php echo base_url();?>assets/js/detect.js"></script>
+        <script src="<?php echo base_url();?>assets/js/fastclick.js"></script>
+        <script src="<?php echo base_url();?>assets/js/jquery.slimscroll.js"></script>
+        <script src="<?php echo base_url();?>assets/js/jquery.blockUI.js"></script>
+        <script src="<?php echo base_url();?>assets/js/waves.js"></script>
+        <script src="<?php echo base_url();?>assets/js/jquery.nicescroll.js"></script>
+        <script src="<?php echo base_url();?>assets/js/jquery.scrollTo.min.js"></script>
 
-        <script src="assets/plugins/metro/MetroJs.min.js"></script>
-        <script src="assets/plugins/jvectormap/jquery-jvectormap-2.0.2.min.js"></script>
-        <script src="assets/plugins/jvectormap/jquery-jvectormap-world-mill-en.js"></script>
-        <script src="assets/plugins/sparkline-chart/jquery.sparkline.min.js"></script>
-        <script src="assets/plugins/morris/morris.min.js"></script>
-        <script src="assets/plugins/raphael/raphael-min.js"></script>
-        <script src="assets/pages/dashboard.js"></script>
+        <script src="<?php echo base_url();?>assets/plugins/metro/MetroJs.min.js"></script>
+        <script src="<?php echo base_url();?>assets/plugins/jvectormap/jquery-jvectormap-2.0.2.min.js"></script>
+        <script src="<?php echo base_url();?>assets/plugins/jvectormap/jquery-jvectormap-world-mill-en.js"></script>
+        <script src="<?php echo base_url();?>assets/plugins/sparkline-chart/jquery.sparkline.min.js"></script>
+        <script src="<?php echo base_url();?>assets/plugins/morris/morris.min.js"></script>
+        <script src="<?php echo base_url();?>assets/plugins/raphael/raphael-min.js"></script>
+        <script src="<?php echo base_url();?>assets/pages/dashboard.js"></script>
         <!-- App js -->
-        <script src="assets/js/app.js"></script>
+        <script src="<?php echo base_url();?>assets/js/app.js"></script>
 
     </body>
 </html>
