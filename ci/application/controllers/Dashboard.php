@@ -12,27 +12,5 @@ class Dashboard extends CI_Controller{ //membuat controller Mahasiswa
 		$this->template->views('Admin2/dashboard',$data);
 			//untuk mengakses file views 'crud/home_mahasiswa' pada halaman template
 	}
-
-	public function dashboard() { 
-		$this->template->views('Admin2/dashboard');
-		//untuk mengakses file views 'crud/tambah_mahasiswa' pada halaman template
-	}
-	
-	public function jenis_divisi() { 
-		$this->template->views('Admin2/jenis-divisi');
-		//untuk mengakses file views 'crud/tambah_mahasiswa' pada halaman template
-	}
-	public function data_divisi() { 
-		$this->template->views('Admin2/data-divisi');
-		//untuk mengakses file views 'crud/tambah_mahasiswa' pada halaman template
-	}
-	public function data_pengguna() { 
-		$this->template->views('Admin2/data-pengguna');
-		//untuk mengakses file views 'crud/tambah_mahasiswa' pada halaman template
-	}
-	public function master_user() { 
-		$this->template->views('Admin2/master-user');
-		//untuk mengakses file views 'crud/tambah_mahasiswa' pada halaman template
-	}
 }
 ?>
