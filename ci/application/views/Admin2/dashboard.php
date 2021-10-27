@@ -136,8 +136,7 @@
                                     </div>
                                 </div>                  
                             </div><!-- end row -->
-        <!-- jQuery  -->
-        
+        <!-- jQuery  
 
     </body>
 </html>
