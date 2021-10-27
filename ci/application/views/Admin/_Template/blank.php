@@ -13,7 +13,7 @@ $getGrup = $this->session->userdata('session_grup');
         <meta content="themesdesign" name="author" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
-        <link rel="shortcut icon" href="<?php echo base_url();?>assets/images/favicon.ico">
+        <link rel="shortcut icon" href="assets/images/favicon.ico">
 
         <link href="<?php echo base_url();?>assets/css/bootstrap.min.css" rel="stylesheet" type="text/css">
         <link href="<?php echo base_url();?>assets/plugins/animate/animate.css" rel="stylesheet" type="text/css">
@@ -60,44 +60,45 @@ $getGrup = $this->session->userdata('session_grup');
 
 
                         <li class="has_sub">
-                            <a href="javascript:void(0);" class="waves-effect waves-light"><i
-                                    class="mdi mdi-file-document-box"></i><span> Data Dokumen </span><span
+                            <a href="#" class="waves-effect waves-light"><i
+                                    class="mdi mdi-file-document-box"></i><span> Data Arsip </span><span
                                     class="float-right"><i class="mdi mdi-chevron-right"></i></span></a>
                             <ul class="list-unstyled">
-                                <li><a href="Admin2/jenis-arsip.php">Jenis Arsip</a></li>
-                                <li><a href="Admin2/data-arsip.php">Data Arsip</a></li>
+                                <li><a href="#">Jenis Arsip</a></li>
+                                <li><a href="#">Data Arsip</a></li>
                             </ul>
                         </li>
 
                         <li class="has_sub">
-                            <a href="javascript:void(0);" class="waves-effect"><i
-                                    class="mdi mdi-file-document"></i><span> Data Arsip </span> <span
+                            <a href="#" class="waves-effect"><i
+                                    class="mdi mdi-file-document"></i><span> Data Dokumen </span> <span
                                     class="float-right"><i class="mdi mdi-chevron-right"></i></span></a>
                             <ul class="list-unstyled">
-                                <li><a href="surat-masuk.html">Surat Masuk</a></li>
-                                <li><a href="surat-keluar.html">Surat Keluar</a></li>
-                                <li><a href="disposisi.html">Disposisi</a></li>
+                                <li><a href="#">Surat Masuk</a></li>
+                                <li><a href="#">Surat Keluar</a></li>
+                                <li><a href="#">Disposisi</a></li>
+                            </ul>
+                        </li>
+
+                            <li class="has_sub">
+                            <a href="#" class="waves-effect waves-light"><i
+                                    class="mdi mdi-folder-account"></i><span> Data Divisi </span><span
+                                    class="float-right"><i class="mdi mdi-chevron-right"></i></span></a>
+                            <ul class="list-unstyled">
+                                <li><a href="#">Jenis Divisi</a></li>
+                                <li><a href="#">Data Divisi</a></li>
                             </ul>
                         </li>
 
                         <li class="has_sub">
-                           </li>
-                            </a>
+                            <a href="#" class="waves-effect waves-light"><i
+                                    class="mdi mdi-folder-account"></i><span> Data Pengguna </span><span
+                                    class="float-right"><i class="mdi mdi-chevron-right"></i></span></a>
+                            <ul class="list-unstyled">
+                                <li><a href="#">Pengguna</a></li>
+                                <li><a href="#">Master User</a></li>
+                            </ul>
                         </li>
-
-                        <li>
-                                <a href="divisi-divisi.html" class="waves-effect waves-light"><i class="mdi mdi-division-box"></i><span> Data Divisi </span></a>
-                            </li>
-
-                        <li class="has_sub">
-                           </li>
-                            </a>
-                        </li>
-
-                        <li>
-                                <a href="pengguna-pengguna.html" class="waves-effect waves-light"><i class="mdi mdi-folder-account"></i><span> Data Pengguna </span></a>
-                            </li>
-
 
                         </ul>
                     </div>
@@ -130,19 +131,19 @@ $getGrup = $this->session->userdata('session_grup');
 
                                         <!-- item-->
                                         <a href="javascript:void(0);" class="dropdown-item notify-item">
-                                            <div class="notify-icon"><img src="assets/images/users/avatar-2.jpg" alt="user-img" class="img-fluid rounded-circle" /> </div>
+                                            <div class="notify-icon"><img src="<?php echo base_url();?>assets/images/users/avatar-2.jpg" alt="user-img" class="img-fluid rounded-circle" /> </div>
                                             <p class="notify-details"><b>Charles M. Jones</b><small class="">Dummy text of the printing and typesetting industry.</small></p>
                                         </a>
 
                                         <!-- item-->
                                         <a href="javascript:void(0);" class="dropdown-item notify-item">
-                                            <div class="notify-icon"><img src="assets/images/users/avatar-3.jpg" alt="user-img" class="img-fluid rounded-circle" /> </div>
+                                            <div class="notify-icon"><img src="<?php echo base_url();?>assets/images/users/avatar-3.jpg" alt="user-img" class="img-fluid rounded-circle" /> </div>
                                             <p class="notify-details"><b>Thomas J. Mimms</b><small class="">You have 87 unread messages</small></p>
                                         </a>
 
                                         <!-- item-->
                                         <a href="javascript:void(0);" class="dropdown-item notify-item">
-                                            <div class="notify-icon"><img src="assets/images/users/avatar-4.jpg" alt="user-img" class="img-fluid rounded-circle" /> </div>
+                                            <div class="notify-icon"><img src="<?php echo base_url();?>assets/images/users/avatar-4.jpg" alt="user-img" class="img-fluid rounded-circle" /> </div>
                                             <p class="notify-details"><b>Luis M. Konrad</b><small class="">It is a long established fact that a reader will</small></p>
                                         </a>
                                         <div class="dropdown-divider"></div>
@@ -193,7 +194,7 @@ $getGrup = $this->session->userdata('session_grup');
                                 <li class="list-inline-item dropdown notification-list">
                                     <a class="nav-link dropdown-toggle arrow-none waves-effect waves-light nav-user" data-toggle="dropdown" href="#" role="button"
                                         aria-haspopup="false" aria-expanded="false">
-                                        <img src="assets/images/users/avatar-1.jpg" alt="user" class="rounded-circle">
+                                        <img src="<?php echo base_url();?>assets/images/users/avatar-1.jpg" alt="user" class="rounded-circle">
                                     </a>
                                     <div class="dropdown-menu dropdown-menu-right profile-dropdown ">
                                         <!-- item-->
@@ -244,21 +245,27 @@ $getGrup = $this->session->userdata('session_grup');
         </div>
         <!-- END wrapper -->
 
-
         <!-- jQuery  -->
-        <script src="<?php echo base_url();?>assets/js/jquery.min.js"></script>
-        <script src="<?php echo base_url();?>assets/js/bootstrap.bundle.min.js"></script>
-        <script src="<?php echo base_url();?>assets/js/modernizr.min.js"></script>
-        <script src="<?php echo base_url();?>assets/js/detect.js"></script>
-        <script src="<?php echo base_url();?>assets/js/fastclick.js"></script>
-        <script src="<?php echo base_url();?>assets/js/jquery.slimscroll.js"></script>
-        <script src="<?php echo base_url();?>assets/js/jquery.blockUI.js"></script>
-        <script src="<?php echo base_url();?>assets/js/waves.js"></script>
-        <script src="<?php echo base_url();?>assets/js/jquery.nicescroll.js"></script>
-        <script src="<?php echo base_url();?>assets/js/jquery.scrollTo.min.js"></script>
+        <script src="<?php echo base_url()?>assets/js/jquery.min.js"></script>
+        <script src="<?php echo base_url()?>assets/js/bootstrap.bundle.min.js"></script>
+        <script src="<?php echo base_url()?>assets/js/modernizr.min.js"></script>
+        <script src="<?php echo base_url()?>assets/js/detect.js"></script>
+        <script src="<?php echo base_url()?>assets/js/fastclick.js"></script>
+        <script src="<?php echo base_url()?>assets/js/jquery.slimscroll.js"></script>
+        <script src="<?php echo base_url()?>assets/js/jquery.blockUI.js"></script>
+        <script src="<?php echo base_url()?>assets/js/waves.js"></script>
+        <script src="<?php echo base_url()?>assets/js/jquery.nicescroll.js"></script>
+        <script src="<?php echo base_url()?>assets/js/jquery.scrollTo.min.js"></script>
 
+        <script src="<?php echo base_url()?>assets/plugins/metro/MetroJs.min.js"></script>
+        <script src="<?php echo base_url()?>assets/plugins/jvectormap/jquery-jvectormap-2.0.2.min.js"></script>
+        <script src="<?php echo base_url()?>assets/plugins/jvectormap/jquery-jvectormap-world-mill-en.js"></script>
+        <script src="<?php echo base_url()?>assets/plugins/sparkline-chart/jquery.sparkline.min.js"></script>
+        <script src="<?php echo base_url()?>assets/plugins/morris/morris.min.js"></script>
+        <script src="<?php echo base_url()?>assets/plugins/raphael/raphael-min.js"></script>
+        <script src="<?php echo base_url()?>assets/pages/dashboard.js"></script>
         <!-- App js -->
-        <script src="<?php echo base_url();?>assets/js/app.js"></script>
-
+        <script src="<?php echo base_url()?>assets/js/app.js"></script>
+        
     </body>
 </html>
