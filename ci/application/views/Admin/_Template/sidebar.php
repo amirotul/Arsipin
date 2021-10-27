@@ -46,15 +46,13 @@ $getGrup = $this->session->userdata('session_grup');
                         </li>
 
                         <li class="has_sub">
-                            <a href="#" class="waves-effect"><i
-                                    class="mdi mdi-file-document"></i><span> Data Dokumen </span> <span
-                                    class="float-right"><i class="mdi mdi-chevron-right"></i></span></a>
-                            <ul class="list-unstyled">
+                                <a href="#" class="waves-effect waves-light"><i class="mdi mdi-file-document"></i><span> Data Dokumen </span><span class="float-right"><i class="mdi mdi-chevron-right"></i></span></a>
+                                <ul class="list-unstyled">
                                 <li><a href="Surat_Masuk">Surat Masuk</a></li>
                                 <li><a href="Surat_Keluar">Surat Keluar</a></li>
                                 <li><a href="Disposisi">Disposisi</a></li>
-                            </ul>
-                        </li>
+                                </ul>
+                            </li>
 
                             <li class="has_sub">
                             <a href="#" class="waves-effect waves-light"><i
