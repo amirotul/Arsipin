@@ -181,32 +181,4 @@
         <!-- END wrapper -->
 
 
-        <!-- jQuery  -->
-        <script src="assets/js/jquery.min.js"></script>
-        <script src="assets/js/bootstrap.bundle.min.js"></script>
-        <script src="assets/js/modernizr.min.js"></script>
-        <script src="assets/js/detect.js"></script>
-        <script src="assets/js/fastclick.js"></script>
-        <script src="assets/js/jquery.slimscroll.js"></script>
-        <script src="assets/js/jquery.blockUI.js"></script>
-        <script src="assets/js/waves.js"></script>
-        <script src="assets/js/jquery.nicescroll.js"></script>
-        <script src="assets/js/jquery.scrollTo.min.js"></script>
-
-        <script src="assets/plugins/tiny-editable/mindmup-editabletable.js"></script>
-        <script src="assets/plugins/tiny-editable/numeric-input-example.js"></script>
-        <script src="assets/plugins/tabledit/jquery.tabledit.js"></script>
-        <script src="assets/pages/edit-table.js"></script>
-
-        <!-- App js -->
-        <script src="assets/js/app.js"></script>
-
-    </body>
-<!--<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-<script>
-    $('.checked-all').on('change', function(e){
-    e.preventDefault()
-    $('input[name=pilih]').prop('checked', this.checked)
-})-->
-</script>
-</html>
+        
