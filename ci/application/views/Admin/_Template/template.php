@@ -78,6 +78,13 @@ $getGrup = $this->session->userdata('session_grup');
         <script src="<?php echo base_url()?>assets/js/jquery.nicescroll.js"></script>
         <script src="<?php echo base_url()?>assets/js/jquery.scrollTo.min.js"></script>
 
+        <script src="<?php echo base_url()?>assets/plugins/metro/MetroJs.min.js"></script>
+        <script src="<?php echo base_url()?>assets/plugins/jvectormap/jquery-jvectormap-2.0.2.min.js"></script>
+        <script src="<?php echo base_url()?>assets/plugins/jvectormap/jquery-jvectormap-world-mill-en.js"></script>
+        <script src="<?php echo base_url()?>assets/plugins/sparkline-chart/jquery.sparkline.min.js"></script>
+        <script src="<?php echo base_url()?>assets/plugins/morris/morris.min.js"></script>
+        <script src="<?php echo base_url()?>assets/plugins/raphael/raphael-min.js"></script>
+        <script src="<?php echo base_url()?>assets/pages/dashboard.js"></script>
         <!-- App js -->
         <script src="<?php echo base_url()?>assets/js/app.js"></script>
 </body>

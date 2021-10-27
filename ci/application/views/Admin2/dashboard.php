@@ -118,45 +118,7 @@
                 </div>
             </div>
 
-            <div class="row">
-                <div class="col-md-12 col-xl-8">
-                    <div class="card">
-                        <div class="card-body">   
-                            <h4 class="mt-0 mb-3 header-title">Dokumen</h4>        
-                            <div id="morris-area-chart" style="height: 340px;"></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-12 col-xl-4">
-                    <div class="card">
-                        <div class="card-body">
-                            <h4 class="mt-0 mb-3 header-title">Surat Masuk</h4> 
-                            <div id="morris-donut-example" style="height: 340px;"></div>
-                        </div>
-                    </div>
-                </div>                  
-            </div><!-- end row -->
-            <!-- jQuery  -->
-            <script src="<?php echo base_url();?>assets/js/jquery.min.js"></script>
-            <script src="<?php echo base_url();?>assets/js/bootstrap.bundle.min.js"></script>
-            <script src="<?php echo base_url();?>assets/js/modernizr.min.js"></script>
-            <script src="<?php echo base_url();?>assets/js/detect.js"></script>
-            <script src="<?php echo base_url();?>assets/js/fastclick.js"></script>
-            <script src="<?php echo base_url();?>assets/js/jquery.slimscroll.js"></script>
-            <script src="<?php echo base_url();?>assets/js/jquery.blockUI.js"></script>
-            <script src="<?php echo base_url();?>assets/js/waves.js"></script>
-            <script src="<?php echo base_url();?>assets/js/jquery.nicescroll.js"></script>
-            <script src="<?php echo base_url();?>assets/js/jquery.scrollTo.min.js"></script>
 
-            <script src="<?php echo base_url();?>assets/plugins/metro/MetroJs.min.js"></script>
-            <script src="<?php echo base_url();?>assets/plugins/jvectormap/jquery-jvectormap-2.0.2.min.js"></script>
-            <script src="<?php echo base_url();?>assets/plugins/jvectormap/jquery-jvectormap-world-mill-en.js"></script>
-            <script src="<?php echo base_url();?>assets/plugins/sparkline-chart/jquery.sparkline.min.js"></script>
-            <script src="<?php echo base_url();?>assets/plugins/morris/morris.min.js"></script>
-            <script src="<?php echo base_url();?>assets/plugins/raphael/raphael-min.js"></script>
-            <script src="<?php echo base_url();?>assets/pages/dashboard.js"></script>
-            <!-- App js -->
-            <script src="<?php echo base_url();?>assets/js/app.js"></script>
 
         </body>
         </html>
