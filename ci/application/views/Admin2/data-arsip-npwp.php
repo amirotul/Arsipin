@@ -6,7 +6,7 @@
         <div class="row">
             <div class="col-sm-12">
                 <div class="page-title-box">
-                    <h4 class="page-title">Data MOU</h4>
+                    <h4 class="page-title">Data NPWP</h4>
                 </div>
             </div>
         </div>
@@ -20,7 +20,7 @@
                         </a>
                         <br>
                         <p>
-                            <a href=form-add-data-mou.html>
+                            <a href=form-add-data-npwp.html>
                                 <button type="button" class="btn btn-info btn-sm">Tambah Data</button></p>
                             </a>
                             <form action="" method=""></form>
@@ -105,48 +105,50 @@
                             <tr>
                                 
                                 <td>1</td>
-                                <td>MOU CV Hummasoft</td>
-                                <td>MOU</td>
+                                <td>NPWP CV Hummasoft</td>
+                                <td>NPWP</td>
                                 <td>14/10/2021</td>
-                                <td><a href=form-edit-data-mou.html>
+                                <td><a href=form-edit-data-npwp.html>
                                     <button type="button" class="btn-primary">Edit</button></a>
                                     &nbsp
-                                    <a href=data-arsip-mou.html>
+                                    <a href=data-arsip-npwp.html>
                                         <button type="button" class="btn-danger">Hapus</button></a>
                                         &nbsp
-                                        <a href=lihat-mou.html>
+                                        <a href=lihat-npwp.html>
                                             <button type="button" class="btn-warning">Detail</button></a></td>
+                                            
+
                                             
                                         </tr>
                                         <tr>
                                             
                                             <td>2</td>
-                                            <td>MOU CV Hummasoft</td>
-                                            <td>MOU</td>
+                                            <td>NPWP CV Hummasoft</td>
+                                            <td>NPWP</td>
                                             <th>13/10/2021</th>
-                                            <td><a href=form-edit-data-mou.html>
+                                            <td><a href=form-edit-data-npwp.html>
                                                 <button type="button" class="btn-primary">Edit</button></a>
                                                 &nbsp
-                                                <a href=data-arsip-mou.html>
+                                                <a href=data-arsip-npwp.html>
                                                     <button type="button" class="btn-danger">Hapus</button></a>
                                                     &nbsp
-                                                    <a href=lihat-mou.html>
+                                                    <a href=lihat-npwp.html>
                                                         <button type="button" class="btn-warning">Detail</button></a></td>
                                                         
                                                     </tr>
                                                     <tr>
                                                         
                                                         <td>3</td>
-                                                        <td>MOU CV Hummasoft</td>
-                                                        <td>MOU</td>
+                                                        <td>NPWP CV Hummasoft</td>
+                                                        <td>NPWP</td>
                                                         <th>10/10/2021</th>
-                                                        <td><a href=form-edit-data-mou.html>
+                                                        <td><a href=form-edit-data-npwp.html>
                                                             <button type="button" class="btn-primary">Edit</button></a>
                                                             &nbsp
-                                                            <a href=data-arsip-mou.html>
+                                                            <a href=data-arsip-npwp.html>
                                                                 <button type="button" class="btn-danger">Hapus</button></a>
                                                                 &nbsp
-                                                                <a href=lihat-mou.html>
+                                                                <a href=lihat-npwp.html>
                                                                     <button type="button" class="btn-warning">Detail</button></a></td>
                                                                     
                                                                 </tr>
