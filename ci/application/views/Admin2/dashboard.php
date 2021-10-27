@@ -117,8 +117,21 @@
                     </div>
                 </div>
             </div>
-
-
-
-        </body>
-        </html>
+            <div class="row">
+                <div class="col-md-12 col-xl-8">
+                    <div class="card">
+                        <div class="card-body">   
+                            <h4 class="mt-0 mb-3 header-title">Dokumen</h4>        
+                            <div id="morris-area-chart" style="height: 340px;"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-12 col-xl-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h4 class="mt-0 mb-3 header-title">Surat Masuk</h4> 
+                            <div id="morris-donut-example" style="height: 340px;"></div>
+                        </div>
+                    </div>
+                </div>                  
+                            </div><!-- end row -->
