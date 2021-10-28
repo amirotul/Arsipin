@@ -20,7 +20,7 @@
                         </a>
                         <br>
                         <p>
-                            <a href=form-add-data-akte-perusahaan.html>
+                            <a href="<?php echo base_url('Data_Arsip/tambah_akte_perusahaan')?>">
                                 <button type="button" class="btn btn-info btn-sm">Tambah Data</button></p>
                             </a>
                             <form action="" method=""></form>
@@ -108,10 +108,10 @@
                                 <td>Akte Perusahaan CV Hummasoft</td>
                                 <td>Akte Perusahaan</td>
                                 <td>14/10/2021</td>
-                                <td><a href=form-edit-data-akte-perusahaan.html>
+                                <td><a href=<?php echo base_url('Data_Arsip/form-edit-data-akte-perusahaan')?>>
                                     <button type="button" class="btn-primary">Edit</button></a>
                                     &nbsp
-                                    <a href=data-arsip-akte-perusahaan.html>
+                                    <a href=<?php echo base_url('Data_Arsip/form-edit-data-akte-perusahaan')?>>
                                         <button type="button" class="btn-danger">Hapus</button></a>
                                         &nbsp
                                         <a href=lihat-akte-perusahaan.html>

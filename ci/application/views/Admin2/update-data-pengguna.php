@@ -1,4 +1,4 @@
-
+<form class="user" action="<?php echo base_url('Data_Pengguna/update');?>"></form>
 <div class="page-content-wrapper">
 
     <div class="container-fluid">

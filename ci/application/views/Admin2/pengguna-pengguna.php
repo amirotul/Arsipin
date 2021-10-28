@@ -15,7 +15,7 @@
                     <div class="card m-b-30">
                         <div class="card-body">
                             <p>
-                                <a href=form-add-data-pengguna.html>
+                                <a href=<?php echo base_url('Data_Pengguna/tambah_pengguna');?>>
                                     <button type="button" class="btn btn-info btn-sm">Tambah Data</button>
                                 </a>
                             </p>
@@ -74,32 +74,25 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>1</td>
-                        <td>Hana Lestari</td>
-                        <td>hana@gmail.com</td>
-                        <td>Divisi Marketing</td>
-                        <td>hanalestari1</td>
-                        <td>hana123</td>
-                        <td><a href=update-data-pengguna.html>
-                            <button type="button" class="btn-primary">Edit</button></a>
-                            &nbsp
-                            <a href=pengguna-pengguna.html>
-                                <button type="button" class="btn-danger">Hapus</button></a></td>
-                            </tr>
-                            <tr>
-                                <td>2</td>
-                                <td>Hani L</td>
-                                <td>hani@gmail.com</td>
-                                <td>Divisi HRD</td>
-                                <td>hani_l</td>
-                                <td>hani123</td>
-                                <td><a href=update-data-pengguna.html>
-                                    <button type="button" class="btn-primary">Edit</button></a>
-                                    &nbsp
-                                    <a href=pengguna-pengguna.html>
-                                        <button type="button" class="btn-danger">Hapus</button></a></td>
-                                    </tr>
+                    <?php
+                    $no = 1;
+                    foreach ($user as $baris){
+                        ?>
+                        <tr>
+                            <td><?php echo $no++; ?></td>
+                            <td><?php echo $baris->pengguna; ?></td>
+                            <td>
+                                <?php
+                            echo '<a href="'.base_url('Data_Pengguna/edit_pengguna/').'"><button
+                            type="button" class="btn-primary">Edit</button></a>';
+                            echo " ";
+                            echo '<a href="'.base_url('Data_Pengguna/hapus_pengguna/').'"><button
+                            type="button" class="btn-primary">Edit</button></a>'; 
+                            ?></td>
+                        </tr>
+                        <?php
+                    }
+                    ?>
                                 </tbody>
                             </table>
                         </div>
