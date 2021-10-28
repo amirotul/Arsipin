@@ -20,7 +20,7 @@
                         </a>
                         <br>
                         <p>
-                            <a href=<?php echo base_url('Data_Arsip/tambah_tdp')?>>
+                            <a href="<?php echo base_url('Data_Arsip/tambah_tdp')?>">
                                 <button type="button" class="btn btn-info btn-sm">Tambah Data</button></p>
                             </a>
                             <form action="" method=""></form>
