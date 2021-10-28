@@ -14,7 +14,7 @@
             <div class="col-10">
                 <div class="card m-b-30">
                     <div class="card-body">
-                        <a href="disposisi.html">
+                        <a href="<?php echo base_url('Disposisi')?>">
                             <i class="far fa-arrow-alt-circle-left fa-2x" ></i>
                             <br>
                         </a>

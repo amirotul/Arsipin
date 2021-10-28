@@ -14,7 +14,7 @@
             <div class="col-12">
                 <div class="card ">
                     <div class="card-body">
-                        <a href="surat-keluar.html">
+                        <a href="<?php echo base_url('Surat_Keluar')?>">
                             <i class="far fa-arrow-alt-circle-left fa-2x" ></i>
                             <br>
                         </a>
