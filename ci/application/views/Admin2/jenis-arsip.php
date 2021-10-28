@@ -1,4 +1,7 @@
-<form class="user" action="<?php echo base_url('Jenis_Arsip/jenis-arsip');?>" method="POST">
+<?php
+$getUser = $this->session->userdata('session_user');
+$getGrup = $this->session->userdata('session_grup');
+?>
     <div class="page-content-wrapper">
 
         <div class="container-fluid">
@@ -15,7 +18,7 @@
                     <div class="card m-b-30">
                         <div class="card-body">
                             <p>
-                                <a href=form-add-jenis-arsip.html>
+                                <a href=<?php echo base_url('Jenis_Arsip/tambah')?>>
                                     <button type="button" class="btn btn-info btn-sm">Tambah Data</button></p>
                                 </a>
                                 <div id="datatable_wrapper"
@@ -70,60 +73,25 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>1</td>
-                            <td>Akte Perusahaan</td>
-                            <td><a href=update-jenis-arsip.html>
-                                <button type="button" class="btn-primary">Edit</button></a>
-                                &nbsp
-                                <a href=#>
-                                    <button type="button" class="btn-danger">Hapus</button></a></td>
-                                </tr>
-                                <tr>
-                                    <td>2</td>
-                                    <td>MOU</td>
-                                    <td><a href=update-jenis-arsip.html>
-                                        <button type="button" class="btn-primary">Edit</button></a>
-                                        &nbsp
-                                        <a href=#>
-                                            <button type="button" class="btn-danger">Hapus</button></a></td>
-                                        </tr>
-                                        <tr>
-                                            <td>3</td>
-                                            <td>Kontrak Kerja</td>
-                                            <td><a href=update-jenis-arsip.html>
-                                                <button type="button" class="btn-primary">Edit</button></a>
-                                                &nbsp
-                                                <a href=update-jenis-arsip.html>
-                                                    <button type="button" class="btn-danger">Hapus</button></a></td>
-                                                </tr>
-                                                <tr>
-                                                    <td>4</td>
-                                                    <td>NPWP</td>
-                                                    <td><a href=#>
-                                                        <button type="button" class="btn-primary">Edit</button></a>
-                                                        &nbsp
-                                                        <a href=update-jenis-arsip.html>
-                                                            <button type="button" class="btn-danger">Hapus</button></a></td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>5</td>
-                                                            <td>TDP</td>
-                                                            <td><a href=update-jenis-arsip.html>
-                                                                <button type="button" class="btn-primary">Edit</button></a>
-                                                                &nbsp
-                                                                <a href=#>
-                                                                    <button type="button" class="btn-danger">Hapus</button></a></td>
-                                                                </tr>
-                                                                <tr>
-                                                                    <td>6</td>
-                                                                    <td>CV</td>
-                                                                    <td><a href=update-jenis-arsip.html>
-                                                                        <button type="button" class="btn-primary">Edit</button></a>
-                                                                        &nbsp
-                                                                        <a href=#>
-                                                                            <button type="button" class="btn-danger">Hapus</button></a></td>
-                                                                        </tr>
+                        <?php 
+                            $no = 1; //no default 1
+                            foreach ($user as $baris) { //
+                             ?>
+                             <tr>
+                                <td><?php echo $no++; ?></td>
+                                <!-- nomor user otomatis bertambah pada saatn menambah data -->
+                                <td><?php echo $baris->jenis_arsip; ?></td> 
+                                <td>
+                                    <?php
+                                    echo '<a href="'.base_url('Jenis_Arsip/edit/'.$baris->jenis_arsip).'" <button type="button" class="btn-primary">Edit</button></a>';
+                                    echo " ";
+                                    echo '<a href="'.base_url('Jenis_Arsip/hapus/'.$baris->jenis_arsip).'" <button type="button" class="btn-danger">Hapus</button></a>';
+                                    ?>
+                                </td>
+                            </tr>
+                            <?php 
+                        }
+                        ?>
                                                                     </tbody>
                                                                 </table>
                                                             </div>

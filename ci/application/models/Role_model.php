@@ -2,13 +2,12 @@
 /**
  * 
  */
-class Mahasiswa_model extends CI_Model
+class Role_model extends CI_Model
 {
 	
 	function getAll(){ //membuat function getAll
 		$this->db->select('*'); //memilih semua
-		$this->db->from('tm_user');// dari tabel tm_user
-		$this->db->join('tm_grup', 'tm_user.grup = tm_grup.id_grup');
+		$this->db->from('data_pengguna');// dari tabel tm_user
 		$query = $this->db->get();
 		return $query;
 		//untuk proses selecy data dari database
@@ -35,7 +34,7 @@ class Mahasiswa_model extends CI_Model
 
 	function login($user, $pass, $table){
 		$this->db->select('*');
-		$this->db->from('tm_user');
+		$this->db->from('data_pengguna');
 		$this->db->where('username', $user);
 		$this->db->where('password', $pass);
 		$query = $this->db->get();

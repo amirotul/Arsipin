@@ -1,6 +1,5 @@
-
 <div class="page-content-wrapper">
-
+<form class="user" action="<?php echo base_url('Jenis_Arsip/input');?>" method="post">
     <div class="container-fluid">
         <!-- end page title end breadcrumb -->
         <div class="row">
@@ -26,14 +25,14 @@
                                     <div class="custom">
                                         <div class="input-group-append">
 
-                                            <a href=jenis-arsip.html>
-                                                <button class="btn btn-primary btn-sm" type="button">Simpan</button></a>
+                                            <!-- <a href=jenis-arsip.html> -->
+                                                <button class="btn btn-primary btn-sm" type="submit" name="submit">Simpan</button></a>
                                             </div>
                                             
                                         </div> &nbsp &nbsp
                                         <div class="input-group-append">
 
-                                            <a href=jenis-arsip.html>
+                                            <a href=index>
                                                 <button class="btn btn-danger btn-sm" type="button">Batal</button></a>
                                             </div>
                                         </div>
