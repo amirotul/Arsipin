@@ -1,4 +1,4 @@
-
+<form class="user" action="<?php echo base_url('Data_Arsip/input_akte_perusahaan');?>" method="post">
 <div class="page-content-wrapper">
 
     <div class="container-fluid">
