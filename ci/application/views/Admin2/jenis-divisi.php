@@ -15,7 +15,7 @@
                     <div class="card m-b-30">
                         <div class="card-body">
                             <p>
-                                <a href=form-add-jenis-divisi.html>
+                                <a href=<?php echo base_url('Jenis_Divisi/tambah_jenis_divisi');?>>
                                     <button type="button" class="btn btn-info btn-sm">Tambah Data</button>
                                 </a>
                             </p>
@@ -73,20 +73,20 @@
                     <tr>
                         <td>1</td>
                         <td>Marketing</td>
-                        <td><a href=update-divisi.html>
+                        <td><a href=<?php echo base_url('Jenis_Divisi/edit-jenis-divisi');?>>
                             <button type="button" class="btn-primary">Edit</button></a>
                             &nbsp
-                            <a href=divisi-divisi.html>
+                            <a href=<?php echo base_url('Jenis_Arsip/hapus-jenis-arsip');?>>
                                 <button type="button" class="btn-danger">Hapus</button></a>
                             </td>
                         </tr>
                         <tr>
                             <td>2</td>
                             <td>HRD</td>
-                            <td><a href=update-divisi.html>
+                            <td><a href=<?php echo base_url('Jenis_Divisi/edit-jenis-divisi');?>>
                                 <button type="button" class="btn-primary">Edit</button></a>
                                 &nbsp
-                                <a href=divisi-divisi.html>
+                                <a href=<?php echo base_url('Jenis_Divisi/hapus-jenis-arsip');?>>
                                     <button type="button" class="btn-danger">Hapus</button></a>
                                 </td>
                             </tr>

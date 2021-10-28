@@ -71,14 +71,14 @@
                                     <div class="custom">
                                         <div class="input-group-append">
 
-                                            <a href=data-arsip-kontrak-kerja.html>
+                                            <a href=<?php echo base_url('Data_Arsip/simpan-form-edit-kontrak-kerja');?>>
                                                 <button class="btn btn-primary" type="button">Simpan</button></a>
                                             </div>
                                             
                                         </div> &nbsp &nbsp
                                         <div class="input-group-append">
 
-                                            <a href=data-arsip-kontrak-kerja.html>
+                                            <a href=<?php echo base_url('Data_Arsip/batal-form-edit-kontrak-kerja');?>>
                                                 <button class="btn btn-danger" type="button">Batal</button></a>
                                             </div>
                                         </div>

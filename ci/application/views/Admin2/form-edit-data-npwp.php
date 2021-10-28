@@ -69,14 +69,14 @@
                                     <div class="custom">
                                         <div class="input-group-append">
 
-                                            <a href=data-arsip-npwp.html>
+                                            <a href=<?php echo base_url('Data_Arsip/simpan-form-edit-data-npwp');?>>
                                                 <button class="btn btn-primary" type="button">Simpan</button></a>
                                             </div>
                                             
                                         </div> &nbsp &nbsp
                                         <div class="input-group-append">
 
-                                            <a href=data-arsip-npwp.html>
+                                            <a href=<?php echo base_url('Data_Arsip/batal-form-edit-data-npwp');?>>
                                                 <button class="btn btn-danger" type="button">Batal</button></a>
                                             </div>
                                         </div>
