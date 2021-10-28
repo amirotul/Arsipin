@@ -16,7 +16,7 @@
                     <div class="card m-b-30">
                         <div class="card-body">
                             <p>
-                                <a href=<?php echo base_url('Master_User/tambah_master_user');?>>
+                                <a href=<?php echo base_url('Master_User/tambah_master');?>>
                                     <button type="button" class="btn btn-info btn-sm">Tambah Data</button>
                                 </a>
                             </p>
@@ -71,38 +71,25 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>1</td>
-                        <td>Admin</td>
-                        <td>
-                            <a href=<?php echo base_url('Master_User/hapus-master-user');?>>
-                                <button type="button" class="btn-danger">Hapus</button></a>
-                            </td>
-                        </tr>
+                <?php
+                    $no = 1;
+                    foreach ($user as $baris){
+                        ?>
                         <tr>
-                            <td>2</td>
-                            <td>Pimpinan</td>
+                            <td><?php echo $no++; ?></td>
+                            <td><?php echo $baris->master_user; ?></td>
                             <td>
-                                <a href=<?php echo base_url('Master_User/hapus-master-user');?>>
-                                    <button type="button" class="btn-danger">Hapus</button></a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>3</td>
-                                <td>Resepsionis</td>
-                                <td>
-                                    <a href=<?php echo base_url('Master_User/hapus-master-user');?>>
-                                        <button type="button" class="btn-danger">Hapus</button></a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>4</td>
-                                    <td>Divisi</td>
-                                    <td>
-                                        <a href=<?php echo base_url('Master_User/hapus-master-user');?>>
-                                            <button type="button" class="btn-danger">Hapus</button></a>
-                                        </td>
-                                    </tr>
+                                <?php
+                            echo '<a href="'.base_url('Master_User/edit_master/').'"><button
+                            type="button" class="btn-primary">Edit</button></a>';
+                            echo " ";
+                            echo '<a href="'.base_url('Master_User/hapus_master/').'"><button
+                            type="button" class="btn-primary">Hapus</button></a>'; 
+                            ?></td>
+                        </tr>
+                        <?php
+                    }
+                    ?>
                                     
                                 </tbody>
                             </table>
