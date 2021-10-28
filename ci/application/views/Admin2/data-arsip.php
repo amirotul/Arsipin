@@ -32,7 +32,7 @@
                                             <div class="row no-gutters align-items-center">
                                                 <div class="col mr-2">
                                                     <div class="text-xs font-weight-bold text-primary text-uppercase mb-1 text-center">
-                                                        <a href=data-arsip-akte-perusahaan.html class="text-primary">Akte Perusahaan</a></div>
+                                                        <a href="<?php echo base_url('Data_Arsip/data_akte_perusahaan')?>"class="text-primary">Akte Perusahaan</a></div>
                                                         <div class="h5 mb-0 font-weight-bold text-gray-800 text-center">10</div>
                                                     </div>
                                                 </div>
@@ -45,7 +45,7 @@
                                                 <div class="row no-gutters align-items-center">
                                                     <div class="col mr-2">
                                                         <div class="text-xs font-weight-bold text-primary text-uppercase mb-1 text-center">
-                                                            <a href=data-arsip-mou.html class="text-primary">MOU</a></div>
+                                                            <a href="<?php echo base_url('Data_Arsip/data_mou')?>" class="text-primary">MOU</a></div>
                                                             <div class="h5 mb-0 font-weight-bold text-gray-800 text-center">6</div>
                                                         </div>
                                                     </div>
@@ -58,7 +58,7 @@
                                                     <div class="row no-gutters align-items-center">
                                                         <div class="col mr-2">
                                                             <div class="text-xs font-weight-bold text-primary text-uppercase mb-1 text-center">
-                                                                <a href=data-arsip-kontrak-kerja.html class="text-primary">Kontrak Kerja</a></div>
+                                                                <a href="<?php echo base_url('Data_Arsip/data_kontrak_kerja')?>" class="text-primary">Kontrak Kerja</a></div>
                                                                 <div class="h5 mb-0 font-weight-bold text-gray-800 text-center">9</div>
                                                             </div>
                                                         </div>
@@ -71,7 +71,7 @@
                                                         <div class="row no-gutters align-items-center">
                                                             <div class="col mr-2">
                                                                 <div class="text-xs font-weight-bold text-primary text-uppercase mb-1 text-center">
-                                                                    <a href=data-arsip-npwp.html class="text-primary">NPWP</a></div>
+                                                                    <a href="<?php echo base_url('Data_Arsip/data_npwp')?>" class="text-primary">NPWP</a></div>
                                                                     <div class="h5 mb-0 font-weight-bold text-gray-800 text-center">4</div>
                                                                 </div>
                                                             </div>
@@ -84,7 +84,7 @@
                                                             <div class="row no-gutters align-items-center">
                                                                 <div class="col mr-2">
                                                                     <div class="text-xs font-weight-bold text-primary text-uppercase mb-1 text-center">
-                                                                        <a href=data-arsip-tdp.html class="text-primary">TDP</a></div>
+                                                                        <a href="<?php echo base_url('Data_Arsip/data_tdp')?>" class="text-primary">TDP</a></div>
                                                                         <div class="h5 mb-0 font-weight-bold text-gray-800 text-center">3</div>
                                                                     </div>
                                                                 </div>
@@ -97,7 +97,7 @@
                                                                 <div class="row no-gutters align-items-center">
                                                                     <div class="col mr-2">
                                                                         <div class="text-xs font-weight-bold text-primary text-uppercase mb-1 text-center">
-                                                                            <a href=data-arsip-cv.html class="text-primary">CV</a></div>
+                                                                            <a href="<?php echo base_url('Data_Arsip/data_cv')?>" class="text-primary">CV</a></div>
                                                                             <div class="h5 mb-0 font-weight-bold text-gray-800 text-center">5</div>
                                                                         </div>
                                                                     </div>
