@@ -15,7 +15,7 @@
                     <div class="card m-b-30">
                         <div class="card-body">
                            <p>
-                            <a href=form-add-surat-keluar.html>
+                            <a href=<?php echo base_url('Surat_Keluar/tambah_surat_keluar');?>>
                                 <button type="button" class="btn btn-info btn-sm">Tambah Data</button>
                                 
                             </a> 
@@ -110,13 +110,13 @@
                                 <td>5 Oktober 2021</td>
                                 <td>Politeknik Negeri Jember</td>
                                 <td><font color="green">Disetujui</font></td>
-                                <td><a href=update-surat-keluar.html>
+                                <td><a href=<?php echo base_url('Surat_Keluar/edit-surat-keluar');?>>
                                     <button type="button" class="btn-primary">Edit</button></a>
                                     &nbsp
-                                    <a href=surat-keluar.html>
+                                    <a href=<?php echo base_url('Surat_Keluar/hapus-surat-keluar');?>>
                                         <button type="button" class="btn-danger">Hapus</button></a>
                                         &nbsp
-                                        <a href=detail-surat-keluar.html>
+                                        <a href=<?php echo base_url('Surat_Keluar/detail-surat-keluar');?>>
                                             <button type="button" class="btn-warning">Detail</button></a>
                                         </td>
                                     </tr>
@@ -127,13 +127,13 @@
                                         <td>6 Oktober 2021</td>
                                         <td>Tokopedia</td>
                                         <td>-</td>
-                                        <td><a href=update-surat-keluar.html>
+                                        <td><a href=<?php echo base_url('Surat_Keluar/edit-surat-keluar');?>>
                                             <button type="button" class="btn-primary">Edit</button></a>
                                             &nbsp
-                                            <a href=surat-keluar.html>
+                                            <a href=<?php echo base_url('Surat_Keluar/hapus-surat-keluar');?>>
                                                 <button type="button" class="btn-danger">Hapus</button></a>
                                                 &nbsp
-                                                <a href=detail-surat-keluar.html>
+                                                <a href=<?php echo base_url('Surat_Keluar/detail-surat-keluar');?>>
                                                     <button type="button" class="btn-warning">Detail</button></a>
                                                 </td>
                                             </tr>

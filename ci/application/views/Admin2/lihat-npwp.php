@@ -14,7 +14,7 @@
             <div class="col-12">
                 <div class="card m-b-30">
                     <div class="card-body">
-                        <a href="data-arsip.html">
+                        <a href="<?php echo base_url('Data_Arsip/lihat-npwp');?>">
                             <i class="far fa-arrow-alt-circle-left fa-2x" ></i>
                             <br>
                         </a>

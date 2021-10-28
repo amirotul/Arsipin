@@ -15,7 +15,7 @@
                     <div class="card m-b-30">
                         <div class="card-body">
                             <p>
-                                <a href=form-add-data-pengguna.html>
+                                <a href=<?php echo base_url('Data_Pengguna/tambah_pengguna');?>>
                                     <button type="button" class="btn btn-info btn-sm">Tambah Data</button>
                                 </a>
                             </p>
@@ -81,10 +81,10 @@
                         <td>Divisi Marketing</td>
                         <td>hanalestari1</td>
                         <td>hana123</td>
-                        <td><a href=update-data-pengguna.html>
+                        <td><a href=<?php echo base_url('Data_Pengguna/edit-pengguna-pengguna');?>>
                             <button type="button" class="btn-primary">Edit</button></a>
                             &nbsp
-                            <a href=pengguna-pengguna.html>
+                            <a href=<?php echo base_url('Data_Pengguna/hapus-pengguna-pengguna');?>>
                                 <button type="button" class="btn-danger">Hapus</button></a></td>
                             </tr>
                             <tr>
@@ -94,10 +94,10 @@
                                 <td>Divisi HRD</td>
                                 <td>hani_l</td>
                                 <td>hani123</td>
-                                <td><a href=update-data-pengguna.html>
+                                <td><a href=<?php echo base_url('Data_Pengguna/edit-pengguna-pengguna');?>>
                                     <button type="button" class="btn-primary">Edit</button></a>
                                     &nbsp
-                                    <a href=pengguna-pengguna.html>
+                                    <a href=<?php echo base_url('Data_Pengguna/hapus-pengguna-pengguna');?>>
                                         <button type="button" class="btn-danger">Hapus</button></a></td>
                                     </tr>
                                 </tbody>

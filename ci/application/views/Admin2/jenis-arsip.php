@@ -15,7 +15,7 @@
                     <div class="card m-b-30">
                         <div class="card-body">
                             <p>
-                                <a href=form-add-jenis-arsip.html>
+                                <a href=<?php echo base_url('Jenis_Arsip/tambah_jenis_arsip');?>l>
                                     <button type="button" class="btn btn-info btn-sm">Tambah Data</button></p>
                                 </a>
                                 <div id="datatable_wrapper"
@@ -73,55 +73,55 @@
                         <tr>
                             <td>1</td>
                             <td>Akte Perusahaan</td>
-                            <td><a href=update-jenis-arsip.html>
+                            <td><a href=<?php echo base_url('Jenis_Arsip/edit-jenis-arsip');?>>
                                 <button type="button" class="btn-primary">Edit</button></a>
                                 &nbsp
-                                <a href=#>
+                                <a href=<?php echo base_url('Jenis_Arsip/hapus-jenis-arsip');?>>
                                     <button type="button" class="btn-danger">Hapus</button></a></td>
                                 </tr>
                                 <tr>
                                     <td>2</td>
                                     <td>MOU</td>
-                                    <td><a href=update-jenis-arsip.html>
+                                    <td><a href=<?php echo base_url('Jenis_Arsip/edit-jenis-arsip');?>>
                                         <button type="button" class="btn-primary">Edit</button></a>
                                         &nbsp
-                                        <a href=#>
+                                        <a href=<?php echo base_url('Jenis_Arsip/hapus-jenis-arsip');?>>
                                             <button type="button" class="btn-danger">Hapus</button></a></td>
                                         </tr>
                                         <tr>
                                             <td>3</td>
                                             <td>Kontrak Kerja</td>
-                                            <td><a href=update-jenis-arsip.html>
+                                            <td><a href=<?php echo base_url('Jenis_Arsip/edit-jenis-arsip');?>>
                                                 <button type="button" class="btn-primary">Edit</button></a>
                                                 &nbsp
-                                                <a href=update-jenis-arsip.html>
+                                                <a href=<?php echo base_url('Jenis_Arsip/hapus-jenis-arsip');?>>
                                                     <button type="button" class="btn-danger">Hapus</button></a></td>
                                                 </tr>
                                                 <tr>
                                                     <td>4</td>
                                                     <td>NPWP</td>
-                                                    <td><a href=#>
+                                                    <td><a href=<?php echo base_url('Jenis_Arsip/edit-jenis-arsip');?>>
                                                         <button type="button" class="btn-primary">Edit</button></a>
                                                         &nbsp
-                                                        <a href=update-jenis-arsip.html>
+                                                        <a href=<?php echo base_url('Jenis_Arsip/hapus-jenis-arsip');?>>
                                                             <button type="button" class="btn-danger">Hapus</button></a></td>
                                                         </tr>
                                                         <tr>
                                                             <td>5</td>
                                                             <td>TDP</td>
-                                                            <td><a href=update-jenis-arsip.html>
+                                                            <td><a href=<?php echo base_url('Jenis_Arsip/edit-jenis-arsip');?>>
                                                                 <button type="button" class="btn-primary">Edit</button></a>
                                                                 &nbsp
-                                                                <a href=#>
+                                                                <a href=<?php echo base_url('Jenis_Arsip/hapus-jenis-arsip');?>>
                                                                     <button type="button" class="btn-danger">Hapus</button></a></td>
                                                                 </tr>
                                                                 <tr>
                                                                     <td>6</td>
                                                                     <td>CV</td>
-                                                                    <td><a href=update-jenis-arsip.html>
+                                                                    <td><a href=<?php echo base_url('Jenis_Arsip/edit-jenis-arsip');?>>
                                                                         <button type="button" class="btn-primary">Edit</button></a>
                                                                         &nbsp
-                                                                        <a href=#>
+                                                                        <a href=<?php echo base_url('Jenis_Arsip/hapus-jenis-arsip');?>>
                                                                             <button type="button" class="btn-danger">Hapus</button></a></td>
                                                                         </tr>
                                                                     </tbody>
