@@ -50,21 +50,28 @@ $getGrup = $this->session->userdata('session_grup');
                                 <ul class="list-unstyled">
                                 <li><a href="Surat_Masuk">Surat Masuk</a></li>
                                 <li><a href="Surat_Keluar">Surat Keluar</a></li>
-                                <li><a href="Disposisi">Disposisi</a></li>
+                                  <?php
+            if($getGrup==1){
+                echo '
+                                <li><a href="Disposisi">Disposisi</a></li>';}?>
                                 </ul>
                             </li>
 
-                            <li class="has_sub">
-                            <a href="#" class="waves-effect waves-light"><i
+                            <?php
+            if($getGrup==1){
+                echo '<li class="has_sub">
+                <a href="#" class="waves-effect waves-light"><i
                                     class="mdi mdi-folder-account"></i><span> Data Divisi </span><span
                                     class="float-right"><i class="mdi mdi-chevron-right"></i></span></a>
                             <ul class="list-unstyled">
                                 <li><a href="Jenis_Divisi">Jenis Divisi</a></li>
                                 <li><a href="Data_Divisi">Data Divisi</a></li>
                             </ul>
-                        </li>
+                        </li>';}?>
 
-                        <li class="has_sub">
+                         <?php
+            if($getGrup==1){
+                echo '<li class="has_sub">
                             <a href="#" class="waves-effect waves-light"><i
                                     class="mdi mdi-folder-account"></i><span> Data Pengguna </span><span
                                     class="float-right"><i class="mdi mdi-chevron-right"></i></span></a>
@@ -72,8 +79,7 @@ $getGrup = $this->session->userdata('session_grup');
                                 <li><a href="Data_Pengguna">Pengguna</a></li>
                                 <li><a href="Master_User">Master User</a></li>
                             </ul>
-                        </li>
-
+                        </li>';}?>
 
                         </ul>
                     </div>
