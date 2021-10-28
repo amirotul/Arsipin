@@ -16,13 +16,16 @@ class Divisi_model extends CI_Model
 		$this->db->insert($table,$data);
 		//untuk proses insert data ke database
 	}
-	function edit_jenis_divisi($where,$table) {
+	function edit_data($where,$table) {
 		return $this->db->get_where($table, $where);
 	}
-
-	function update_jenis_divisi($where,$data,$table) {
+	function update_data($where,$data,$table) {
 		$this->db->where($where);
 		$this->db->update($table, $data);
+	}
+	function hapus_data($where, $table) {
+		$this->db->where($where);
+		$this->db->delete($table);
 	}
 }
 ?>

@@ -81,9 +81,9 @@
                                 <td><?php echo $baris->jenis_divisi; ?></td>
                                 <td>
                                     <?php
-                                    echo '<a href="'.base_url('Jenis_Divisi/edit_jenis_divisi/').'"><button type="button" class="btn-primary">Edit</button></a>';
+                                    echo '<a href="'.base_url('Jenis_Divisi/edit_jenis_divisi/'.$baris->id).'"><button type="button" class="btn-primary">Edit</button></a>';
                                     echo " ";
-                                    echo '<a href="'.base_url('Jenis_Divisi/hapus_jenis_divisi/').'"><button type="button" class="btn-danger">Hapus</button></a>';
+                                    echo '<a href="'.base_url('Jenis_Divisi/hapus_jenis_divisi/'.$baris->id).'"><button type="button" class="btn-danger">Hapus</button></a>';
                                     ?></td>
                             </tr>
                             <?php 

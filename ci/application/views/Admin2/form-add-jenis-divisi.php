@@ -33,7 +33,7 @@
                                                                     
                                                                 </div> &nbsp &nbsp
                                                                 <div class="input-group-append">
-                                                                    <a class="small" href="Jenis_Divisi"><button class="btn btn-danger btn-sm" type="button">Batal</button>
+                                                                    <a class="small" href="<?php echo base_url('Jenis_Divisi')?>"><button class="btn btn-danger btn-sm" type="button">Batal</button>
                                                                     </a>
                                                                 </div>
                                                             </div>

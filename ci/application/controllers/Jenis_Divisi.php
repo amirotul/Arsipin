@@ -27,31 +27,29 @@ class Jenis_Divisi extends CI_Controller{ //membuat controller Mahasiswa
 		redirect('Jenis_Divisi');
 		//setelah data berhasil tersimpan, halaman web otomatis beralih ke halaman pada function index
 	}
-	public function edit_jenis_divisi() {
-		$where = array('jenis_divisi' => $jenis_divisi);
+	public function edit_jenis_divisi($id) {
+		$where = array('id' => $id);
 		$data['user'] = $this->Divisi_model->edit_data($where, 'jenis_divisi')->result();
 		$this->template->views('Admin2/update-divisi', $data);
 	}
-
 	public function update() {
 		$id = $this->input->post('id');
-		$username = $this->input->post('username');
-		$password = $this->input->post('pass');
-		$nama = $this->input->post('nama');
-		$grup = $this->input->post('grup');
-
+		$jenis_divisi = $this->input->post('jenis_divisi');
+		
 		$data = array(
-			'username' => $username,
-			'password' => $password,
-			'nama' => $nama,
-			'grup' => $grup,
+			'jenis_divisi' => $jenis_divisi
 		);
 
 		$where = array(
 			'id' => $id
 		);
-		$this->Mahasiswa_model->update_data($where,$data, 'tm_user');
-		redirect('Mahasiswa');
+		$this->Divisi_model->update_data($where,$data, 'jenis_divisi');
+		redirect('Jenis_Divisi');
+	}
+	public function hapus_jenis_divisi($id) {
+		$where = array('id' => $id);
+		$this->Divisi_model->hapus_data($where, 'jenis_divisi');
+		redirect('Jenis_Divisi');
 	}
 
 }
