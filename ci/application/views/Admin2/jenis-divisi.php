@@ -70,26 +70,25 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>1</td>
-                        <td>Marketing</td>
-                        <td><a href=<?php echo base_url('Jenis_Divisi/edit-jenis-divisi');?>>
-                            <button type="button" class="btn-primary">Edit</button></a>
-                            &nbsp
-                            <a href=<?php echo base_url('Jenis_Arsip/hapus-jenis-arsip');?>>
-                                <button type="button" class="btn-danger">Hapus</button></a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>2</td>
-                            <td>HRD</td>
-                            <td><a href=<?php echo base_url('Jenis_Divisi/edit-jenis-divisi');?>>
-                                <button type="button" class="btn-primary">Edit</button></a>
-                                &nbsp
-                                <a href=<?php echo base_url('Jenis_Divisi/hapus-jenis-arsip');?>>
-                                    <button type="button" class="btn-danger">Hapus</button></a>
-                                </td>
+
+                    <?php 
+                            $no = 1; //no default 1
+                            foreach ($user as $baris) { //
+                             ?>
+                             <tr>
+                                <td><?php echo $no++; ?></td>
+                                <!-- nomor user otomatis bertambah pada saatn menambah data -->
+                                <td><?php echo $baris->jenis_divisi; ?></td>
+                                <td>
+                                    <?php
+                                    echo '<a href="'.base_url('Jenis_Divisi/edit_jenis_divisi/'.$baris->id).'"><button type="button" class="btn-primary">Edit</button></a>';
+                                    echo " ";
+                                    echo '<a href="'.base_url('Jenis_Divisi/hapus_jenis_divisi/'.$baris->id).'"><button type="button" class="btn-danger">Hapus</button></a>';
+                                    ?></td>
                             </tr>
+                            <?php 
+                        }
+                        ?>
                             
                         </tbody>
                     </table>

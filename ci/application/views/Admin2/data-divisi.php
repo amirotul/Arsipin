@@ -101,61 +101,31 @@
                     </thead>
                     <tbody>
                         <tr>
-                            <td>1</td>
-                            <td>Marketing</td>
-                            <td>Hana Lestari</td>
-                            <td>hana@gmail.com</td>
-                            <td>hanalestari</td>
-                            <td>hanales123</td>
-                            <td>hana.jpg</td>
-                            <td><a href=update-data-divisi.html>
-                                <button type="button" class="btn-primary">Edit</button></a>
-                                &nbsp
-                                <a href=data-divisi.html>
-                                    <button type="button" class="btn-danger">Hapus</button></a>
-                                    &nbsp
-                                    <a href=lihat-data-divisi.html>
-                                        <button type="button" class="btn-warning">Detail</button></a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>2</td>
-                                    <td>HRD</td>
-                                    <td>Ferdi Permana</td>
-                                    <td>ferdi@gmail.com</td>
-                                    <td>ferdiaja</td>
-                                    <td>ferdi65</td>
-                                    <td>ferdi.jpg</td>
-                                    <td><a href=update-data-divisi.html>
-                                        <button type="button" class="btn-primary">Edit</button></a>
-                                        &nbsp
-                                        <a href=data-divisi.html>
-                                            <button type="button" class="btn-danger">Hapus</button></a>
-                                            &nbsp
-                                            <a href=lihat-data-divisi.html>
-                                                <button type="button" class="btn-warning">Detail</button></a>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>3</td>
-                                            <td>Marketing</td>
-                                            <td>Agnia Putri</td>
-                                            <td>agnia@gmail.com</td>
-                                            <td>agniaputri</td>
-                                            <td>agnia11</td>
-                                            <td>agni.jpg</td>
-                                            <td><a href=update-data-divisi.html>
-                                                <button type="button" class="btn-primary">Edit</button></a>
-                                                &nbsp
-                                                <a href=data-divisi.html>
-                                                    <button type="button" class="btn-danger">Hapus</button></a>
-                                                    &nbsp
-                                                    <a href=lihat-data-divisi.html>
-                                                        <button type="button" class="btn-warning">Detail</button></a>
-                                                    </td>
-                                                </tr>
-                                                
-                                            </tr>
+                        <?php 
+                            $no = 1; //no default 1
+                            foreach ($user as $baris) { //
+                             ?>
+                             <tr>
+                                <td><?php echo $no++; ?></td>
+                                <!-- nomor user otomatis bertambah pada saatn menambah data -->
+                                <td><?php echo $baris->jenis_divisi; ?></td>
+                                <td><?php echo $baris->nama_divisi; ?></td>
+                                <td><?php echo $baris->email_divisi; ?></td>
+                                <td><?php echo $baris->username; ?></td>
+                                <td><?php echo $baris->password; ?></td>
+                                <td><?php echo $baris->foto; ?></td>
+                                <td>
+                                    <?php
+                                    echo '<a href="'.base_url('Data_Divisi/edit_data_divisi/'.$baris->id).'"><button type="button" class="btn-primary">Edit</button></a>';
+                                    echo " ";
+                                    echo '<a href="'.base_url('Data_Divisi/hapus_data_divisi/'.$baris->id).'"><button type="button" class="btn-danger">Hapus</button></a>';
+                                    echo " ";
+                                    echo '<a href="'.base_url('Data_Divisi/detail_data_divisi/'.$baris->id).'"><button type="button" class="btn-warning">Detail</button></a>';
+                                    ?></td>
+                            </tr>
+                            <?php 
+                        }
+                        ?>
                                         </tbody>
                                     </table>
                                     
