@@ -11,10 +11,10 @@
 
         <link rel="shortcut icon" href="assets/images/favicon.ico">
 
-        <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css">
-        <link href="assets/plugins/animate/animate.css" rel="stylesheet" type="text/css">
-        <link href="assets/css/icons.css" rel="stylesheet" type="text/css">
-        <link href="assets/css/style.css" rel="stylesheet" type="text/css">
+        <link href="<?php echo base_url()?>/assets/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+        <link href="<?php echo base_url()?>/assets/plugins/animate/animate.css" rel="stylesheet" type="text/css">
+        <link href="<?php echo base_url()?>/assets/css/icons.css" rel="stylesheet" type="text/css">
+        <link href="<?php echo base_url()?>/assets/css/style.css" rel="stylesheet" type="text/css">
 
     </head>
 
@@ -37,17 +37,17 @@
 
                     <div class="p-3">
                         
-                        <form class="form-horizontal" action="dashboard.html">
+                        <form class="form-horizontal" action="<?php echo base_url('Login/cek_log');?>" method="POST">
 
                             <div class="form-group row">
                                 <div class="col-12">
-                                    <input class="form-control" type="text" required="" placeholder="Username">
+                                    <input class="form-control" type="text" required="" placeholder="Username" name="txt_user">
                                 </div>
                             </div>
 
                             <div class="form-group row">
                                 <div class="col-12">
-                                    <input class="form-control" type="password" required="" placeholder="Password">
+                                    <input class="form-control" type="password" required="" placeholder="Password" name="txt_pass">
                                 </div>
                             </div>
 
@@ -62,7 +62,7 @@
 
                             <div class="form-group text-center row m-t-20">
                                 <div class="col-12">
-                                    <button class="btn btn-danger btn-block waves-effect waves-light" type="submit">Log In</button>
+                                    <button class="btn btn-danger btn-block waves-effect waves-light" type="submit" name="btn_log">Log In</button>
                                 </div>
                             </div>
 
@@ -82,19 +82,19 @@
 
 
         <!-- jQuery  -->
-        <script src="assets/js/jquery.min.js"></script>
-        <script src="assets/js/bootstrap.bundle.min.js"></script>
-        <script src="assets/js/modernizr.min.js"></script>
-        <script src="assets/js/detect.js"></script>
-        <script src="assets/js/fastclick.js"></script>
-        <script src="assets/js/jquery.slimscroll.js"></script>
-        <script src="assets/js/jquery.blockUI.js"></script>
-        <script src="assets/js/waves.js"></script>
-        <script src="assets/js/jquery.nicescroll.js"></script>
-        <script src="assets/js/jquery.scrollTo.min.js"></script>
+        <script src="<?php echo base_url()?>/assets/js/jquery.min.js"></script>
+        <script src="<?php echo base_url()?>/assets/js/bootstrap.bundle.min.js"></script>
+        <script src="<?php echo base_url()?>/assets/js/modernizr.min.js"></script>
+        <script src="<?php echo base_url()?>/assets/js/detect.js"></script>
+        <script src="<?php echo base_url()?>/assets/js/fastclick.js"></script>
+        <script src="<?php echo base_url()?>/assets/js/jquery.slimscroll.js"></script>
+        <script src="<?php echo base_url()?>/assets/js/jquery.blockUI.js"></script>
+        <script src="<?php echo base_url()?>/assets/js/waves.js"></script>
+        <script src="<?php echo base_url()?>/assets/js/jquery.nicescroll.js"></script>
+        <script src="<?php echo base_url()?>/assets/js/jquery.scrollTo.min.js"></script>
 
         <!-- App js -->
-        <script src="assets/js/app.js"></script>
+        <script src="<?php echo base_url()?>/assets/js/app.js"></script>
 
     </body>
 </html>

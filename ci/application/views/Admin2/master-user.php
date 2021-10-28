@@ -16,7 +16,7 @@
                     <div class="card m-b-30">
                         <div class="card-body">
                             <p>
-                                <a href=form-add-data-master-user.html>
+                                <a href=<?php echo base_url('Master_User/tambah_master_user');?>>
                                     <button type="button" class="btn btn-info btn-sm">Tambah Data</button>
                                 </a>
                             </p>
@@ -75,7 +75,7 @@
                         <td>1</td>
                         <td>Admin</td>
                         <td>
-                            <a href=divisi-divisi.html>
+                            <a href=<?php echo base_url('Master_User/hapus-master-user');?>>
                                 <button type="button" class="btn-danger">Hapus</button></a>
                             </td>
                         </tr>
@@ -83,7 +83,7 @@
                             <td>2</td>
                             <td>Pimpinan</td>
                             <td>
-                                <a href=divisi-divisi.html>
+                                <a href=<?php echo base_url('Master_User/hapus-master-user');?>>
                                     <button type="button" class="btn-danger">Hapus</button></a>
                                 </td>
                             </tr>
@@ -91,7 +91,7 @@
                                 <td>3</td>
                                 <td>Resepsionis</td>
                                 <td>
-                                    <a href=divisi-divisi.html>
+                                    <a href=<?php echo base_url('Master_User/hapus-master-user');?>>
                                         <button type="button" class="btn-danger">Hapus</button></a>
                                     </td>
                                 </tr>
@@ -99,7 +99,7 @@
                                     <td>4</td>
                                     <td>Divisi</td>
                                     <td>
-                                        <a href=divisi-divisi.html>
+                                        <a href=<?php echo base_url('Master_User/hapus-master-user');?>>
                                             <button type="button" class="btn-danger">Hapus</button></a>
                                         </td>
                                     </tr>
