@@ -9,15 +9,10 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="row">
-                                <div class="col-12">
-                                    <div class="card m-b-30">
-                                        <div class="card-body">
-                                          <?php foreach($user as $baris){ ?>
-                                          <form class="user" action="<?php echo base_url('Jenis_Divisi/update');?>"
-                                            method="post">
 
-                                              <div class="form-group row">
+                        <?php foreach($user as $baris){ ?>
+                        <form class="user" action="<?php echo base_url('Jenis_Divisi/update');?>" method="post">
+                        <div class="form-group row">
                                                 <label for="example-text-input" class="col-sm-2 col-form-label">Nama Divisi</label>
                                                 <div class="col-sm-5">
                                                    <input type="hidden" name="id" value="<?php echo $baris->id; ?>">
