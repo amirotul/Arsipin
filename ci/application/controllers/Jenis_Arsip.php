@@ -30,30 +30,30 @@ class Jenis_Arsip extends CI_Controller{ //membuat controller Mahasiswa
 		//setelah data berhasil tersimpan, halaman web otomatis beralih ke halaman pada function index
 	}
 
-	public function edit($jenis_arsip) {
-		$where = array('jenis_arsip' => $jenis_arsip);
+	public function edit($id_jenis_arsip) {
+		$where = array('id_jenis_arsip' => $id_jenis_arsip);
 		$data['user'] = $this->Jenis_arsip_model->edit_data($where, 'jenis_arsip')->result();
 		$this->template->views('Admin2/update-jenis-arsip', $data);
 	}
-
 	public function update() {
+		$id_jenis_arsip = $this->input->post('id_jenis_arsip');
 		$jenis_arsip = $this->input->post('jenis_arsip');
-
+		
 		$data = array(
 			'jenis_arsip' => $jenis_arsip
 		);
 
 		$where = array(
-			'jenis_arsip' => $jenis_arsip
+			'id_jenis_arsip' => $id_jenis_arsip
 		);
 		$this->Jenis_arsip_model->update_data($where,$data, 'jenis_arsip');
 		redirect('Jenis_Arsip');
 	}
 
-	public function hapus($id_grup) {
-		$where = array('id_grup' => $id_grup);
-		$this->Grup_model->hapus_data($where, 'tm_grup');
-		redirect('Grup');
+	public function hapus($id_jenis_arsip) {
+		$where = array('id_jenis_arsip' => $id_jenis_arsip);
+		$this->Jenis_arsip_model->hapus_data($where, 'jenis_arsip');
+		redirect('Jenis_Arsip');
 	}
 }
 ?>
