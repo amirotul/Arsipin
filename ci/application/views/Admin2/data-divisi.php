@@ -112,6 +112,7 @@
                                 <td><?php echo $baris->email_divisi; ?></td>
                                 <td><?php echo $baris->username; ?></td>
                                 <td><?php echo $baris->password; ?></td>
+                                
                                 <td>
                                     <?php
                                     echo '<a href="'.base_url('Data_Divisi/edit_data_divisi/'.$baris->id_divisi).'"><button type="button" class="btn-primary">Edit</button></a>';
