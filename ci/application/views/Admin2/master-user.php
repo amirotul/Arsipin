@@ -16,9 +16,7 @@
                     <div class="card m-b-30">
                         <div class="card-body">
                             <p>
-                                <a href=<?php echo base_url('Master_User/tambah_master_user');?>>
-                                    <button type="button" class="btn btn-info btn-sm">Tambah Data</button>
-                                </a>
+                               
                             </p>
                             <div id="datatable_wrapper"
                             class="dataTables_wrapper dt-bootstrap4 no-footer">
