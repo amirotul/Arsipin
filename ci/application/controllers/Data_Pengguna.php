@@ -23,7 +23,7 @@ class Data_Pengguna extends CI_Controller{ //membuat controller Mahasiswa
 	public function input_pengguna() { //function input untuk memasukkan proses inputan data ke database
 		$nama_pengguna = $this->input->post('nama');
 		$email_pengguna = $this->input->post('email');
-		$nama_role = $this->input->post('role');
+		$id_role = $this->input->post('id_role');
 		$username = $this->input->post('username');
 		$password = $this->input->post('password');
 		$foto = $this->imageuploader->checkAndUploadImage($_FILES['foto'], 'assets/upload/fotopengguna/');
@@ -32,7 +32,7 @@ class Data_Pengguna extends CI_Controller{ //membuat controller Mahasiswa
 		$data = array( //array data untuk menampung inputan data
 			'nama_pengguna' => $nama_pengguna,
 			'email_pengguna' => $email_pengguna,
-			'nama_role' => $nama_role,
+			'id_role' => $id_role,
 			'username' => $username,
 			'password' => $password,
 			'foto' => $foto

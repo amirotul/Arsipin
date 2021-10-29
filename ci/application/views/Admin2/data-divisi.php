@@ -122,6 +122,7 @@
                                     echo '<a href="'.base_url('Data_Divisi/detail_data_divisi/'.$baris->id_divisi).'"><button type="button" class="btn-warning">Detail</button></a>';
                                     ?></td>
                             </tr>
+                            
                             <?php 
                         }
                         ?>
