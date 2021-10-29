@@ -15,7 +15,7 @@
                         <div class="form-group row">
                                                 <label for="example-text-input" class="col-sm-2 col-form-label">Nama Divisi</label>
                                                 <div class="col-sm-5">
-                                                   <input type="hidden" name="id" value="<?php echo $baris->id; ?>">
+                                                   <input type="hidden" name="id_jenis_arsip" value="<?php echo $baris->id_jenis_arsip; ?>">
                                                   <input class="form-control" type="text" value="<?php echo $baris->jenis_divisi; ?>" id="jenis_divisi" name="jenis_divisi">
                                                     
                                                 </div>
