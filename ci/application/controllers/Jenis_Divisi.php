@@ -51,7 +51,6 @@ class Jenis_Divisi extends CI_Controller{ //membuat controller Mahasiswa
 		$this->Divisi_model->hapus_data($where, 'jenis_divisi');
 		redirect('Jenis_Divisi');
 	}
-
 }
 ?>
 
