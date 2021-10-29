@@ -14,11 +14,11 @@ class Data_Pengguna extends CI_Controller{ //membuat controller Mahasiswa
 			//untuk mengakses file views 'crud/home_mahasiswa' pada halaman template
 	}
 	public function tambah_pengguna() { //function untuk tambah data
-		$this->load->model('Role_model');
-		$this->load->model('Pengguna_model');
-		$master_user= $this->Pengguna_model->getAll()->result();
-		$data['role'] = $this->Role_model->getAll()->result();
-		$this->template->views('Admin2/form-add-data-pengguna',$master_user);
+		//$this->load->model('Role_model');
+		//$this->load->model('Pengguna_model');
+		//$master_user= $this->Pengguna_model->getAll()->result();
+		//$data['role'] = $this->Role_model->getAll()->result();
+		$this->template->views('Admin2/form-add-data-pengguna');
 		//untuk mengakses file views 'crud/tambah_mahasiswa' pada halaman template
 	}
 
