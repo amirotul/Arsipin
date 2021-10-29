@@ -1,4 +1,4 @@
-<form class="user" action="<?php echo base_url('Jenis_Divisi/input_data_divisi');?>" method="post">
+<form class="user" action="<?php echo base_url('Data_Divisi/input_data_divisi');?>" method="post" enctype="multipart/form-data">
 <div class="page-content-wrapper">
 
     <div class="container-fluid">
@@ -15,13 +15,15 @@
                                 <div class="card m-b-30">
                                     <div class="card-body">
 
+
                                             <div class="form-group row">
                                                 <label for="example-date-input" class="col-sm-2 col-form-label">Jenis Divisi</label>
                                                 <div class="col-sm-5">
-                                                    <select class="form-control" id="jenis_divisi" name="jenis_divisi">
-                                                        <option value=""hidden disabled selected>Pilih Jenis Divisi</option>
-                                                    <option value="akte perusahaan">HRD</option>
-                                                    <option value="akte perusahaan">Marketing</option>
+                                                    <select class="form-control" id="jenis_divisi" name="jenis_divisi" required="">
+                                                    <option value="0">Pilih Jenis Divisi</option>
+                                                    <option value="1" >HRD</option>
+                                                    <option value="2" >Marketing</option>
+                                                    <option value="3" >Pemasaran</option>
                                                     
                                                 </select>
                                                 </div>
@@ -56,21 +58,19 @@
                                             </div>
                                             
                                             <div class="form-group row">
-                                                <label for="example-date-input" class="col-sm-2 col-form-label">Foto/jpg</label>
-                                                <div class="col-sm-3">
-                                                    <div class="input-group">
-                                                    <div class="input-group-prepend">
-                                                    <div class="custom-file">
-                                                    <input type="file" class="custom-file-input" id="foto" name="foto">
-                                                    <label class="custom-file-label" for="inputGroupFile04"></label>
-                                                </div> 
-                                                <div class="input-group-append">
-                                                <button class="btn btn-primary" type="button">Upload</button>
-                                                </div>
+                                <label for="example-date-input" class="col-sm-2 col-form-label">Foto/jpg</label>
+                                <div class="col-sm-3">
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <div class="custom-file">
+                                                <input type="file" class="custom-file-input" id="foto" name="foto" accept="image/jpeg, image/png">
+                                                <label class="custom-file-label" for="foto">Pilih foto...</label>
                                             </div>
+
                                         </div>
-                                        </div>
-                                        </div>
+                                    </div>
+                                </div>
+                            </div>
 
                                         <div class="form-group row">
                                                                 <div class="col-md-10 offset-md-2">

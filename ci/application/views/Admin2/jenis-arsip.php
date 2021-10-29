@@ -15,7 +15,7 @@
                     <div class="card m-b-30">
                         <div class="card-body">
                             <p>
-                                <a href=<?php echo base_url('Jenis_Arsip/tambah_jenis_arsip');?>l>
+                                <a href=<?php echo base_url('Jenis_Arsip/tambah')?>>
                                     <button type="button" class="btn btn-info btn-sm">Tambah Data</button></p>
                                 </a>
                                 <div id="datatable_wrapper"
@@ -64,66 +64,31 @@
                     <thead>
                         <tr>
                             <th>No</th>
-                            <th>Nama</th>
+                            <th>Jenis Arsip</th>
                             <th>Aksi</th>
                             
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>1</td>
-                            <td>Akte Perusahaan</td>
-                            <td><a href=<?php echo base_url('Jenis_Arsip/edit-jenis-arsip');?>>
-                                <button type="button" class="btn-primary">Edit</button></a>
-                                &nbsp
-                                <a href=<?php echo base_url('Jenis_Arsip/hapus-jenis-arsip');?>>
-                                    <button type="button" class="btn-danger">Hapus</button></a></td>
-                                </tr>
-                                <tr>
-                                    <td>2</td>
-                                    <td>MOU</td>
-                                    <td><a href=<?php echo base_url('Jenis_Arsip/edit-jenis-arsip');?>>
-                                        <button type="button" class="btn-primary">Edit</button></a>
-                                        &nbsp
-                                        <a href=<?php echo base_url('Jenis_Arsip/hapus-jenis-arsip');?>>
-                                            <button type="button" class="btn-danger">Hapus</button></a></td>
-                                        </tr>
-                                        <tr>
-                                            <td>3</td>
-                                            <td>Kontrak Kerja</td>
-                                            <td><a href=<?php echo base_url('Jenis_Arsip/edit-jenis-arsip');?>>
-                                                <button type="button" class="btn-primary">Edit</button></a>
-                                                &nbsp
-                                                <a href=<?php echo base_url('Jenis_Arsip/hapus-jenis-arsip');?>>
-                                                    <button type="button" class="btn-danger">Hapus</button></a></td>
-                                                </tr>
-                                                <tr>
-                                                    <td>4</td>
-                                                    <td>NPWP</td>
-                                                    <td><a href=<?php echo base_url('Jenis_Arsip/edit-jenis-arsip');?>>
-                                                        <button type="button" class="btn-primary">Edit</button></a>
-                                                        &nbsp
-                                                        <a href=<?php echo base_url('Jenis_Arsip/hapus-jenis-arsip');?>>
-                                                            <button type="button" class="btn-danger">Hapus</button></a></td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>5</td>
-                                                            <td>TDP</td>
-                                                            <td><a href=<?php echo base_url('Jenis_Arsip/edit-jenis-arsip');?>>
-                                                                <button type="button" class="btn-primary">Edit</button></a>
-                                                                &nbsp
-                                                                <a href=<?php echo base_url('Jenis_Arsip/hapus-jenis-arsip');?>>
-                                                                    <button type="button" class="btn-danger">Hapus</button></a></td>
-                                                                </tr>
-                                                                <tr>
-                                                                    <td>6</td>
-                                                                    <td>CV</td>
-                                                                    <td><a href=<?php echo base_url('Jenis_Arsip/edit-jenis-arsip');?>>
-                                                                        <button type="button" class="btn-primary">Edit</button></a>
-                                                                        &nbsp
-                                                                        <a href=<?php echo base_url('Jenis_Arsip/hapus-jenis-arsip');?>>
-                                                                            <button type="button" class="btn-danger">Hapus</button></a></td>
-                                                                        </tr>
+                        <?php 
+                            $no = 1; //no default 1
+                            foreach ($user as $baris) { //
+                             ?>
+                             <tr>
+                                <td><?php echo $no++; ?></td>
+                                <!-- nomor user otomatis bertambah pada saatn menambah data -->
+                                <td><?php echo $baris->jenis_arsip; ?></td> 
+                                <td>
+                                   <?php
+                                    echo '<a href="'.base_url('Jenis_Arsip/edit/'.$baris->id_jenis_arsip).'"><button type="button" class="btn-primary">Edit</button></a>';
+                                    echo " ";
+                                    echo '<a href="'.base_url('Jenis_Arsip/hapus/'.$baris->id_jenis_arsip).'"><button type="button" class="btn-danger">Hapus</button></a>';
+                                    ?>
+                                </td>
+                            </tr>
+                            <?php 
+                        }
+                        ?>
                                                                     </tbody>
                                                                 </table>
                                                             </div>

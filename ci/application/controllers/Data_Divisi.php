@@ -5,6 +5,7 @@ class Data_Divisi extends CI_Controller{ //membuat controller Mahasiswa
 		parent:: __construct();
 		$this->load->model('Datadivisi_model');
 		//untuk mengakses file model 'Mahasiswa_model'
+		$this->load->library('imageuploader');
 	}
 
 	public function index(){ //function untuk menampilkan halaman awal yang ditampilkan
@@ -22,7 +23,7 @@ class Data_Divisi extends CI_Controller{ //membuat controller Mahasiswa
 		$email_divisi = $this->input->post('email_divisi');
 		$username = $this->input->post('username');
 		$password = $this->input->post('password');
-		$foto = $this->input->post('foto');
+		$foto = $this->imageuploader->checkAndUploadImage($_FILES['foto'], 'assets/upload/fotopengguna/');
 
 		$data = array( //array data untuk menampung inputan data
 			'jenis_divisi' => $jenis_divisi,
@@ -37,5 +38,46 @@ class Data_Divisi extends CI_Controller{ //membuat controller Mahasiswa
 		redirect('Data_Divisi');
 		//setelah data berhasil tersimpan, halaman web otomatis beralih ke halaman pada function index
 	}
+	public function edit_data_divisi($id_divisi) {
+		$where = array('id_divisi' => $id_divisi);
+		$data['user'] = $this->Datadivisi_model->edit_data($where, 'data_divisi')->result();
+		$this->template->views('Admin2/update-data-divisi', $data);
+	}
+	public function update() {
+		$id_divisi = $this->input->post('id_divisi');
+		$jenis_divisi = $this->input->post('jenis_divisi');
+		$nama_divisi = $this->input->post('nama_divisi');
+		$email_divisi = $this->input->post('email_divisi');
+		$username = $this->input->post('username');
+		$password = $this->input->post('password');
+		$foto = $this->input->post('foto');
+		
+		$data = array(
+			'jenis_divisi' => $jenis_divisi,
+			'nama_divisi' => $nama_divisi,
+			'email_divisi' => $email_divisi,
+			'username' => $username,
+			'password' => $password,
+			'foto' => $foto
+		);
+
+		$where = array(
+			'id_divisi' => $id_divisi
+		);
+		$this->Datadivisi_model->update_data($where,$data, 'data_divisi');
+		redirect('Data_Divisi');
+	}
+	public function hapus_data_divisi($id_divisi) {
+		$where = array('id_divisi' => $id_divisi);
+		$this->Datadivisi_model->hapus_data($where, 'data_divisi');
+		redirect('Data_Divisi');
+	}
+	public function detail_data_divisi($id_divisi) {
+		$where = array('id_divisi' => $id_divisi);
+		$data['user'] = $this->Datadivisi_model->detail_data($where, 'data_divisi')->result();
+		$this->template->views('Admin2/lihat-data-divisi', $data);
+	}
+
 }
+
 ?>

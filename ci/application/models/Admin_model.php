@@ -5,7 +5,7 @@ class Admin_model extends CI_Model
 	function getAll(){ //membuat function getAll
 		$this->db->select('*'); //memilih semua
 		$this->db->from('data_pengguna');// dari tabel tm_user
-		$this->db->join('master_user', 'data_pengguna.nama_role = master_user.nama_role');
+		$this->db->join('master_user', 'data_pengguna.id_role = master_user.id_role');
 		$query = $this->db->get();
 		return $query;
 		//untuk proses selecy data dari database

@@ -23,7 +23,7 @@ class Login extends CI_Controller
 		if($cek != FALSE) {
 			foreach ($cek as $row) {
 				$user = $row->username;
-				$grup = $row->nama_role;
+				$grup = $row->id_role;
 			}
 			$this->session->set_userdata('session_user', $user);
 			$this->session->set_userdata('session_grup', $grup);

@@ -95,7 +95,6 @@
                             <th>Email</th>
                             <th>Username</th>
                             <th>Password</th>
-                            <th>Foto</th>
                             <th>Aksi</th>
                         </tr>
                     </thead>
@@ -113,16 +112,17 @@
                                 <td><?php echo $baris->email_divisi; ?></td>
                                 <td><?php echo $baris->username; ?></td>
                                 <td><?php echo $baris->password; ?></td>
-                                <td><?php echo $baris->foto; ?></td>
+                                
                                 <td>
                                     <?php
-                                    echo '<a href="'.base_url('Data_Divisi/edit_data_divisi/'.$baris->id).'"><button type="button" class="btn-primary">Edit</button></a>';
+                                    echo '<a href="'.base_url('Data_Divisi/edit_data_divisi/'.$baris->id_divisi).'"><button type="button" class="btn-primary">Edit</button></a>';
                                     echo " ";
-                                    echo '<a href="'.base_url('Data_Divisi/hapus_data_divisi/'.$baris->id).'"><button type="button" class="btn-danger">Hapus</button></a>';
+                                    echo '<a href="'.base_url('Data_Divisi/hapus_data_divisi/'.$baris->id_divisi).'"><button type="button" class="btn-danger">Hapus</button></a>';
                                     echo " ";
-                                    echo '<a href="'.base_url('Data_Divisi/detail_data_divisi/'.$baris->id).'"><button type="button" class="btn-warning">Detail</button></a>';
+                                    echo '<a href="'.base_url('Data_Divisi/detail_data_divisi/'.$baris->id_divisi).'"><button type="button" class="btn-warning">Detail</button></a>';
                                     ?></td>
                             </tr>
+                            
                             <?php 
                         }
                         ?>
