@@ -16,7 +16,7 @@
                         <div class="card-body">
                          
                             <p>
-                                <a href=form-add-disposisi.html>
+                                <a href=<?php echo base_url('Surat_Masuk/tambah_disposisi');?>>
                                     <button type="button" class="btn btn-info btn-sm" id="tambah_disposisi">Tambah Disposisi</button>
                                 </a>
                             </p>
@@ -109,7 +109,7 @@
                                 <td>Politeknik Negeri Jember</td>
                                 <td><font color="green">Dilaksanakan</font></td>
                                 <td><font color="green">Disetujui</font></td>
-                                <td><a href=update-surat-masuk.html>
+                                <td><a href=<?php echo base_url('/_disposisi');?>>
                                     <button type="button" class="btn-primary">Edit</button></a>
                                     &nbsp
                                     <a href=surat-masuk.html>

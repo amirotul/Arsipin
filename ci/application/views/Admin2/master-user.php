@@ -71,38 +71,22 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>1</td>
-                        <td>Admin</td>
-                        <td>
-                            <a href=<?php echo base_url('Master_User/hapus-master-user');?>>
-                                <button type="button" class="btn-danger">Hapus</button></a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>2</td>
-                            <td>Pimpinan</td>
-                            <td>
-                                <a href=<?php echo base_url('Master_User/hapus-master-user');?>>
-                                    <button type="button" class="btn-danger">Hapus</button></a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>3</td>
-                                <td>Resepsionis</td>
+                <?php 
+                            $no = 1; //no default 1
+                            foreach ($user as $baris) { //
+                             ?>
+                             <tr>
+                                <td><?php echo $no++; ?></td>
+                                <!-- nomor user otomatis bertambah pada saatn menambah data -->
+                                <td><?php echo $baris->nama_role; ?></td>
                                 <td>
-                                    <a href=<?php echo base_url('Master_User/hapus-master-user');?>>
-                                        <button type="button" class="btn-danger">Hapus</button></a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>4</td>
-                                    <td>Divisi</td>
-                                    <td>
-                                        <a href=<?php echo base_url('Master_User/hapus-master-user');?>>
-                                            <button type="button" class="btn-danger">Hapus</button></a>
-                                        </td>
-                                    </tr>
+                                    <?php
+                                    echo '<a href="'.base_url('Master_User/hapus_master/'.$baris->nama_role).'"><button type="button" class="btn-danger">Hapus</button></a>';
+                                    ?></td>
+                            </tr>
+                            <?php 
+                        }
+                        ?>
                                     
                                 </tbody>
                             </table>

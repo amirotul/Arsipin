@@ -1,11 +1,13 @@
 <?php
-class Admin_model extends CI_Model
+/**
+ * 
+ */
+class Jenis_arsip_model extends CI_Model
 {
 	
 	function getAll(){ //membuat function getAll
 		$this->db->select('*'); //memilih semua
-		$this->db->from('data_pengguna');// dari tabel tm_user
-		$this->db->join('master_user', 'data_pengguna.id_role = master_user.id_role');
+		$this->db->from('jenis_arsip');// dari tabel tm_user
 		$query = $this->db->get();
 		return $query;
 		//untuk proses selecy data dari database
@@ -32,7 +34,7 @@ class Admin_model extends CI_Model
 
 	function login($user, $pass, $table){
 		$this->db->select('*');
-		$this->db->from('data_pengguna');
+		$this->db->from('master_user');
 		$this->db->where('username', $user);
 		$this->db->where('password', $pass);
 		$query = $this->db->get();
