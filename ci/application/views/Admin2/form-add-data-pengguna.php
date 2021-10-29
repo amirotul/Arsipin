@@ -31,11 +31,11 @@
                                 <div class="col-sm-5">
                                     <select class="form-control" name="role">
                                         <?php foreach ($master_user as $value) : ?>
-                                            <option value="<?php echo $value->nama_role ?>"><?php echo $value->nama_role ?></option>
+                                            <option value="<?php echo $value->id_role ?>"><?php echo $value->nama_role ?></option>
                                         <?php endforeach ?>
-                                        <option value="" hidden disabled selected>Role Divisi</option>
+                                        <!-- <option value="" hidden disabled selected>Role Divisi</option>
                                         <option value="marketing">Marketing</option>
-                                        <option value="hrd">HRD</option>
+                                        <option value="hrd">HRD</option> -->
                                     </select>
                                 </div>
                             </div>
