@@ -73,7 +73,7 @@
                                             <br>
                                         </a>
                                             <div class="col-md d-flex" id="foto" name="foto">
-                                                <img src="../assets/upload/fotopengguna/<?php echo $baris->foto; ?>" alt="" width="200" height="200" id="foto" name="foto" >
+                                                <img src="../../assets/upload/fotodivisi/<?php echo $baris->foto; ?>" alt="" width="200" height="200">
                                             </div>
                                         </div>
                                     </div>
