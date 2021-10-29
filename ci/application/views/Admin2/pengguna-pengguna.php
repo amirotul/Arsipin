@@ -78,7 +78,7 @@
                                                 <td><?php echo $baris->username; ?></td>
                                                 <td><?php echo $baris->password; ?></td>
                                                 <td>
-                                                    <img src="assets/upload/fotopengguna/<?php echo $baris->foto; ?>" alt="" width="50" height="50">
+                                                    <img src="../assets/upload/fotopengguna/<?php echo $baris->foto; ?>" alt="" width="50" height="50">
                                                 </td>
                                                 <td>
                                                         <?php
