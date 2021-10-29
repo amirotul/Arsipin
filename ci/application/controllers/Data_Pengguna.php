@@ -14,8 +14,10 @@ class Data_Pengguna extends CI_Controller{ //membuat controller Mahasiswa
 			//untuk mengakses file views 'crud/home_mahasiswa' pada halaman template
 	}
 	public function tambah_pengguna() { //function untuk tambah data
+		$this->load->model('Role_model');
 		$this->load->model('Pengguna_model');
 		$master_user= $this->Pengguna_model->getAll()->result();
+		$data['role'] = $this->Role_model->getAll()->result();
 		$this->template->views('Admin2/form-add-data-pengguna',$master_user);
 		//untuk mengakses file views 'crud/tambah_mahasiswa' pada halaman template
 	}
@@ -41,6 +43,38 @@ class Data_Pengguna extends CI_Controller{ //membuat controller Mahasiswa
 		//untuk mengakses file model 'Grup_model' dan data tersimpan pada tabel tm_user
 		redirect('Data_Pengguna');
 		//setelah data berhasil tersimpan, halaman web otomatis beralih ke halaman pada function index
+	}
+	public function edit_pengguna($id) {
+		$this->load->model('Role_model');  //Copy line iki ng tambah_pengguna
+		$where = array('id_pengguna' => $id);
+		$data['user'] = $this->Datapengguna_model->edit_data($where, 'data_pengguna')->row_array();
+		$data['role'] = $this->Role_model->getAll()->result();   //Copy line iki ng tambah_pengguna
+		// echo json_encode($data['user']); die;
+		$this->template->views('Admin2/update-data-pengguna', $data);
+	}
+	public function update() {
+		$id = $this->input->post('id');
+		$data = array( //array data untuk menampung inputan data
+			'nama_pengguna' => $this->input->post('nama_pengguna'),
+			'email_pengguna' => $this->input->post('email_pengguna'),
+			'id_role' => $this->input->post('id_role'),
+			'username' => $this->input->post('username'),
+			'password' => $this->input->post('password'),
+		
+		);
+
+		// echo json_encode($data); die;
+
+		$where = array(
+			'id_pengguna' => $id
+		);
+		$this->Datapengguna_model->update_data($where,$data, 'data_pengguna');
+		redirect('Data_Pengguna');
+	}
+	public function hapus_pengguna($id) {
+		$where = array('id_pengguna' => $id);
+		$this->Datapengguna_model->hapus_data($where, 'data_pengguna');
+		redirect('Data_Pengguna');
 	}
 }
 ?>

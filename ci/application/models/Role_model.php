@@ -7,7 +7,7 @@ class Role_model extends CI_Model
 	
 	function getAll(){ //membuat function getAll
 		$this->db->select('*'); //memilih semua
-		$this->db->from('data_pengguna');// dari tabel tm_user
+		$this->db->from('master_user');// dari tabel tm_user
 		$query = $this->db->get();
 		return $query;
 		//untuk proses selecy data dari database
