@@ -1,4 +1,4 @@
-<form class="user" action="<?php echo base_url('Surat_Masuk/input');?>" method="post">
+<form class="user" action="<?php echo base_url('Surat_Masuk/tambah_disposisi');?>" method="post">
     <div class="page-content-wrapper">
         <div class="container-fluid">
             <!-- end page title end breadcrumb -->
@@ -56,64 +56,41 @@
                             <div class="form-group row">
                                 <label for="example-text-input" class="col-sm-2 col-form-label">Catatan</label>
                                 <div class="col-sm-5">
-                                   <input class="form-control" type="text" value="" id="catatan_dis" name="">
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <div class="col-sm-3">
-                                    <div class="input-group">
-                                        <div class="input-group-prepend">
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="form-group row">
-
-                                <div class="col-sm-5">
-
-                                </div>
-                                <div class="col-sm-5">
-                                </div>
-                                <div class="col-md-10 offset-md-2">
-                                    <div class="input-group mt-2">
-                                        <div class="custom">
-                                            <div class="input-group-append">
-                                            </form></hr>
-                                            <a><input type="submit" class="btn btn-primary btn-sm" name="submit" value="Simpan"></a>
-                                        </div>
-
-                                    </div> &nbsp &nbsp
-                                    <div class="input-group-append">
-                                        <a href=<?php echo base_url('Surat_Masuk')?>>
-                                            <button class="btn btn-danger btn-sm" type="button">Batal</button></a>
-                                        </div>
+                                 <input class="form-control" type="text" value="" id="catatan_dis" name="">
+                             </div>
+                         </div>
+                         <div class="form-group row">
+                            <div class="col-sm-3">
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
                                     </div>
                                 </div>
                             </div>
                         </div>
 
+                        <div class="form-group row">
+
+                            <div class="col-sm-5">
+
+                            </div>
+                            <div class="col-sm-5">
+                            </div>
+                            <div class="col-md-10 offset-md-2">
+                                <div class="input-group mt-2">
+                                    <div class="custom">
+                                        <div class="input-group-append">
+                                        </form></hr>
+                                        <a><input type="submit" class="btn btn-primary btn-sm" name="submit" value="Simpan"></a>
+                                    </div>
+
+                                </div> &nbsp &nbsp
+                                <div class="input-group-append">
+                                    <a href=<?php echo base_url('Surat_Masuk')?>>
+                                        <button class="btn btn-danger btn-sm" type="button">Batal</button></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
 
-                </div> <!-- end col -->
-            </div> <!-- end row -->
-
-
-        </div><!-- container -->
-
-
-    </div><!-- container -->
-
-</div> <!-- Page content Wrapper -->
-
-</div> <!-- content -->
-
-<footer class="footer">
-    © 2018 - 2020 Dashor by Themesdesign.
-</footer>
-
-</div>
-<!-- End Right content here -->
-
-</div>
-                                <!-- END wrapper -->
+                </div>
