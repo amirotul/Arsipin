@@ -90,7 +90,6 @@
                     <table id="datatable" class="table table-bordered dt-responsive nowrap" style="border-collapse: collapse; border-spacing: 0; width: 100%;">
                         <thead>
                             <tr>
-                                <th></th>
                                 <th>No</th>
                                 <th>No. Surat</th>
                                 <th>Tanggal Surat</th>
@@ -101,9 +100,32 @@
                             </tr>
                         </thead>
                         <tbody>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </div>
-    </div>
+                            <?php 
+                            $no = 1; //no default 1
+                            foreach ($user as $baris) { //
+                             ?>
+                             <tr>
+                                <td><?php echo $no++; ?></td>
+                                <!-- nomor user otomatis bertambah pada saatn menambah data -->
+                                <td><?php echo $baris->no_sm; ?></td>
+                                <td><?php echo $baris->tgl_sm; ?></td>
+                                <td><?php echo $baris->asal_sm; ?></td>
+                                <td><?php echo $baris->status_divisi; ?></td>
+                                <td><?php echo $baris->status_pimpinan; ?></td>
+                                <td>
+                                   <?php
+                                   echo '<a href="'.base_url('Surat_Masuk/edit/'.$baris->id_sm).'"><button type="button" class="btn-primary">Edit</button></a>';
+                                   echo " ";
+                                   echo '<a href="'.base_url('Surat_Masuk/hapus/'.$baris->id_sm).'"><button type="button" class="btn-danger">Hapus</button></a>';
+                                   ?>
+                               </td>
+                           </tr>
+                           <?php 
+                       }
+                       ?>
+                   </tbody>
+               </table>
+           </div>
+       </div>
+   </div>
+</div>

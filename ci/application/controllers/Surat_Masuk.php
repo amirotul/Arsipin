@@ -1,5 +1,5 @@
 <?php
- defined ('BASEPATH') OR exit ('No direct script access allowed');
+defined ('BASEPATH') OR exit ('No direct script access allowed');
 class Surat_Masuk extends CI_Controller{ //membuat controller Mahasiswa
 	function __construct(){
 		parent:: __construct();
@@ -13,10 +13,10 @@ class Surat_Masuk extends CI_Controller{ //membuat controller Mahasiswa
 			//untuk mengakses file views 'crud/home_mahasiswa' pada halaman template
 	}
 
-	// public function tambah_disposisi() { //function untuk tambah data
-	// 	$this->template->views('Admin2/form-add-surat-masuk');
-	// 	//untuk mengakses file views 'crud/tambah_Grup' pada halaman template
-	// }
+	public function tambah_disposisi() { //function untuk tambah data
+	$this->template->views('Admin2/form-add-disposisi');
+	//untuk mengakses file views 'crud/tambah_Grup' pada halaman template
+	 }
 
 	// public function input() { //function input untuk memasukkan proses inputan data ke database
 	// 	$disposisi = $this->input->post('disposisi');
@@ -30,30 +30,38 @@ class Surat_Masuk extends CI_Controller{ //membuat controller Mahasiswa
 	// 	//setelah data berhasil tersimpan, halaman web otomatis beralih ke halaman pada function index
 	// }
 
-	// public function edit($id_jenis_arsip) {
-	// 	$where = array('id_jenis_arsip' => $id_jenis_arsip);
-	// 	$data['user'] = $this->Jenis_arsip_model->edit_data($where, 'jenis_arsip')->result();
-	// 	$this->template->views('Admin2/update-jenis-arsip', $data);
-	// }
-	// public function update() {
-	// 	$id_jenis_arsip = $this->input->post('id_jenis_arsip');
-	// 	$jenis_arsip = $this->input->post('jenis_arsip');
+	public function edit($id_sm) {
+		$where = array('id_sm' => $id_sm);
+		$data['user'] = $this->Surat_masuk_model->edit_data($where, 'surat_masuk')->result();
+		$this->template->views('Admin2/update-surat-masuk', $data);
+	}
+	public function update() {
+		$id_sm = $this->input->post('id_sm');
+		$no_sm = $this->input->post('no_sm');
+		$tgl_sm = $this->input->post('tgl_sm');
+		$tgl_terima_sm = $this->input->post('tgl_terima_sm');
+		$asal_sm = $this->input->post('asal_sm');
+		$perihal_sm = $this->input->post('perihal_sm');
 		
-	// 	$data = array(
-	// 		'jenis_arsip' => $jenis_arsip
-	// 	);
+		$data = array(
+			'no_sm' => $no_sm,
+			'tgl_sm' => $tgl_sm,
+			'tgl_terima_sm' => $tgl_terima_sm,
+			'asal_sm' => $asal_sm,
+			'perihal_sm' => $perihal_sm,
+		);
 
-	// 	$where = array(
-	// 		'id_jenis_arsip' => $id_jenis_arsip
-	// 	);
-	// 	$this->Jenis_arsip_model->update_data($where,$data, 'jenis_arsip');
-	// 	redirect('Jenis_Arsip');
-	// }
+		$where = array(
+			'id_sm' => $id_sm
+		);
+		$this->Surat_masuk_model->update_data($where,$data, 'surat_masuk');
+		redirect('Surat_Masuk');
+	}
 
-	// public function hapus($id_jenis_arsip) {
-	// 	$where = array('id_jenis_arsip' => $id_jenis_arsip);
-	// 	$this->Jenis_arsip_model->hapus_data($where, 'jenis_arsip');
-	// 	redirect('Jenis_Arsip');
-	// }
+	public function hapus($id_sm) {
+		$where = array('id_sm' => $id_sm);
+		$this->Surat_masuk_model->hapus_data($where, 'surat_masuk');
+		redirect('Surat_Masuk');
+	}
 }
 ?>
