@@ -93,7 +93,6 @@
                     <table id="datatable" class="table table-bordered dt-responsive nowrap" style="border-collapse: collapse; border-spacing: 0; width: 100%;">
                         <thead>
                             <tr>
-                                <th></th>
                                 <th>No</th>
                                 <th>No. Surat</th>
                                 <th>Tanggal Surat</th>
@@ -104,41 +103,35 @@
                         </thead>
                         <tbody>
                             <tr>
-                                <td><input type="checkbox"/></td>
-                                <td>1</td>
-                                <td>SR-131</td>
-                                <td>5 Oktober 2021</td>
-                                <td>Politeknik Negeri Jember</td>
-                                <td><font color="green">Disetujui</font></td>
-                                <td><a href=<?php echo base_url('Surat_Keluar/edit-surat-keluar');?>>
-                                    <button type="button" class="btn-primary">Edit</button></a>
-                                    &nbsp
-                                    <a href=<?php echo base_url('Surat_Keluar/hapus-surat-keluar');?>>
-                                        <button type="button" class="btn-danger">Hapus</button></a>
-                                        &nbsp
-                                        <a href=<?php echo base_url('Surat_Keluar/detail-surat-keluar');?>>
-                                            <button type="button" class="btn-warning">Detail</button></a>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td><input type="checkbox"/></td>
-                                        <td>2</td>
-                                        <td>SR-132</td>
-                                        <td>6 Oktober 2021</td>
-                                        <td>Tokopedia</td>
-                                        <td>-</td>
-                                        <td><a href=<?php echo base_url('Surat_Keluar/edit-surat-keluar');?>>
-                                            <button type="button" class="btn-primary">Edit</button></a>
-                                            &nbsp
-                                            <a href=<?php echo base_url('Surat_Keluar/hapus-surat-keluar');?>>
-                                                <button type="button" class="btn-danger">Hapus</button></a>
-                                                &nbsp
-                                                <a href=<?php echo base_url('Surat_Keluar/detail-surat-keluar');?>>
-                                                    <button type="button" class="btn-warning">Detail</button></a>
-                                                </td>
-                                            </tr>
+                                <?php 
+                            $no = 1; //no default 1
+                            foreach ($user as $baris) { //
+                             ?>
+                             <tr>
+                                <td><?php echo $no++; ?></td>
+                                <!-- nomor user otomatis bertambah pada saatn menambah data -->
+                                <td><?php echo $baris->no_sk; ?></td>
+                                <td><?php echo $baris->tgl_sk; ?></td>
+                                <td><?php echo $baris->tujuan_sk; ?></td>
+                                <td><?php echo $baris->status; ?></td>
+                                
+                                <td>
+                                    <?php
+                                    echo '<a href="'.base_url('Surat_Keluar/edit_surat_keluar/'.$baris->id_sk).'"><button type="button" class="btn-primary">Edit</button></a>';
+                                    echo " ";
+                                    echo '<a href="'.base_url('Surat_Keluar/hapus_surat_keluar/'.$baris->id_sk).'"><button type="button" class="btn-danger">Hapus</button></a>';
+                                    echo " ";
+                                   echo '<a href="'.base_url('Surat_Keluar/detail_surat/'.$baris->id_sk).'"><button type="button" class="btn-warning">Detail</button></a>';
+                                    ?></td>
+                            </tr>
+                            
+                            <?php 
+                        }
+                        ?>
                                         </tbody>
                                     </table>
+                                    
+                                    
                                 </div>
 
                             </div>

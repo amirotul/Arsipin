@@ -86,7 +86,7 @@
             <div class="row">
                 <div class="col-sm-12">
                 </div>
-                <table id="datatable" class="table table-bordered dt-responsive nowrap" style="border-collapse: collapse; border-spacing: 0; width: 100%;">
+                <table id="datatable" class="table table-bordered dt-responsive nowrap" style="border-collapse: collapse; border-spacing: 0; width: 100%;" text-center>
                     <thead>
                         <tr>
                             <th>No</th>
@@ -95,6 +95,7 @@
                             <th>Email</th>
                             <th>Username</th>
                             <th>Password</th>
+                            <th>Foto</th>
                             <th>Aksi</th>
                         </tr>
                     </thead>
@@ -112,14 +113,14 @@
                                 <td><?php echo $baris->email_divisi; ?></td>
                                 <td><?php echo $baris->username; ?></td>
                                 <td><?php echo $baris->password; ?></td>
-                                
+                                <td><img src="../../assets/upload/fotodivisi/<?php echo $baris->foto; ?>" alt="" width="60" height="60"></td>
                                 <td>
                                     <?php
                                     echo '<a href="'.base_url('Data_Divisi/edit_data_divisi/'.$baris->id_divisi).'"><button type="button" class="btn-primary">Edit</button></a>';
                                     echo " ";
                                     echo '<a href="'.base_url('Data_Divisi/hapus_data_divisi/'.$baris->id_divisi).'"><button type="button" class="btn-danger">Hapus</button></a>';
-                                    echo " ";
-                                    echo '<a href="'.base_url('Data_Divisi/detail_data_divisi/'.$baris->id_divisi).'"><button type="button" class="btn-warning">Detail</button></a>';
+                                //echo " ";
+                                  // echo '<a href="'.base_url('Data_Divisi/detail_data_divisi/'.$baris->id_divisi).'"><button type="button" class="btn-warning">Detail</button></a>';
                                     ?></td>
                             </tr>
                             
