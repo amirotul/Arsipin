@@ -30,6 +30,6 @@ class Datadivisi_model extends CI_Model
 	function detail_data($where,$table) {
 		return $this->db->get_where($table, $where);
 	}
-}
 
+}
 ?>

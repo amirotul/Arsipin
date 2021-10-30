@@ -27,18 +27,17 @@
                                 </div>
                             </div>
                             <div class="form-group row">
-                                <label for="example-date-input" class="col-sm-2 col-form-label">Role</label>
-                                <div class="col-sm-5">
-                                    <select class="form-control" name="role">
-                                        <?php foreach ($master_user as $value) : ?>
-                                            <option value="<?php echo $value->nama_role ?>"><?php echo $value->nama_role ?></option>
-                                        <?php endforeach ?>
-                                        <option value="" hidden disabled selected>Role Divisi</option>
-                                        <option value="marketing">Marketing</option>
-                                        <option value="hrd">HRD</option>
-                                    </select>
-                                </div>
-                            </div>
+                                                <label for="example-date-input" class="col-sm-2 col-form-label">Jenis Divisi</label>
+                                                <div class="col-sm-5">
+                                                    <select class="form-control" id="id_role" name="id_role" required="">
+                                                    <option value="0">Pilih Jenis Divisi</option>
+                                                    <option value="1" >Admin</option>
+                                                    <option value="2" >Pimpinan</option>
+                                                    <option value="3" >Resepsion</option>
+                                                    
+                                                </select>
+                                                </div>
+                                            </div>
                             <div class="form-group row">
                                 <label for="example-text-input" class="col-sm-2 col-form-label">Username</label>
                                 <div class="col-sm-5">

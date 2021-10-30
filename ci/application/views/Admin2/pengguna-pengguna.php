@@ -74,16 +74,15 @@
                                                 <!-- nomor user otomatis bertambah pada saatn menambah data -->
                                                 <td><?php echo $baris->nama_pengguna; ?></td>
                                                 <td><?php echo $baris->email_pengguna; ?></td>
-                                                <td><?php echo $baris->nama_role; ?></td>
+                                                <td><?php echo $baris->id_role; ?></td>
                                                 <td><?php echo $baris->username; ?></td>
                                                 <td><?php echo $baris->password; ?></td>
                                                 <td>
-                                                    <img src="../assets/upload/fotopengguna/<?php echo $baris->foto; ?>" alt="Foto <?php echo $baris->email_pengguna; ?>" class="img-thumbnail">
+                                                    <img src="../assets/upload/fotopengguna/<?php echo $baris->foto; ?>" alt="" width="50" height="50">
                                                 </td>
                                                 <td>
-                                                    <div class="btn-group">
                                                         <?php
-                                                        echo '<a href="' . base_url('Data_Pengguna/edit_pengguna/' . $baris->id_pengguna) . '"><button type="button" class="btn-primary">Edit</button></a>';
+                                                        echo '<a href="' . base_url('Data_Pengguna/edit_pengguna/' . $baris->id_pengguna) . '"><button type="button" class="btn-primary">Edit</button></a>'; 
                                                         echo " ";
                                                         echo '<a href="' . base_url('Data_Pengguna/hapus_pengguna/' . $baris->id_pengguna) . '"><button type="button" class="btn-danger">Hapus</button></a>';
                                                         ?>
