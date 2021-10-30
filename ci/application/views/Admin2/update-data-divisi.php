@@ -1,3 +1,4 @@
+<form class="user" action="<?php echo base_url('Data_Divisi/update');?>" method="post" enctype="multipart/form-data">
 <div class="page-content-wrapper">
 
                     <div class="container-fluid">
@@ -15,7 +16,6 @@
                                         <div class="card-body">
 
                                             <?php foreach($user as $baris){ ?>
-                                          <form class="user" action="<?php echo base_url('Data_Divisi/update');?>" method="post">
 
                                                        <div class="form-group row">
                                                     <label for="example-date-input" class="col-sm-2 col-form-label">Jenis Divisi</label>
@@ -59,7 +59,7 @@
                                                 </div>
                                             </div>
                                             
-                                            <!--<div class="form-group row">
+                                            <div class="form-group row">
                                             <label for="example-date-input" class="col-sm-2 col-form-label">Foto/jpg</label>
                                             <div class="col-sm-3">
                                                 <div class="input-group">
@@ -72,7 +72,7 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div>  -->
+                                        </div>  
 
                                         <div class="form-group row">
                                                                 <div class="col-md-10 offset-md-2">
