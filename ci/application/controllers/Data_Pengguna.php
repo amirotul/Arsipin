@@ -1,6 +1,7 @@
 <?php
 defined ('BASEPATH') OR exit ('No direct script access allowed');
 class Data_Pengguna extends CI_Controller{ //membuat controller Mahasiswa
+	private $img_path = 'assets/upload/fotopengguna/';
 	function __construct(){
 		parent:: __construct();
 		$this->load->model('Datapengguna_model');
@@ -14,11 +15,10 @@ class Data_Pengguna extends CI_Controller{ //membuat controller Mahasiswa
 			//untuk mengakses file views 'crud/home_mahasiswa' pada halaman template
 	}
 	public function tambah_pengguna() { //function untuk tambah data
-		//$this->load->model('Role_model');
-		//$this->load->model('Pengguna_model');
-		//$master_user= $this->Pengguna_model->getAll()->result();
-		//$data['role'] = $this->Role_model->getAll()->result();
-		$this->template->views('Admin2/form-add-data-pengguna');
+		$this->load->model('Role_model');
+		$this->load->model('Pengguna_model');
+		$data['role'] = $this->Role_model->getAll()->result();
+		$this->template->views('Admin2/form-add-data-pengguna', $data);
 		//untuk mengakses file views 'crud/tambah_mahasiswa' pada halaman template
 	}
 
@@ -28,7 +28,7 @@ class Data_Pengguna extends CI_Controller{ //membuat controller Mahasiswa
 		$id_role = $this->input->post('id_role');
 		$username = $this->input->post('username');
 		$password = $this->input->post('password');
-		$foto = $this->imageuploader->checkAndUploadImage($_FILES['foto'], 'assets/upload/fotopengguna/');
+		$foto = $this->imageuploader->checkAndUploadImage($_FILES['foto'], $this->img_path);
 
 
 		$data = array( //array data untuk menampung inputan data
@@ -60,8 +60,16 @@ class Data_Pengguna extends CI_Controller{ //membuat controller Mahasiswa
 			'id_role' => $this->input->post('id_role'),
 			'username' => $this->input->post('username'),
 			'password' => $this->input->post('password'),
-		
+			'foto' => '',
 		);
+		$fotolama = $this->input->post('fotolama');
+
+		if ($_FILES['foto']['error'] === 4) {
+			$data['foto'] = $fotolama;
+		} else {
+			$data['foto'] = $this->imageuploader->checkAndUploadImage($_FILES['foto'], $this->img_path);
+			if (file_exists($this->img_path . $fotolama)) unlink($this->img_path . $fotolama);
+		}
 
 		// echo json_encode($data); die;
 
@@ -77,4 +85,3 @@ class Data_Pengguna extends CI_Controller{ //membuat controller Mahasiswa
 		redirect('Data_Pengguna');
 	}
 }
-?>

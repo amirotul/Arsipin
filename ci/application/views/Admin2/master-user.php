@@ -18,44 +18,6 @@
                             <p>
                                
                             </p>
-                            <div id="datatable_wrapper"
-                            class="dataTables_wrapper dt-bootstrap4 no-footer">
-                            <div
-                            class="row align-items-center justify-content-between">
-                            <div class="col-auto py-2">
-                                <div id="datatable_length"
-                                class="dataTables_length d-flex align-items-center">
-                                <label class="mr-3 mb-0">
-                                    Show
-                                </label>
-                                <select
-                                class="custom-select custom-select-sm form-control form-control-sm"
-                                name="datatable_length"
-                                aria-controls="datatable">
-                                <option value="10">10</option>
-                                <option value="25">25</option>
-                                <option value="50">50</option>
-                                <option value="100">100</option>
-                            </select>
-                            <label class="mr-3 mb-0">
-                                entries
-                            </label>
-                        </div>
-                    </div>
-
-                    <div class="col-sm-12 col-md-6">
-                        <div id="datatable_filter"
-                        class="dataTables_filter" align="right">
-                        <label class="m-0">
-                            <input type="search"
-                            class="form-control form-control-sm"
-                            placeholder="Search"
-                            aria-controls="datatable">
-                        </label>
-                    </div>
-                </div>
-            </div>
-
             <div class="row">
                 <div class="col-sm-12">
                 </div>
