@@ -5,7 +5,7 @@ class Surat_Keluar extends CI_Controller{ //membuat controller Mahasiswa
 		parent:: __construct();
 		$this->load->model('Surat_keluar_model');
 		//untuk mengakses file model 'Mahasiswa_model'
-		$this->load->library('fileuploader');
+		$this->load->library('fileuploader', '$config');
 	}
 
 	public function index(){ //function untuk menampilkan halaman awal yang ditampilkan
@@ -18,11 +18,13 @@ class Surat_Keluar extends CI_Controller{ //membuat controller Mahasiswa
 		//untuk mengakses file views 'crud/tambah_mahasiswa' pada halaman template
 	}
 	public function input_surat_keluar() { //function input untuk memasukkan proses inputan data ke database
+		
+
 		$no_sk = $this->input->post('no_sk');
 		$tgl_sk = $this->input->post('tgl_sk');
 		$tujuan_sk = $this->input->post('tujuan_sk');
 		$perihal_sk = $this->input->post('perihal_sk');
-		$file_sk = $this->fileuploader->checkAndUploadImage($_FILES['file_sk'], 'assets/upload/fotopengguna/');
+		$file_sk = $this->fileuploader->checkAndUploadImage($_FILES['file_sk'], '../assets/upload/fotopengguna/');
 
 		$data = array( //array data untuk menampung inputan data
 			'no_sk' => $no_sk,
