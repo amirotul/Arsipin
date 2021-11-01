@@ -1,5 +1,4 @@
 <form class="user" action="<?php echo base_url('Surat_Keluar/lihat-surat-keluar');?>" method="POST">
-    <div class="page-content-wrapper">
 <div class="page-content-wrapper">
 
     <div class="container-fluid">
