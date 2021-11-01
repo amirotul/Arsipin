@@ -24,7 +24,7 @@ class Imageuploader
         // ubah nama file menjadi random
         $ekstensiFile = explode('.', $namaFile);
         $ekstensiFile = strtolower(end($ekstensiFile));
-        $namaFileBaru = md5(uniqid());
+        $namaFileBaru = date("Ymd_His");
         $namaFileBaru .= '.';
         $namaFileBaru .= $ekstensiFile;
 
