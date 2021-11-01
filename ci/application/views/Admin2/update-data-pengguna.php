@@ -14,6 +14,8 @@
                 <div class="col-12">
                     <div class="card m-b-30">
                         <div class="card-body">
+                        <div class="row">
+                            <div class="col-8">
                             <input type="hidden" name="id" value="<?= $user['id_pengguna'] ?>">
                             <div class="form-group row">
                                 <label for="example-text-input" class="col-sm-2 col-form-label">Nama</label>
@@ -66,6 +68,11 @@
                                                             </div>
                                 </div>
                             </div> <!-- end col -->
+                            </div>
+                            <div class="col-md d-flex">
+                                                <img src="<?php echo base_url('assets/images/foto.jpg')?>" alt="" height="190">
+                                            </div>
+
                         </div> <!-- end row -->
 
 
