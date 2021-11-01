@@ -44,6 +44,7 @@ class Data_Divisi extends CI_Controller{ //membuat controller Mahasiswa
 		$this->template->views('Admin2/update-data-divisi', $data);
 	}
 	public function update() {
+
 		$id_divisi = $this->input->post('id_divisi');
 		$jenis_divisi = $this->input->post('jenis_divisi');
 		$nama_divisi = $this->input->post('nama_divisi');
