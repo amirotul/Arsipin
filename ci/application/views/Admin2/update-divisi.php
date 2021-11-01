@@ -1,5 +1,5 @@
-<form class="user" action="<?php echo base_url('Data_Divisi/data-divisi');?>" method="POST" enctype="multipart/form-data">
-    <div class="page-content-wrapper">
+<form class="user" action="<?php echo base_url('Jenis_Divisi/update');?>" method="post" >
+
 <div class="page-content-wrapper">
 
                     <div class="container-fluid">
@@ -17,7 +17,7 @@
                         <div class="form-group row">
                                                 <label for="example-text-input" class="col-sm-2 col-form-label">Nama Divisi</label>
                                                 <div class="col-sm-5">
-                                                   <input type="hidden" name="id_jenis_arsip" value="<?php echo $baris->id_jenis_arsip; ?>">
+                                                   <input type="hidden" name="id" value="<?php echo $baris->id; ?>">
                                                   <input class="form-control" type="text" value="<?php echo $baris->jenis_divisi; ?>" id="jenis_divisi" name="jenis_divisi">
                                                     
                                                 </div>
