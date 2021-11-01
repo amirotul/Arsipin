@@ -52,11 +52,18 @@
                             </div>
                             <div class="form-group row">
                                 <div class="col-md-10 offset-md-2">
-                                    <div class="btn-group mt-2" role="group">
-                                                <button class="btn btn-primary" type="submit">Simpan</button>
-                                                <a href="pengguna-pengguna.html" class="btn btn-danger ml-2">Batal</a>
+                                <div class="input-group mt-2">
+                                                                <div class="custom">
+                                                                <div class="input-group-append">
 
-                                    </div>
+                                                                <a><input type="submit" class="btn btn-primary btn-sm" name="submit" value="Simpan"></a>
+                                                                </div>
+                                                                </div> &nbsp &nbsp
+                                                                <div class="input-group-append">
+                                                                    <a class="small" href="<?php echo base_url('Data_Pengguna/index')?>"><button class="btn btn-danger btn-sm" type="button">Batal</button>
+                                                                    </a>
+                                                                </div>
+                                                            </div>
                                 </div>
                             </div> <!-- end col -->
                         </div> <!-- end row -->

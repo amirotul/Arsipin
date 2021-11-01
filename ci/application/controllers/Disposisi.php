@@ -12,5 +12,10 @@ class Disposisi extends CI_Controller{ //membuat controller Mahasiswa
 		$this->template->views('Admin2/disposisi',$data);
 			//untuk mengakses file views 'crud/home_mahasiswa' pada halaman template
 	}
+
+	public function tambah_disposisi() { //function untuk tambah data
+	$this->template->views('Admin2/form-add-disposisi');
+	//untuk mengakses file views 'crud/tambah_Grup' pada halaman template
+	 }
 }
 ?>
