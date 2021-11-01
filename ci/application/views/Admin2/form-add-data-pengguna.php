@@ -33,7 +33,7 @@
                                                     <option value="0">Pilih Jenis Divisi</option>
                                                     <option value="1" >Admin</option>
                                                     <option value="2" >Pimpinan</option>
-                                                    <option value="3" >Resepsion</option>
+                                                    <option value="3" >Resepsionis</option>
                                                     
                                                 </select>
                                                 </div>
