@@ -65,7 +65,7 @@
                                                 <div class="input-group">
                                                     <div class="input-group-prepend">
                                                         <div class="custom-file">
-                                                <input type="file" class="custom-file-input" id="foto" name="foto" accept="image/jpeg, image/png" value="../assets/upload/fotopengguna/<?php echo $baris->foto; ?>">
+                                                <input type="file" class="custom-file-input" id="foto" name="foto" accept="image/jpeg, image/png" value="../../assets/upload/fotodivisi/<?php echo $baris->foto; ?>">
                                                 <label class="custom-file-label" for="foto">Pilih foto...</label>
                                                     </div>
 
