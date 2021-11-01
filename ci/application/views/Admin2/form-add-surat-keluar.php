@@ -1,4 +1,5 @@
 <form class="user" action="<?php echo base_url('Surat_Keluar/input_surat_keluar');?>" method="post" enctype="multipart/form-data">
+
 <div class="page-content-wrapper">
 
     <div class="container-fluid">
@@ -39,13 +40,13 @@
                             </div>
                         </div>
                         <div class="form-group row">
-                                            <label for="example-date-input" class="col-sm-2 col-form-label">Foto/jpg</label>
+                                            <label for="example-date-input" class="col-sm-2 col-form-label">File/pdf</label>
                                             <div class="col-sm-3">
                                                 <div class="input-group">
                                                     <div class="input-group-prepend">
                                                         <div class="custom-file">
-                                                <input type="file" class="custom-file-input" id="file_sk" name="file_sk" accept="file/pdf">
-                                                <label class="custom-file-label" for="foto">Pilih file...</label>
+                                                <input type="file" class="custom-file-input" id="file_sk" name="file_sk" accept="file_sk/pdf">
+                                                <label class="custom-file-label" for="file_sk">Pilih file...</label>
                                                     </div>
 
                                                     </div>
