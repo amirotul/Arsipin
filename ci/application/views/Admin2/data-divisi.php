@@ -1,4 +1,4 @@
-<form class="user" action="<?php echo base_url('Data_Divisi/data-divisi');?>" method="POST">
+<form class="user" action="<?php echo base_url('Data_Divisi/data-divisi');?>" method="POST" enctype="multipart/form-data">
     <div class="page-content-wrapper">
 
         <div class="container-fluid">
