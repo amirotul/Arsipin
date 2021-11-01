@@ -13,10 +13,12 @@ class Fileuploader
 
     public function checkAndUploadImage($file_sk, $path)
     {
+        $config['upload_path'] = '../assets/upload/fotopengguna/';
+        $config['allowed_types'] = 'pdf';
         $namaFile = $file_sk['name'];
         $tipeFile = $file_sk['type'];
         $tmpFile = $file_sk['tmp_name'];
-        $tipeFileValid = ['file/pdf'];
+        $tipeFileValid = ['file_sk/pdf'];
 
         // cek apakah tipe file yg diupload berupa file gambar
         if (!in_array($tipeFile, $tipeFileValid)) return false;

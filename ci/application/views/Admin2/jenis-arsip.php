@@ -73,48 +73,26 @@
                         <?php 
                             $no = 1; //no default 1
                             foreach ($user as $baris) { //
-                             ?>
-                             <tr>
+                               ?>
+                               <tr>
                                 <td><?php echo $no++; ?></td>
                                 <!-- nomor user otomatis bertambah pada saatn menambah data -->
                                 <td><?php echo $baris->jenis_arsip; ?></td> 
                                 <td>
-                                   <?php
-                                    echo '<a href="'.base_url('Jenis_Arsip/edit/'.$baris->id_jenis_arsip).'"><button type="button" class="btn-primary">Edit</button></a>';
-                                    echo " ";
-                                    echo '<a href="'.base_url('Jenis_Arsip/hapus/'.$baris->id_jenis_arsip).'"><button type="button" class="btn-danger">Hapus</button></a>';
-                                    ?>
-                                </td>
-                            </tr>
-                            <?php 
-                        }
-                        ?>
-                                                                    </tbody>
-                                                                </table>
-                                                            </div>
+                                 <?php
+                                 echo '<a href="'.base_url('Jenis_Arsip/edit/'.$baris->id_jenis_arsip).'"><button type="button" class="btn-primary">Edit</button></a>';
+                                 echo " ";
+                                 echo '<a href="'.base_url('Jenis_Arsip/hapus/'.$baris->id_jenis_arsip).'"><button type="button" class="btn-danger">Hapus</button></a>';
+                                 ?>
+                             </td>
+                         </tr>
+                         <?php 
+                     }
+                     ?>
+                 </tbody>
+             </table>
+         </div>
 
-                                                        </div>
-                                                    </div>
-                                                </div> <!-- end col -->
-                                            </div> <!-- end row -->
-
-
-                                        </div><!-- container -->
-
-                                    </div> <!-- Page content Wrapper -->
-
-                                </div><!-- container -->
-
-                            </div> <!-- Page content Wrapper -->
-
-                        </div> <!-- content -->
-
-                        <footer class="footer">
-                            © 2018 - 2020 Dashor by Themesdesign.
-                        </footer>
-
-                    </div>
-                    <!-- End Right content here -->
-
-                </div>
-    <!-- END wrapper -->
+     </div>
+ </div>
+ 

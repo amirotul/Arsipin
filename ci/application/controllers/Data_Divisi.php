@@ -50,7 +50,7 @@ class Data_Divisi extends CI_Controller{ //membuat controller Mahasiswa
 		$email_divisi = $this->input->post('email_divisi');
 		$username = $this->input->post('username');
 		$password = $this->input->post('password');
-		//$foto = $this->imageuploader->checkAndUploadImage($_FILES['foto'], 'assets/upload/fotopengguna/');
+		$foto = $this->imageuploader->checkAndUploadImage($_FILES['foto'], '../assets/upload/fotodivisi/');
 		
 		$data = array(
 			'jenis_divisi' => $jenis_divisi,
@@ -58,6 +58,7 @@ class Data_Divisi extends CI_Controller{ //membuat controller Mahasiswa
 			'email_divisi' => $email_divisi,
 			'username' => $username,
 			'password' => $password,
+			'foto' => $foto
 		);
 
 		$where = array(

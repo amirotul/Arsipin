@@ -14,10 +14,10 @@
                 <div class="col-12">
                     <div class="card m-b-30">
                         <div class="card-body">
-                         
+
                             <p>
                                 <a href=<?php echo base_url('Surat_Masuk/tambah_disposisi');?>>
-                                    <button type="button" class="btn btn-info btn-sm" id="tambah_disposisi">Tambah Disposisi</button>
+                                    <button type="button" class="btn btn-info btn-sm">Tambah Disposisi</button>
                                 </a>
                             </p>
                             <form action="" method=""></form>
@@ -90,7 +90,6 @@
                     <table id="datatable" class="table table-bordered dt-responsive nowrap" style="border-collapse: collapse; border-spacing: 0; width: 100%;">
                         <thead>
                             <tr>
-                                <th></th>
                                 <th>No</th>
                                 <th>No. Surat</th>
                                 <th>Tanggal Surat</th>
@@ -101,103 +100,32 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td><input type="checkbox" disabled="true" /></td>
-                                <td>1</td>
-                                <td>SR-121</td>
-                                <td>1 Oktober 2021</td>
-                                <td>Politeknik Negeri Jember</td>
-                                <td><font color="green">Dilaksanakan</font></td>
-                                <td><font color="green">Disetujui</font></td>
-                                <td><a href=<?php echo base_url('/_disposisi');?>>
-                                    <button type="button" class="btn-primary">Edit</button></a>
-                                    &nbsp
-                                    <a href=surat-masuk.html>
-                                        <button type="button" class="btn-danger">Hapus</button></a>
-                                        &nbsp
-                                        <a href=detail-surat-masuk.html>
-                                            <button type="button" class="btn-warning">Detail</button></a>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td><input type="checkbox"/></td>
-                                        <td>2</td>
-                                        <td>SR-122</td>
-                                        <td>4 Oktober 2021</td>
-                                        <td>Tokopedia</td>
-                                        <td>-</td>
-                                        <td>-</td>
-                                        <td><a href=update-surat-masuk.html>
-                                            <button type="button" class="btn-primary">Edit</button></a>
-                                            &nbsp
-                                            <a href=surat-masuk.html>
-                                                <button type="button" class="btn-danger">Hapus</button></a>
-                                                &nbsp
-                                                <a href=detail-surat-masuk.html>
-                                                    <button type="button" class="btn-warning">Detail</button></a>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td><input type="checkbox" disabled="true" /></td>
-                                                <td>3</td>
-                                                <td>SR-123</td>
-                                                <td>4 Oktober 2021</td>
-                                                <td>Lazada</td>
-                                                <td><font color="green">Dilaksanakan</font></td>
-                                                <td><font color="red">Diabaikan</font></td>
-                                                <td><a href=update-surat-masuk.html>
-                                                    <button type="button" class="btn-primary">Edit</button></a>
-                                                    &nbsp
-                                                    <a href=surat-masuk.html>
-                                                        <button type="button" class="btn-danger">Hapus</button></a>&nbsp
-                                                        <a href=detail-surat-masuk.html>
-                                                            <button type="button" class="btn-warning">Detail</button></a>
-                                                        </tr>
-                                                        <tr>
-                                                            <td><input type="checkbox" disabled="true" /></td>
-                                                            <td>4</td>
-                                                            <td>SR-124</td>
-                                                            <td>4 Oktober 2021</td>
-                                                            <td>Shopee</td>
-                                                            <td><font color="green">Dilaksanakan</font></td>
-                                                            <td><font color="green">Disetujui</font></td>
-                                                            <td><a href=update-surat-masuk.html>
-                                                                <button type="button" class="btn-primary">Edit</button></a>
-                                                                &nbsp
-                                                                <a href=surat-masuk.html>
-                                                                    <button type="button" class="btn-danger">Hapus</button></a>
-                                                                    &nbsp
-                                                                    <a href=detail-surat-masuk.html>
-                                                                        <button type="button" class="btn-warning">Detail</button></a>
-                                                                    </td>
-                                                                </tr>
-                                                            </tbody>
-                                                        </table>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                        </div>
-                                    </div>
-                                </div> <!-- end col -->
-                            </div> <!-- end row -->
-
-
-                        </div><!-- container -->
-
-                    </div> <!-- Page content Wrapper -->
-
-                </div><!-- container -->
-
-            </div> <!-- Page content Wrapper -->
-
-        </div> <!-- content -->
-        <footer class="footer">
-            © 2018 - 2020 Dashor by Themesdesign.
-        </footer>
-
-    </div>
-    <!-- End Right content here -->
-
+                            <?php 
+                            $no = 1; //no default 1
+                            foreach ($user as $baris) { //
+                             ?>
+                             <tr>
+                                <td><?php echo $no++; ?></td>
+                                <!-- nomor user otomatis bertambah pada saatn menambah data -->
+                                <td><?php echo $baris->no_sm; ?></td>
+                                <td><?php echo $baris->tgl_sm; ?></td>
+                                <td><?php echo $baris->asal_sm; ?></td>
+                                <td><?php echo $baris->status_divisi; ?></td>
+                                <td><?php echo $baris->status_pimpinan; ?></td>
+                                <td>
+                                   <?php
+                                   echo '<a href="'.base_url('Surat_Masuk/edit/'.$baris->id_sm).'"><button type="button" class="btn-primary">Edit</button></a>';
+                                   echo " ";
+                                   echo '<a href="'.base_url('Surat_Masuk/hapus/'.$baris->id_sm).'"><button type="button" class="btn-danger">Hapus</button></a>';
+                                   ?>
+                               </td>
+                           </tr>
+                           <?php 
+                       }
+                       ?>
+                   </tbody>
+               </table>
+           </div>
+       </div>
+   </div>
 </div>
-                <!-- END wrapper -->
