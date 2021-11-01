@@ -1,3 +1,5 @@
+<form class="user" action="<?php echo base_url('Data_Divisi/data-divisi');?>" method="POST">
+    <div class="page-content-wrapper">
 <div class="page-content-wrapper">
 
                     <div class="container-fluid">
