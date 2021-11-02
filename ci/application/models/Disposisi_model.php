@@ -2,12 +2,12 @@
 /**
  * 
  */
-class Divisi_model extends CI_Model
+class Disposisi_model extends CI_Model
 {
 	
 	function getAll(){ //membuat function getAll
 		$this->db->select('*'); //memilih semua
-		$this->db->from('jenis_divisi');// dari tabel tm_user
+		$this->db->from('disposisi');// dari tabel tm_user
 		$query = $this->db->get();
 		return $query;
 		//untuk proses selecy data dari database
@@ -26,10 +26,19 @@ class Divisi_model extends CI_Model
 		$this->db->where($where);
 		$this->db->update($table, $data);
 	}
-    
-    function hapus_data($where, $table) {
-    $this->db->where($where);
-    $this->db->delete($table);
-}
+
+	function hapus_data($where, $table) {
+		$this->db->where($where);
+		$this->db->delete($table);
+	}
+
+	function login($user, $pass, $table){
+		$this->db->select('*');
+		$this->db->from('master_user');
+		$this->db->where('username', $user);
+		$this->db->where('password', $pass);
+		$query = $this->db->get();
+		return $query;
+	}
 }
 ?>
