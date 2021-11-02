@@ -16,18 +16,18 @@
                                     <div class="card-body">
 
 
-                                            <div class="form-group row">
-                                                <label for="example-date-input" class="col-sm-2 col-form-label">Jenis Divisi</label>
-                                                <div class="col-sm-5">
-                                                    <select class="form-control" id="jenis_divisi" name="jenis_divisi" required="">
-                                                    <option value="0">Pilih Jenis Divisi</option>
-                                                    <option value="1" >HRD</option>
-                                                    <option value="2" >Marketing</option>
-                                                    <option value="3" >Pemasaran</option>
-                                                    
-                                                </select>
-                                                </div>
-                                            </div>
+                                           <div class="form-group row">
+                                        <label for="example-date-input" class="col-sm-2 col-form-label">Jenis Divisi</label>
+                                        <div class="col-sm-5">
+                                            <select class="form-control" id="jenis_divisi" name="jenis_divisi" required="">
+                                                <option value="" hidden disabled selected>Pilih Jenis Divisi</option>
+                                                <?php foreach ($role as $item) : ?>
+                                                    <option value="<?= $item->id ?>"><?= $item->jenis_divisi ?></option>
+                                                <?php endforeach ?>
+
+                                            </select>
+                                        </div>
+                                    </div>
 
                                             <div class="form-group row">
                                                 <label for="example-date-input" class="col-sm-2 col-form-label">Nama</label>
