@@ -23,9 +23,9 @@
                                                     <div class="col-sm-5">
                                                      
                                                     <select class="form-control" name="jenis_divisi" id="jenis_divisi" required="">
-                                                    <option value="HRD" <?php if(($baris->jenis_divisi)== 1){ echo "selected";}?>>HRD</option>
-                                                    <option value="Marketing" <?php if(($baris->jenis_divisi)== 2 ){ echo "selected";}?>>Marketing</option>
-                                                    <option value="Pemasaran" <?php if(($baris->jenis_divisi)== 3 ){ echo "selected";}?>>Pemasaran</option>
+                                                    <option value="1" <?php if(($baris->jenis_divisi)== 1){ echo "selected";}?>>HRD</option>
+                                                    <option value="2" <?php if(($baris->jenis_divisi)== 2 ){ echo "selected";}?>>Marketing</option>
+                                                    <option value="3" <?php if(($baris->jenis_divisi)== 3 ){ echo "selected";}?>>Pemasaran</option>
                                                     
                                                 </select>
                                                 </div>
@@ -66,7 +66,7 @@
                                                 <div class="input-group">
                                                     <div class="input-group-prepend">
                                                         <div class="custom-file">
-                                                <input type="file" class="custom-file-input" id="foto" name="foto" accept="image/jpeg, image/png" value="../../assets/upload/fotodivisi/<?php echo $baris->foto; ?>">
+                                                <input type="file" class="custom-file-input" id="foto" name="foto" accept="image/jpeg, image/png" value="../assets/upload/fotodivisi/<?php echo $baris->foto; ?>">
                                                 <label class="custom-file-label" for="foto">Pilih foto...</label>
                                                     </div>
 
