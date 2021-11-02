@@ -16,9 +16,10 @@
                         <div class="card-body">
                             <p>
                                 <a href=<?php echo base_url('Jenis_Divisi/tambah_jenis_divisi');?>>
-                                    <button type="button" class="btn btn-info btn-sm">Tambah Data</button>
+                                    <button type="button" class="btn btn-info btn-sm float-right">+ Tambah Data</button>
                                 </a>
                             </p>
+                            <br>
                             <div id="datatable_wrapper"
                             class="dataTables_wrapper dt-bootstrap4 no-footer">
                             <div

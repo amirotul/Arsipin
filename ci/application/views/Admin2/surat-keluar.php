@@ -16,13 +16,14 @@
                         <div class="card-body">
                            <p>
                             <a href=<?php echo base_url('Surat_Keluar/tambah_surat_keluar');?>>
-                                <button type="button" class="btn btn-info btn-sm">Tambah Data</button>
-                                
+                                <button type="button" class="btn btn-info btn-sm float-right">+ Tambah Data</button>
                             </a> 
-                            &nbsp
+                            &nbsp&nbsp&nbsp&nbsp
                             <a href=#>
-                                <button type="button" class="btn btn-warning btn-sm" id="teruskan">Teruskan</button></p>
+                                <button type="button" class="btn btn-warning btn-sm float-right" id="teruskan">Teruskan</button></p>
                             </a>
+                        </p>
+                        <br>
                             <form action="" method=""></form>
                             <div class="container align-items-center">
                                 <form action="">

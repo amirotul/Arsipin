@@ -1,0 +1,15 @@
+<?php
+$mysqli = new mysqli('localhost', 'root', '','arsipin');
+$page = isset($_GET['p'])? $_GET['p'] : '';
+if($page=='del') {
+} else {
+	$hasil = $mysqli->query("select * from surat_masuk");
+	while($row = $hasil->_fetch_assoc()){
+		?>
+		<tr>
+			
+		</tr>
+		<?php
+	}
+}
+?>
