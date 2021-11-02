@@ -14,6 +14,7 @@
                 <div class="col-12">
                     <div class="card m-b-30">
                         <div class="card-body">
+
                             <p>
                                 <a href="<?php echo base_url('Data_Divisi/tambah_data_divisi')?>">
                                     <button type="button" class="btn btn-info btn-sm float-right">Tambah Data</button>
