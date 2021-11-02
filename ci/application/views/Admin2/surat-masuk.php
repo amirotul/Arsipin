@@ -1,4 +1,3 @@
-<body onload="viewdata()">
     <form class="user" action="<?php echo base_url('Surat_Masuk/surat-masuk');?>" method="POST">
         <div class="page-content-wrapper">
 
@@ -42,66 +41,29 @@
                                             </div>
                                         </div>
                                     </form>
-                                    <div id="datatable_wrapper"
-                                    class="dataTables_wrapper dt-bootstrap4 no-footer">
-                                    <div
-                                    class="row align-items-center justify-content-between">
-                                    <div class="col-auto py-2">
-                                        <div id="datatable_length"
-                                        class="dataTables_length d-flex align-items-center">
-                                        <label class="mr-3 mb-0">
-                                            Show
-                                        </label>
-                                        <select
-                                        class="custom-select custom-select-sm form-control form-control-sm"
-                                        name="datatable_length"
-                                        aria-controls="datatable">
-                                        <option value="10">10</option>
-                                        <option value="25">25</option>
-                                        <option value="50">50</option>
-                                        <option value="100">100</option>
-                                    </select>
-                                    <label class="mr-3 mb-0">
-                                        entries
-                                    </label>
-                                </div>
-                            </div>
-
-                            <div class="col-sm-12 col-md-6">
-                                <div id="datatable_filter"
-                                class="dataTables_filter" align="right">
-                                <label class="m-0">
-                                    <input type="search"
-                                    class="form-control form-control-sm"
-                                    placeholder="Search"
-                                    aria-controls="datatable">
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <div class="col-sm-12">
-                        </div>
-                        <table  id="Table1" class="table table-bordered dt-responsive nowrap" style="border-collapse: collapse; border-spacing: 0; width: 100%;">
-                            <thead>
-                                <tr>
-                                    <th>No</th>
-                                    <th>No. Surat</th>
-                                    <th>Tanggal Surat</th>
-                                    <th>Asal Surat</th>
-                                    <th>Oleh Divisi</th>
-                                    <th>Oleh Pimpinan</th>
-                                    <th>Disposisi</th>
-                                    <th>Aksi</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <?php 
+                                    <div class="row">
+                                        <div class="col-sm-12">
+                                        </div>
+                                    </div>
+                                    <table id="datatable" class="table table-bordered dt-responsive nowrap" style="border-collapse: collapse; border-spacing: 0; width: 100%;">
+                                        <thead>
+                                            <tr>
+                                                <th>No</th>
+                                                <th>No. Surat</th>
+                                                <th>Tanggal Surat</th>
+                                                <th>Asal Surat</th>
+                                                <th>Oleh Divisi</th>
+                                                <th>Oleh Pimpinan</th>
+                                                <th>Disposisi</th>
+                                                <th>Aksi</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <?php 
                             $no = 1; //no default 1
                             foreach ($user as $baris) { //
-                             ?>
-                             <tr>
+                               ?>
+                               <tr>
                                 <!-- <td><input type="checkbox"/></td> -->
                                 <td><?php echo $no++; ?></td>
                                 <!-- nomor user otomatis bertambah pada saatn menambah data -->
@@ -111,33 +73,28 @@
                                 <td><?php echo $baris->status_divisi; ?></td>
                                 <td><?php echo $baris->status_pimpinan; ?></td>
                                 <td>
-                                   <?php
-                                   echo '<a href="'.base_url('Surat_Masuk/tambah_disposisi/'.$baris->id_sm).'"><button type="button" class="btn-info">+ Disposisikan</button></a>';
-                                   ?>
-                               </td>
-                               <td>
-                                   <?php
-                                   echo '<a href="'.base_url('Surat_Masuk/edit/'.$baris->id_sm).'"><button type="button" class="btn-primary">Edit</button></a>';
-                                   echo " ";
-                                   echo '<a href="'.base_url('Surat_Masuk/hapus/'.$baris->id_sm).'"><button type="button" class="btn-danger">Hapus</button></a>';
-                                   echo " ";  
-                                   ?>
-                               </td>
-                           </tr>
-                           <?php 
-                       }
-                       ?>
-                   </tbody>
-               </table>
-           </div>
-       </div>
-   </div>
+                                 <?php
+                                 echo '<a href="'.base_url('Surat_Masuk/tambah_disposisi/'.$baris->id_sm).'"><button type="button" class="btn-success">Disposisikan</button></a>';
+                                 ?>
+                             </td>
+                             <td>
+                                 <?php
+                                 echo '<a href="'.base_url('Surat_Masuk/edit/'.$baris->id_sm).'"><button type="button" class="btn-primary">Edit</button></a>';
+                                 echo " ";
+                                 echo '<a href="'.base_url('Surat_Masuk/hapus/'.$baris->id_sm).'"><button type="button" class="btn-danger">Hapus</button></a>';
+                                 echo " ";
+                                 echo '<a href="'.base_url('Surat_Masuk/detail/'.$baris->id_sm).'"><button type="button" class="btn-warning">Detail</button></a>';
+                                 echo " "; 
+                                 ?>
+                             </td>
+                         </tr>
+                         <?php 
+                     }
+                     ?>
+                 </tbody>
+             </table>
+         </div>
+     </div>
+ </div>
 </div>
 </div>
-<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
-<script type="text/javascript">
-    $(function () {
-        //Assign Click event to Button.
-        $("#btnGet").click(function () {
-        });
-    </script>

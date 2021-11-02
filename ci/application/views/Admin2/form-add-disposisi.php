@@ -1,3 +1,4 @@
+ <form class="user" action="<?php echo base_url('Disposisi/input_dis');?>" method="post">
 <div class="page-content-wrapper">
     <div class="container-fluid">
         <!-- end page title end breadcrumb -->
@@ -13,11 +14,10 @@
                 <div class="card m-b-30">
                     <div class="card-body">
                         <?php foreach($user as $baris){ ?>
-                          
+                           <form class="user" action="<?php echo base_url('Surat_Masuk/get_sm');?>" method="post">
                             <div class="form-group row">
                                 <label for="example-number-input" class="col-sm-2 col-form-label">No. Surat</label>
                                 <div class="col-sm-5">
-                                    <form class="user" action="<?php echo base_url('Surat_Masuk/act_tambah_disposisi_sm');?>" method="post">
                                     <input type="hidden" name="id_sm" value="<?php echo $baris->id_sm; ?>">
                                     <input class="form-control" type="int" value="<?php echo $baris->no_sm; ?>" id="no_sm" name="no_sm" disabled>
                                 </div>
@@ -26,7 +26,6 @@
                             <div class="form-group row">
                                 <label for="example-date-input" class="col-sm-2 col-form-label">Tanggal Surat</label>
                                 <div class="col-sm-5">
-                                    <form class="user" action="<?php echo base_url('Surat_Masuk/act_tambah_disposisi_sm');?>" method="post">
                                         <input class="form-control" type="datetime" value="<?php echo $baris->tgl_sm; ?>" id="tgl_sm" name="tgl_sm" disabled>
                                     </form>
                                 </div>
@@ -35,8 +34,7 @@
                             <div class="form-group row">
                                 <label for="example-date-input" class="col-sm-2 col-form-label">Batas Waktu</label>
                                 <div class="col-sm-5">
-                                     <form class="user" action="<?php echo base_url('Surat_Masuk/input_dis');?>" method="post">
-                                    <input class="form-control" type="datetime" value="" id="batas_waktu_dis" name="batas_waktu_dis">
+                                    <input class="form-control" type="date" value="" id="batas_waktu_dis" name="batas_waktu_dis">
                                 </form>
                                 </div>
                                 </div>
@@ -44,24 +42,22 @@
                                 <div class="form-group row">
                                     <label for="example-text-input" class="col-sm-2 col-form-label">Asal Surat</label>
                                     <div class="col-sm-5">
-                                        <form class="user" action="<?php echo base_url('Surat_Masuk/act_tambah_disposisi_sm');?>" method="post">
                                         <input class="form-control" type="text" value="<?php echo $baris->asal_sm; ?>" id="asal_sm" name="asal_sm" disabled>
                                     </div>
                                 </div>
                                 <div class="form-group row">
                                     <label for="example-date-input" class="col-sm-2 col-form-label">Tujuan</label>
                                     <div class="col-sm-5">
-                                        <select class="form-control" name="tujuan_divisi">
+                                        <select class="form-control" id="tujuan_divisi" name="tujuan_divisi">
                                             <option value=""hidden disabled selected>Pilih Divisi</option>
-                                            <option value="marketing">Marketing</option>
-                                            <option value="hrd">HRD</option>
+                                            <option value="Marketing">Marketing</option>
+                                            <option value="HRD">HRD</option>
                                         </select>
                                     </div>
                                 </div>
                             <div class="form-group row">
                                 <label for="example-text-input" class="col-sm-2 col-form-label">Isi</label>
                                 <div class="col-sm-5">
-                                     <form class="user" action="<?php echo base_url('Surat_Masuk/input_dis');?>" method="post">
                                     <input class="form-control" type="text" value="" id="isi_dis" name="isi_dis">
                                 </form>
                                 </div>
@@ -69,7 +65,6 @@
                             <div class="form-group row">
                                 <label for="example-text-input" class="col-sm-2 col-form-label">Catatan</label>
                                 <div class="col-sm-5">
-                                     <form class="user" action="<?php echo base_url('Surat_Masuk/input_dis');?>" method="post">
                                    <input class="form-control" type="text" value="" id="catatan_dis" name="catatan_dis">
                                </form>
                                </div>
@@ -95,7 +90,7 @@
                                     <div class="custom">
                                         <div class="input-group-append">
                                         </form></hr>
-                                        <a href=<?php echo base_url('Disposisi')?>>
+                                       
                                         <input type="submit" class="btn btn-primary btn-sm" name="submit" value="Simpan"></a>
                                     </div>
 

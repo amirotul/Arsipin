@@ -16,9 +16,11 @@
                         <div class="card-body">
                             <p>
                                 <a href=<?php echo base_url('Data_Pengguna/tambah_pengguna'); ?>>
-                                    <button type="button" class="btn btn-info btn-sm ">Tambah Data</button>
+                                    <button type="button" class="btn btn-info btn-sm float-right">+ Tambah Data</button>
                                 </a>
                             </p>
+                            <br>
+                            <br>
                                 <div class="row">
                                     <div class="col-sm-12">
                                     </div>
