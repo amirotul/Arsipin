@@ -18,7 +18,7 @@
                                         <div class="row">
                                             <div class="col-8">
 
-                                                <a href="<?php echo base_url('Data_Divisi')?>">
+                                                <a href="<?php echo base_url('Data_Divisi/index')?>">
                                                 <i class="far fa-arrow-alt-circle-left fa-2x" ></i>
                                             <br>
                                             </a>

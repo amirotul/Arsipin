@@ -54,42 +54,41 @@
                                     <thead>
                                         <tr>
                                             <th>No</th>
-                            <th>Jenis Divisi</th>
-                            <th>Nama</th>
-                            <th>Email</th>
-                            <th>Username</th>
-                            <th>Password</th>
-                            <th>Foto</th>
-                            <th>Aksi</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <?php
-                                        $no = 1; //no default 1
-                                        foreach ($user as $baris) { //
-                                        ?>
-                                            <tr>
-                                                
-                                <td><?php echo $no++; ?></td>
-                                <!-- nomor user otomatis bertambah pada saatn menambah data -->
-                                <td><?php echo $baris->jenis_divisi; ?></td>
-                                <td><?php echo $baris->nama_divisi; ?></td>
-                                <td><?php echo $baris->email_divisi; ?></td>
-                                <td><?php echo $baris->username; ?></td>
-                                <td><?php echo $baris->password; ?></td>
-                                <td><img src="../../assets/upload/fotodivisi/<?php echo $baris->foto; ?>" alt="" width="60" height="60"></td>
-                                                <td>
-                                    <?php
-                                    echo '<a href="'.base_url('Data_Divisi/edit_data_divisi/'.$baris->id_divisi).'"><button type="button" class="btn-primary">Edit</button></a>';
-                                    echo " ";
-                                    echo '<a href="'.base_url('Data_Divisi/hapus_data_divisi/'.$baris->id_divisi).'"><button type="button" class="btn-danger">Hapus</button></a>';
-                                //echo " ";
-                                  // echo '<a href="'.base_url('Data_Divisi/detail_data_divisi/'.$baris->id_divisi).'"><button type="button" class="btn-warning">Detail</button></a>';
-                                    ?></td>
+                                            <th>Jenis Divisi</th>
+                                            <th>Nama</th>
+                                            <th>Email</th>
+                                            <th>Username</th>
+                                            <th>Password</th>
+                                            <th>Foto</th>
+                                            <th>Aksi</th>
                                             </tr>
-                                        <?php
-                                        }
-                                        ?>
+                                        </thead>
+                                        <tbody>
+                                            <?php
+                                            $no = 1; //no default 1
+                                            foreach ($user as $baris) { //
+                                            ?>
+                                                <tr>
+                                                
+                                            <td><?php echo $no++; ?></td>
+                                            <!-- nomor user otomatis bertambah pada saatn menambah data -->
+                                            <td><?php echo $baris->jenis_divisi; ?></td>
+                                            <td><?php echo $baris->nama_divisi; ?></td>
+                                            <td><?php echo $baris->email_divisi; ?></td>
+                                            <td><?php echo $baris->username; ?></td>
+                                            <td><?php echo $baris->password; ?></td>
+                                            <td><img src="../../assets/upload/fotodivisi/<?php echo $baris->foto; ?>" alt="" width="60" height="60"></td>
+                                                <td>
+                                                <?php
+                                                echo '<a href="'.base_url('Data_Divisi/edit_data_divisi/'.$baris->id_divisi).'"><button type="button" class="btn-primary">Edit</button></a>';
+                                                echo " ";
+                                                echo '<a href="'.base_url('Data_Divisi/hapus_data_divisi/'.$baris->id_divisi).'"><button type="button" class="btn-danger">Hapus</button></a>';
+                                            //echo " ";
+                                              // echo '<a href="'.base_url('Data_Divisi/detail_data_divisi/'.$baris->id_divisi).'"><button type="button" class="btn-warning">Detail</button></a>';
+                                                ?></td>
+                                            </tr>
+                                            <?php
+                                                }?>
                                     </tbody>
                                 </table>
                             </div>
