@@ -17,10 +17,12 @@
 
                             <p>
                                 <a href="<?php echo base_url('Data_Divisi/tambah_data_divisi')?>">
+
                                     <button type="button" class="btn btn-info btn-sm float-right">+ Tambah Data</button>
+
                                 </a>
                             </p>
-                            <form action="" method=""></form>
+                            <!--<form action="" method=""></form>
                             <div class="container align-items-center">
                                 <form action="">
                                     <div class="row">
@@ -45,7 +47,7 @@
                                             class="btn btn-primary bt-sm">Cari</button>
                                         </div>
                                     </div>
-                                </form>
+                                </form>-->
 
                                 <div class="row">
                                     <div class="col-sm-12">
@@ -78,14 +80,14 @@
                                             <td><?php echo $baris->email_divisi; ?></td>
                                             <td><?php echo $baris->username; ?></td>
                                             <td><?php echo $baris->password; ?></td>
-                                            <td><img src="../../assets/upload/fotodivisi/<?php echo $baris->foto; ?>" alt="" width="60" height="60"></td>
+                                            <td><img src="<?php echo base_url('../assets/upload/fotodivisi/') . $baris->foto; ?>" alt="" width="50" height="50" onerror="this.onerror = null; this.src = '<?= base_url('assets/images/avatar.png') ?>'"></td>
                                                 <td>
                                                 <?php
                                                 echo '<a href="'.base_url('Data_Divisi/edit_data_divisi/'.$baris->id_divisi).'"><button type="button" class="btn-primary">Edit</button></a>';
                                                 echo " ";
                                                 echo '<a href="'.base_url('Data_Divisi/hapus_data_divisi/'.$baris->id_divisi).'"><button type="button" class="btn-danger">Hapus</button></a>';
-                                            //echo " ";
-                                              // echo '<a href="'.base_url('Data_Divisi/detail_data_divisi/'.$baris->id_divisi).'"><button type="button" class="btn-warning">Detail</button></a>';
+                                                echo " ";
+                                                echo '<a href="'.base_url('Data_Divisi/detail_data_divisi/'.$baris->id_divisi).'"><button type="button" class="btn-warning">Detail</button></a>';
                                                 ?></td>
                                             </tr>
                                             <?php

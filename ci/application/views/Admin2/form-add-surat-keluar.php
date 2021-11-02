@@ -40,13 +40,13 @@
                             </div>
                         </div>
                         <div class="form-group row">
-                                            <label for="example-date-input" class="col-sm-2 col-form-label">File/pdf</label>
+                                            <label for="example-date-input" class="col-sm-2 col-form-label">Foto/jpg</label>
                                             <div class="col-sm-3">
                                                 <div class="input-group">
                                                     <div class="input-group-prepend">
                                                         <div class="custom-file">
-                                                <input type="file" class="custom-file-input" id="file_sk" name="file_sk" accept="file_sk/pdf">
-                                                <label class="custom-file-label" for="file_sk">Pilih file...</label>
+                                                <input type="file" class="custom-file-input" id="file" name="file" accept="image/jpeg, image/png, image/pdf">
+                                                <label class="custom-file-label" for="file">Pilih foto...</label>
                                                     </div>
 
                                                     </div>
