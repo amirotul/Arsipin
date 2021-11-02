@@ -16,11 +16,16 @@
                         <div class="card-body">
                             <p>
                                 <a href=<?php echo base_url('Data_Pengguna/tambah_pengguna'); ?>>
-                                    <button type="button" class="btn btn-info btn-sm ">Tambah Data</button>
+                                    <button type="button" class="btn btn-info btn-sm float-right">+ Tambah Data</button>
                                 </a>
                             </p>
-                            <div class="row">
-                                <div class="col-sm-12">
+
+                            <br>
+                            <br>
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                    </div>
+
                                 </div>
                             </div>
                             <table id="datatable" class="table table-bordered dt-responsive nowrap" style="border-collapse: collapse; border-spacing: 0; width: 100%;">
