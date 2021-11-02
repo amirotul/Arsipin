@@ -122,7 +122,7 @@
                                     echo " ";
                                     echo '<a href="'.base_url('Surat_Keluar/hapus_surat_keluar/'.$baris->id_sk).'"><button type="button" class="btn-danger">Hapus</button></a>';
                                     echo " ";
-                                   echo '<a href="'.base_url('Surat_Keluar/detail_surat/'.$baris->id_sk).'"><button type="button" class="btn-warning">Detail</button></a>';
+                                   echo '<a href="'.base_url('Surat_Keluar/detail_surat_keluar/'.$baris->id_sk).'"><button type="button" class="btn-warning">Detail</button></a>';
                                     ?></td>
                             </tr>
                             

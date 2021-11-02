@@ -20,10 +20,10 @@
                                                 <label for="example-date-input" class="col-sm-2 col-form-label">Jenis Divisi</label>
                                                 <div class="col-sm-5">
                                                     <select class="form-control" id="jenis_divisi" name="jenis_divisi" required="">
-                                                    <option value="Pilih">Pilih Jenis Divisi</option>
-                                                    <option value="HRD" >HRD</option>
-                                                    <option value="Marketing" >Marketing</option>
-                                                    <option value="Pemasaran" >Pemasaran</option>
+                                                    <option value="0">Pilih Jenis Divisi</option>
+                                                    <option value="1" >HRD</option>
+                                                    <option value="2" >Marketing</option>
+                                                    <option value="3" >Pemasaran</option>
                                                     
                                                 </select>
                                                 </div>
@@ -83,7 +83,7 @@
                                                                     
                                                                 </div> &nbsp &nbsp
                                                                 <div class="input-group-append">
-                                                                    <a class="small" href="<?php echo base_url('Data_Divisi')?>"><button class="btn btn-danger btn-sm" type="button">Batal</button>
+                                                                    <a class="small" href="<?php echo base_url('Data_Divisi/index')?>"><button class="btn btn-danger btn-sm" type="button">Batal</button>
                                                                     </a>
                                                                 </div>
                                                             </div>
