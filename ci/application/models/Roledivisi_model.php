@@ -2,7 +2,7 @@
 /**
  * 
  */
-class Divisi_model extends CI_Model
+class Roledivisi_model extends CI_Model
 {
 	
 	function getAll(){ //membuat function getAll
@@ -26,10 +26,19 @@ class Divisi_model extends CI_Model
 		$this->db->where($where);
 		$this->db->update($table, $data);
 	}
-    
-    function hapus_data($where, $table) {
-    $this->db->where($where);
-    $this->db->delete($table);
-}
+
+	function hapus_data($where, $table) {
+		$this->db->where($where);
+		$this->db->delete($table);
+	}
+
+	function login($user, $pass, $table){
+		$this->db->select('*');
+		$this->db->from('data_pengguna');
+		$this->db->where('username', $user);
+		$this->db->where('password', $pass);
+		$query = $this->db->get();
+		return $query;
+	}
 }
 ?>
