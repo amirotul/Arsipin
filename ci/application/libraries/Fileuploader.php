@@ -11,14 +11,12 @@ class Fileuploader
         $this->res = &get_instance();
     }
 
-    public function checkAndUploadImage($file_sk, $path)
+   public function checkAndUploadImage($file, $path)
     {
-        $config['upload_path'] = '../assets/upload/fotopengguna/';
-        $config['allowed_types'] = 'pdf';
-        $namaFile = $file_sk['name'];
-        $tipeFile = $file_sk['type'];
-        $tmpFile = $file_sk['tmp_name'];
-        $tipeFileValid = ['file_sk/pdf'];
+        $namaFile = $foto['name'];
+        $tipeFile = $foto['type'];
+        $tmpFile = $foto['tmp_name'];
+        $tipeFileValid = ['image/jpeg', 'image/jpg', 'image/png', 'image/pdf'];
 
         // cek apakah tipe file yg diupload berupa file gambar
         if (!in_array($tipeFile, $tipeFileValid)) return false;
@@ -26,7 +24,7 @@ class Fileuploader
         // ubah nama file menjadi random
         $ekstensiFile = explode('.', $namaFile);
         $ekstensiFile = strtolower(end($ekstensiFile));
-        $namaFileBaru = md5(uniqid());
+        $namaFileBaru = date("Ymd_His");
         $namaFileBaru .= '.';
         $namaFileBaru .= $ekstensiFile;
 
@@ -37,5 +35,4 @@ class Fileuploader
         return $namaFileBaru;
     }
 
-    
 }

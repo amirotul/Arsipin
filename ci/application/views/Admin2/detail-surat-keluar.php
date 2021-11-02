@@ -79,7 +79,8 @@
                             <div class="row">
                                 <div class="col-lg-12">
                                     <div class="btn-toolbar mb-3" role="toolbar">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-                                        <iframe src="../assets/upload/fotopengguna/<?php echo $baris->file; ?>" width="500" height="370" id="file_sk" name="file_sk"></iframe>
+                                        
+                                        <iframe src="<?php echo base_url('../assets/upload/fotodivisi/') . $baris->file ?>" alt="" width="515" height="470" ></iframe>
                                     </div>
                                 </div>
                                 <div class="form-group row">
