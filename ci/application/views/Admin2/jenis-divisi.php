@@ -16,10 +16,10 @@
                         <div class="card-body">
                             <p>
                                 <a href=<?php echo base_url('Jenis_Divisi/tambah_jenis_divisi');?>>
-                                    <button type="button" class="btn btn-info btn-sm float-right">Tambah Data</button>
+                                    <button type="button" class="btn btn-info btn-sm">Tambah Data</button>
                                 </a>
                             </p>
-                             <form action="" method=""></form>
+                            <!--<form action="" method=""></form>
                             <div class="container align-items-center">
                                 <form action="">
                                     <div class="row">
@@ -45,7 +45,7 @@
                                         </div>
                                     </div>
                                 </form>
-                            <!--<div id="datatable_wrapper"
+                            <div id="datatable_wrapper"
                             class="dataTables_wrapper dt-bootstrap4 no-footer">
                             <div
                             class="row align-items-center justify-content-between">

@@ -30,7 +30,7 @@
                                                 <label for="example-date-input" class="col-sm-2 col-form-label">Jenis Divisi</label>
                                                 <div class="col-sm-5">
                                                     
-                                                    <input class="form-control" type="text" value="<?= $user['jenis_divisi'] ?>" id="jenis_divisi" name="jenis_divisi">
+                                                    <input class="form-control" type="text" value="<?= $user['jenis_divisi'] ?>" id="jenis_divisi" name="jenis_divisi" disabled>
                                                 </div>
                                             </div>
 
@@ -38,28 +38,28 @@
                                                 <label for="example-date-input" class="col-sm-2 col-form-label">Nama</label>
                                                 <div class="col-sm-5">
                                                     
-                                                    <input class="form-control" type="text" value="<?= $user['nama_divisi'] ?>" id="nama_divisi" name="nama_divisi">
+                                                    <input class="form-control" type="text" value="<?= $user['nama_divisi'] ?>" id="nama_divisi" name="nama_divisi" disabled>
                                                 </div>
                                             </div>
 
                                             <div class="form-group row">
                                                 <label for="example-date-input" class="col-sm-2 col-form-label">Email</label>
                                                 <div class="col-sm-5">
-                                                    <input class="form-control" type="text" value="<?= $user['email_divisi'] ?>" id="email_divisi" name="email_divisi">
+                                                    <input class="form-control" type="text" value="<?= $user['email_divisi'] ?>" id="email_divisi" name="email_divisi" disabled>
                                                 </div>
                                             </div>
 
                                             <div class="form-group row">
                                                 <label for="example-date-input" class="col-sm-2 col-form-label">Username</label>
                                                 <div class="col-sm-5">
-                                                    <input class="form-control" type="text" value="<?= $user['username'] ?>" id="username" name="username">
+                                                    <input class="form-control" type="text" value="<?= $user['username'] ?>" id="username" name="username" disabled>
                                                 </div>
                                             </div>
 
                                             <div class="form-group row">
                                                 <label for="example-date-input" class="col-sm-2 col-form-label">Password</label>
                                                 <div class="col-sm-5">
-                                                    <input class="form-control" type="text" value="<?= $user['password'] ?>" id="password" name="password">
+                                                    <input class="form-control" type="text" value="<?= $user['password'] ?>" id="password" name="password" disabled>
                                                 </div>
                                             </div>
 

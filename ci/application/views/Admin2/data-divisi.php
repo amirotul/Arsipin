@@ -17,10 +17,10 @@
 
                             <p>
                                 <a href="<?php echo base_url('Data_Divisi/tambah_data_divisi')?>">
-                                    <button type="button" class="btn btn-info btn-sm float-right">Tambah Data</button>
+                                    <button type="button" class="btn btn-info btn-sm">Tambah Data</button>
                                 </a>
                             </p>
-                            <form action="" method=""></form>
+                            <!--<form action="" method=""></form>
                             <div class="container align-items-center">
                                 <form action="">
                                     <div class="row">
@@ -45,7 +45,7 @@
                                             class="btn btn-primary bt-sm">Cari</button>
                                         </div>
                                     </div>
-                                </form>
+                                </form>-->
 
                                 <div class="row">
                                     <div class="col-sm-12">

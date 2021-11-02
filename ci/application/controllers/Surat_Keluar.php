@@ -5,7 +5,7 @@ class Surat_Keluar extends CI_Controller{ //membuat controller Mahasiswa
 		parent:: __construct();
 		$this->load->model('Surat_keluar_model');
 		//untuk mengakses file model 'Mahasiswa_model'
-		$this->load->library('fileuploader', '$config');
+		$this->load->library('fileuploader');
 	}
 
 	public function index(){ //function untuk menampilkan halaman awal yang ditampilkan
@@ -24,14 +24,14 @@ class Surat_Keluar extends CI_Controller{ //membuat controller Mahasiswa
 		$tgl_sk = $this->input->post('tgl_sk');
 		$tujuan_sk = $this->input->post('tujuan_sk');
 		$perihal_sk = $this->input->post('perihal_sk');
-		$file_sk = $this->fileuploader->checkAndUploadImage($_FILES['file_sk'], '../assets/upload/fotopengguna/');
+		$file = $this->fileuploader->checkAndUploadImage($_FILES['file'], '../assets/upload/fotodivisi/');
 
 		$data = array( //array data untuk menampung inputan data
 			'no_sk' => $no_sk,
 			'tgl_sk' => $tgl_sk,
 			'tujuan_sk' => $tujuan_sk,
 			'perihal_sk' => $perihal_sk,
-			'file_sk' => $file_sk
+			'file' => $file
 		);
 		$this->Surat_keluar_model->input_data($data, 'surat_keluar'); 
 		//untuk mengakses file model 'Grup_model' dan data tersimpan pada tabel tm_user
