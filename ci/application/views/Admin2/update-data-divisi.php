@@ -19,7 +19,7 @@
                                     <input type="hidden" name="id" value="<?= $user['id_divisi'] ?>">
                                     <input type="hidden" name="fotolama" value="<?= $user['foto'] ?>">
 
-                                    <div class="form-group row">
+                                    <!--<div class="form-group row">
                                         <label for="example-date-input" class="col-sm-2 col-form-label">Jenis Divisi</label>
                                         <div class="col-sm-5">
                                             <select class="form-control" id="jenis_divisi" name="jenis_divisi" value="<?= $user['jenis_divisi'] ?>" required="">
@@ -30,7 +30,7 @@
 
                                             </select>
                                         </div>
-                                    </div>
+                                    </div>-->
 
                                     <div class="form-group row">
                                                 <label for="example-date-input" class="col-sm-2 col-form-label">Nama</label>
