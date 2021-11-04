@@ -9,7 +9,7 @@ class Data_Divisi extends CI_Controller{ //membuat controller Mahasiswa
 	}
 
 	public function index(){ //function untuk menampilkan halaman awal yang ditampilkan
-		$config['total_rows'] = $this->Datadivisi_model->count_all_data_divisi();
+		$config['total_rows'] = $this->Datadivisi_model->count_all_divisi();
 		$data['user'] = $this->Datadivisi_model->getAll()->result();
 		$this->template->views('Admin2/data-divisi',$data);
 			//untuk mengakses file views 'crud/home_mahasiswa' pada halaman template
