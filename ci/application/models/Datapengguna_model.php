@@ -13,6 +13,10 @@ class Datapengguna_model extends CI_Model
 		return $query;
 		//untuk proses selecy data dari database
 	}
+	function count_all_pengguna()
+    {
+        return $this->db->get('data_pengguna')->num_rows();
+    }
 
 	function input_data($data, $table) { //membuat function input_data
 		$this->db->insert($table,$data);
