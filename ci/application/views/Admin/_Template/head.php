@@ -11,6 +11,10 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
         <link rel="shortcut icon" href="assets/images/favicon.ico">
+        
+        <link rel="stylesheet" href="<?php echo base_url();?>assets/plugins/metro/MetroJs.min.css">
+        <link rel="stylesheet" href="<?php echo base_url();?>assets/plugins/morris/morris.css">
+        <link href="<?php echo base_url();?>assets/plugins/jvectormap/jquery-jvectormap-2.0.2.css" rel="stylesheet">
 
         <!-- DataTables -->
         <link href="<?php echo base_url();?>assets/plugins/datatables/dataTables.bootstrap4.min.css" rel="stylesheet" type="text/css" />
