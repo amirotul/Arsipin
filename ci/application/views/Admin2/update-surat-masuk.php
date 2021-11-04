@@ -27,13 +27,13 @@
                         <div class="form-group row">
                             <label for="example-date-input" class="col-sm-2 col-form-label">Tanggal Surat</label>
                             <div class="col-sm-5">
-                                <input class="form-control" type="datetime" value="<?php echo $baris->tgl_sm; ?>" id="tgl_sm" name="tgl_sm">
+                                <input class="form-control" type="date" value="<?php echo $baris->tgl_sm; ?>" id="tgl_sm" name="tgl_sm">
                            </div>
                        </div>
                        <div class="form-group row">
                         <label for="example-date-input" class="col-sm-2 col-form-label">Tanggal Terima</label>
                         <div class="col-sm-5">
-                            <input class="form-control" type="datetime" value="<?php echo $baris->tgl_terima_sm; ?>" id="tgl_terima_sm" name="tgl_terima_sm">
+                            <input class="form-control" type="date" value="<?php echo $baris->tgl_terima_sm; ?>" id="tgl_terima_sm" name="tgl_terima_sm">
                         </div>
                     </div>
                     <div class="form-group row">
