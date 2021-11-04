@@ -63,7 +63,6 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
                                         <?php 
                             $no = 1; //no default 1
                             foreach ($user as $baris) { //
