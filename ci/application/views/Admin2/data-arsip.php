@@ -1,4 +1,3 @@
-<form class="user" action="<?php echo base_url('Data_Arsip/data-arsip');?>" method="POST">
 
     <div class="page-content-wrapper">
 
@@ -105,33 +104,36 @@
                                                             </div>
                                                         </div>
                                                         
-                                                        <form action="" method=""></form>
-                                                        <div class="container align-items-center">
-                                                            <form action="">
-                                                                <div class="row">
+                                                        
+                                                                <div class="container align-items-center">
+                                                                <form action="<?php echo base_url('Data_Arsip/filter');?>" method="get">
+                                                                    <div class="row">
                                                                     <div class="form-group">
                                                                         <label for="inputMulaiTanggal" class="font-weight-bold">Mulai
                                                                         Tanggal :</label>
                                                                         <input type="date" id="inputMulaiTanggal" name="mulai_tanggal"
-                                                                        class="form-control" name="tgl_pemasukan" required>
+                                                                        class="form-control" required>
                                                                     </div>
                                                                     &nbsp&nbsp&nbsp&nbsp
                                                                     <div class="form-group">
                                                                         <label for="inputSampaiTanggal" class="font-weight-bold">Sampai
                                                                         Tanggal :</label>
                                                                         <input type="date" id="inputSampaiTanggal" name="sampai_tanggal"
-                                                                        class="form-control" name="tgl_pemasukan" required>
+                                                                        class="form-control" required>
                                                                     </div>
                                                                     <div class="col-sm-1 form-group">
                                                                         <label for="inputSampaiTanggal" class="font-weight-bold">
                                                                             <font color="white">Disetujui</font>
                                                                         </label>
+                                                                    <div class="btn-group">
                                                                         <button type="submit"
                                                                         class="btn btn-primary bt-sm">Cari</button>
+                                                                        <a href="<?php echo base_url('Data_Arsip')?>"  class="btn btn-outline-primary ml-2">Reset</a>
+                                                                    </div>
                                                                     </div>
                                                                 </div>
                                                             </form>
-                                                            <div id="datatable_wrapper"
+                                                            <!--<div id="datatable_wrapper"
                                                             class="dataTables_wrapper dt-bootstrap4 no-footer">
                                                             <div
                                                             class="row align-items-center justify-content-between">
@@ -167,44 +169,41 @@
                                                         </label>
                                                     </div>
                                                 </div>
-                                            </div>
+                                            </div>-->
 
                                             <div class="row">
                                                 <div class="col-sm-12">
-                                                </div>
-                                                <table id="datatable" class="table table-bordered dt-responsive nowrap" style="border-collapse: collapse; border-spacing: 0; width: 100%;">
-                                                    <thead>
-                                                        <tr>
-                                                            <th>No</th>
-                                                            <th>Nama</th>
-                                                            <th>Jenis arsip</th>
-                                                            <th>Tanggal Upload</th>
-                                                        </tr>
-                                                    </thead>
-                                                    <tbody>
-                                                        <tr>
-                                                            <td>1</td>
-                                                            <td>Kontrak Kerja Pegawai Divisi Marketing</td>
-                                                            <td>Kontrak Kerja</td>
-                                                            <td>14 Oktober 2021</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>2</td>
-                                                            <td>Akte Perusahaan CV Hummasoft</td>
-                                                            <td>Akte Perusahaan</td>
-                                                            <td>14 Oktober 2021</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>3</td>
-                                                            <td>NPWP Perusahaan CV Hummasoft</td>
-                                                            <td>NPWP</td>
-                                                            <td>14 Oktober 2021</td>
-                                                        </tr>
+                                                    <div class="page-title-box">
                                                         
-                                                        
+                                                   
+                                            <table id="datatable" class="table" style="border-collapse: collapse; border-spacing: 0; width: 100%;">
+                                                <thead>
+                                                    <tr>
+                                                        <th>No</th>
+                                                        <th>Nama</th>
+                                                        <th>Jenis arsip</th>
+                                                        <th>Tanggal Upload</th>
                                                     </tr>
+                                                </thead>
+                                                <tbody>
+                                                        <?php
+                                                        $no = 1; //no default 1
+                                                        foreach ($user as $baris) { //
+                                                        ?>
+                                                            <tr>
+                                                            
+                                                        <td><?php echo $no++; ?></td>
+                                                        <!-- nomor user otomatis bertambah pada saatn menambah data -->
+                                                        <td><?php echo $baris->nama_arsip; ?></td>
+                                                        <td><?php echo $baris->jenis_arsip; ?></td>
+                                                        <td><?php echo $baris->tgl_upload; ?></td>
+                                                        
+                                                        </tr>
+                                                        <?php
+                                                            }?>
                                                 </tbody>
                                             </table>
+
                                             <div class="row">
                                                 <div class="col-sm-12">
                                                     <div class="page-title-box">
@@ -222,29 +221,23 @@
                                                     </tr>
                                                 </thead>
                                                 <tbody>
-                                                    <tr>
-                                                        <td>1</td>
-                                                        <td>Kontrak Kerja Pegawai Divisi Marketing</td>
-                                                        <td>Kontrak Kerja</td>
-                                                        <td>20 Oktober 2021</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>2</td>
-                                                        <td>Akte Perusahaan CV Hummasoft</td>
-                                                        <td>Akte Perusahaan</td>
-                                                        <td>20 Oktober 2021</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>3</td>
-                                                        <td>NPWP Perusahaan CV Hummasoft</td>
-                                                        <td>NPWP</td>
-                                                        <td>20 Oktober 2021</td>
-                                                    </tr>
-                                                    
-                                                    
-                                                </tr>
-                                            </tbody>
-                                        </table>
+                                                    <?php
+                                            $no = 1; //no default 1
+                                            foreach ($user as $baris) { //
+                                            ?>
+                                                <tr>
+                                                
+                                            <td><?php echo $no++; ?></td>
+                                            <!-- nomor user otomatis bertambah pada saatn menambah data -->
+                                            <td><?php echo $baris->nama_arsip; ?></td>
+                                            <td><?php echo $baris->jenis_arsip; ?></td>
+                                            <td><?php echo $baris->tgl_upload; ?></td>
+                                            
+                                            </tr>
+                                            <?php
+                                                }?>
+                                    </tbody>
+                                </table>
                                         
                                     </div>
                                     
@@ -273,3 +266,4 @@
 
 </div>
                 <!-- END wrapper -->
+
