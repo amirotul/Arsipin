@@ -39,16 +39,6 @@
                                 </div>
                             </div>
                             <div class="form-group row">
-                                <label for="example-date-input" class="col-sm-2 col-form-label">Ditujukan Kepada</label>
-                                <div class="col-sm-5">
-                                    <select class="form-control" name="tujuan_divisi" name="tujuan_divisi">
-                                        <option value=""hidden disabled selected>Pilih Divisi</option>
-                                        <option value="marketing">Marketing</option>
-                                        <option value="hrd">HRD</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="form-group row">
                                 <label for="example-text-input" class="col-sm-2 col-form-label">Perihal</label>
                                 <div class="col-sm-5">
                                     <input class="form-control" type="text" value="" id="perihal_sm" name="perihal_sm">
