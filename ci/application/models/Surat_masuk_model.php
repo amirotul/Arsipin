@@ -40,5 +40,8 @@ class Surat_masuk_model extends CI_Model
 		$query = $this->db->get();
 		return $query;
 	}
+	function detail_data($where,$table) {
+		return $this->db->get_where($table, $where);
+	}
 }
 ?>

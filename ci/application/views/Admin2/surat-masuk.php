@@ -14,6 +14,11 @@
                     <div class="col-12">
                         <div class="card m-b-30">
                             <div class="card-body">
+                                <p>
+                                    <a href="<?php echo base_url('Surat_Masuk/tambah_data')?>">
+                                        <button type="button" class="btn btn-info btn-sm float-right">+ Tambah Data</button>
+                                    </a>
+                                </p>
                                 <br>
                                 <form action="" method=""></form>
                                 <div class="container align-items-center">
@@ -62,8 +67,8 @@
                                             <?php 
                             $no = 1; //no default 1
                             foreach ($user as $baris) { //
-                               ?>
-                               <tr>
+                             ?>
+                             <tr>
                                 <!-- <td><input type="checkbox"/></td> -->
                                 <td><?php echo $no++; ?></td>
                                 <!-- nomor user otomatis bertambah pada saatn menambah data -->
@@ -73,28 +78,29 @@
                                 <td><?php echo $baris->status_divisi; ?></td>
                                 <td><?php echo $baris->status_pimpinan; ?></td>
                                 <td>
-                                 <?php
-                                 echo '<a href="'.base_url('Surat_Masuk/tambah_disposisi/'.$baris->id_sm).'"><button type="button" class="btn-success">Disposisikan</button></a>';
-                                 ?>
-                             </td>
-                             <td>
-                                 <?php
-                                 echo '<a href="'.base_url('Surat_Masuk/edit/'.$baris->id_sm).'"><button type="button" class="btn-primary">Edit</button></a>';
-                                 echo " ";
-                                 echo '<a href="'.base_url('Surat_Masuk/hapus/'.$baris->id_sm).'"><button type="button" class="btn-danger">Hapus</button></a>';
-                                 echo " ";
-                                 echo '<a href="'.base_url('Surat_Masuk/detail/'.$baris->id_sm).'"><button type="button" class="btn-warning">Detail</button></a>';
-                                 echo " "; 
-                                 ?>
-                             </td>
-                         </tr>
-                         <?php 
-                     }
-                     ?>
-                 </tbody>
-             </table>
-         </div>
-     </div>
- </div>
+                                   <?php
+                                   echo '<a href="'.base_url('Surat_Masuk/tambah_disposisi/'.$baris->id_sm).'"><button type="button" class="btn-success">Disposisikan</button></a>';
+                                   ?>
+                               </td>
+                               <td>
+                                   <?php
+                                   echo '<a href="'.base_url('Surat_Masuk/edit/'.$baris->id_sm).'"><button type="button" class="btn-primary">Edit</button></a>';
+                                   echo " ";
+                                   echo '<a href="'.base_url('Surat_Masuk/hapus/'.$baris->id_sm).'"><button type="button" class="btn-danger">Hapus</button></a>';
+                                   echo " ";
+                                   echo '<a href="'.base_url('Surat_Masuk/detail/'.$baris->id_sm).'"><button type="button" class="btn-warning">Detail</button></a>';
+                                   echo " "; 
+                                   ?>
+                               </td>
+                           </tr>
+                           <?php 
+                       }
+                       ?>
+                   </tbody>
+               </table>
+           </div>
+       </div>
+   </div>
+</div>
 </div>
 </div>
