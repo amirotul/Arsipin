@@ -8,6 +8,7 @@ class Surat_Masuk extends CI_Controller{ //membuat controller Mahasiswa
 	}
 
 	public function index(){ //function untuk menampilkan halaman awal yang ditampilkan
+		$config['total_rows'] = $this->Surat_masuk_model->count_all_sm();
 		$data['user'] = $this->Surat_masuk_model->getAll()->result();
 		$this->template->views('Admin2/surat-masuk',$data);
 			//untuk mengakses file views 'crud/home_mahasiswa' pada halaman template
@@ -17,6 +18,31 @@ class Surat_Masuk extends CI_Controller{ //membuat controller Mahasiswa
 		$where = array('id_sm' => $id_sm);
 		$data['user'] = $this->Surat_masuk_model->edit_data($where, 'surat_masuk')->result();
 		$this->template->views('Admin2/form-add-disposisi', $data);
+	}
+
+	//Resepsionis
+	public function tambah_data() { //function untuk tambah data
+		$this->template->views('Admin2/form-add-surat-masuk');
+		//untuk mengakses file views 'crud/tambah_Grup' pada halaman template
+	}
+	public function input_data() { //function input untuk memasukkan proses inputan data ke database
+		$no_sm = $this->input->post('no_sm');
+		$tgl_sm = $this->input->post('tgl_sm');
+		$tgl_terima_sm = $this->input->post('tgl_terima_sm');
+		$asal_sm = $this->input->post('asal_sm');
+		$perihal_sm = $this->input->post('perihal_sm');
+
+		$data = array( //array data untuk menampung inputan data
+			'no_sm' => $no_sm,
+			'tgl_sm' => $tgl_sm,
+			'tgl_terima_sm' => $tgl_terima_sm,
+			'asal_sm' => $asal_sm,
+			'perihal_sm' => $perihal_sm
+		);
+		$this->Surat_masuk_model->input_data($data, 'surat_masuk'); 
+		//untuk mengakses file model 'Grup_model' dan data tersimpan pada tabel tm_user
+		redirect('Surat_Masuk');
+		//setelah data berhasil tersimpan, halaman web otomatis beralih ke halaman pada function index
 	}
 
 	 public function get_sm() {
@@ -71,5 +97,17 @@ class Surat_Masuk extends CI_Controller{ //membuat controller Mahasiswa
 	 	$this->Surat_masuk_model->hapus_data($where, 'surat_masuk');
 	 	redirect('Surat_Masuk');
 	 }
+
+	 public function detail($id_sm) {
+		$where = array('id_sm' => $id_sm);
+		$data['user'] = $this->Surat_masuk_model->detail_data($where, 'surat_masuk')->row_array();
+		$this->template->views('Admin2/detail-surat-masuk', $data);
+	}
+
+	public function detail_get_sm($id_sm) {
+		$where = array('id_sm' => $id_sm);
+		$data['user'] = $this->Surat_masuk_model->detail_data($where, 'surat_masuk')->row_array();
+		$this->template->views('Admin2/detail-disposisi', $data);
+	}
 	}
 ?>

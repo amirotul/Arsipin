@@ -8,6 +8,7 @@ class Disposisi extends CI_Controller{ //membuat controller Mahasiswa
 	}
 
 	public function index(){ //function untuk menampilkan halaman awal yang ditampilkan
+		$config['total_rows'] = $this->Disposisi_model->count_all_dis();
 		$data['user'] = $this->Disposisi_model->getAll()->result();
 		$this->template->views('Admin2/disposisi',$data);
 			//untuk mengakses file views 'crud/home_mahasiswa' pada halaman template
@@ -37,19 +38,18 @@ class Disposisi extends CI_Controller{ //membuat controller Mahasiswa
 		$this->template->views('Admin2/update-disposisi', $data);
 	}
 	public function update() {
-		$id_sm = $this->input->post('id_sm');
-		$no_sm = $this->input->post('no_sm');
-		$tgl_sm = $this->input->post('tgl_sm');
-		$tgl_terima_sm = $this->input->post('tgl_terima_sm');
-		$asal_sm = $this->input->post('asal_sm');
-		$perihal_sm = $this->input->post('perihal_sm');
+		$id_disposisi = $this->input->post('id_disposisi');
+		$batas_waktu_dis = $this->input->post('batas_waktu_dis');
+		$tujuan_divisi = $this->input->post('tujuan_divisi');
+		$isi_dis = $this->input->post('isi_dis');
+		$catatan_dis = $this->input->post('catatan_dis');
 
 		$data = array(
 			'id_disposisi' => $id_disposisi,
-			'tgl_sm' => $tgl_sm,
-			'tgl_terima_sm' => $tgl_terima_sm,
-			'asal_sm' => $asal_sm,
-			'perihal_sm' => $perihal_sm,
+			'batas_waktu_dis' => $batas_waktu_dis,
+			'tujuan_divisi' => $tujuan_divisi,
+			'isi_dis' => $isi_dis,
+			'catatan_dis' => $catatan_dis,
 		);
 
 		$where = array(
@@ -63,6 +63,17 @@ class Disposisi extends CI_Controller{ //membuat controller Mahasiswa
 		$where = array('id_disposisi' => $id_disposisi);
 		$this->Disposisi_model->hapus_data($where, 'disposisi');
 		redirect('Disposisi');
+	}
+
+	//  public function detail_get_disposisi($id_disposisi){
+	// 	$where = array('id_disposisi' => $id_disposisi);
+	// 	$data['user'] = $this->Disposisi_model->detail_data($where, 'disposisi')->row_array();
+	// 	$this->template->views('Admin2/detail-disposisi', $data);
+	// }
+	public function detail($id_disposisi) {
+		$where = array('id_disposisi' => $id_disposisi);
+		$data['user'] = $this->Disposisi_model->detail_data($where, 'disposisi')->row_array();
+		$this->template->views('Admin2/detail-disposisi', $data);
 	}
 }
 ?>
