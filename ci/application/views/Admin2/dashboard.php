@@ -26,7 +26,7 @@
                         </div>
                         <div class="p-4">
                             <h6 class="text-uppercase mb-3">Surat Masuk</h6>
-                            <h4 class="mb-0"><small class="ml-2"></small></h4>
+                            <h4 class="mb-0"><?php echo $total_data_sm; ?><small class="ml-2"></small></h4>
                         </div>
                     </div>
                 </div>
@@ -38,7 +38,7 @@
                         </div>
                         <div class="p-4">
                             <h6 class="text-uppercase mb-3">Surat Keluar</h6>
-                            <h4 class="mb-0"><small class="ml-2"></small></h4>
+                            <h4 class="mb-0"><?php echo $total_data_sk; ?><small class="ml-2"></small></h4>
                         </div>
                     </div>
                 </div>
@@ -50,7 +50,7 @@
                         </div>
                         <div class="p-4">
                             <h6 class="text-uppercase mb-3">Disposisi</h6>                                  
-                            <h4 class="mb-0"><small class="ml-2"></small></h4>
+                            <h4 class="mb-0"><?php echo $total_data_dis; ?><small class="ml-2"></small></h4>
                         </div>
                     </div>
                 </div>
@@ -134,4 +134,7 @@
                         </div>
                     </div>
                 </div>                  
-                            </div><!-- end row -->
+            </div>
+        </div>
+    </form>
+    

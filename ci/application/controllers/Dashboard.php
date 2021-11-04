@@ -4,6 +4,9 @@ class Dashboard extends CI_Controller{ //membuat controller Mahasiswa
 	function __construct(){
 		parent:: __construct();
 		$this->load->model('Admin_model');
+		$this->load->model('Surat_masuk_model');
+		$this->load->model('Surat_keluar_model');
+		$this->load->model('Disposisi_model');
 		$this->load->model('Data_arsip_model');
 		$this->load->model('Datadivisi_model');
 		$this->load->model('Datapengguna_model');
@@ -12,6 +15,9 @@ class Dashboard extends CI_Controller{ //membuat controller Mahasiswa
 
 	public function index(){ //function untuk menampilkan halaman awal yang ditampilkan
 		$data['user'] = $this->Admin_model->getAll()->result();
+		$data['total_data_sm'] = $this->Surat_masuk_model-> count_all_sm();
+		$data['total_data_sk'] = $this->Surat_keluar_model-> count_all_sk();
+		$data['total_data_dis'] = $this->Disposisi_model-> count_all_dis();
 		$data['total_data_arsip'] = $this->Data_arsip_model-> count_all_arsip();
 		$data['total_data_divisi'] = $this->Datadivisi_model-> count_all_divisi();
 		$data['total_data_pengguna'] = $this->Datapengguna_model-> count_all_pengguna();
