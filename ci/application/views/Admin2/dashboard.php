@@ -88,7 +88,7 @@
                         </div>
                         <div class="p-4">
                             <h6 class="text-uppercase mb-3">Data Pengguna</h6>
-                            <h4 class="mb-0"><small class="ml-2"></small></h4>
+                            <h4 class="mb-0"><?php echo $total_data_pengguna; ?><small class="ml-2"></small></h4>
                         </div>
                     </div>
                 </div>
