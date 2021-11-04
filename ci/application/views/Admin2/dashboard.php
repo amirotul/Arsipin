@@ -26,7 +26,7 @@
                         </div>
                         <div class="p-4">
                             <h6 class="text-uppercase mb-3">Surat Masuk</h6>
-                            <h4 class="mb-0">4<small class="ml-2"></small></h4>
+                            <h4 class="mb-0"><small class="ml-2"></small></h4>
                         </div>
                     </div>
                 </div>
@@ -38,7 +38,7 @@
                         </div>
                         <div class="p-4">
                             <h6 class="text-uppercase mb-3">Surat Keluar</h6>
-                            <h4 class="mb-0">2<small class="ml-2"></small></h4>
+                            <h4 class="mb-0"><small class="ml-2"></small></h4>
                         </div>
                     </div>
                 </div>
@@ -50,7 +50,7 @@
                         </div>
                         <div class="p-4">
                             <h6 class="text-uppercase mb-3">Disposisi</h6>                                  
-                            <h4 class="mb-0">3<small class="ml-2"></small></h4>
+                            <h4 class="mb-0"><small class="ml-2"></small></h4>
                         </div>
                     </div>
                 </div>
@@ -62,7 +62,7 @@
                         </div>
                         <div class="p-4">
                             <h6 class="text-uppercase mb-3">Data Arsip</h6>
-                            <h4 class="mb-0">24<small class="ml-2"></small></h4>
+                            <h4 class="mb-0"><?php echo $total_data_arsip; ?><small class="ml-2"></small></h4>
                         </div>
                     </div>
 
@@ -76,7 +76,7 @@
                         </div>
                         <div class="p-4">
                             <h6 class="text-uppercase mb-3">Data Divisi</h6>
-                            <h4 class="mb-0">2<small class="ml-2"></small></h4>
+                            <h4 class="mb-0"><?php echo $total_data_divisi; ?><small class="ml-2"></small></h4>
                         </div>
                     </div>
                 </div>
@@ -88,7 +88,7 @@
                         </div>
                         <div class="p-4">
                             <h6 class="text-uppercase mb-3">Data Pengguna</h6>
-                            <h4 class="mb-0">2<small class="ml-2"></small></h4>
+                            <h4 class="mb-0"><?php echo $total_data_pengguna; ?><small class="ml-2"></small></h4>
                         </div>
                     </div>
                 </div>
@@ -100,7 +100,7 @@
                         </div>
                         <div class="p-4">
                             <h6 class="text-uppercase mb-3">Surat Masuk Bulan Ini</h6>
-                            <h4 class="mb-0">2<small class="ml-2"></small></h4>
+                            <h4 class="mb-0"><small class="ml-2"></small></h4>
                         </div>
                     </div>
                 </div>
@@ -112,7 +112,7 @@
                         </div>
                         <div class="p-4">
                             <h6 class="text-uppercase mb-3">Surat Keluar Bulan Ini</h6>
-                            <h4 class="mb-0">2<small class="ml-2"></small></h4>
+                            <h4 class="mb-0"><small class="ml-2"></small></h4>
                         </div>
                     </div>
                 </div>

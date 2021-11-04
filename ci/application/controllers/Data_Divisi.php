@@ -9,6 +9,7 @@ class Data_Divisi extends CI_Controller{ //membuat controller Mahasiswa
 	}
 
 	public function index(){ //function untuk menampilkan halaman awal yang ditampilkan
+		$config['total_rows'] = $this->Datadivisi_model->count_all_divisi();
 		$data['user'] = $this->Datadivisi_model->getAll()->result();
 		$this->template->views('Admin2/data-divisi',$data);
 			//untuk mengakses file views 'crud/home_mahasiswa' pada halaman template
@@ -42,9 +43,9 @@ class Data_Divisi extends CI_Controller{ //membuat controller Mahasiswa
 		//setelah data berhasil tersimpan, halaman web otomatis beralih ke halaman pada function index
 	}
 	public function edit_data_divisi($id) {
-		$this->load->model('Roledivisi_model');
-		$this->load->model('Divisi_model');
-		$data['role'] = $this->Roledivisi_model->getAll()->result();
+		//$this->load->model('Roledivisi_model');
+		//$this->load->model('Divisi_model');
+		//$data['role'] = $this->Roledivisi_model->getAll()->result();
 		$where = array('id_divisi' => $id);
 		$data['user'] = $this->Datadivisi_model->edit_data($where, 'data_divisi')->row_array();
 		//$data['role'] = $this->Role_model->getAll()->result();   //Copy line iki ng tambah_pengguna
@@ -53,7 +54,7 @@ class Data_Divisi extends CI_Controller{ //membuat controller Mahasiswa
 	}
 	public function update() {
 		$id = $this->input->post('id');
-		$jenis_divisi = $this->input->post('jenis_divisi');
+		//$jenis_divisi = $this->input->post('jenis_divisi');
 		$nama_divisi = $this->input->post('nama_divisi');
 		$email_divisi = $this->input->post('email_divisi');
 		$username = $this->input->post('username');
@@ -61,7 +62,7 @@ class Data_Divisi extends CI_Controller{ //membuat controller Mahasiswa
 		$foto = $this->imageuploader->checkAndUploadImage($_FILES['foto'], '../assets/upload/fotodivisi/');
 
 		$data = array( //array data untuk menampung inputan data
-			'jenis_divisi' => $jenis_divisi,
+			//'jenis_divisi' => $jenis_divisi,
 			'nama_divisi' => $nama_divisi,
 			'email_divisi' => $email_divisi,
 			'username' => $username,

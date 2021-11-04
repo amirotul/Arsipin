@@ -10,7 +10,9 @@ class Data_Pengguna extends CI_Controller{ //membuat controller Mahasiswa
 	}
 
 	public function index(){ //function untuk menampilkan halaman awal yang ditampilkan
+		$config['total_rows'] = $this->Datapengguna_model->count_all_pengguna();
 		$data['user'] = $this->Datapengguna_model->getAll()->result();
+		// echo json_encode($data['user']); die;
 		$this->template->views('Admin2/pengguna-pengguna',$data);
 			//untuk mengakses file views 'crud/home_mahasiswa' pada halaman template
 	}
@@ -46,6 +48,7 @@ class Data_Pengguna extends CI_Controller{ //membuat controller Mahasiswa
 	}
 	public function edit_pengguna($id) {
 		$this->load->model('Role_model');  //Copy line iki ng tambah_pengguna
+		$this->load->model('Pengguna_model');
 		$where = array('id_pengguna' => $id);
 		$data['user'] = $this->Datapengguna_model->edit_data($where, 'data_pengguna')->row_array();
 		$data['role'] = $this->Role_model->getAll()->result();   //Copy line iki ng tambah_pengguna
@@ -84,4 +87,15 @@ class Data_Pengguna extends CI_Controller{ //membuat controller Mahasiswa
 		$this->Datapengguna_model->hapus_data($where, 'data_pengguna');
 		redirect('Data_Pengguna');
 	}
+	public function detail_data_pengguna($id) {
+		$id_pengguna = $id;
+		$data['user'] = $this->Datapengguna_model->detail_data($id_pengguna, 'data_pengguna')->row_array();
+		//$data['role'] = $this->Role_model->getAll()->result();   //Copy line iki ng tambah_pengguna
+		// echo json_encode($data['user']); die;
+		$this->template->views('Admin2/lihat-data-pengguna', $data);
+	}
+
 }
+
+?>
+
