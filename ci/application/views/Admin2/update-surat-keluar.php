@@ -43,7 +43,8 @@
                                 <input class="form-control" type="text" value="<?php echo $baris->perihal_sk; ?>" id="perihal_sk" name="perihal_sk">
                             </div>
                         </div>
-                        <div class="form-group row">
+                        
+                        <!--<div class="form-group row">
                                             <label for="example-date-input" class="col-sm-2 col-form-label">File/pdf</label>
                                             <div class="col-sm-3">
                                                 <div class="input-group">
@@ -56,7 +57,7 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div>
+                                        </div>-->
 
                                         <div class="form-group row">
                                             <div class="col-md-10 offset-md-2">

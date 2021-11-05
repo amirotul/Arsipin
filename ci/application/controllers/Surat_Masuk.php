@@ -109,5 +109,14 @@ class Surat_Masuk extends CI_Controller{ //membuat controller Mahasiswa
 		$data['user'] = $this->Surat_masuk_model->detail_data($where, 'surat_masuk')->row_array();
 		$this->template->views('Admin2/detail-disposisi', $data);
 	}
+
+	public function filter(){ //function untuk menampilkan halaman awal yang ditampilkan
+		$data = [
+			'date_from'=>$this->input->get('mulai_tanggal'),
+			'date_to'=>$this->input->get('sampai_tanggal'),
+		];
+		$data['user'] = $this->Surat_masuk_model->getByDate($data['date_from'], $data['date_to'])->result();
+		$this->template->views('Admin2/surat-masuk',$data);
+	}
 	}
 ?>
