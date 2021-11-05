@@ -70,9 +70,9 @@ class Disposisi extends CI_Controller{ //membuat controller Mahasiswa
 	// 	$data['user'] = $this->Disposisi_model->detail_data($where, 'disposisi')->row_array();
 	// 	$this->template->views('Admin2/detail-disposisi', $data);
 	// }
-	public function detail($id_disposisi) {
-		$id_disposisi = $id_disposisi;
-		$data['user'] = $this->Disposisi_model->detail_data($where, 'disposisi')->row_array();
+	public function detail($id) {
+		$id_disposisi = $id;
+		$data['user'] = $this->Disposisi_model->detail_data($id_disposisi, 'disposisi')->row_array();
 		$this->template->views('Admin2/detail-disposisi', $data);
 	}
 
