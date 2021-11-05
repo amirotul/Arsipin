@@ -10,6 +10,8 @@ class Surat_Keluar extends CI_Controller{ //membuat controller Mahasiswa
 
 	public function index(){ //function untuk menampilkan halaman awal yang ditampilkan
 		$config['total_rows'] = $this->Surat_keluar_model->count_all_sk();
+		$config['total_rows'] = $this->Surat_keluar_model->tampil_data_perbulan();
+
 		$data['user'] = $this->Surat_keluar_model->getAll()->result();
 		$this->template->views('Admin2/surat-keluar',$data);
 			//untuk mengakses file views 'crud/home_mahasiswa' pada halaman template
