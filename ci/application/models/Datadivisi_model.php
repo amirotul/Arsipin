@@ -8,6 +8,7 @@ class Datadivisi_model extends CI_Model
 	function getAll(){ //membuat function getAll
 		$this->db->select('*'); //memilih semua
 		$this->db->from('data_divisi');// dari tabel tm_user
+		$this->db->join('jenis_divisi', 'jenis_divisi.id = data_divisi.jenis_divisi');
 		$query = $this->db->get();
 		return $query;
 		//untuk proses selecy data dari database
@@ -34,7 +35,12 @@ class Datadivisi_model extends CI_Model
     $this->db->delete($table);
 	}
 	function detail_data($where,$table) {
-		return $this->db->get_where($table, $where);
+	$this->db->select('*'); //memilih semua
+		$this->db->from('data_divisi');// dari tabel tm_user
+		$this->db->where('id_divisi', $where);//
+		$this->db->join('jenis_divisi', 'jenis_divisi.id = data_divisi.jenis_divisi');
+		$query = $this->db->get();
+		return $query;
 	}
 }
 ?>
