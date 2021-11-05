@@ -75,5 +75,14 @@ class Disposisi extends CI_Controller{ //membuat controller Mahasiswa
 		$data['user'] = $this->Disposisi_model->detail_data($where, 'disposisi')->row_array();
 		$this->template->views('Admin2/detail-disposisi', $data);
 	}
+
+	public function filter(){ //function untuk menampilkan halaman awal yang ditampilkan
+		$data = [
+			'date_from'=>$this->input->get('mulai_tanggal'),
+			'date_to'=>$this->input->get('sampai_tanggal'),
+		];
+		$data['user'] = $this->Disposisi_model->getByDate($data['date_from'], $data['date_to'])->result();
+		$this->template->views('Admin2/disposisi',$data);
+	}
 }
 ?>
