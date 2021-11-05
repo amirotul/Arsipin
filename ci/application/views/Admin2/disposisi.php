@@ -73,7 +73,7 @@
                                 <!-- nomor user otomatis bertambah pada saatn menambah data -->
                                 <!-- <td><?php echo $baris->tgl_dis; ?></td> -->
                                 <td><?php echo $baris->batas_waktu_dis; ?></td>
-                                <td><?php echo $baris->tujuan_divisi; ?></td>
+                                <td><?php echo $baris->jenis_divisi; ?></td>
                                 <td><?php echo $baris->isi_dis; ?></td>
                                <td>
                                  <?php

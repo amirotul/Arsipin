@@ -35,7 +35,7 @@
                                                 <label for="example-number-input"class="col-sm-4
                                                 col-form-label">Tujuan</label>
                                                 <div class="col-sm-8">
-                                                    <input class="form-control" type="varchar"  value="<?= $user['tujuan_divisi'] ?>" id="tujuan_divisi" name="tujuan_divisi" disabled>
+                                                    <input class="form-control" type="varchar"  value="<?= $user['jenis_divisi'] ?>" id="jenis_divisi" name="jenis_divisi" disabled>
                                                 </div>
                                             </div>
 

@@ -8,6 +8,7 @@ class Disposisi_model extends CI_Model
 	function getAll(){ //membuat function getAll
 		$this->db->select('*'); //memilih semua
 		$this->db->from('disposisi');// dari tabel tm_user
+		$this->db->join('jenis_divisi', 'jenis_divisi.id = disposisi.jenis_divisi');
 		$query = $this->db->get();
 		return $query;
 		//untuk proses selecy data dari database
@@ -47,7 +48,12 @@ class Disposisi_model extends CI_Model
 	}
 
 	function detail_data($where,$table) {
-		return $this->db->get_where($table, $where);
+	$this->db->select('*'); //memilih semua
+		$this->db->from('disposisi');// dari tabel tm_user
+		$this->db->where('id_disposisi', $where);//
+		$this->db->join('jenis_divisi', 'jenis_divisi.id = disposisi.jenis_divisi');
+		$query = $this->db->get();
+		return $query;
 	}
 
 	function getByDate($data_from, $date_to){ //membuat function getAll
