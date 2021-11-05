@@ -35,6 +35,9 @@ class Disposisi extends CI_Controller{ //membuat controller Mahasiswa
 	public function edit($id_disposisi) {
 		$where = array('id_disposisi' => $id_disposisi);
 		$data['user'] = $this->Disposisi_model->edit_data($where, 'disposisi')->result();
+		$this->load->model('Roledivisi_model');
+		$this->load->model('Divisi_model');
+		$data['role'] = $this->Roledivisi_model->getAll()->result();
 		$this->template->views('Admin2/update-disposisi', $data);
 	}
 	public function update() {
