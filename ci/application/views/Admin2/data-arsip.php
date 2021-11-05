@@ -1,24 +1,24 @@
 
-    <div class="page-content-wrapper">
+<div class="page-content-wrapper">
 
-        <div class="container-fluid">
-            <!-- end page title end breadcrumb -->
-            <div class="row">
-                <div class="col-sm-12">
-                    <div class="page-title-box">
-                        <h4 class="page-title">Data Arsip</h4>
-                    </div>
+    <div class="container-fluid">
+        <!-- end page title end breadcrumb -->
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="page-title-box">
+                    <h4 class="page-title">Data Arsip</h4>
                 </div>
             </div>
-            
-            <div class="row">
-                <div class="col-12">
-                    <div class="card m-b-30">
-                        <div class="card-body">
-                           <!-- Begin Page Content -->
-                           <div class="container-fluid">
+        </div>
+        
+        <div class="row">
+            <div class="col-12">
+                <div class="card m-b-30">
+                    <div class="card-body">
+                     <!-- Begin Page Content -->
+                     <div class="container-fluid">
 
-                            <!-- Page Heading -->
+                        <!-- Page Heading -->
                             <!-- <div class="d-sm-flex align-items-center justify-content-between mb-4">
                                 <h1 class="h3 mb-0 text-gray-800">Cards</h1>
                             </div> -->
@@ -105,9 +105,9 @@
                                                         </div>
                                                         
                                                         
-                                                                <div class="container align-items-center">
-                                                                <form action="<?php echo base_url('Data_Arsip/filter');?>" method="get">
-                                                                    <div class="row">
+                                                        <div class="container align-items-center">
+                                                            <form action="<?php echo base_url('Data_Arsip/filter');?>" method="get">
+                                                                <div class="row">
                                                                     <div class="form-group">
                                                                         <label for="inputMulaiTanggal" class="font-weight-bold">Mulai
                                                                         Tanggal :</label>
@@ -125,11 +125,11 @@
                                                                         <label for="inputSampaiTanggal" class="font-weight-bold">
                                                                             <font color="white">Disetujui</font>
                                                                         </label>
-                                                                    <div class="btn-group">
-                                                                        <button type="submit"
-                                                                        class="btn btn-primary bt-sm">Cari</button>
-                                                                        <a href="<?php echo base_url('Data_Arsip')?>"  class="btn btn-outline-primary ml-2">Reset</a>
-                                                                    </div>
+                                                                        <div class="btn-group">
+                                                                            <button type="submit"
+                                                                            class="btn btn-primary bt-sm">Cari</button>
+                                                                            <a href="<?php echo base_url('Data_Arsip')?>"  class="btn btn-outline-primary ml-2">Reset</a>
+                                                                        </div>
                                                                     </div>
                                                                 </div>
                                                             </form>
@@ -175,85 +175,85 @@
                                                 <div class="col-sm-12">
                                                     <div class="page-title-box">
                                                         
-                                                   
-                                            <table id="datatable" class="table" style="border-collapse: collapse; border-spacing: 0; width: 100%;">
-                                                <thead>
-                                                    <tr>
-                                                        <th>No</th>
-                                                        <th>Nama</th>
-                                                        <th>Jenis arsip</th>
-                                                        <th>Tanggal Upload</th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
-                                                        <?php
+                                                     
+                                                        <table id="datatable" class="table" style="border-collapse: collapse; border-spacing: 0; width: 100%;">
+                                                            <thead>
+                                                                <tr>
+                                                                    <th>No</th>
+                                                                    <th>Nama</th>
+                                                                    <th>Jenis arsip</th>
+                                                                    <th>Tanggal Upload</th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody>
+                                                                <?php
                                                         $no = 1; //no default 1
                                                         foreach ($user as $baris) { //
-                                                        ?>
+                                                            ?>
                                                             <tr>
-                                                            
-                                                        <td><?php echo $no++; ?></td>
-                                                        <!-- nomor user otomatis bertambah pada saatn menambah data -->
-                                                        <td><?php echo $baris->nama_arsip; ?></td>
-                                                        <td><?php echo $baris->jenis_arsip; ?></td>
-                                                        <td><?php echo $baris->tgl_upload; ?></td>
-                                                        
-                                                        </tr>
-                                                        <?php
-                                                            }?>
-                                                </tbody>
-                                            </table>
+                                                                
+                                                                <td><?php echo $no++; ?></td>
+                                                                <!-- nomor user otomatis bertambah pada saatn menambah data -->
+                                                                <td><?php echo $baris->nama_arsip; ?></td>
+                                                                <td><?php echo $baris->jenis_arsip; ?></td>
+                                                                <td><?php echo $baris->tgl_upload; ?></td>
+                                                                
+                                                            </tr>
+                                                            <?php
+                                                        }?>
+                                                    </tbody>
+                                                </table>
 
-                                            <div class="row">
-                                                <div class="col-sm-12">
-                                                    <div class="page-title-box">
-                                                        <h4 class="page-title">Data Arsip Terbaru</h4>
+                                                <div class="row">
+                                                    <div class="col-sm-12">
+                                                        <div class="page-title-box">
+                                                            <h4 class="page-title">Data Arsip Terbaru</h4>
+                                                        </div>
                                                     </div>
                                                 </div>
-                                            </div>
-                                            <table id="datatable" class="table table-bordered dt-responsive nowrap" style="border-collapse: collapse; border-spacing: 0; width: 100%;">
-                                                <thead>
-                                                    <tr>
-                                                        <th>No</th>
-                                                        <th>Nama</th>
-                                                        <th>Jenis arsip</th>
-                                                        <th>Tanggal Upload</th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
-                                                    <?php
+                                                <table id="datatable" class="table table-bordered dt-responsive nowrap" style="border-collapse: collapse; border-spacing: 0; width: 100%;">
+                                                    <thead>
+                                                        <tr>
+                                                            <th>No</th>
+                                                            <th>Nama</th>
+                                                            <th>Jenis arsip</th>
+                                                            <th>Tanggal Upload</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <?php
                                             $no = 1; //no default 1
                                             foreach ($user as $baris) { //
-                                            ?>
+                                                ?>
                                                 <tr>
-                                                
-                                            <td><?php echo $no++; ?></td>
-                                            <!-- nomor user otomatis bertambah pada saatn menambah data -->
-                                            <td><?php echo $baris->nama_arsip; ?></td>
-                                            <td><?php echo $baris->jenis_arsip; ?></td>
-                                            <td><?php echo $baris->tgl_upload; ?></td>
-                                            
-                                            </tr>
-                                            <?php
-                                                }?>
-                                    </tbody>
-                                </table>
-                                        
-                                    </div>
+                                                    
+                                                    <td><?php echo $no++; ?></td>
+                                                    <!-- nomor user otomatis bertambah pada saatn menambah data -->
+                                                    <td><?php echo $baris->nama_arsip; ?></td>
+                                                    <td><?php echo $baris->jenis_arsip; ?></td>
+                                                    <td><?php echo $baris->tgl_upload; ?></td>
+                                                    
+                                                </tr>
+                                                <?php
+                                            }?>
+                                        </tbody>
+                                    </table>
                                     
                                 </div>
+                                
                             </div>
-                        </div> <!-- end col -->
-                    </div> <!-- end row -->
+                        </div>
+                    </div> <!-- end col -->
+                </div> <!-- end row -->
 
 
-                </div><!-- container -->
+            </div><!-- container -->
 
-            </div> <!-- Page content Wrapper -->
+        </div> <!-- Page content Wrapper -->
 
-        </div><!-- container -->
+    </div><!-- container -->
 
-    </div> <!-- Page content Wrapper -->
+</div> <!-- Page content Wrapper -->
 
 </div> <!-- content -->
 
@@ -265,5 +265,5 @@
 <!-- End Right content here -->
 
 </div>
-                <!-- END wrapper -->
+<!-- END wrapper -->
 
