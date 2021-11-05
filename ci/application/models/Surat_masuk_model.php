@@ -58,5 +58,12 @@ class Surat_masuk_model extends CI_Model
 		return $query;
 		
 	}
+	function tampil_data_perbulan(){
+      	$this->db->select('*'); 
+      	$this->db->from('surat_masuk'); 
+      	$this->db->where('month(tgl_sm)=',date('m')); 
+      	$query = $this->db->get(); 
+      	return $query->num_rows();
+  } 
 }
 ?>
