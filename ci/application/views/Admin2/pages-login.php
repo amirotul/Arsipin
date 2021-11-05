@@ -9,7 +9,7 @@
         <meta content="themesdesign" name="author" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
-        <link rel="shortcut icon" href="assets/images/favicon.ico">
+        <link rel="shortcut icon" href="<?php echo base_url()?>assets/images/favicon.ico">
 
         <link href="<?php echo base_url()?>/assets/css/bootstrap.min.css" rel="stylesheet" type="text/css">
         <link href="<?php echo base_url()?>/assets/plugins/animate/animate.css" rel="stylesheet" type="text/css">

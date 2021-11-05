@@ -14,10 +14,29 @@ class Surat_Masuk extends CI_Controller{ //membuat controller Mahasiswa
 			//untuk mengakses file views 'crud/home_mahasiswa' pada halaman template
 	}
 
+	// public function tambah_disposisi($id_sm) { //function untuk tambah data
+	// 	$this->load->model('Roledivisi_model');
+	// 	$this->load->model('Divisi_model');
+	// 	$data['user'] = $this->Roledivisi_model->getAll()->result();
+	// 	$this->template->views('Admin2/form-add-disposisi', $data);
+	// }
+
+	public function tambah_data_divisi() { //function untuk tambah data
+		$this->load->model('Roledivisi_model');
+		$this->load->model('Divisi_model');
+		$data['role'] = $this->Roledivisi_model->getAll()->result();
+		$this->template->views('Admin2/form-add-data-divisi', $data);
+		//untuk mengakses file views 'crud/tambah_mahasiswa' pada halaman template
+	}
+
 	public function tambah_disposisi($id_sm) { //function untuk tambah data
 		$where = array('id_sm' => $id_sm);
 		$data['user'] = $this->Surat_masuk_model->edit_data($where, 'surat_masuk')->result();
-		$this->template->views('Admin2/form-add-disposisi', $data);
+		$this->load->model('Roledivisi_model');
+		$this->load->model('Divisi_model');
+		$data['role'] = $this->Roledivisi_model->getAll()->result();
+		$this->template->views('Admin2/form-add-disposisi',$data);
+		//untuk mengakses file views 'crud/tambah_Grup' pada halaman template
 	}
 
 	//Resepsionis
