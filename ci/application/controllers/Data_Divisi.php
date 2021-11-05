@@ -93,14 +93,20 @@ class Data_Divisi extends CI_Controller{ //membuat controller Mahasiswa
 	}
 
 	public function detail_data_divisi($id) {
-		//$this->load->model('Roledivisi_model');
-		//$this->load->model('Divisi_model');
-		//$data['role'] = $this->Roledivisi_model->getAll()->result();
-		$where = array('id_divisi' => $id);
-		$data['user'] = $this->Datadivisi_model->detail_data($where, 'data_divisi')->row_array();
+		$id_divisi = $id;
+		$data['user'] = $this->Datadivisi_model->detail_data($id_divisi, 'data_divisi')->row_array();
 		//$data['role'] = $this->Role_model->getAll()->result();   //Copy line iki ng tambah_pengguna
 		// echo json_encode($data['user']); die;
 		$this->template->views('Admin2/lihat-data-divisi', $data);
+
+		//$this->load->model('Roledivisi_model');
+		//$this->load->model('Divisi_model');
+		//$data['role'] = $this->Roledivisi_model->getAll()->result();
+		//$where = array('id_divisi' => $id);
+		//$data['user'] = $this->Datadivisi_model->detail_data($where, 'data_divisi')->row_array();
+		//$data['role'] = $this->Role_model->getAll()->result();   //Copy line iki ng tambah_pengguna
+		// echo json_encode($data['user']); die;
+		//$this->template->views('Admin2/lihat-data-divisi', $data);
 	}
 
 }
