@@ -50,14 +50,14 @@ class Surat_Keluar extends CI_Controller{ //membuat controller Mahasiswa
 		$tgl_sk = $this->input->post('tgl_sk');
 		$tujuan_sk = $this->input->post('tujuan_sk');
 		$perihal_sk = $this->input->post('perihal_sk');
-		$file_sk = $this->fileuploader->checkAndUploadImage($_FILES['file_sk'], '../assets/upload/fotopengguna/');
+		//$file_sk = $this->fileuploader->checkAndUploadImage($_FILES['file_sk'], '../assets/upload/fotopengguna/');
 		
 		$data = array( //array data untuk menampung inputan data
 			'no_sk' => $no_sk,
 			'tgl_sk' => $tgl_sk,
 			'tujuan_sk' => $tujuan_sk,
 			'perihal_sk' => $perihal_sk,
-			'file_sk' => $file_sk
+			//'file_sk' => $file_sk
 		);
 
 		$where = array(
@@ -76,6 +76,14 @@ class Surat_Keluar extends CI_Controller{ //membuat controller Mahasiswa
 		$where = array('id_sk' => $id_sk);
 		$data['user'] = $this->Surat_keluar_model->detail_data($where, 'surat_keluar')->result();
 		$this->template->views('Admin2/detail-surat-keluar', $data);
+	}
+	public function filter(){ 
+		$data = [
+			'date_from'=>$this->input->get('mulai_tanggal'),
+			'date_to'=>$this->input->get('sampai_tanggal'),
+		];
+		$data['user'] = $this->Surat_keluar_model->getByDate($data['date_from'], $data['date_to'])->result();
+		$this->template->views('Admin2/surat-keluar',$data);
 	}
 
 }
