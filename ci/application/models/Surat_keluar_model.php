@@ -36,6 +36,15 @@ class Surat_keluar_model extends CI_Model
 	function detail_data($where,$table) {
 		return $this->db->get_where($table, $where);
 	}
+	function getByDate($data_from, $date_to){ //membuat function getAll
+		$this->db->select('*'); //memilih semua
+		$this->db->from('surat_keluar');
+		$where = "tgl_sk BETWEEN '".$data_from."'AND'".$date_to."'";
+		$this->db->where($where);
+		$query = $this->db->get();
+		return $query;
+		
+	}
 
 }
 ?>
