@@ -16,13 +16,13 @@ class Disposisi extends CI_Controller{ //membuat controller Mahasiswa
 
 	public function input_dis() { 
 		$batas_waktu_dis = $this->input->post('batas_waktu_dis');
-		$tujuan_divisi = $this->input->post('tujuan_divisi');
+		$jenis_divisi = $this->input->post('jenis_divisi');
 	 	$isi_dis = $this->input->post('isi_dis');
 	 	$catatan_dis = $this->input->post('catatan_dis');
 
 		$data = array( //array data untuk menampung inputan data
 			'batas_waktu_dis' => $batas_waktu_dis,
-			'tujuan_divisi' => $tujuan_divisi,
+			'jenis_divisi' => $jenis_divisi,
 	 		'isi_dis' => $isi_dis,
 	 		'catatan_dis' => $catatan_dis
 		);
@@ -40,14 +40,14 @@ class Disposisi extends CI_Controller{ //membuat controller Mahasiswa
 	public function update() {
 		$id_disposisi = $this->input->post('id_disposisi');
 		$batas_waktu_dis = $this->input->post('batas_waktu_dis');
-		$tujuan_divisi = $this->input->post('tujuan_divisi');
+		$jenis_divisi = $this->input->post('jenis_divisi');
 		$isi_dis = $this->input->post('isi_dis');
 		$catatan_dis = $this->input->post('catatan_dis');
 
 		$data = array(
 			'id_disposisi' => $id_disposisi,
 			'batas_waktu_dis' => $batas_waktu_dis,
-			'tujuan_divisi' => $tujuan_divisi,
+			'jenis_divisi' => $jenis_divisi,
 			'isi_dis' => $isi_dis,
 			'catatan_dis' => $catatan_dis,
 		);
@@ -70,9 +70,9 @@ class Disposisi extends CI_Controller{ //membuat controller Mahasiswa
 	// 	$data['user'] = $this->Disposisi_model->detail_data($where, 'disposisi')->row_array();
 	// 	$this->template->views('Admin2/detail-disposisi', $data);
 	// }
-	public function detail($id_disposisi) {
-		$where = array('id_disposisi' => $id_disposisi);
-		$data['user'] = $this->Disposisi_model->detail_data($where, 'disposisi')->row_array();
+	public function detail($id) {
+		$id_disposisi = $id;
+		$data['user'] = $this->Disposisi_model->detail_data($id_disposisi, 'disposisi')->row_array();
 		$this->template->views('Admin2/detail-disposisi', $data);
 	}
 
