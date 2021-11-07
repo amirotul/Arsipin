@@ -100,7 +100,7 @@
                         </div>
                         <div class="p-4">
                             <h6 class="text-uppercase mb-3">Surat Masuk Bulan Ini</h6>
-                            <h4 class="mb-0"><small class="ml-2"></small></h4>
+                            <h4 class="mb-0"><?php echo $total_data_sm; ?><small class="ml-2"></small></h4>
                         </div>
                     </div>
                 </div>
@@ -112,7 +112,7 @@
                         </div>
                         <div class="p-4">
                             <h6 class="text-uppercase mb-3">Surat Keluar Bulan Ini</h6>
-                            <h4 class="mb-0"><small class="ml-2"></small></h4>
+                            <h4 class="mb-0"><?php echo $total_data_perbulan; ?><small class="ml-2"></small></h4>
                         </div>
                     </div>
                 </div>

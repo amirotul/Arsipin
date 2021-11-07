@@ -9,6 +9,8 @@ class Surat_Masuk extends CI_Controller{ //membuat controller Mahasiswa
 
 	public function index(){ //function untuk menampilkan halaman awal yang ditampilkan
 		$config['total_rows'] = $this->Surat_masuk_model->count_all_sm();
+		$config['total_rows'] = $this->Surat_masuk_model->tampil_data_perbulan();
+		
 		$data['user'] = $this->Surat_masuk_model->getAll()->result();
 		$this->template->views('Admin2/surat-masuk',$data);
 			//untuk mengakses file views 'crud/home_mahasiswa' pada halaman template

@@ -1,4 +1,4 @@
-
+<form class="user" action="<?php echo base_url('Disposisi/update');?>" method="post" >
 <div class="page-content-wrapper">
 
     <div class="container-fluid">
@@ -27,10 +27,11 @@
                         <div class="form-group row">
                             <label for="example-date-input" class="col-sm-2 col-form-label">Tujuan Divisi</label>
                             <div class="col-sm-5">
-                                <select class="form-control" name="Role">
-                                    <option value=""hidden disabled selected>Divisi HRD</option>
-                                    <option value="marketing">Marketing</option>
-                                    <option value="hrd">HRD</option>
+                                <select class="form-control" id="jenis_divisi" name="jenis_divisi" required="">
+                                    <option value=""hidden disabled selected>Pilih Jenis Divisi</option>
+                                    <?php foreach ($role as $item) : ?>
+                                                    <option value="<?= $item->id ?>"><?= $item->jenis_divisi ?></option>
+                                                <?php endforeach ?>
                                 </select>
                             </div>
                         </div>
