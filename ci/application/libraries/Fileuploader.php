@@ -13,10 +13,10 @@ class Fileuploader
 
    public function checkAndUploadImage($file, $path)
     {
-        $namaFile = $foto['name'];
-        $tipeFile = $foto['type'];
-        $tmpFile = $foto['tmp_name'];
-        $tipeFileValid = ['image/jpeg', 'image/jpg', 'image/png', 'image/pdf'];
+        $namaFile = $file['name'];
+        $tipeFile = $file['type'];
+        $tmpFile = $file['tmp_name'];
+        $tipeFileValid = ['file/pdf'];
 
         // cek apakah tipe file yg diupload berupa file gambar
         if (!in_array($tipeFile, $tipeFileValid)) return false;
@@ -33,6 +33,20 @@ class Fileuploader
         $this->compressImage($tmpFile, $path . $namaFileBaru, 60);
 
         return $namaFileBaru;
+    }
+
+    public function compressImage($source, $path, $quality = 80)
+    {
+        $imageSize = getimagesize($source);
+        if ($imageSize['mime'] == 'file/pdf') $image = imagecreatefromjpeg($source);
+        else if ($imageSize['mime'] == 'file/pdf') {
+            $image = imagecreatefrompng($source);
+            imagepalettetotruecolor($image);
+            imagealphablending($image, true);
+            imagesavealpha($image, true);
+        }
+        imagewebp($file, $path, $quality);
+        imagedestroy($file);
     }
 
 }

@@ -106,7 +106,7 @@
                                                         
                                                         
                                                         <div class="container align-items-center">
-                                                            <form action="<?php echo base_url('Data_Arsip/filter');?>" method="get">
+                                                            <!--<form action="<?php echo base_url('Data_Arsip/filter');?>" method="get">
                                                                 <div class="row">
                                                                     <div class="form-group">
                                                                         <label for="inputMulaiTanggal" class="font-weight-bold">Mulai
@@ -133,7 +133,7 @@
                                                                     </div>
                                                                 </div>
                                                             </form>
-                                                            <!--<div id="datatable_wrapper"
+                                                            <div id="datatable_wrapper"
                                                             class="dataTables_wrapper dt-bootstrap4 no-footer">
                                                             <div
                                                             class="row align-items-center justify-content-between">
@@ -171,7 +171,7 @@
                                                 </div>
                                             </div>-->
 
-                                            <div class="row">
+                                            <!--<div class="row">
                                                 <div class="col-sm-12">
                                                     <div class="page-title-box">
                                                         
@@ -193,7 +193,6 @@
                                                             <tr>
                                                                 
                                                                 <td><?php echo $no++; ?></td>
-                                                                <!-- nomor user otomatis bertambah pada saatn menambah data -->
                                                                 <td><?php echo $baris->nama_arsip; ?></td>
                                                                 <td><?php echo $baris->jenis_arsip; ?></td>
                                                                 <td><?php echo $baris->tgl_upload; ?></td>
@@ -202,16 +201,27 @@
                                                             <?php
                                                         }?>
                                                     </tbody>
-                                                </table>
+                                                </table>-->
 
                                                 <div class="row">
                                                     <div class="col-sm-12">
                                                         <div class="page-title-box">
-                                                            <h4 class="page-title">Data Arsip Terbaru</h4>
-                                                        </div>
-                                                    </div>
+                                                            <div class="card-header border-0">
+                                                                <div class="row align-items-center">
+
+                                                <div class="col">
+                                                    <h5 class="mb-0">Data Arsip Terbaru</h5>
                                                 </div>
-                                                <table id="datatable" class="table table-bordered dt-responsive nowrap" style="border-collapse: collapse; border-spacing: 0; width: 100%;">
+
+                                                <div class="col text-right">
+                                                     <a href="<?php echo base_url('Data_Arsip/lihat_semua_arsip')?>">
+                                                        <button type="button" class="btn btn-info btn-sm float-right">Lihat Semua</button>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                                <table id="table" class="table table-bordered dt-responsive nowrap" style="border-collapse: collapse; border-spacing: 0; width: 100%;">
                                                     <thead>
                                                         <tr>
                                                             <th>No</th>
