@@ -31,7 +31,7 @@
                                     <div class="form-group row">
                                         <label for="example-date-input" class="col-sm-2 col-form-label">Role</label>
                                         <div class="col-sm-5">
-                                            <select class="form-control" id="master_user" name="master_user" required="">
+                                            <select class="form-control" id="master_user" name="id_role" required="">
                                                 <option value="" hidden disabled selected>Pilih Role</option>
                                                 <?php foreach ($role as $item) : ?>
                                                     <option value="<?= $item->id_role ?>"><?= $item->nama_role ?></option>
