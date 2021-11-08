@@ -166,34 +166,34 @@
         
           //creating area chart
           var $areaData = [
-            {y: '2007', a: 0, b: 0, c:0},
-            {y: '2008', a: 150, b: 45, c:15},
-            {y: '2009', a: 60, b: 150, c:195},
-            {y: '2010', a: 180, b: 36, c:21},
-            {y: '2011', a: 90, b: 60, c:360},
-            {y: '2012', a: 75, b: 240, c:120},
-            {y: '2013', a: 30, b: 30, c:30}
+            {y: '2015', a: 0, b: 0, c:0},
+            {y: '2016', a: 150, b: 45, c:15},
+            {y: '2017', a: 60, b: 150, c:195},
+            {y: '2018', a: 180, b: 36, c:21},
+            {y: '2019', a: 90, b: 60, c:360},
+            {y: '2020', a: 75, b: 240, c:120},
+            {y: '2021', a: 30, b: 30, c:30}
         ];
-        this.createAreaChart('morris-area-chart', 0, 0, $areaData, 'y', ['a', 'b', 'c'], ['Series A', 'Series B', 'Series C'], ['#ec536c', '#5b6be8', '#59ceb5']);
+        this.createAreaChart('morris-area-chart', 0, 0, $areaData, 'y', ['a', 'b', 'c'], ['Surat Masuk', 'Surat Keluar', 'Disposisi'], ['#ec536c', '#5b6be8', '#59ceb5']);
 
         //creating donut chart
         var $donutData = [
-            {label: "Margin", value: 20},
-            {label: "Profit", value: 30},
-            {label: "Lost", value: 10}, 
+            {label: "Disposisi", value: 20},
+            {label: "Belum Didisposisi", value: 30},
+            //{label: "Lost", value: 10}, 
         ];
         
         this.createDonutChart('morris-donut-example', $donutData, [ 'rgba(211, 218, 232,0.8)','rgba(64, 164, 241,0.8)', 'rgba(236, 83, 108,0.8)']);
 
         //create line chart
         var $data  = [
-            { y: '2012', a: 0, b: 0},
-            { y: '2013', a: 50,  b: 30 },
-            { y: '2014', a: 50,  b: 30 },
-            { y: '2015', a: 120,  b: 100},
-            { y: '2016', a: 60,  b: 40 },
-            { y: '2017', a: 140,  b: 120},
-            { y: '2018', a: 180, b: 200 }
+            { y: '2020', a: 0, b: 0},
+            { y: '2021', a: 50,  b: 30 },
+            { y: '2022', a: 50,  b: 30 },
+            { y: '2023', a: 120,  b: 100},
+            { y: '2024', a: 60,  b: 40 },
+            { y: '2025', a: 140,  b: 120},
+            { y: '2026', a: 180, b: 200 }
           ];
         this.createLineChart('multi-line-chart', $data, 'y', ['a', 'b'], ['Dom', 'Int'], ['#59ceb5', '#ec536c']);
     },

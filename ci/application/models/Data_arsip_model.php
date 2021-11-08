@@ -27,7 +27,12 @@ class Data_arsip_model extends CI_Model
 	}
 	public function data_terbaru()
     {
-        return $this->db->order_by('id_arsip', 'DESC')->get('data_arsip')->result();
+    	$this->db->select('*'); //memilih semua
+		$this->db->from('data_arsip');
+        $this->db->order_by('id_arsip','DESC');
+		$this->db->limit(3);
+		$query = $this->db->get();
+		return $query;
     }
 	
 }
