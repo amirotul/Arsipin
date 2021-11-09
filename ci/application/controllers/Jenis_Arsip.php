@@ -55,5 +55,6 @@ class Jenis_Arsip extends CI_Controller{ //membuat controller Mahasiswa
 		$this->Jenis_arsip_model->hapus_data($where, 'jenis_arsip');
 		redirect('Jenis_Arsip');
 	}
+	
 }
 ?>
