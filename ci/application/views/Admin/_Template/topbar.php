@@ -90,7 +90,7 @@
                                         
                                         <a class="dropdown-item" href="#"><i class="mdi mdi-lock-open-outline"></i> Lock screen</a>
                                         <div class="dropdown-divider"></div>
-                                        <a class="dropdown-item text-danger" href="#"><i class="mdi mdi-power text-danger"></i> Logout</a>
+                                        <a class="dropdown-item text-danger" href="#" data-toggle="modal" data-target="#logoutModal"><i class="mdi mdi-power text-danger" ></i> Logout</a>
                                     </div>
                                 </li>
                             </ul>
