@@ -59,7 +59,7 @@
                                                 <?php
                                                 echo '<a href="' . base_url('Data_Pengguna/edit_pengguna/' . $baris->id_pengguna) . '"><button type="button" class="btn-primary">Edit</button></a>';
                                                 echo " ";
-                                                echo '<a href="' . base_url('Data_Pengguna/hapus_pengguna/' . $baris->id_pengguna) . '"data-toggle="modal" data-target="#deleteModal"><button type="button" class="btn-danger">Hapus</button></a>';
+                                                echo '<button type="button" class="btn-danger" data-toggle="modal" data-target="#deleteModal" data-id-pengguna="' . $baris->id_pengguna . '">Hapus</button>';
                                                 echo " ";
                                                 echo '<a href="' . base_url('Data_Pengguna/detail_data_pengguna/' . $baris->id_pengguna) . '"><button type="button" class="btn-warning">Detail</button></a>';
                                                 ?></td>
@@ -86,7 +86,7 @@
                             <div class="modal-footer">
 
                             <?php
-                            echo '<a href="'.base_url('Data_Pengguna/hapus_pengguna/'.$baris->id_pengguna).'"><button type="button" class="btn btn-danger">Hapus</button></a>';
+                            echo '<a class="btn-hapus"><button type="button" class="btn btn-danger">Hapus</button></a>';
                             echo " ";
                             echo '<a><button class="btn btn-secondary" type="button" data-dismiss="modal">Batal</button></a>';
                             ?>
@@ -120,4 +120,5 @@
     <!-- End Right content here -->
 
     </div>
+    <script src="<?= base_url('assets/js/delete-confirm-pengguna.js') ?>"></script>
     <!-- END wrapper -->
