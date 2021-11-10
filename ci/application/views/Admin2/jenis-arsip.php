@@ -46,14 +46,8 @@
                                  <?php
 
                                  echo '<a href="'.base_url('Jenis_Arsip/edit/'.$baris->id_jenis_arsip).'"><button type="button" class="btn-primary">Edit</button></a>';
-                                 //echo " ";
-                                 //echo '<a href="'.base_url('Jenis_Arsip/hapus/'.$baris->id_jenis_arsip).'"><button type="button" class="btn-danger">Hapus</button></a>';
-
-                                 
-
-
                                  echo " ";
-                                 echo '<a href="'.base_url('Jenis_Arsip/hapus/'.$baris->id_jenis_arsip).'" data-toggle="modal" data-target="#deleteModal" ><button type="button" class="btn-danger">Hapus</button></a>';
+                                 echo '<button type="button" class="btn-danger" data-toggle="modal" data-target="#deleteModal" data-id-jenisarsip="' . $baris->id_jenis_arsip . '">Hapus</button>';
                                  ?>
                                  <?php 
                      }
@@ -62,34 +56,29 @@
              </table>
          </div>
 
+                             <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                            <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Hapus Jenis Arsip</h5>
+                            <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">×</span>
+                            </button>
+                            </div>
+                            <div class="modal-body">Yakin ingin menghapus? Tindakan ini tidak dapat dibatalkan.</div>
+                            <div class="modal-footer">
 
-         <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-        aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Hapus Jenis Arsip</h5>
-                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">×</span>
-                    </button>
-                </div>
-                <div class="modal-body">Yakin ingin menghapus? Tindakan ini tidak dapat dibatalkan.</div>
-                <div class="modal-footer">
-                    
-
-                    <?php
-                    echo '<a href="'.base_url('Jenis_Arsip/hapus/'.$baris->id_jenis_arsip).'"><button type="button" class="btn btn-danger">Hapus</button></a>';
-                    echo " ";
-                    echo '<a><button class="btn btn-secondary" type="button" data-dismiss="modal">Batal</button></a>';
-                    ?>
-                
+                            <?php
+                            echo '<a class="btn-hapus"><button type="button" class="btn btn-danger">Hapus</button></a>';
+                            echo " ";
+                            echo '<a><button class="btn btn-secondary" type="button" data-dismiss="modal">Batal</button></a>';
+                            ?>
 
                 </div>
             </div>
         </div>
     </div>
-</div>
-</form>
 
      </div>
  </div>
+ <script src="<?= base_url('assets/js/delete-confirm-jenisarsip.js') ?>"></script>

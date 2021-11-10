@@ -50,19 +50,11 @@ class Jenis_Arsip extends CI_Controller{ //membuat controller Mahasiswa
 		redirect('Jenis_Arsip');
 	}
 
-	public function hapus($id_jenis_arsip) {
-
-		$where = array('id_jenis_arsip' => $id_jenis_arsip);
+	public function hapus_jenisarsip($id) {
+		$where = array('id_jenis_arsip' => $id);
 		$this->Jenis_arsip_model->hapus_data($where, 'jenis_arsip');
 		redirect('Jenis_Arsip');
 	}
-
-	function hapus_barang(){
-		
-        $id_jenis_arsip=$this->input->post('id_jenis_arsip');
-        $this->Jenis_arsip_model->hapus_barang($id_jenis_arsip);
-        redirect('Jenis_Arsip');
-    }
 
 }
 ?>

@@ -107,7 +107,7 @@
                                     <?php
                                     echo '<a href="'.base_url('Jenis_Divisi/edit_jenis_divisi/'.$baris->id).'"><button type="button" class="btn-primary">Edit</button></a>';
                                     echo " ";
-                                    echo '<a href="'.base_url('Jenis_Divisi/hapus_jenis_divisi/'.$baris->id).'" data-toggle="modal" data-target="#deleteModal" ><button type="button" class="btn-danger">Hapus</button></a>';
+                                    echo '<button type="button" class="btn-danger" data-toggle="modal" data-target="#deleteModal" data-id-jenisdivisi="' . $baris->id . '">Hapus</button>';
                                     ?></td>
                             </tr>
                             <?php 
@@ -122,7 +122,7 @@
                 <div class="modal-dialog" role="document">
                 <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Hapus Jenis Arsip</h5>
+                    <h5 class="modal-title" id="exampleModalLabel">Hapus Jenis Divisi</h5>
                     <button class="close" type="button" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">×</span>
                     </button>
@@ -131,10 +131,10 @@
                 <div class="modal-footer">
 
                     <?php
-                    echo '<a href="'.base_url('Jenis_Divisi/hapus_jenis_divisi/'.$baris->id).'"><button type="button" class="btn btn-danger">Hapus</button></a>';
-                    echo " ";
-                    echo '<a><button class="btn btn-secondary" type="button" data-dismiss="modal">Batal</button></a>';
-                    ?>
+                            echo '<a class="btn-hapus"><button type="button" class="btn btn-danger">Hapus</button></a>';
+                            echo " ";
+                            echo '<a><button class="btn btn-secondary" type="button" data-dismiss="modal">Batal</button></a>';
+                            ?>
 
                 </div>
             </div>
@@ -166,3 +166,4 @@
 
 </div>
 <!-- END wrapper -->
+<script src="<?= base_url('assets/js/delete-confirm-jenisdivisi.js') ?>"></script>
