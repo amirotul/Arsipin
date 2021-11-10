@@ -41,7 +41,7 @@
                                 <td><?php echo $baris->nama_role; ?></td>
                                 <td>
                                     <?php
-                                    echo '<a href="'.base_url('Master_User/hapus_master/'.$baris->nama_role).'"data-toggle="modal" data-target="#deleteModal"><button type="button" class="btn-danger">Hapus</button></a>';
+                                    echo '<button type="button" class="btn-danger" data-toggle="modal" data-target="#deleteModal" data-id-masteruser="' . $baris->id_role . '">Hapus</button>';
                                     ?></td>
                             </tr>
                             <?php 
@@ -64,7 +64,7 @@
                             <div class="modal-footer">
 
                             <?php
-                            echo '<a href="'.base_url('Master_User/hapus_master/'.$baris->nama_role).'"><button type="button" class="btn btn-danger">Hapus</button></a>';
+                            echo '<a href="" class="btn-hapus"><button type="button" class="btn btn-danger">Hapus</button></a>';
                             echo " ";
                             echo '<a><button class="btn btn-secondary" type="button" data-dismiss="modal">Batal</button></a>';
                             ?>
@@ -96,5 +96,7 @@
 
 </div>
 <!-- End Right content here -->
+<script src="<?= base_url('assets/js/delete-confirm-masteruser.js') ?>"></script>
+
 
 </div>
