@@ -28,7 +28,7 @@ class Master_User extends CI_Controller{ //membuat controller Mahasiswa
 			//setelah data berhasil tersimpan, halaman web otomatis beralih ke halaman pada function index
 		}
 		public function hapus_master($id) {
-			$where = array('nama_role' => $id);
+			$where = array('id_role' => $id);
 			$this->Master_model->hapus_data($where, 'master_user');
 			redirect('Master_User');
 		}
