@@ -14,7 +14,10 @@ class Jenis_Arsip extends CI_Controller{ //membuat controller Mahasiswa
 	}
 
 	public function tambah() { //function untuk tambah data
-		$this->template->views('Admin2/form-add-jenis-arsip');
+		$this->load->model('Datapengguna_model');
+		$this->load->model('Jenis_arsip_model');
+		$data['role'] = $this->Datapengguna_model->getAll()->result();
+		$this->template->views('Admin2/form-add-jenis-arsip', $data);
 		//untuk mengakses file views 'crud/tambah_Grup' pada halaman template
 	}
 
@@ -53,6 +56,7 @@ class Jenis_Arsip extends CI_Controller{ //membuat controller Mahasiswa
 	public function hapus($id_jenis_arsip) {
 		$where = array('id_jenis_arsip' => $id_jenis_arsip);
 		$this->Jenis_arsip_model->hapus_data($where, 'jenis_arsip');
+		 $this->session->set_flashdata('notif','<div class="alert alert-success" role="alert"> Data Berhasil dihapus <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button></div>');
 		redirect('Jenis_Arsip');
 	}
 }
