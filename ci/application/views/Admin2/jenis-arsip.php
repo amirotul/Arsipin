@@ -44,6 +44,7 @@
                                 <td><?php echo $baris->jenis_arsip; ?></td> 
                                 <td>
                                  <?php
+
                                  echo '<a href="'.base_url('Jenis_Arsip/edit/'.$baris->id_jenis_arsip).'"><button type="button" class="btn-primary">Edit</button></a>';
                                  //echo " ";
                                  //echo '<a href="'.base_url('Jenis_Arsip/hapus/'.$baris->id_jenis_arsip).'"><button type="button" class="btn-danger">Hapus</button></a>';
@@ -54,9 +55,7 @@
                                  echo " ";
                                  echo '<a href="'.base_url('Jenis_Arsip/hapus/'.$baris->id_jenis_arsip).'" data-toggle="modal" data-target="#deleteModal" ><button type="button" class="btn-danger">Hapus</button></a>';
                                  ?>
-                             </td>
-                         </tr>
-                         <?php 
+                                 <?php 
                      }
                      ?>
                  </tbody>
@@ -76,12 +75,14 @@
                 </div>
                 <div class="modal-body">Yakin ingin menghapus? Tindakan ini tidak dapat dibatalkan.</div>
                 <div class="modal-footer">
+                    
 
                     <?php
                     echo '<a href="'.base_url('Jenis_Arsip/hapus/'.$baris->id_jenis_arsip).'"><button type="button" class="btn btn-danger">Hapus</button></a>';
                     echo " ";
                     echo '<a><button class="btn btn-secondary" type="button" data-dismiss="modal">Batal</button></a>';
                     ?>
+                
 
                 </div>
             </div>
