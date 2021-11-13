@@ -58,7 +58,7 @@ $autoload['packages'] = array();
 |
 |	$autoload['libraries'] = array('user_agent' => 'ua');
 */
-$autoload['libraries'] = array('table', 'database', 'session', 'template');
+$autoload['libraries'] = array('database', 'table', 'session', 'template');
 //library table -> untuk mengakses suatu table
 //libary database -> untuk akses data dan pengolahan data
 //library session -> untuk memelihara informasi status mengenai pengguna
@@ -93,7 +93,7 @@ $autoload['drivers'] = array();
 |
 |	$autoload['helper'] = array('url', 'file');
 */
-$autoload['helper'] = array('form', 'url');
+$autoload['helper'] = array('url','file', 'form');
 
 /*
 | -------------------------------------------------------------------
