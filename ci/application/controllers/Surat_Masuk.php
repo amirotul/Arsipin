@@ -81,7 +81,7 @@ class Surat_Masuk extends CI_Controller{ //membuat controller Mahasiswa
 		if ($data['file_sm']='') {
 
 		}else{
-			$config['upload_path']          = './assets/upload_gambar/';
+			$config['upload_path']          = './assets/upload/file/';
 			$config['allowed_types']        = 'gif|jpg|png|pdf';
 			$config['file_name']            = $data['perihal_sm'].'-'.time();
 			$config['overwrite']            = TRUE;
