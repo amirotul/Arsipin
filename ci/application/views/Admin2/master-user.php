@@ -41,7 +41,7 @@
                                 <td><?php echo $baris->nama_role; ?></td>
                                 <td>
                                     <?php
-                                    echo '<a href="'.base_url('Master_User/hapus_master/'.$baris->nama_role).'"><button type="button" class="btn-danger">Hapus</button></a>';
+                                    echo '<button type="button" class="btn-danger" data-toggle="modal" data-target="#deleteModal" data-id-masteruser="' . $baris->id_role . '">Hapus</button>';
                                     ?></td>
                             </tr>
                             <?php 
@@ -51,6 +51,28 @@
                                 </tbody>
                             </table>
                         </div>
+                        <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                            <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Hapus Master User</h5>
+                            <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">×</span>
+                            </button>
+                            </div>
+                            <div class="modal-body">Yakin ingin menghapus? Tindakan ini tidak dapat dibatalkan.</div>
+                            <div class="modal-footer">
+
+                            <?php
+                            echo '<a href="" class="btn-hapus"><button type="button" class="btn btn-danger">Hapus</button></a>';
+                            echo " ";
+                            echo '<a><button class="btn btn-secondary" type="button" data-dismiss="modal">Batal</button></a>';
+                            ?>
+
+                </div>
+            </div>
+        </div>
+    </div>
 
                     </div>
                 </div>
@@ -74,5 +96,7 @@
 
 </div>
 <!-- End Right content here -->
+<script src="<?= base_url('assets/js/delete-confirm-masteruser.js') ?>"></script>
+
 
 </div>

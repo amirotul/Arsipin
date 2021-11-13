@@ -39,6 +39,11 @@ class Jenis_arsip_model extends CI_Model
 		$this->db->delete($table);
 	}
 
+	function hapus_barang($id_jenis_arsip){
+        $hasil=$this->db->query("DELETE FROM jenis_arsip WHERE id_jenis_arsip='$id_jenis_arsip'");
+        return $hasil;
+    }
+
 	function login($user, $pass, $table){
 		$this->db->select('*');
 		$this->db->from('master_user');

@@ -53,11 +53,12 @@ class Jenis_Arsip extends CI_Controller{ //membuat controller Mahasiswa
 		redirect('Jenis_Arsip');
 	}
 
-	public function hapus($id_jenis_arsip) {
-		$where = array('id_jenis_arsip' => $id_jenis_arsip);
+	public function hapus_jenisarsip($id) {
+		$where = array('id_jenis_arsip' => $id);
 		$this->Jenis_arsip_model->hapus_data($where, 'jenis_arsip');
 		 $this->session->set_flashdata('notif','<div class="alert alert-success" role="alert"> Data Berhasil dihapus <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button></div>');
 		redirect('Jenis_Arsip');
 	}
+
 }
 ?>

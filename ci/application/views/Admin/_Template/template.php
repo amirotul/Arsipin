@@ -193,6 +193,8 @@ $getGrup = $this->session->userdata('session_grup');
 
                 </div> <!-- content -->
 
+   
+
     <!-- Bootstrap core JavaScript-->
     
         <script src="<?php echo base_url()?>assets/js/jquery.min.js"></script>
