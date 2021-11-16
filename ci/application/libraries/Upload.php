@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
-class Fileuploader
+class Upload
 {
 
     protected $res; 
@@ -11,12 +11,12 @@ class Fileuploader
         $this->res = &get_instance();
     }
 
-   public function checkAndUploadImage($file, $path)
+    public function checkAndUploadImage($file_sk, $path)
     {
-        $namaFile = $file['name'];
-        $tipeFile = $file['type'];
-        $tmpFile = $file['tmp_name'];
-        $tipeFileValid = ['file/pdf'];
+        $namaFile = $file_sk['name'];
+        $tipeFile = $file_sk['type'];
+        $tmpFile = $file_sk['tmp_name'];
+        $tipeFileValid = ['image/pdf'];
 
         // cek apakah tipe file yg diupload berupa file gambar
         if (!in_array($tipeFile, $tipeFileValid)) return false;
@@ -38,8 +38,8 @@ class Fileuploader
     public function compressImage($source, $path, $quality = 80)
     {
         $imageSize = getimagesize($source);
-        if ($imageSize['mime'] == 'file/pdf') $image = imagecreatefromjpeg($source);
-        else if ($imageSize['mime'] == 'file/pdf') {
+        if ($imageSize['mime'] == 'image/pdf') $image = imagecreatefromjpeg($source);
+        else if ($imageSize['mime'] == 'image/pdf') {
             $image = imagecreatefrompng($source);
             imagepalettetotruecolor($image);
             imagealphablending($image, true);
@@ -48,5 +48,4 @@ class Fileuploader
         imagewebp($image, $path, $quality);
         imagedestroy($image);
     }
-
 }

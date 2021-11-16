@@ -24,6 +24,7 @@ class Surat_Keluar extends CI_Controller{ //membuat controller Mahasiswa
 	// public function input_surat_keluar() { //function input untuk memasukkan proses inputan data ke database
 		
 
+
 	// 	$no_sk = $this->input->post('no_sk');
 	// 	$tgl_sk = $this->input->post('tgl_sk');
 	// 	$tujuan_sk = $this->input->post('tujuan_sk');
@@ -69,6 +70,7 @@ class Surat_Keluar extends CI_Controller{ //membuat controller Mahasiswa
 		}
 
 		$this->Surat_keluar_model->input_data($data,'surat_keluar');
+
 		redirect('Surat_Keluar');
 	}
 

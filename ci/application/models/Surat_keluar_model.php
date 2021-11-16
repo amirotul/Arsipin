@@ -17,12 +17,17 @@ class Surat_keluar_model extends CI_Model
     {
         return $this->db->get('surat_keluar')->num_rows();
     }
+    function input_data($data = array(), $table){
+        // Insert Ke Database dengan Banyak Data Sekaligus
+        $this->db->insert($table,$data);
+    }
 
-	function input_data($data, $table) { //membuat function input_data
-		$this->db->insert($table,$data);
+	//function input_data($data, $table) { //membuat function input_data
+		//$this->db->insert($table,$data);
 		//untuk proses insert data ke database
+
 	}
-	
+
 	function edit_data($where,$table) {
 		return $this->db->get_where($table, $where);
 	}
