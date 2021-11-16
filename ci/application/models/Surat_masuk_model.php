@@ -13,7 +13,13 @@ class Surat_masuk_model extends CI_Model
 		//untuk proses selecy data dari database
 	}
 
+
 	function count_all_sm()
+    {
+        return $this->db->get('surat_masuk')->num_rows();
+    }
+
+    function tampil_jumlah_sm()
     {
         return $this->db->get('surat_masuk')->num_rows();
     }

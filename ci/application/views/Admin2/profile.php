@@ -65,7 +65,7 @@
 
 
                             <div class="col-md d-flex">
-                                <img src="assets/images/foto.jpg" alt="" height="190">
+                                <img src="<?php echo base_url();?>/assets/images/foto.jpg" alt="" height="190">
                             </div>
                         </div>
                     </div>

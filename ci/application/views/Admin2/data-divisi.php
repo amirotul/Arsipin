@@ -87,7 +87,7 @@
                                                 <?php
                                                 echo '<a href="'.base_url('Data_Divisi/edit_data_divisi/'.$baris->id_divisi).'"><button type="button" class="btn-primary">Edit</button></a>';
                                                 echo " ";
-                                                echo '<a href="'.base_url('Data_Divisi/hapus_data_divisi/'.$baris->id_divisi).'" data-toggle="modal" data-target="#deleteModal"><button type="button" class="btn-danger">Hapus</button></a>';
+                                                echo '<button type="button" class="btn-danger" data-toggle="modal" data-target="#deleteModal" data-id-datadivisi="' . $baris->id_divisi . '">Hapus</button>';
                                                 echo " ";
                                                 echo '<a href="'.base_url('Data_Divisi/detail_data_divisi/'.$baris->id_divisi).'"><button type="button" class="btn-warning">Detail</button></a>';
                                                 ?></td>
@@ -102,20 +102,19 @@
                             <div class="modal-dialog" role="document">
                             <div class="modal-content">
                             <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLabel">Hapus Jenis Arsip</h5>
-                            <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">×</span>
-                            </button>
+                                <h5 class="modal-title" id="exampleModalLabel">Hapus Data Divisi</h5>
+                                <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">×</span>
+                                </button>
                             </div>
                             <div class="modal-body">Yakin ingin menghapus? Tindakan ini tidak dapat dibatalkan.</div>
                             <div class="modal-footer">
 
-                            <?php
-                            echo '<a href="'.base_url('Data_Divisi/hapus_data_divisi/'.$baris->id_divisi).'"><button type="button" class="btn btn-danger">Hapus</button></a>';
+                                <?php
+                            echo '<a class="btn-hapus"><button type="button" class="btn btn-danger">Hapus</button></a>';
                             echo " ";
                             echo '<a><button class="btn btn-secondary" type="button" data-dismiss="modal">Batal</button></a>';
                             ?>
-
                 </div>
             </div>
         </div>
@@ -146,3 +145,4 @@
 
     </div>
     <!-- END wrapper -->
+    <script src="<?= base_url('assets/js/delete-confirm-datadivisi.js') ?>"></script>

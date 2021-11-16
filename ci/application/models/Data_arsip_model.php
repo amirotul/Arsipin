@@ -8,6 +8,7 @@ class Data_arsip_model extends CI_Model
 	function getAll(){ //membuat function getAll
 		$this->db->select('*'); //memilih semua
 		$this->db->from('data_arsip');// dari tabel tm_user
+		$this->db->join('jenis_arsip', 'jenis_arsip.id_jenis_arsip = data_arsip.jenis_arsip');
 		$query = $this->db->get();
 		return $query;
 		//untuk proses selecy data dari database
@@ -15,6 +16,12 @@ class Data_arsip_model extends CI_Model
 	function count_all_arsip()
     {
         return $this->db->get('data_arsip')->num_rows();
+    }
+    function lihat_semua_arsip(){
+    	$this->db->select('*');
+    	$this->db->from('data_arsip');
+    	$query = $this->db->get();
+    	return $query;
     }
 	function getByDate($data_from, $date_to){ //membuat function getAll
 		$this->db->select('*'); //memilih semua

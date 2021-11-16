@@ -1,3 +1,9 @@
+
+
+        <?php
+$getUser = $this->session->userdata('session_user');
+$getGrup = $this->session->userdata('session_grup');
+?>
     <form class="user" action="<?php echo base_url('Dashboard/dashboard');?>" method="POST">
 
         <div class="page-content-wrapper">
@@ -96,7 +102,7 @@
                 <div class="col-md-12 col-xl-3">
                     <div class="card mini-stat">
                         <div class="mini-stat-icon text-right">
-                            <i class="mdi mdi-folder-account"></i>
+                            <i class="mdi mdi-email"></i>
                         </div>
                         <div class="p-4">
                             <h6 class="text-uppercase mb-3">Surat Masuk Bulan Ini</h6>
@@ -108,7 +114,7 @@
                 <div class="col-md-12 col-xl-3">
                     <div class="card mini-stat">
                         <div class="mini-stat-icon text-right">
-                            <i class="mdi mdi-folder-account"></i>
+                            <i class="mdi mdi-email-open"></i>
                         </div>
                         <div class="p-4">
                             <h6 class="text-uppercase mb-3">Surat Keluar Bulan Ini</h6>
@@ -120,8 +126,8 @@
             <div class="row">
                 <div class="col-md-12 col-xl-8">
                     <div class="card">
-                        <div class="card-body">   
-                            <h4 class="mt-0 mb-3 header-title">Dokumen</h4>        
+                        <div class="card-body">
+                            <h4 class="mt-0 mb-3 header-title">Dokumen</h4>
                             <div id="morris-area-chart" style="height: 340px;"></div>
                         </div>
                     </div>
