@@ -78,7 +78,7 @@
                                     <?php
                                     echo '<a href="'.base_url('Surat_Keluar/edit_surat_keluar/'.$baris->id_sk).'"><button type="button" class="btn-primary">Edit</button></a>';
                                     echo " ";
-                                    echo '<a href="'.base_url('Surat_Keluar/hapus_surat_keluar/'.$baris->id_sk).'"><button type="button" class="btn-danger">Hapus</button></a>';
+                                    echo '<button type="button" class="btn-danger" data-toggle="modal" data-target="#deleteModal" data-id-suratkeluar="' . $baris->id_sk . '">Hapus</button>';
                                     echo " ";
                                     echo '<a href="'.base_url('Surat_Keluar/detail_surat_keluar/'.$baris->id_sk).'"><button type="button" class="btn-warning">Detail</button></a>';
                                 ?></td>
@@ -90,7 +90,51 @@
                     </tbody>
                 </table>
             </div>
+                            <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Hapus Data Divisi</h5>
+                                <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">×</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">Yakin ingin menghapus? Tindakan ini tidak dapat dibatalkan.</div>
+                            <div class="modal-footer">
+
+                                <?php
+                            echo '<a class="btn-hapus"><button type="button" class="btn btn-danger">Hapus</button></a>';
+                            echo " ";
+                            echo '<a><button class="btn btn-secondary" type="button" data-dismiss="modal">Batal</button></a>';
+                            ?>
+                </div>
+            </div>
         </div>
     </div>
-</div>
-</div>
+
+                        </div>
+                    </div>
+                </div> <!-- end col -->
+            </div> <!-- end row -->
+
+
+        </div><!-- container -->
+
+    </div> <!-- Page content Wrapper -->
+
+    </div><!-- container -->
+
+    </div> <!-- Page content Wrapper -->
+
+    </div> <!-- content -->
+
+    <footer class="footer">
+        © 2018 - 2020 Dashor by Themesdesign.
+    </footer>
+
+    </div>
+    <!-- End Right content here -->
+
+    </div>
+    <!-- END wrapper -->
+    <script src="<?= base_url('assets/js/delete-confirm-suratkeluar.js') ?>"></script>
