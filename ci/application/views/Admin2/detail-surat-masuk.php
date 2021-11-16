@@ -71,7 +71,6 @@
                                                     <input class="form-control" type="date" value="<?= $user['tgl_disetujui_sm'] ?>" id="tgl_disetujui_sm" name="tgl_disetujui_sm" disabled>
                                                 </div>
                                             </div>
-
                                         </div>
                                     </div>
                                 </div>
@@ -92,17 +91,17 @@
                                 <div class="row">
                                     <div class="col-lg-12">
                                         <div class="btn-toolbar mb-3" role="toolbar">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-                                            <iframe src="contoh.pdf" width="500" height="370"></iframe>
+                                            <iframe type="application/pdf" src="<?php echo base_url();?>assets/upload/file_sm/<?= $user['file_sm'] ?>" id="file_sm" name="file_sm" width="500" height="370"></iframe>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="form-group row">
+                                        <div class="form-group row">
 
-                                        <div class="col-sm-5">
+                                            <div class="col-sm-5">
 
-                                        </div>
-                                        <div class="col-sm-5">
+                                            </div>
+                                            <div class="col-sm-5">
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
