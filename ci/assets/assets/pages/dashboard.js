@@ -178,7 +178,7 @@
 
         //creating donut chart
         var $donutData = [
-            {label: "Didisposisi", value: 40},
+            {label: "Didisposisikan", value: 40},
             {label: "Belum Didisposisi", value: 30},
         ];
         

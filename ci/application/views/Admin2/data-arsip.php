@@ -24,6 +24,10 @@
                             </div> -->
                             
                             <div class="row">
+                            <?php
+                            foreach ($role as $item) { //
+                            ?>
+                                                
                                 <!-- Earnings (Monthly) Card Example -->
                                 <div class="col-xl-3 col-md-6 mb-4">
                                     <div class="card border-left-primary shadow h-95 py-2">
@@ -32,80 +36,17 @@
                                             ers align-items-center">
                                                 <div class="col mr-2">
                                                     <div class="text-xs font-weight-bold text-primary text-uppercase mb-1 text-center">
-                                                        <a href="<?php echo base_url('Data_Arsip/data_akte_perusahaan')?>"class="text-primary">Akte Perusahaan</a></div>
-                                                        <div class="h5 mb-0 font-weight-bold text-gray-800 text-center">6</div>
+                                                        <a href="<?php echo base_url('Data_Arsip/data_per_arsip/'. $item->id_jenis_arsip);?>" class="text-primary"><?= $item->jenis_arsip ?></a></div>
+                                                        <div class="h5 mb-0 font-weight-bold text-gray-800 text-center"></div>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
+                                    <?php } ?>
 
                                     
-                                    <div class="col-xl-3 col-md-6 mb-4">
-                                        <div class="card border-left-primary shadow h-95 py-2">
-                                            <div class="card-body">
-                                                <div class="row no-gutters align-items-center">
-                                                    <div class="col mr-2">
-                                                        <div class="text-xs font-weight-bold text-primary text-uppercase mb-1 text-center">
-                                                            <a href="<?php echo base_url('Data_Arsip/data_mou')?>" class="text-primary">MOU</a></div>
-                                                            <div class="h5 mb-0 font-weight-bold text-gray-800 text-center">6</div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-xl-3 col-md-6 mb-4">
-                                            <div class="card border-left-primary shadow h-95 py-2">
-                                                <div class="card-body">
-                                                    <div class="row no-gutters align-items-center">
-                                                        <div class="col mr-2">
-                                                            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1 text-center">
-                                                                <a href="<?php echo base_url('Data_Arsip/data_kontrak_kerja')?>" class="text-primary">Kontrak Kerja</a></div>
-                                                                <div class="h5 mb-0 font-weight-bold text-gray-800 text-center">9</div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-xl-3 col-md-6 mb-4">
-                                                <div class="card border-left-primary shadow h-95 py-2">
-                                                    <div class="card-body">
-                                                        <div class="row no-gutters align-items-center">
-                                                            <div class="col mr-2">
-                                                                <div class="text-xs font-weight-bold text-primary text-uppercase mb-1 text-center">
-                                                                    <a href="<?php echo base_url('Data_Arsip/data_npwp')?>" class="text-primary">NPWP</a></div>
-                                                                    <div class="h5 mb-0 font-weight-bold text-gray-800 text-center">4</div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="col-xl-3 col-md-6 mb-4">
-                                                    <div class="card border-left-primary shadow h-95 py-2">
-                                                        <div class="card-body">
-                                                            <div class="row no-gutters align-items-center">
-                                                                <div class="col mr-2">
-                                                                    <div class="text-xs font-weight-bold text-primary text-uppercase mb-1 text-center">
-                                                                        <a href="<?php echo base_url('Data_Arsip/data_tdp')?>" class="text-primary">TDP</a></div>
-                                                                        <div class="h5 mb-0 font-weight-bold text-gray-800 text-center">3</div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-xl-3 col-md-6 mb-4">
-                                                        <div class="card border-left-primary shadow h-95 py-2">
-                                                            <div class="card-body">
-                                                                <div class="row no-gutters align-items-center">
-                                                                    <div class="col mr-2">
-                                                                        <div class="text-xs font-weight-bold text-primary text-uppercase mb-1 text-center">
-                                                                            <a href="<?php echo base_url('Data_Arsip/data_cv')?>" class="text-primary">CV</a></div>
-                                                                            <div class="h5 mb-0 font-weight-bold text-gray-800 text-center">5</div>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
+                                   
                                                         
                                                         
                                                         <div class="container align-items-center">
@@ -236,7 +177,7 @@
                                                     <tbody>
                                                         <?php
                                             $no = 1; //no default 1
-                                            foreach ($user as $baris) { //
+                                            foreach ($terbaru as $baris) { //
                                                 ?>
                                                 <tr>
                                                     

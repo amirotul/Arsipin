@@ -1,4 +1,5 @@
 
+
         <?php
 $getUser = $this->session->userdata('session_user');
 $getGrup = $this->session->userdata('session_grup');
@@ -125,8 +126,8 @@ $getGrup = $this->session->userdata('session_grup');
             <div class="row">
                 <div class="col-md-12 col-xl-8">
                     <div class="card">
-                        <div class="card-body">   
-                            <h4 class="mt-0 mb-3 header-title">Dokumen</h4>        
+                        <div class="card-body">
+                            <h4 class="mt-0 mb-3 header-title">Dokumen</h4>
                             <div id="morris-area-chart" style="height: 340px;"></div>
                         </div>
                     </div>

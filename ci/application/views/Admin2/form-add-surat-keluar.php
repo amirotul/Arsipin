@@ -45,8 +45,8 @@
                                                 <div class="input-group">
                                                     <div class="input-group-prepend">
                                                         <div class="custom-file">
-                                                <input type="file" class="custom-file-input" id="nama_file" name="nama_file" accept="'image/jpeg', 'image/jpg', 'image/png', 'image/pdf'">
-                                                <label class="custom-file-label" for="nama_file">Pilih file...</label>
+                                                <input type="file" class="custom-file-input" id="file_sk" name="file_sk" accept="image/pdf">
+                                                <label class="custom-file-label" for="file_sk">Pilih file...</label>
                                                     </div>
 
                                                     </div>
