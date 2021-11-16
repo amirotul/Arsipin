@@ -1,5 +1,9 @@
 
 
+        <?php
+$getUser = $this->session->userdata('session_user');
+$getGrup = $this->session->userdata('session_grup');
+?>
     <form class="user" action="<?php echo base_url('Dashboard/dashboard');?>" method="POST">
 
         <div class="page-content-wrapper">

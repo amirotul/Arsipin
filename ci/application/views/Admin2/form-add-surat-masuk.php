@@ -1,4 +1,4 @@
-<form class="user" action="<?php echo base_url('Surat_Masuk/input_data');?>" method="post">
+
     <div class="page-content-wrapper">
 
         <div class="container-fluid">
@@ -10,6 +10,7 @@
                     </div>
                 </div>
             </div>
+            <form class="user" action="<?= base_url('Surat_Masuk/input_data');?>" method="post" enctype="multipart/form-data">
             <div class="row">
                 <div class="col-12">
                     <div class="card m-b-30">
@@ -45,29 +46,22 @@
                                 </div>
                             </div>
                             <div class="form-group row">
-                                <label for="example-date-input" class="col-sm-2 col-form-label">File/jpg</label>
+                                <label for="example-date-input" class="col-sm-2 col-form-label">File</label>
                                 <div class="col-sm-3">
                                     <div class="input-group">
                                         <div class="input-group-prepend">
-                                            <div class="custom-file">
-                                                <input type="file" class="custom-file-input" id="inputGroupFile04">
-                                                <label class="custom-file-label" for="inputGroupFile04">Choose file</label>
-                                            </div> 
-                                            <div class="input-group-append">
-                                                <button class="btn btn-primary" type="button">Upload</button>
-                                            </div>
+                                            <input type="file" class="form-control" name="file_sm" id="file_sm">
                                         </div>
                                     </div>
                                 </div>
                             </div>
-
                             <div class="form-group row">
                                 <div class="col-md-10 offset-md-2">
                                     <div class="input-group mt-2">
                                         <div class="custom">
                                             <div class="input-group-append">
                                             </form></hr>
-                                            <a><input type="submit" class="btn btn-primary btn-sm" name="submit" value="Simpan"></a>
+                                            <a><input type="submit" class="btn btn-primary btn-sm" value="Simpan"></a>
                                         </div>
                                         
                                     </div> &nbsp &nbsp
