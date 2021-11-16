@@ -1,16 +1,14 @@
-
-    <div class="page-content-wrapper">
-
-        <div class="container-fluid">
-            <!-- end page title end breadcrumb -->
-            <div class="row">
-                <div class="col-sm-12">
-                    <div class="page-title-box">
-                        <h4 class="page-title">Tambah Surat Masuk</h4>
-                    </div>
+<div class="page-content-wrapper">
+    <div class="container-fluid">
+        <!-- end page title end breadcrumb -->
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="page-title-box">
+                    <h4 class="page-title">Tambah Surat Masuk</h4>
                 </div>
             </div>
-            <form class="user" action="<?= base_url('Surat_Masuk/input_data');?>" method="post" enctype="multipart/form-data">
+        </div>
+        <form class="user" action="<?= base_url('Surat_Masuk/input_data');?>" method="post" enctype="multipart/form-data">
             <div class="row">
                 <div class="col-12">
                     <div class="card m-b-30">

@@ -25,7 +25,9 @@ class Surat_keluar_model extends CI_Model
 	//function input_data($data, $table) { //membuat function input_data
 		//$this->db->insert($table,$data);
 		//untuk proses insert data ke database
-	//}
+
+	}
+
 	function edit_data($where,$table) {
 		return $this->db->get_where($table, $where);
 	}

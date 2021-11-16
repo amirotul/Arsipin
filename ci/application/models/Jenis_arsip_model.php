@@ -8,7 +8,7 @@ class Jenis_arsip_model extends CI_Model
 	function getAll(){ //membuat function getAll
 		$this->db->select('*'); //memilih semua
 		$this->db->from('jenis_arsip');// dari tabel tm_user
-		$this->db->join('data_pengguna', 'data_pengguna.id_pengguna = jenis_arsip.id_pengguna');
+		// $this->db->join('data_pengguna', 'data_pengguna.id_pengguna = jenis_arsip.id_pengguna');
 		$query = $this->db->get();
 		return $query;
 		//untuk proses selecy data dari database
