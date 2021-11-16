@@ -166,7 +166,7 @@
         
           //creating area chart
           var $areaData = [
-            {y: '2015', a: 0, b: 0, c:0},
+            {y: '2015', a: 10, b: 10, c:10},
             {y: '2016', a: 150, b: 45, c:15},
             {y: '2017', a: 60, b: 150, c:195},
             {y: '2018', a: 180, b: 36, c:21},
@@ -179,7 +179,7 @@
         //creating donut chart
         var $donutData = [
             {label: "Didisposisi", value: 40},
-            {label: "Belum Didisposisi", value: 30},
+            {label: "Belum ", value: 30},
         ];
         
         this.createDonutChart('morris-donut-example', $donutData, [ 'rgba(211, 218, 232,0.8)','rgba(64, 164, 241,0.8)', 'rgba(236, 83, 108,0.8)']);

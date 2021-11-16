@@ -27,14 +27,14 @@ class Surat_Keluar extends CI_Controller{ //membuat controller Mahasiswa
 		$tgl_sk = $this->input->post('tgl_sk');
 		$tujuan_sk = $this->input->post('tujuan_sk');
 		$perihal_sk = $this->input->post('perihal_sk');
-		$file = $this->fileuploader->checkAndUploadImage($_FILES['file'], '../assets/upload/fotodivisi/');
+		$file_sk = $this->fileuploader->checkAndUploadImage($_FILES['file_sk'], $this->img_path);
 
 		$data = array( //array data untuk menampung inputan data
 			'no_sk' => $no_sk,
 			'tgl_sk' => $tgl_sk,
 			'tujuan_sk' => $tujuan_sk,
 			'perihal_sk' => $perihal_sk,
-			'file' => $file
+			'file_sk' => $file_sk
 		);
 		$this->Surat_keluar_model->input_data($data, 'surat_keluar'); 
 		//untuk mengakses file model 'Grup_model' dan data tersimpan pada tabel tm_user

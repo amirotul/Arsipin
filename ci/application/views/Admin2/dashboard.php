@@ -1,4 +1,5 @@
 
+
     <form class="user" action="<?php echo base_url('Dashboard/dashboard');?>" method="POST">
 
         <div class="page-content-wrapper">
@@ -121,8 +122,8 @@
             <div class="row">
                 <div class="col-md-12 col-xl-8">
                     <div class="card">
-                        <div class="card-body">   
-                            <h4 class="mt-0 mb-3 header-title">Dokumen</h4>        
+                        <div class="card-body">
+                            <h4 class="mt-0 mb-3 header-title">Dokumen</h4>
                             <div id="morris-area-chart" style="height: 340px;"></div>
                         </div>
                     </div>

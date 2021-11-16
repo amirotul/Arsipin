@@ -18,6 +18,11 @@ class Surat_masuk_model extends CI_Model
         return $this->db->get('surat_masuk')->num_rows();
     }
 
+    function tampil_jumlah_sm()
+    {
+        return $this->db->get('surat_masuk')->num_rows();
+    }
+
 	function input_data($data, $table) { //membuat function input_data
 		$this->db->insert($table,$data);
 		//untuk proses insert data ke database

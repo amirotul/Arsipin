@@ -2,7 +2,7 @@
 /**
  * 
  */
-class Jenis_arsip_model extends CI_Model
+class Rolejenisarsip_model extends CI_Model
 {
 	
 	function getAll(){ //membuat function getAll

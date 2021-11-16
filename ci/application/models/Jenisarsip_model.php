@@ -2,7 +2,7 @@
 /**
  * 
  */
-class Jenis_arsip_model extends CI_Model
+class Jenisarsip_model extends CI_Model
 {
 	
 	function getAll(){ //membuat function getAll
@@ -42,13 +42,5 @@ class Jenis_arsip_model extends CI_Model
         return $hasil;
     }
 
-	function login($user, $pass, $table){
-		$this->db->select('*');
-		$this->db->from('master_user');
-		$this->db->where('username', $user);
-		$this->db->where('password', $pass);
-		$query = $this->db->get();
-		return $query;
-	}
 }
 ?>
