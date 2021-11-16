@@ -20,27 +20,58 @@ class Surat_Keluar extends CI_Controller{ //membuat controller Mahasiswa
 		$this->template->views('Admin2/form-add-surat-keluar');
 		//untuk mengakses file views 'crud/tambah_mahasiswa' pada halaman template
 	}
-	public function input_surat_keluar() { //function input untuk memasukkan proses inputan data ke database
+
+	// public function input_surat_keluar() { //function input untuk memasukkan proses inputan data ke database
 		
 
-		$no_sk = $this->input->post('no_sk');
-		$tgl_sk = $this->input->post('tgl_sk');
-		$tujuan_sk = $this->input->post('tujuan_sk');
-		$perihal_sk = $this->input->post('perihal_sk');
-		$file = $this->fileuploader->checkAndUploadImage($_FILES['file'], '../assets/upload/fotodivisi/');
+	// 	$no_sk = $this->input->post('no_sk');
+	// 	$tgl_sk = $this->input->post('tgl_sk');
+	// 	$tujuan_sk = $this->input->post('tujuan_sk');
+	// 	$perihal_sk = $this->input->post('perihal_sk');
+	// 	$file = $this->fileuploader->checkAndUploadImage($_FILES['file'], '../assets/upload/fotodivisi/');
 
-		$data = array( //array data untuk menampung inputan data
-			'no_sk' => $no_sk,
-			'tgl_sk' => $tgl_sk,
-			'tujuan_sk' => $tujuan_sk,
-			'perihal_sk' => $perihal_sk,
-			'file' => $file
-		);
-		$this->Surat_keluar_model->input_data($data, 'surat_keluar'); 
-		//untuk mengakses file model 'Grup_model' dan data tersimpan pada tabel tm_user
+	// 	$data = array( //array data untuk menampung inputan data
+	// 		'no_sk' => $no_sk,
+	// 		'tgl_sk' => $tgl_sk,
+	// 		'tujuan_sk' => $tujuan_sk,
+	// 		'perihal_sk' => $perihal_sk,
+	// 		'file' => $file
+	// 	);
+	// 	$this->Surat_keluar_model->input_data($data, 'surat_keluar'); 
+	// 	//untuk mengakses file model 'Grup_model' dan data tersimpan pada tabel tm_user
+	// 	redirect('Surat_Keluar');
+	// 	//setelah data berhasil tersimpan, halaman web otomatis beralih ke halaman pada function index
+	// }
+
+	public function input_surat_keluar()
+	{
+		$data = [
+			'no_sk' => $this->input->post('no_sk'),
+			'tgl_sk' => $this->input->post('tgl_sk'),
+			'tujuan_sk' => $this->input->post('tujuan_sk'),
+			'perihal_sk' => $this->input->post('perihal_sk'),
+			'file_sk' => $_FILES['file_sk']
+		];
+		if ($data['file_sk']='') {
+
+		}else{
+			$config['upload_path']          = './assets/upload/file_sk/';
+			$config['allowed_types']        = 'gif|jpg|png|pdf';
+			$config['file_name']            = $data['perihal_sk'].'-'.time();
+			$config['overwrite']            = TRUE;
+
+			$this->load->library('upload', $config);
+			if(!$this->upload->do_upload('file_sk')){
+				echo "Gagal";
+			}else{
+				$data['file_sk'] = $this->upload->data('file_name');
+			}
+		}
+
+		$this->Surat_keluar_model->input_data($data,'surat_keluar');
 		redirect('Surat_Keluar');
-		//setelah data berhasil tersimpan, halaman web otomatis beralih ke halaman pada function index
 	}
+
 	public function edit_surat_keluar($id_sk) {
 		$where = array('id_sk' => $id_sk);
 		$data['user'] = $this->Surat_keluar_model->edit_data($where, 'surat_keluar')->result();

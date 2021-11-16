@@ -17,13 +17,6 @@ class Surat_Masuk extends CI_Controller{ //membuat controller Mahasiswa
 			//untuk mengakses file views 'crud/home_mahasiswa' pada halaman template
 	}
 
-	// public function tambah_disposisi($id_sm) { //function untuk tambah data
-	// 	$this->load->model('Roledivisi_model');
-	// 	$this->load->model('Divisi_model');
-	// 	$data['user'] = $this->Roledivisi_model->getAll()->result();
-	// 	$this->template->views('Admin2/form-add-disposisi', $data);
-	// }
-
 	public function tambah_data_divisi() { //function untuk tambah data
 		$this->load->model('Roledivisi_model');
 		$this->load->model('Divisi_model');
@@ -47,26 +40,6 @@ class Surat_Masuk extends CI_Controller{ //membuat controller Mahasiswa
 		$this->template->views('Admin2/form-add-surat-masuk');
 		//untuk mengakses file views 'crud/tambah_Grup' pada halaman template
 	}
-	// public function input_data() { //function input untuk memasukkan proses inputan data ke database
-	// 	$no_sm = $this->input->post('no_sm');
-	// 	$tgl_sm = $this->input->post('tgl_sm');
-	// 	$tgl_terima_sm = $this->input->post('tgl_terima_sm');
-	// 	$asal_sm = $this->input->post('asal_sm');
-	// 	$perihal_sm = $this->input->post('perihal_sm');
-
-	// 	$data = array( //array data untuk menampung inputan data
-	// 		'no_sm' => $no_sm,
-	// 		'tgl_sm' => $tgl_sm,
-	// 		'tgl_terima_sm' => $tgl_terima_sm,
-	// 		'asal_sm' => $asal_sm,
-	// 		'perihal_sm' => $perihal_sm,
-	// 		'file_sm' => $_FILES['file_sm']
-	// 	);
-	// 	$this->Surat_masuk_model->input_data($data, 'surat_masuk'); 
-	// 	//untuk mengakses file model 'Grup_model' dan data tersimpan pada tabel tm_user
-	// 	redirect('Surat_Masuk');
-	// 	//setelah data berhasil tersimpan, halaman web otomatis beralih ke halaman pada function index
-	// }
 
 	public function input_data()
 	{
@@ -81,7 +54,7 @@ class Surat_Masuk extends CI_Controller{ //membuat controller Mahasiswa
 		if ($data['file_sm']='') {
 
 		}else{
-			$config['upload_path']          = './assets/upload/file/';
+			$config['upload_path']          = './assets/upload/file_sm/';
 			$config['allowed_types']        = 'gif|jpg|png|pdf';
 			$config['file_name']            = $data['perihal_sm'].'-'.time();
 			$config['overwrite']            = TRUE;
@@ -148,6 +121,7 @@ class Surat_Masuk extends CI_Controller{ //membuat controller Mahasiswa
 	public function hapus($id_sm) {
 		$where = array('id_sm' => $id_sm);
 		$this->Surat_masuk_model->hapus_data($where, 'surat_masuk');
+		$this->session->set_flashdata('notif','<div class="alert alert-success" role="alert"> Data Berhasil dihapus <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button></div>');
 		redirect('Surat_Masuk');
 	}
 
