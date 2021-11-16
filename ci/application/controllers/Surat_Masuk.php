@@ -119,10 +119,9 @@ class Surat_Masuk extends CI_Controller{ //membuat controller Mahasiswa
 		redirect('Surat_Masuk');
 	}
 
-	public function hapus($id_sm) {
+	public function hapus_surat_masuk($id_sm) {
 		$where = array('id_sm' => $id_sm);
 		$this->Surat_masuk_model->hapus_data($where, 'surat_masuk');
-		$this->session->set_flashdata('notif','<div class="alert alert-success" role="alert"> Data Berhasil dihapus <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button></div>');
 		redirect('Surat_Masuk');
 	}
 

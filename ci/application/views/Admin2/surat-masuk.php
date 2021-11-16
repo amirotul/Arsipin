@@ -1,3 +1,4 @@
+
     <div class="page-content-wrapper">
 
         <div class="container-fluid">
@@ -62,8 +63,9 @@
                                                 <th>Asal Surat</th>
                                                 <th>Oleh Divisi</th>
                                                 <th>Oleh Pimpinan</th>
-                                                <th>Disposisi</th>
                                                 <th>Aksi</th>
+                                                <th>Disposisi</th>
+
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -80,11 +82,6 @@
                                 <td><?php echo $baris->asal_sm; ?></td>
                                 <td><?php echo $baris->status_divisi; ?></td>
                                 <td><?php echo $baris->status_pimpinan; ?></td>
-                                <td>
-                                   <?php
-                                   echo '<a href="'.base_url('Surat_Masuk/tambah_disposisi/'.$baris->id_sm).'"><button type="button" class="btn-success">Disposisikan</button></a>';
-                                   ?>
-                               </td>
 
                                <td>
                                                 <?php
@@ -94,6 +91,11 @@
                                                 echo " ";
                                                 echo '<a href="'.base_url('Surat_Masuk/detail/'.$baris->id_sm).'"><button type="button" class="btn-warning">Detail</button></a>';
                                                 ?></td>
+                                    <td>
+                                   <?php
+                                   echo '<a href="'.base_url('Surat_Masuk/tambah_disposisi/'.$baris->id_sm).'"><button type="button" class="btn-success">Disposisikan</button></a>';
+                                   ?>
+                                    </td>
                                             </tr>
                                             <?php
                                                 }?>

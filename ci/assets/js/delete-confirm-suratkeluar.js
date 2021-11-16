@@ -3,6 +3,6 @@ const btnDeleteLink = document.querySelector('a.btn-hapus');
 
 btnModals.forEach(btn => {
     btn.addEventListener('click', function () {
-        btnDeleteLink.setAttribute('href', `http://localhost/Arsipin/ci/Surat_Masuk/hapus_surat_masuk/${btn.getAttribute('data-id-suratmasuk')}`)
+        btnDeleteLink.setAttribute('href', `http://localhost/Arsipin/ci/Surat_Keluar/hapus_surat_keluar/${btn.getAttribute('data-id-suratkeluar')}`)
     });
 });
