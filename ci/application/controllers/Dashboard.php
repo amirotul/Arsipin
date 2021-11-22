@@ -1,5 +1,5 @@
 <?php
- defined ('BASEPATH') OR exit ('No direct script access allowed');
+defined ('BASEPATH') OR exit ('No direct script access allowed');
 class Dashboard extends CI_Controller{ //membuat controller Mahasiswa
 	function __construct(){
 		parent:: __construct();
@@ -15,6 +15,10 @@ class Dashboard extends CI_Controller{ //membuat controller Mahasiswa
 
 	public function index(){ //function untuk menampilkan halaman awal yang ditampilkan
 		$data['user'] = $this->Admin_model->getAll()->result();
+		$data['data_tahun'] = $this->Surat_masuk_model-> tampil_tahun();
+		$data['data_sm_pertahun'] = $this->Surat_masuk_model-> tampil_data_pertahun();
+		$data['data_sk_pertahun'] = $this->Surat_keluar_model-> tampil_data_pertahun();
+		$data['data_dis_pertahun'] = $this->Disposisi_model-> tampil_data_pertahun();
 		$data['total_data_sm'] = $this->Surat_masuk_model-> count_all_sm();
 		$data['total_data_sk'] = $this->Surat_keluar_model-> count_all_sk();
 		$data['total_data_dis'] = $this->Disposisi_model-> count_all_dis();
@@ -23,9 +27,6 @@ class Dashboard extends CI_Controller{ //membuat controller Mahasiswa
 		$data['total_data_pengguna'] = $this->Datapengguna_model-> count_all_pengguna();
 		$data['total_data_perbulan'] = $this->Surat_keluar_model-> tampil_data_perbulan();
 		$data['total_data_sm'] = $this->Surat_masuk_model-> tampil_data_perbulan();
-
-		$data['total_sm'] = $this->Surat_masuk_model-> tampil_jumlah_sm();
-
 		$this->template->views('Admin2/dashboard',$data);
 			//untuk mengakses file views 'crud/home_mahasiswa' pada halaman template
 	}

@@ -15,14 +15,14 @@ class Surat_masuk_model extends CI_Model
 
 
 	function count_all_sm()
-    {
-        return $this->db->get('surat_masuk')->num_rows();
-    }
+	{
+		return $this->db->get('surat_masuk')->num_rows();
+	}
 
-    function tampil_jumlah_sm()
-    {
-        return $this->db->get('surat_masuk')->num_rows();
-    }
+	function tampil_jumlah_sm()
+	{
+		return $this->db->get('surat_masuk')->num_rows();
+	}
 
 	function input_data($data, $table) { //membuat function input_data
 		$this->db->insert($table,$data);
@@ -65,11 +65,36 @@ class Surat_masuk_model extends CI_Model
 		
 	}
 	function tampil_data_perbulan(){
-      	$this->db->select('*'); 
-      	$this->db->from('surat_masuk'); 
-      	$this->db->where('month(tgl_sm)=',date('m')); 
-      	$query = $this->db->get(); 
-      	return $query->num_rows();
-  } 
+		$this->db->select('*'); 
+		$this->db->from('surat_masuk'); 
+		$this->db->where('month(tgl_sm)=',date('m')); 
+		$query = $this->db->get(); 
+		return $query->num_rows();
+	} 
+	function tampil_data_pertahun(){
+		$this->db->select('*'); 
+		$this->db->from('surat_masuk'); 
+		$this->db->where('year(tgl_sm)=',date('Y')); 
+		$query = $this->db->get(); 
+		return $query->num_rows();
+	} 
+
+	// function tampil_tahun(){
+	// 	$this->db->select('*'); 
+	// 	$this->db->from('surat_masuk');
+	// 	$this->db->where('YEAR(tgl_sm)=',date('Y')); 
+	// 	$query = $this->db->get(); 
+	// 	return $query->num_rows();
+	// } 
+
+	function tampil_tahun(){
+		$this->db->select('YEAR("tgl_sm")');
+		$this->db->from("surat_masuk");
+		$this->db->order_by("tgl_sm", "DESC");
+		$this->db->where('id_sm', 1);
+		$this->db->distinct();
+		$this->db->get();
+	} 
+	
 }
 ?>
