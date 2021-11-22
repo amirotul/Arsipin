@@ -89,7 +89,7 @@
             { y: '2025', a: 140,  b: 120},
             { y: '2026', a: 180, b: 200 }
           ];
-        this.createLineChart('morris-line-example', $data, 'y', ['a', 'b'], ['Surat Masuk', 'Surat Keluar'], ['#365d6e', '#ddd']);
+        this.createLineChart('morris-line-example', $data, 'y', ['a', 'b'], ['', 'Surat Keluar'], ['#365d6e', '#ddd']);
 
         //creating area chart
         var $areaData = [

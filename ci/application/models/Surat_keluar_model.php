@@ -13,20 +13,15 @@ class Surat_keluar_model extends CI_Model
 		//untuk proses selecy data dari database
 	}
 
-	function count_all_sk()
+    function count_all_sk()
     {
         return $this->db->get('surat_keluar')->num_rows();
     }
-    function input_data($data = array(), $table){
-        // Insert Ke Database dengan Banyak Data Sekaligus
-        $this->db->insert($table,$data);
-    }
 
-	//function input_data($data, $table) { //membuat function input_data
-		//$this->db->insert($table,$data);
+	function input_data($data, $table) { //membuat function input_data
+		$this->db->insert($table,$data);
 		//untuk proses insert data ke database
-
-	
+	}
 
 	function edit_data($where,$table) {
 		return $this->db->get_where($table, $where);
@@ -58,6 +53,12 @@ class Surat_keluar_model extends CI_Model
       	$query = $this->db->get(); 
       	return $query->num_rows();
   } 
-
+  function tampil_data_pertahun(){
+      	$this->db->select('*'); 
+      	$this->db->from('surat_keluar'); 
+      	$this->db->where('year(tgl_sk)=',date('Y')); 
+      	$query = $this->db->get(); 
+      	return $query->num_rows();
+  }
 }
 ?>

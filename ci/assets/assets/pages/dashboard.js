@@ -174,12 +174,12 @@
             {y: '2020', a: 75, b: 240, c:120},
             {y: '2021', a: 30, b: 30, c:30}
         ];
-        this.createAreaChart('morris-area-chart', 0, 0, $areaData, 'y', ['a', 'b','c'], ['Surat Masuk', 'Surat Keluar', 'Disposisi'], ['#ec536c', '#5b6be8', '#59ceb5']);
+        this.createAreaChart('morris-area-chart', 0, 0, $areaData, 'y', ['a', 'b','c'], ['Surat', 'Surat Keluar', 'Disposisi'], ['#ec536c', '#5b6be8', '#59ceb5']);
 
         //creating donut chart
         var $donutData = [
             {label: "Didisposisikan", value: 40},
-            {label: "Belum Didisposisi", value: 30},
+            {label: "B", value: 30},
         ];
         
         this.createDonutChart('morris-donut-example', $donutData, [ 'rgba(211, 218, 232,0.8)','rgba(64, 164, 241,0.8)', 'rgba(236, 83, 108,0.8)']);
