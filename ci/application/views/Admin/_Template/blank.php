@@ -19,7 +19,7 @@ $getGrup = $this->session->userdata('session_grup');
         <link href="<?php echo base_url();?>assets/plugins/animate/animate.css" rel="stylesheet" type="text/css">
         <link href="<?php echo base_url();?>assets/css/icons.css" rel="stylesheet" type="text/css">
         <link href="<?php echo base_url();?>assets/css/style.css" rel="stylesheet" type="text/css">
-
+<link rel="stylesheet" href="<?php echo base_url();?>assets/highcharts/style.css" type="text/css">
     </head>
 
 
@@ -266,6 +266,13 @@ $getGrup = $this->session->userdata('session_grup');
         <script src="<?php echo base_url()?>assets/pages/dashboard.js"></script>
         <!-- App js -->
         <script src="<?php echo base_url()?>assets/js/app.js"></script>
-        
+        <script src="<?php echo base_url();?>assets/highcharts/highcharts.js"></script>
+<script src="<?php echo base_url();?>assets/highcharts/exporting.js"></script>
+<script src="<?php echo base_url();?>assets/highcharts/export-data.js"></script>
+<script src="<?php echo base_url();?>assets/highcharts/accessibility.js"></script>
+<script src="<?php echo base_url();?>assets/highcharts/js.js"></script>
+<script src="<?php echo base_url();?>assets/highcharts/data.js"></script>
+<script src="<?php echo base_url();?>assets/highcharts/drilldown.js"></script>
+
     </body>
 </html>
