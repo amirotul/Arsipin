@@ -1,4 +1,4 @@
-
+<form class="user" action="" method="POST" enctype="multipart/form-data">
 <div class="page-content-wrapper">
 
     <div class="container-fluid">
@@ -17,57 +17,58 @@
                     <div class="card-body">
                         <div class="row">
                             <div class="col-8">
-                                
+                                <input type="hidden" name="fotolama" value="<?= $user['foto'] ?>">
                                 <div class="form-group row">
                                     <label for="example-text-input" class="col-sm-2 col-form-label">Nama</label>
                                     <div class="col-sm-5">
-                                        <input class="form-control" type="text" value="Hana Larasati" id="example-text-input" disabled="">
+                                        <input class="form-control" type="text" value="<?= $user['nama_pengguna'];?>" id="example-text-input" disabled="">
                                     </div>
                                 </div>
                                 <div class="form-group row">
                                     <label for="example-date-input" class="col-sm-2 col-form-label">Email</label>
                                     <div class="col-sm-5">
-                                        <input class="form-control" type="text" value="hana@gmail.com" id="example-date-input" disabled="">
+                                        <input class="form-control" type="text" value="<?= $user['email_pengguna'];?>" id="example-date-input" disabled="">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="example-date-input" class="col-sm-2 col-form-label">Username</label>
+                                    <div class="col-sm-5">
+                                        <input class="form-control" type="text" value="<?= $user['username'];?>" id="example-date-input" disabled="">
                                     </div>
                                 </div>
                                 <div class="form-group row">
                                     <label for="example-date-input" class="col-sm-2 col-form-label">Password</label>
                                     <div class="col-sm-5">
-                                        <input class="form-control" type="text" value="hana123" id="example-date-input" disabled="">
+                                        <input class="form-control" type="text" value="<?= $user['password'];?>" id="example-date-input" disabled="">
                                     </div>
                                 </div>
-                                <div class="form-group row">
-                                    <label for="example-text-input" class="col-sm-2 col-form-label">Re-password</label>
-                                    <div class="col-sm-5">
-                                        <input class="form-control" type="text" value="hana123" id="example-text-input" disabled="">
-                                    </div>
-                                </div>
-                                <div class="form-group row">
+                                <!--<div class="form-group row">
                                     <label for="example-text-input" class="col-sm-2 col-form-label">Asal Kota</label>
                                     <div class="col-sm-5">
                                         <input class="form-control" type="text" value="Malang" id="example-text-input" disabled="">
                                     </div>
-                                </div>
-                                <div class="col-md-10 offset-md-2">
-                                    <div class="input-group mt-2">
-                                        <div class="custom">
-                                            <div class="input-group-append">
-                                                
-                                                <a href=update-profile.html>
-                                                    <button type="button"
-                                                    class="btn btn-primary">Update</button>
-                                                </a>
+                                </div>-->
+                                <div class="form-group row">
+                                        <div class="col-md-10 offset-md-2">
+                                            <div class="input-group mt-2">
+                                                <div class="custom">
+                                                    <div class="input-group-append">
+                                                        <a href="<?php echo base_url ('Profile/edit_profile')?>"><button type="button" class="btn btn-primary btn-sm">Update</button></a>
+
+                                                    </div>
+
+                                                </div>
                                             </div>
+
                                         </div>
                                     </div>
                                 </div>
-                            </div>
 
-
-                            <div class="col-md d-flex">
-                                <img src="<?php echo base_url();?>/assets/images/foto.jpg" alt="" height="190">
-                            </div>
-                        </div>
+                            <div class="col-auto">
+                                    <figure class="img-fluid">
+                                        <img src="<?php echo base_url('/assets/upload/fotopengguna/') . $user['foto'] ?>" class="preview-foto" alt="" height="150" onerror="this.onerror = null; this.src = '<?= base_url('assets/images/avatar.png') ?>'">
+                                    </figure>
+                                </div>
                     </div>
                 </div>
 
