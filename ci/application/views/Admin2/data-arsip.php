@@ -184,7 +184,7 @@
                                                     <td><?php echo $no++; ?></td>
                                                     <!-- nomor user otomatis bertambah pada saatn menambah data -->
                                                     <td><?php echo $baris->nama_arsip; ?></td>
-                                                    <td><?php echo $baris->jenis_arsip; ?></td>
+                                                    <td><?php echo $baris->id_jenis; ?></td>
                                                     <td><?php echo $baris->tgl_upload; ?></td>
                                                     
                                                 </tr>

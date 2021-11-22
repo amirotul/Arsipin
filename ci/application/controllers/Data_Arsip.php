@@ -34,14 +34,83 @@ class Data_Arsip extends CI_Controller{ //membuat controller Mahasiswa
 		$data['user'] = $this->Data_arsip_model->lihat_semua_arsip()->result();
 		$this->template->views('Admin2/lihat_arsip',$data);
 	}
-	public function data_per_arsip() { //function untuk tambah data
+	public function data_per_arsip($id_jenis) { //function untuk tambah data
 		
-		$data['user'] = $this->Data_arsip_model->lihat_semua_arsip()->result();
+		$data['user'] = $this->Data_arsip_model->lihat_arsip_jenis($id_jenis)->result();
 		$user['user'] = $data;
 		$this->template->views('Admin2/data_perarsip', $data);
 		//untuk mengakses file views 'crud/tambah_Grup' pada halaman template
 	}
+	public function tambah_data_arsip(){
+		$this->load->model('Rolejenisarsip_model');
+		$this->load->model('Jenisarsip_model');
+		$data['role'] = $this->Rolejenisarsip_model->getAll()->result();
 
-	
+		$this->template->views('Admin2/form-add-data-arsipp', $data);
+	}
+	public function input()
+	{
+		$data = [
+			'nama_arsip' => $this->input->post('nama_arsip'),
+			'id_jenis' => $this->input->post('id_jenis'),
+			'tgl_upload' => $this->input->post('tgl_upload'),
+			'file_arsip' => $_FILES['file_arsip']
+		];
+		if ($data['file_arsip']='') {
+
+		}else{
+			$config['upload_path']          = './assets/upload/file_arsip/';
+			$config['allowed_types']        = 'gif|jpg|png|pdf';
+			$config['file_name']            = $data['nama_arsip'].'-'.time();
+			$config['overwrite']            = TRUE;
+
+			$this->load->library('upload', $config);
+			if(!$this->upload->do_upload('file_arsip')){
+				echo "Gagal";
+			}else{
+				$data['file_arsip'] = $this->upload->data('file_name');
+			}
+		}
+
+		$this->Data_arsip_model->input_data($data,'data_arsip');
+
+		redirect('Data_Arsip');
+	}
+	public function edit_data_arsip($id_arsip){
+		$where = array('id_arsip' => $id_arsip);
+		$data['user'] = $this->Data_arsip_model->edit_data($where, 'data_arsip')->result();
+		$this->template->views('Admin2/update-data-arsip', $data);
+	}
+	public function update() {
+		$id_arsip = $this->input->post('id_arsip');
+		$nama_arsip = $this->input->post('nama_arsip');
+		$tgl_upload = $this->input->post('tgl_upload');
+
+		$data = array(
+			'nama_arsip' => $nama_arsip,
+			'tgl_upload' => $tgl_upload,
+			
+		);
+
+		$where = array(
+			'id_arsip' => $id_arsip
+		);
+		$this->Data_arsip_model->update_data($where,$data, 'data_arsip');
+		redirect('Data_Arsip');
+	}
+
+	public function hapus_data_arsip($id_arsip) {
+		$where = array('id_arsip' => $id_arsip);
+		$this->Data_arsip_model->hapus_data($where, 'data_arsip');
+		redirect('Data_Arsip');
+	}
+
+	public function detail_data($id_arsip){
+		$where = array('id_arsip' => $id_arsip);
+		$data['user'] = $this->Data_arsip_model->detail_data($where, 'data_arsip')->result();
+		$this->template->views('Admin2/detail-data-arsip', $data);
+	}
+
+
 }
 ?>

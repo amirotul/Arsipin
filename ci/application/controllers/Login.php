@@ -24,9 +24,17 @@ class Login extends CI_Controller
 			foreach ($cek as $row) {
 				$user = $row->username;
 				$grup = $row->id_role;
+				$foto = $row->foto;
+				$nama_pengguna = $row->nama_pengguna;
+				$email_pengguna = $row->email_pengguna;
+				$password = $row->password;
 			}
 			$this->session->set_userdata('session_user', $user);
 			$this->session->set_userdata('session_grup', $grup);
+			$this->session->set_userdata('session_foto', $foto);
+			$this->session->set_userdata('session_nama_pengguna', $nama_pengguna);
+			$this->session->set_userdata('session_email_pengguna', $email_pengguna);
+			$this->session->set_userdata('session_password', $password);
 			redirect('Dashboard');
 		} else {
 			$this->load->view('Admin2/pages-login');
