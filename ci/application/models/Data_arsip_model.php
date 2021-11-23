@@ -76,5 +76,12 @@ class Data_arsip_model extends CI_Model
 	function detail_data($where,$table) {
 		return $this->db->get_where($table, $where);
 	}
+	function jumlah_data_perarsip()
+    {
+		 $this->db->select('id_jenis, COUNT(id_arsip)');
+		 $this->db->group_by('id_jenis'); 
+		 $this->db->order_by('id_jenis'); 
+		 $this->db->get('data_arsip')->num_rows;
+    }
 }
 ?>

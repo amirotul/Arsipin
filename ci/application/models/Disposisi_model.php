@@ -65,5 +65,12 @@ class Disposisi_model extends CI_Model
 		return $query;
 		
 	}
+	function tampil_data_pertahun(){
+      	$this->db->select('*'); 
+      	$this->db->from('disposisi'); 
+      	$this->db->where('year(batas_waktu_dis)=',date('Y')); 
+      	$query = $this->db->get(); 
+      	return $query->num_rows();
+  }
 }
 ?>

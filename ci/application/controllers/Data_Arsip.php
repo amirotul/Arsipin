@@ -16,6 +16,8 @@ class Data_Arsip extends CI_Controller{ //membuat controller Mahasiswa
 		$config['total_rows'] = $this->Data_arsip_model->count_all_arsip();
 
 		$data ['total_arsip'] = $this->Jenis_arsip_model->count_all_jenis_arsip();
+		$data ['total_perarsip'] = $this->Data_arsip_model->jumlah_data_perarsip();
+
 		$data['terbaru'] = $this->Data_arsip_model->data_terbaru()->result();
 		$data['user'] = $this->Data_arsip_model->getAll()->result();
 		$this->template->views('Admin2/data-arsip',$data);
@@ -120,7 +122,6 @@ class Data_Arsip extends CI_Controller{ //membuat controller Mahasiswa
 		$data['user'] = $this->Data_arsip_model->detail_data($where, 'data_arsip')->result();
 		$this->template->views('Admin2/detail-data-arsip', $data);
 	}
-
 
 }
 ?>
