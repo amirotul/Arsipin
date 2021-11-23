@@ -17,7 +17,11 @@ class Rolejenisarsip_model extends CI_Model
     {
         return $this->db->get('jenis_arsip');
     }
-
+    function count_by_jenis($id_jenis_arsip){
+    	$this->db->where('id_jenis', $id_jenis_arsip);
+    	$this->db->from('data_arsip');
+    	return $this->db->count_all_results();
+    }
 	function input_data($data, $table) { //membuat function input_data
 		$this->db->insert($table,$data);
 		//untuk proses insert data ke database

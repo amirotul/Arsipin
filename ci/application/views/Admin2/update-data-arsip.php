@@ -38,7 +38,7 @@
                                 <input class="form-control" type="date" value="<?php echo $baris->tgl_upload; ?>" id="tgl_upload" name="tgl_upload" >
                             </div>
                         </div>
-                        <div class="form-group row">
+                        <!--<div class="form-group row">
                                 <label for="file_arsip" class="col-sm-2 col-form-label">File</label>
                                 <div class="col-sm-3">
                                     <div class="input-group">
@@ -47,7 +47,7 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+                            </div>-->
 
                             <?php } ?>
                             <div class="form-group row">

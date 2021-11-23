@@ -30,6 +30,7 @@
                                             <input class="form-control" type="text" value="<?= $user['email_pengguna'] ?>" id="example-date-input" name="email_pengguna">
                                         </div>
                                     </div>
+
                                     <div class="form-group row">
                                         <label for="example-date-input" class="col-sm-2 col-form-label">Role</label>
                                         <div class="col-sm-5">
@@ -63,7 +64,7 @@
                                                     </div>
                                                 </div> &nbsp &nbsp
                                                 <div class="input-group-append">
-                                                    <a class="small" href="<?php echo base_url('Data_Pengguna/index') ?>"><button class="btn btn-danger btn-sm" type="button">Batal</button>
+                                                    <a class="small" href="<?php echo base_url('Data_Pengguna') ?>"><button class="btn btn-danger btn-sm" type="button">Batal</button>
                                                     </a>
                                                 </div>
                                             </div>
