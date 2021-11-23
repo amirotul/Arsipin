@@ -22,19 +22,19 @@
                             <div class="form-group row">
                                 <label for="example-date-input" class="col-sm-2 col-form-label">Tanggal Surat</label>
                                 <div class="col-sm-5">
-                                    <input class="form-control" type="date" value="" id="tgl_sk" name="tgl_sk">
+                                    <input class="form-control" type="date" value="" id="tgl_sk" name="tgl_sk" required="">
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <label for="example-text-input" class="col-sm-2 col-form-label">Tujuan Surat</label>
                                 <div class="col-sm-5">
-                                    <input class="form-control" type="text" value="" id="tujuan_sk" name="tujuan_sk">
+                                    <input class="form-control" type="text" value="" id="tujuan_sk" name="tujuan_sk" required="">
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <label for="example-text-input" class="col-sm-2 col-form-label">Perihal</label>
                                 <div class="col-sm-5">
-                                    <input class="form-control" type="text" value="" id="perihal_sk" name="perihal_sk">
+                                    <input class="form-control" type="text" value="" id="perihal_sk" name="perihal_sk" required="">
                                 </div>
                             </div>
                             <div class="form-group row">
@@ -42,7 +42,7 @@
                                 <div class="col-sm-3">
                                     <div class="input-group">
                                         <div class="input-group-prepend">
-                                            <input type="file" class="form-control" name="file_sk" id="file_sk">
+                                            <input type="file" class="form-control" name="file_sk" id="file_sk" required="">
                                         </div>
                                     </div>
                                 </div>
