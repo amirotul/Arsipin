@@ -37,9 +37,19 @@ class Data_Arsip extends CI_Controller{ //membuat controller Mahasiswa
 		$this->template->views('Admin2/lihat_arsip',$data);
 	}
 	public function data_per_arsip($id_jenis) { //function untuk tambah data
-		
-		$data['user'] = $this->Data_arsip_model->lihat_arsip_jenis($id_jenis)->result();
-		$user['user'] = $data;
+		if (isset($_GET['mulai_tanggal']) && isset($_GET['sampai_tanggal'])) {
+			$data = [
+				'date_from'=>$this->input->get('mulai_tanggal'),
+				'date_to'=>$this->input->get('sampai_tanggal'),
+				'id_jenis' => $this->input->get('id_jenis')
+			];
+
+			$data['user'] = $this->Data_arsip_model->getByDateAndJenis($id_jenis, $data['date_from'], $data['date_to'])->result();
+		} else {
+			$data['id_jenis'] = $id_jenis;
+			$data['user'] = $this->Data_arsip_model->lihat_arsip_jenis($id_jenis)->result();
+		}
+		//$user['user'] = $data;
 		$this->template->views('Admin2/data_perarsip', $data);
 		//untuk mengakses file views 'crud/tambah_Grup' pada halaman template
 	}

@@ -29,7 +29,7 @@
                             <br>
                             <br>
                                 <div class="container align-items-center">
-                                                            <form action="<?php echo base_url('Data_Arsip/');?>" method="get">
+                                <form action="<?php echo base_url('Data_Arsip/data_per_arsip/' . $id_jenis); ?>" method="get">
                                                                 <div class="row">
                                                                     <div class="form-group">
                                                                         <label for="inputMulaiTanggal" class="font-weight-bold">Mulai
@@ -44,6 +44,7 @@
                                                                         <input type="date" id="inputSampaiTanggal" name="sampai_tanggal"
                                                                         class="form-control" required>
                                                                     </div>
+                                                                    <input type="hidden" name="id_jenis" value="<?= $id_jenis ?>">
                                                                     <div class="col-sm-1 form-group">
                                                                         <label for="inputSampaiTanggal" class="font-weight-bold">
                                                                             <font color="white">Disetujui</font>
@@ -51,7 +52,7 @@
                                                                         <div class="btn-group">
                                                                             <button type="submit"
                                                                             class="btn btn-primary bt-sm">Cari</button>
-                                                                            <a href="<?php echo base_url('Data_Arsip/data_per_arsip')?>"  class="btn btn-outline-primary ml-2">Reset</a>
+                                                                            <a href="<?php echo base_url('Data_Arsip/data_per_arsip/' . $id_jenis)?>"  class="btn btn-outline-primary ml-2">Reset</a>
                                                                         </div>
                                                                     </div>
                                                                 </div>
