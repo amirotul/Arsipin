@@ -38,7 +38,7 @@
                                                 <div class="col mr-2">
                                                     <div class="text-xs font-weight-bold text-primary text-uppercase mb-1 text-center">
                                                         <a href="<?php echo base_url('Data_Arsip/data_per_arsip/'. $item->id_jenis_arsip);?>" class="text-primary"><?= $item->jenis_arsip ?></a></div>
-                                                        <div class="h5 mb-0 font-weight-bold text-gray-800 text-center"><?php echo $total_perarsip?></div>
+                                                        <div class="h5 mb-0 font-weight-bold text-gray-800 text-center"><?= $item->count?></div>
                                                     </div>
                                                 </div>
                                             </div>
