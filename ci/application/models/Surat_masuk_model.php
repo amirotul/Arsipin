@@ -100,6 +100,7 @@ class Surat_masuk_model extends CI_Model
 		return $query->num_rows();
 	} 
 
+
 	// function tampil_tahun(){
 	// 	$this->db->select('*'); 
 	// 	$this->db->from('surat_masuk');

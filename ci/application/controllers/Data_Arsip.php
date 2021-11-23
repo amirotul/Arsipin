@@ -12,11 +12,14 @@ class Data_Arsip extends CI_Controller{ //membuat controller Mahasiswa
 		$this->load->model('Rolejenisarsip_model');
 		$this->load->model('Jenisarsip_model');
 		$data['role'] = $this->Rolejenisarsip_model->getAll()->result();
+		foreach($data ['role'] as $key => $value){
+			$data['role'][$key]->count = $this->Rolejenisarsip_model->count_by_jenis($value->id_jenis_arsip);
+		}
 
 		$config['total_rows'] = $this->Data_arsip_model->count_all_arsip();
 
 		$data ['total_arsip'] = $this->Jenis_arsip_model->count_all_jenis_arsip();
-		$data ['total_perarsip'] = $this->Data_arsip_model->jumlah_data_perarsip();
+		//$data ['total_perarsip'] = $this->Data_arsip_model->jumlah_data_perarsip();
 
 		$data['terbaru'] = $this->Data_arsip_model->data_terbaru()->result();
 		$data['user'] = $this->Data_arsip_model->getAll()->result();
@@ -30,6 +33,14 @@ class Data_Arsip extends CI_Controller{ //membuat controller Mahasiswa
 		];
 		$data['user'] = $this->Data_arsip_model->getByDate($data['date_from'], $data['date_to'])->result();
 		$this->template->views('Admin2/lihat_arsip',$data);
+	}
+	public function filter_tanggal($id_jenis){ //function untuk menampilkan halaman awal yang ditampilkan
+		$data = [
+			'date_from'=>$this->input->get('mulai_tanggal'),
+			'date_to'=>$this->input->get('sampai_tanggal'),
+		];
+		$data['user'] = $this->Data_arsip_model->getByDateArsip($data['date_from'], $data['date_to'], $id_jenis['id_jenis'])->result();
+		$this->template->views('Admin2/data_perarsip',$data);
 	}
 	public function lihat_semua_arsip(){ //function untuk menampilkan halaman awal yang ditampilkan
 		

@@ -161,14 +161,16 @@ $getGrup = $this->session->userdata('session_grup');
         title: {
             text: 'Jumlah dokumen pertahun'
         },
+
         xAxis: {
             categories: [
-            // '2021',
-            // '2022',
-            // '2023',
-            // '2024',
-            // '2025'
-            <?php echo $data_tahun; ?>
+             '2021',
+             '2022',
+             '2023',
+             '2024',
+             '2025'
+             ],
+            //<?php echo $data_tahun; ?>
             ],
         plotBands: [{ // visualize the weekend
             from: 4.5,
