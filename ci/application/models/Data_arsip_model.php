@@ -39,11 +39,13 @@ class Data_arsip_model extends CI_Model
 		return $query;
 		
 	}
-	function getByDateArsip($data_from, $date_to, $id_jenis){ //membuat function getAll
+
+	function getByDateAndJenis($id_jenis, $date_from, $date_to){ //function buat filter by date and id jenis
 		$this->db->select('*'); //memilih semua
 		$this->db->from('data_arsip');
-		$where = "tgl_upload BETWEEN '".$data_from."'AND'".$date_to."'";
-		$this->db->where('id_jenis', $id_jenis, $where);
+		$where = "id_jenis = '" . $id_jenis . "' AND tgl_upload BETWEEN '".$date_from."'AND'".$date_to."'";
+		$this->db->where($where);
+
 		$query = $this->db->get();
 		return $query;
 		
