@@ -21,13 +21,13 @@
                                     <div class="form-group row">
                                         <label for="example-text-input" class="col-sm-2 col-form-label">Nama</label>
                                         <div class="col-sm-5">
-                                            <input class="form-control" type="text" value="<?= $user['nama_pengguna'] ?>" id="example-text-input" name="nama_pengguna">
+                                            <input class="form-control" type="text" value="<?= $user['nama_pengguna'] ?>" id="example-text-input" name="nama_pengguna" required="">
                                         </div>
                                     </div>
                                     <div class="form-group row">
                                         <label for="example-date-input" class="col-sm-2 col-form-label">Email</label>
                                         <div class="col-sm-5">
-                                            <input class="form-control" type="text" value="<?= $user['email_pengguna'] ?>" id="example-date-input" name="email_pengguna">
+                                            <input class="form-control" type="text" value="<?= $user['email_pengguna'] ?>" id="example-date-input" name="email_pengguna" required="">
                                         </div>
                                     </div>
 
@@ -45,13 +45,13 @@
                                     <div class="form-group row">
                                         <label for="example-text-input" class="col-sm-2 col-form-label">Username</label>
                                         <div class="col-sm-5">
-                                            <input class="form-control" type="text" value="<?= $user['username'] ?>" id="example-text-input" name="username">
+                                            <input class="form-control" type="text" value="<?= $user['username'] ?>" id="example-text-input" name="username" required="">
                                         </div>
                                     </div>
                                     <div class="form-group row">
                                         <label for="example-text-input" class="col-sm-2 col-form-label">Password</label>
                                         <div class="col-sm-5">
-                                            <input class="form-control" type="password" value="<?= $user['password'] ?>" id="example-text-input" name="password">
+                                            <input class="form-control" type="password" value="<?= $user['password'] ?>" id="example-text-input" name="password" required="">
                                         </div>
                                     </div>
                                     <div class="form-group row">

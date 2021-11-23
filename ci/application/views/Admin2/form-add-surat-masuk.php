@@ -22,25 +22,25 @@
                             <div class="form-group row">
                                 <label for="example-date-input" class="col-sm-2 col-form-label">Tanggal Surat</label>
                                 <div class="col-sm-5">
-                                    <input class="form-control" type="date" value="" id="tgl_sm" name="tgl_sm">
+                                    <input class="form-control" type="date" value="" id="tgl_sm" name="tgl_sm" required="">
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <label for="example-date-input" class="col-sm-2 col-form-label">Tanggal Terima</label>
                                 <div class="col-sm-5">
-                                    <input class="form-control" type="date" value="" id="tgl_terima_sm" name="tgl_terima_sm">
+                                    <input class="form-control" type="date" value="" id="tgl_terima_sm" name="tgl_terima_sm" required="">
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <label for="example-text-input" class="col-sm-2 col-form-label">Asal Surat</label>
                                 <div class="col-sm-5">
-                                    <input class="form-control" type="text" value="" id="asal_sm" name="asal_sm">
+                                    <input class="form-control" type="text" value="" id="asal_sm" name="asal_sm" required="">
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <label for="example-text-input" class="col-sm-2 col-form-label">Perihal</label>
                                 <div class="col-sm-5">
-                                    <input class="form-control" type="text" value="" id="perihal_sm" name="perihal_sm">
+                                    <input class="form-control" type="text" value="" id="perihal_sm" name="perihal_sm" required="">
                                 </div>
                             </div>
                             <div class="form-group row">
@@ -48,7 +48,7 @@
                                 <div class="col-sm-3">
                                     <div class="input-group">
                                         <div class="input-group-prepend">
-                                            <input type="file" class="form-control" name="file_sm" id="file_sm">
+                                            <input type="file" class="form-control" name="file_sm" id="file_sm" required="">
                                         </div>
                                     </div>
                                 </div>
