@@ -52,7 +52,7 @@ $getGrup = $this->session->userdata('session_grup');
                                         <i class="ti-bell noti-icon"></i>
                                         <span class="badge badge-success noti-icon-badge"><?=$notif_count?></span>
                                     </a>
-                                    <div class="dropdown-menu dropdown-menu-right dropdown-arrow dropdown-menu-lg">
+                                    <div class="dropdown-menu dropdown-menu-right dropdown-arrow dropdown-menu-lg overflow-scroll" style="height: 50vh; overflow-y: auto;">
                                         <?php foreach($notif as $data): ?>
                                             <a class="dropdown-item text-wrap" href="">
                                                 <strong><?=$data['judul']?></strong><br>
