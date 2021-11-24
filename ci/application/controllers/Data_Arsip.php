@@ -68,10 +68,11 @@ class Data_Arsip extends CI_Controller{ //membuat controller Mahasiswa
 		$this->load->model('Rolejenisarsip_model');
 		$this->load->model('Jenisarsip_model');
 		$data['role'] = $this->Rolejenisarsip_model->getAll()->result();
+		$data['id_jenis'] = $this->input->get('id_jenis');
 
 		$this->template->views('Admin2/form-add-data-arsipp', $data);
 	}
-	public function input()
+	public function input($id_jenis)
 	{
 		$data = [
 			'nama_arsip' => $this->input->post('nama_arsip'),
@@ -97,14 +98,15 @@ class Data_Arsip extends CI_Controller{ //membuat controller Mahasiswa
 
 		$this->Data_arsip_model->input_data($data,'data_arsip');
 
-		redirect('Data_Arsip');
+		redirect('Data_Arsip/data_per_arsip/' . $id_jenis);
 	}
 	public function edit_data_arsip($id_arsip){
 		$where = array('id_arsip' => $id_arsip);
 		$data['user'] = $this->Data_arsip_model->edit_data($where, 'data_arsip')->result();
+		$data['id_jenis'] = $this->input->get('id_jenis');
 		$this->template->views('Admin2/update-data-arsip', $data);
 	}
-	public function update() {
+	public function update($id_jenis) {
 		$id_arsip = $this->input->post('id_arsip');
 		$nama_arsip = $this->input->post('nama_arsip');
 		$tgl_upload = $this->input->post('tgl_upload');
@@ -119,18 +121,19 @@ class Data_Arsip extends CI_Controller{ //membuat controller Mahasiswa
 			'id_arsip' => $id_arsip
 		);
 		$this->Data_arsip_model->update_data($where,$data, 'data_arsip');
-		redirect('Data_Arsip');
+		redirect('Data_Arsip/data_per_arsip/' . $id_jenis);
 	}
 
 	public function hapus_data_arsip($id_arsip) {
 		$where = array('id_arsip' => $id_arsip);
 		$this->Data_arsip_model->hapus_data($where, 'data_arsip');
-		redirect('Data_Arsip');
+		redirect('Data_Arsip/data_per_arsip/'. $this->input->get('id_jenis'));
 	}
 
 	public function detail_data($id_arsip){
 		$where = array('id_arsip' => $id_arsip);
 		$data['user'] = $this->Data_arsip_model->detail_data($where, 'data_arsip')->result();
+		$data['id_jenis'] = $this->input->get('id_jenis');
 		$this->template->views('Admin2/detail-data-arsip', $data);
 	}
 

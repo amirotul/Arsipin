@@ -1,4 +1,4 @@
-<form class="user" action="<?php echo base_url('Data_Arsip/update');?>" method="post" enctype="multipart/form-data">
+<form class="user" action="<?php echo base_url('Data_Arsip/update/' . $id_jenis);?>" method="post" enctype="multipart/form-data">
 <div class="page-content-wrapper">
 
     <div class="container-fluid">
