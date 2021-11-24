@@ -168,6 +168,8 @@ $getGrup = $this->session->userdata('session_grup');
             // '2023',
             // '2024',
             // '2025'
+            <?php echo $data_tahun; ?>,
+            <?php echo $data_tahun; ?>,
             <?php echo $data_tahun; ?>
             ],
         plotBands: [{ // visualize the weekend
