@@ -21,31 +21,31 @@
                             <label for="example-number-input" class="col-sm-2 col-form-label">No. Surat</label>
                             <div class="col-sm-5">
                                 <input type="hidden" name="id_sm" value="<?php echo $baris->id_sm; ?>">
-                                <input class="form-control" type="int" value="<?php echo $baris->no_sm; ?>" id="no_sm" name="no_sm">
+                                <input class="form-control" type="int" value="<?php echo $baris->no_sm; ?>" id="no_sm" name="no_sm" required="">
                             </div>
                         </div>
                         <div class="form-group row">
                             <label for="example-date-input" class="col-sm-2 col-form-label">Tanggal Surat</label>
                             <div class="col-sm-5">
-                                <input class="form-control" type="date" value="<?php echo $baris->tgl_sm; ?>" id="tgl_sm" name="tgl_sm">
+                                <input class="form-control" type="date" value="<?php echo $baris->tgl_sm; ?>" id="tgl_sm" name="tgl_sm" required="">
                            </div>
                        </div>
                        <div class="form-group row">
                         <label for="example-date-input" class="col-sm-2 col-form-label">Tanggal Terima</label>
                         <div class="col-sm-5">
-                            <input class="form-control" type="date" value="<?php echo $baris->tgl_terima_sm; ?>" id="tgl_terima_sm" name="tgl_terima_sm">
+                            <input class="form-control" type="date" value="<?php echo $baris->tgl_terima_sm; ?>" id="tgl_terima_sm" name="tgl_terima_sm" required="">
                         </div>
                     </div>
                     <div class="form-group row">
                         <label for="example-text-input" class="col-sm-2 col-form-label">Asal Surat</label>
                         <div class="col-sm-5">
-                            <input class="form-control" type="text" value="<?php echo $baris->asal_sm; ?>" id="asal_sm" name="asal_sm">
+                            <input class="form-control" type="text" value="<?php echo $baris->asal_sm; ?>" id="asal_sm" name="asal_sm" required="">
                         </div>
                     </div>
                     <div class="form-group row">
                         <label for="example-text-input" class="col-sm-2 col-form-label">Perihal</label>
                         <div class="col-sm-5">
-                            <input class="form-control" type="text" value="<?php echo $baris->perihal_sm; ?>" id="perihal_sm" name="perihal_sm">
+                            <input class="form-control" type="text" value="<?php echo $baris->perihal_sm; ?>" id="perihal_sm" name="perihal_sm" required="">
                         </div>
                     </div>
                     <div class="form-group row">
@@ -54,7 +54,7 @@
                             <div class="input-group">
                                 <div class="input-group-prepend">
                                     <div class="custom-file">
-                                        <input type="file" class="custom-file-input" id="inputGroupFile04">
+                                        <input type="file" class="custom-file-input" id="inputGroupFile04" >
                                         <label class="custom-file-label" for="inputGroupFile04">PKL.pdf</label>
                                     </div> 
                                     <div class="input-group-append">

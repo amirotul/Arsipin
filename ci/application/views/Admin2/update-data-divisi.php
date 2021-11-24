@@ -36,28 +36,28 @@
                                                 <label for="example-date-input" class="col-sm-2 col-form-label">Nama</label>
                                                 <div class="col-sm-5">
                                                     
-                                                    <input class="form-control" type="text" value="<?= $user['nama_divisi'] ?>" id="nama_divisi" name="nama_divisi">
+                                                    <input class="form-control" type="text" value="<?= $user['nama_divisi'] ?>" id="nama_divisi" name="nama_divisi" required="">
                                                 </div>
                                             </div>
 
                                             <div class="form-group row">
                                                 <label for="example-date-input" class="col-sm-2 col-form-label">Email</label>
                                                 <div class="col-sm-5">
-                                                    <input class="form-control" type="text" value="<?= $user['email_divisi'] ?>" id="email_divisi" name="email_divisi">
+                                                    <input class="form-control" type="text" value="<?= $user['email_divisi'] ?>" id="email_divisi" name="email_divisi" required="">
                                                 </div>
                                             </div>
 
                                             <div class="form-group row">
                                                 <label for="example-date-input" class="col-sm-2 col-form-label">Username</label>
                                                 <div class="col-sm-5">
-                                                    <input class="form-control" type="text" value="<?= $user['username'] ?>" id="username" name="username">
+                                                    <input class="form-control" type="text" value="<?= $user['username'] ?>" id="username" name="username" required="">
                                                 </div>
                                             </div>
 
                                             <div class="form-group row">
                                                 <label for="example-date-input" class="col-sm-2 col-form-label">Password</label>
                                                 <div class="col-sm-5">
-                                                    <input class="form-control" type="text" value="<?= $user['password'] ?>" id="password" name="password">
+                                                    <input class="form-control" type="text" value="<?= $user['password'] ?>" id="password" name="password" required="">
                                                 </div>
                                             </div>
 
@@ -71,7 +71,7 @@
                                                     </div>
                                                 </div> &nbsp &nbsp
                                                 <div class="input-group-append">
-                                                    <a class="small" href="<?php echo base_url('Data_Divisi/index') ?>"><button class="btn btn-danger btn-sm" type="button">Batal</button>
+                                                    <a class="small" href="<?php echo base_url('Data_Divisi') ?>"><button class="btn btn-danger btn-sm" type="button">Batal</button>
                                                     </a>
                                                 </div>
                                             </div>

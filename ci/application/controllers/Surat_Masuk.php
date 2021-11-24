@@ -52,6 +52,15 @@ class Surat_Masuk extends CI_Controller{ //membuat controller Mahasiswa
 			'perihal_sm' => $this->input->post('perihal_sm'),
 			'file_sm' => $_FILES['file_sm']
 		];
+
+		$notif = [
+			'judul' => 'Surat masuk',
+			'pengirim' => $data['asal_sm'],
+			'tgl_notif' => $data['tgl_sm'],
+			'is_read' => 0,
+			'id_sm' => ''
+		];
+
 		if ($data['file_sm']='') {
 
 		}else{
@@ -69,6 +78,9 @@ class Surat_Masuk extends CI_Controller{ //membuat controller Mahasiswa
 		}
 
 		$this->Surat_masuk_model->input_data($data,'surat_masuk');
+		$last_surat_id = $this->Surat_masuk_model->getLastId()->row_array();
+		$notif['id_sm'] = $last_surat_id['id_sm'];
+		$this->Surat_masuk_model->notif('tbl_notif', $notif);
 		redirect('Surat_Masuk');
 	}
 
@@ -122,6 +134,7 @@ class Surat_Masuk extends CI_Controller{ //membuat controller Mahasiswa
 	public function hapus_surat_masuk($id_sm) {
 		$where = array('id_sm' => $id_sm);
 		$this->Surat_masuk_model->hapus_data($where, 'surat_masuk');
+		$this->Surat_masuk_model->hapus_data($where, 'tbl_notif');
 		redirect('Surat_Masuk');
 	}
 

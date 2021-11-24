@@ -1,4 +1,4 @@
-<form class="user" action="<?php echo base_url('Data_Arsip/update');?>" method="post" enctype="multipart/form-data">
+<form class="user" action="<?php echo base_url('Data_Arsip/update/' . $id_jenis);?>" method="post" enctype="multipart/form-data">
 <div class="page-content-wrapper">
 
     <div class="container-fluid">
@@ -21,7 +21,7 @@
                             <input type="hidden" name="id_arsip" value="<?php echo $baris->id_arsip; ?>">
                             <label for="nama_arsip" class="col-sm-2 col-form-label">Nama Arsip</label>
                             <div class="col-sm-5">
-                                <input class="form-control" type="text" value="<?php echo $baris->nama_arsip; ?>" id="nama_arsip" name="nama_arsip">
+                                <input class="form-control" type="text" value="<?php echo $baris->nama_arsip; ?>" id="nama_arsip" name="nama_arsip" required="">
                             </div>
                         </div>
 
@@ -35,10 +35,10 @@
                         <div class="form-group row">
                             <label for="example-date-input" class="col-sm-2 col-form-label">Tanggal Upload</label>
                             <div class="col-sm-5">
-                                <input class="form-control" type="date" value="<?php echo $baris->tgl_upload; ?>" id="tgl_upload" name="tgl_upload" >
+                                <input class="form-control" type="date" value="<?php echo $baris->tgl_upload; ?>" id="tgl_upload" name="tgl_upload" required="">
                             </div>
                         </div>
-                        <div class="form-group row">
+                        <!--<div class="form-group row">
                                 <label for="file_arsip" class="col-sm-2 col-form-label">File</label>
                                 <div class="col-sm-3">
                                     <div class="input-group">
@@ -47,7 +47,7 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+                            </div>-->
 
                             <?php } ?>
                             <div class="form-group row">
@@ -62,7 +62,7 @@
                                     </div> &nbsp &nbsp
                                     <div class="input-group-append">
 
-                                        <a href=<?php echo base_url('Data_Arsip')?>>
+                                        <a href=<?php echo base_url('Data_Arsip/data_per_arsip/' . $id_jenis)?>>
                                             <button class="btn btn-danger btn-sm" type="button">Batal</button></a>
                                         </div>
                                     </div>

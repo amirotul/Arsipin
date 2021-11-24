@@ -34,7 +34,7 @@
                             <div class="form-group row">
                                 <label for="example-date-input" class="col-sm-2 col-form-label">Batas Waktu</label>
                                 <div class="col-sm-5">
-                                    <input class="form-control" type="date" value="" id="batas_waktu_dis" name="batas_waktu_dis">
+                                    <input class="form-control" type="date" value="" id="batas_waktu_dis" name="batas_waktu_dis" required="">
                                 </form>
                                 </div>
                                 </div>
@@ -60,17 +60,23 @@
                             <div class="form-group row">
                                 <label for="example-text-input" class="col-sm-2 col-form-label">Isi</label>
                                 <div class="col-sm-5">
-                                    <input class="form-control" type="text" value="" id="isi_dis" name="isi_dis">
+                                    <input class="form-control" type="text" value="" id="isi_dis" name="isi_dis" required="">
                                 </form>
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <label for="example-text-input" class="col-sm-2 col-form-label">Catatan</label>
                                 <div class="col-sm-5">
-                                   <input class="form-control" type="text" value="" id="catatan_dis" name="catatan_dis">
+                                   <input class="form-control" type="text" value="" id="catatan_dis" name="catatan_dis" required="">
                                </form>
                                </div>
                            </div>
+                           <div class="form-group row">
+                                    <label for="example-text-input" class="col-sm-2 col-form-label">File</label>
+                                    <div class="col-sm-5">
+                                        <input class="form-control" type="text" value="<?php echo $baris->file_sm; ?>" id="file_dis" name="file_dis">
+                                    </div>
+                                </div>
                            <div class="form-group row">
                             <div class="col-sm-3">
                                 <div class="input-group">

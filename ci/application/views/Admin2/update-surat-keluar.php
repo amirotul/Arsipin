@@ -21,26 +21,26 @@
                             <input type="hidden" name="id_sk" value="<?php echo $baris->id_sk; ?>">
                             <label for="example-number-input" class="col-sm-2 col-form-label">No. Surat</label>
                             <div class="col-sm-5">
-                                <input class="form-control" type="text" value="<?php echo $baris->no_sk; ?>" id="no_sk" name="no_sk">
+                                <input class="form-control" type="text" value="<?php echo $baris->no_sk; ?>" id="no_sk" name="no_sk" required="">
                             </div>
                         </div>
 
                         <div class="form-group row">
                             <label for="example-date-input" class="col-sm-2 col-form-label">Tanggal Surat</label>
                             <div class="col-sm-5">
-                                <input class="form-control" type="date" value="<?php echo $baris->tgl_sk; ?>" id="tgl_sk" name="tgl_sk">
+                                <input class="form-control" type="date" value="<?php echo $baris->tgl_sk; ?>" id="tgl_sk" name="tgl_sk" required="">
                             </div>
                         </div>
                         <div class="form-group row">
                             <label for="example-text-input" class="col-sm-2 col-form-label">Tujuan Surat</label>
                             <div class="col-sm-5">
-                            <input class="form-control" type="text" value="<?php echo $baris->tujuan_sk; ?>" id="tujuan_sk" name="tujuan_sk">
+                            <input class="form-control" type="text" value="<?php echo $baris->tujuan_sk; ?>" id="tujuan_sk" name="tujuan_sk" required="">
                             </div>
                         </div>
                         <div class="form-group row">
                             <label for="example-text-input" class="col-sm-2 col-form-label">Perihal</label>
                             <div class="col-sm-5">
-                                <input class="form-control" type="text" value="<?php echo $baris->perihal_sk; ?>" id="perihal_sk" name="perihal_sk">
+                                <input class="form-control" type="text" value="<?php echo $baris->perihal_sk; ?>" id="perihal_sk" name="perihal_sk" required="">
                             </div>
                         </div>
                         

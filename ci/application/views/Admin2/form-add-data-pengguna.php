@@ -19,13 +19,13 @@
                                     <div class="form-group row">
                                         <label for="example-text-input" class="col-sm-2 col-form-label">Nama</label>
                                         <div class="col-sm-5">
-                                            <input class="form-control" type="text" value="" id="example-text-input" name="nama">
+                                            <input class="form-control" type="text" value="" id="example-text-input" name="nama" required="">
                                         </div>
                                     </div>
                                     <div class="form-group row">
                                         <label for="example-date-input" class="col-sm-2 col-form-label">Email</label>
                                         <div class="col-sm-5">
-                                            <input class="form-control" type="text" value="" id="example-date-input" name="email">
+                                            <input class="form-control" type="text" value="" id="example-date-input" name="email" required="">
                                         </div>
                                     </div>
                                     <div class="form-group row">
@@ -43,13 +43,13 @@
                                     <div class="form-group row">
                                         <label for="example-text-input" class="col-sm-2 col-form-label">Username</label>
                                         <div class="col-sm-5">
-                                            <input class="form-control" type="text" value="" id="example-text-input" name="username">
+                                            <input class="form-control" type="text" value="" id="example-text-input" name="username" required="">
                                         </div>
                                     </div>
                                     <div class="form-group row">
                                         <label for="example-text-input" class="col-sm-2 col-form-label">Password</label>
                                         <div class="col-sm-5">
-                                            <input class="form-control" type="password" value="" id="example-text-input" name="password">
+                                            <input class="form-control" type="password" value="" id="example-text-input" name="password" required="">
                                         </div>
                                     </div>
                                     <div class="form-group row">

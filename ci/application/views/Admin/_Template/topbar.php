@@ -9,32 +9,32 @@ $getGrup = $this->session->userdata('session_grup');
                                 <li class="list-inline-item dropdown notification-list">
                                     <a class="nav-link dropdown-toggle arrow-none waves-effect waves-light" data-toggle="dropdown" href="#" role="button"
                                        aria-haspopup="false" aria-expanded="false">
-                                        <i class="ti-email noti-icon"></i>
-                                        <span class="badge badge-danger noti-icon-badge">5</span>
+                                        <!--<i class="ti-email noti-icon"></i>
+                                        <span class="badge badge-danger noti-icon-badge">5</span>-->
                                     </a>
                                     <div class="dropdown-menu dropdown-menu-right dropdown-arrow dropdown-menu-lg">
                                         <!-- item-->
-                                        <div class="dropdown-item noti-title">
+                                        <!--<div class="dropdown-item noti-title">
                                             <h5><span class="badge badge-danger float-right">5</span>Messages</h5>
-                                        </div>
+                                        </div>-->
 
                                         <!-- item-->
-                                        <a href="javascript:void(0);" class="dropdown-item notify-item">
+                                        <!--<a href="javascript:void(0);" class="dropdown-item notify-item">
                                             <div class="notify-icon"><img src="<?php echo base_url();?>assets/images/users/avatar-2.jpg" alt="user-img" class="img-fluid rounded-circle" /> </div>
                                             <p class="notify-details"><b>Charles M. Jones</b><small class="">Dummy text of the printing and typesetting industry.</small></p>
-                                        </a>
+                                        </a>-->
 
                                         <!-- item-->
-                                        <a href="javascript:void(0);" class="dropdown-item notify-item">
+                                        <!--<a href="javascript:void(0);" class="dropdown-item notify-item">
                                             <div class="notify-icon"><img src="<?php echo base_url();?>assets/images/users/avatar-3.jpg" alt="user-img" class="img-fluid rounded-circle" /> </div>
                                             <p class="notify-details"><b>Thomas J. Mimms</b><small class="">You have 87 unread messages</small></p>
-                                        </a>
+                                        </a>-->
 
                                         <!-- item-->
-                                        <a href="javascript:void(0);" class="dropdown-item notify-item">
+                                        <!--<a href="javascript:void(0);" class="dropdown-item notify-item">
                                             <div class="notify-icon"><img src="<?php echo base_url();?>assets/images/users/avatar-4.jpg" alt="user-img" class="img-fluid rounded-circle" /> </div>
                                             <p class="notify-details"><b>Luis M. Konrad</b><small class="">It is a long established fact that a reader will</small></p>
-                                        </a>
+                                        </a>-->
                                         <div class="dropdown-divider"></div>
                                         <!-- All-->
                                         <a href="javascript:void(0);" class="dropdown-item notify-item">
@@ -42,36 +42,44 @@ $getGrup = $this->session->userdata('session_grup');
                                         </a>
                                     </div>
                                 </li>
-
+                                <?php 
+                                $notif = $this->db->get_where('tbl_notif',['is_read'=> 0])->result_array();
+                                $notif_count = count($notif);
+                                ?>
                                 <li class="list-inline-item dropdown notification-list">
                                     <a class="nav-link dropdown-toggle arrow-none waves-effect waves-light" data-toggle="dropdown" href="#" role="button"
                                        aria-haspopup="false" aria-expanded="false">
                                         <i class="ti-bell noti-icon"></i>
-                                        <span class="badge badge-success noti-icon-badge">9</span>
+                                        <span class="badge badge-success noti-icon-badge"><?=$notif_count?></span>
                                     </a>
-                                    <div class="dropdown-menu dropdown-menu-right dropdown-arrow dropdown-menu-lg">
-                                        <!-- item-->
-                                        <div class="dropdown-item noti-title">
+                                    <div class="dropdown-menu dropdown-menu-right dropdown-arrow dropdown-menu-lg overflow-scroll" style="height: 50vh; overflow-y: auto;">
+                                        <?php foreach($notif as $data): ?>
+                                            <a class="dropdown-item text-wrap" href="">
+                                                <strong><?=$data['judul']?></strong><br>
+                                                <?= $data['pengirim']. ' <br>pada ' . date_format(date_create($data['tgl_notif']), 'd M Y')?>
+                                            </a>
+                                            <?php endforeach; ?>
+                                        <!-- <div class="dropdown-item noti-title">
                                             <h5><span class="badge badge-success float-right">9</span>Notification</h5>
-                                        </div>
+                                        </div> -->
 
                                         <!-- item-->
-                                        <a href="javascript:void(0);" class="dropdown-item notify-item">
+                                        <!-- <a href="javascript:void(0);" class="dropdown-item notify-item">
                                             <div class="notify-icon bg-primary"><i class="mdi mdi-cart-outline"></i></div>
                                             <p class="notify-details"><b>Your order is placed</b><small class="">Dummy text of the printing and typesetting industry.</small></p>
-                                        </a>
+                                        </a> -->
 
                                         <!-- item-->
-                                        <a href="javascript:void(0);" class="dropdown-item notify-item">
+                                        <!-- <a href="javascript:void(0);" class="dropdown-item notify-item">
                                             <div class="notify-icon bg-success"><i class="mdi mdi-message"></i></div>
                                             <p class="notify-details"><b>New Message received</b><small class="">You have 87 unread messages</small></p>
-                                        </a>
+                                        </a> -->
 
                                         <!-- item-->
-                                        <a href="javascript:void(0);" class="dropdown-item notify-item">
+                                        <!-- <a href="javascript:void(0);" class="dropdown-item notify-item">
                                             <div class="notify-icon bg-warning"><i class="mdi mdi-martini"></i></div>
                                             <p class="notify-details"><b>Your item is shipped</b><small class="">It is a long established fact that a reader will</small></p>
-                                        </a>
+                                        </a> -->
                                         <div class="dropdown-divider"></div>
                                         <!-- All-->
                                         <a href="javascript:void(0);" class="dropdown-item notify-item">

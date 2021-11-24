@@ -12,10 +12,16 @@ class Data_Arsip extends CI_Controller{ //membuat controller Mahasiswa
 		$this->load->model('Rolejenisarsip_model');
 		$this->load->model('Jenisarsip_model');
 		$data['role'] = $this->Rolejenisarsip_model->getAll()->result();
+		$data['id_jenis'] = $this->input->get('id_jenis');
+		foreach($data ['role'] as $key => $value){
+			$data['role'][$key]->count = $this->Rolejenisarsip_model->count_by_jenis($value->id_jenis_arsip);
+		}
 
 		$config['total_rows'] = $this->Data_arsip_model->count_all_arsip();
 
 		$data ['total_arsip'] = $this->Jenis_arsip_model->count_all_jenis_arsip();
+		//$data ['total_perarsip'] = $this->Data_arsip_model->jumlah_data_perarsip();
+
 		$data['terbaru'] = $this->Data_arsip_model->data_terbaru()->result();
 		$data['user'] = $this->Data_arsip_model->getAll()->result();
 		$this->template->views('Admin2/data-arsip',$data);
@@ -29,15 +35,38 @@ class Data_Arsip extends CI_Controller{ //membuat controller Mahasiswa
 		$data['user'] = $this->Data_arsip_model->getByDate($data['date_from'], $data['date_to'])->result();
 		$this->template->views('Admin2/lihat_arsip',$data);
 	}
+	public function filter_tanggal($id_jenis){ //function untuk menampilkan halaman awal yang ditampilkan
+		$data = [
+			'date_from'=>$this->input->get('mulai_tanggal'),
+			'date_to'=>$this->input->get('sampai_tanggal'),
+		];
+		$data['user'] = $this->Data_arsip_model->getByDateArsip($data['date_from'], $data['date_to'], $id_jenis['id_jenis'])->result();
+		$this->template->views('Admin2/data_perarsip',$data);
+	}
 	public function lihat_semua_arsip(){ //function untuk menampilkan halaman awal yang ditampilkan
 		
 		$data['user'] = $this->Data_arsip_model->lihat_semua_arsip()->result();
 		$this->template->views('Admin2/lihat_arsip',$data);
 	}
 	public function data_per_arsip($id_jenis) { //function untuk tambah data
-		
-		$data['user'] = $this->Data_arsip_model->lihat_arsip_jenis($id_jenis)->result();
-		$user['user'] = $data;
+		$this->load->model('Rolejenisarsip_model');
+		$this->load->model('Jenisarsip_model');
+		if (isset($_GET['mulai_tanggal']) && isset($_GET['sampai_tanggal'])) {
+			$data = [
+				'date_from'=>$this->input->get('mulai_tanggal'),
+				'date_to'=>$this->input->get('sampai_tanggal'),
+				'id_jenis' => $this->input->get('id_jenis')
+			];
+
+			$data['user'] = $this->Data_arsip_model->getByDateAndJenis($id_jenis, $data['date_from'], $data['date_to'])->result();
+		} else {
+			$data['id_jenis'] = $id_jenis;
+			//$data['title'] = $this->input->get('id_jenis');
+			$data['title'] = $this->Rolejenisarsip_model->getAll($id_jenis)->result();
+			//$params['title'] = 'Order #'. $data->jenis_arsip;
+			$data['user'] = $this->Data_arsip_model->lihat_arsip_jenis($id_jenis)->result();
+		}
+		//$user['user'] = $data;
 		$this->template->views('Admin2/data_perarsip', $data);
 		//untuk mengakses file views 'crud/tambah_Grup' pada halaman template
 	}
@@ -45,10 +74,11 @@ class Data_Arsip extends CI_Controller{ //membuat controller Mahasiswa
 		$this->load->model('Rolejenisarsip_model');
 		$this->load->model('Jenisarsip_model');
 		$data['role'] = $this->Rolejenisarsip_model->getAll()->result();
+		$data['id_jenis'] = $this->input->get('id_jenis');
 
 		$this->template->views('Admin2/form-add-data-arsipp', $data);
 	}
-	public function input()
+	public function input($id_jenis)
 	{
 		$data = [
 			'nama_arsip' => $this->input->post('nama_arsip'),
@@ -74,14 +104,15 @@ class Data_Arsip extends CI_Controller{ //membuat controller Mahasiswa
 
 		$this->Data_arsip_model->input_data($data,'data_arsip');
 
-		redirect('Data_Arsip');
+		redirect('Data_Arsip/data_per_arsip/' . $id_jenis);
 	}
 	public function edit_data_arsip($id_arsip){
 		$where = array('id_arsip' => $id_arsip);
 		$data['user'] = $this->Data_arsip_model->edit_data($where, 'data_arsip')->result();
+		$data['id_jenis'] = $this->input->get('id_jenis');
 		$this->template->views('Admin2/update-data-arsip', $data);
 	}
-	public function update() {
+	public function update($id_jenis) {
 		$id_arsip = $this->input->post('id_arsip');
 		$nama_arsip = $this->input->post('nama_arsip');
 		$tgl_upload = $this->input->post('tgl_upload');
@@ -96,21 +127,21 @@ class Data_Arsip extends CI_Controller{ //membuat controller Mahasiswa
 			'id_arsip' => $id_arsip
 		);
 		$this->Data_arsip_model->update_data($where,$data, 'data_arsip');
-		redirect('Data_Arsip');
+		redirect('Data_Arsip/data_per_arsip/' . $id_jenis);
 	}
 
 	public function hapus_data_arsip($id_arsip) {
 		$where = array('id_arsip' => $id_arsip);
 		$this->Data_arsip_model->hapus_data($where, 'data_arsip');
-		redirect('Data_Arsip');
+		redirect('Data_Arsip/data_per_arsip/'. $this->input->get('id_jenis'));
 	}
 
 	public function detail_data($id_arsip){
 		$where = array('id_arsip' => $id_arsip);
 		$data['user'] = $this->Data_arsip_model->detail_data($where, 'data_arsip')->result();
+		$data['id_jenis'] = $this->input->get('id_jenis');
 		$this->template->views('Admin2/detail-data-arsip', $data);
 	}
-
 
 }
 ?>

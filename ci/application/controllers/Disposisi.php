@@ -15,17 +15,34 @@ class Disposisi extends CI_Controller{ //membuat controller Mahasiswa
 	}
 
 	public function input_dis() { 
-		$batas_waktu_dis = $this->input->post('batas_waktu_dis');
-		$jenis_divisi = $this->input->post('jenis_divisi');
-	 	$isi_dis = $this->input->post('isi_dis');
-	 	$catatan_dis = $this->input->post('catatan_dis');
+		//$batas_waktu_dis = $this->input->post('batas_waktu_dis');
+		//$jenis_divisi = $this->input->post('jenis_divisi');
+	 	//$isi_dis = $this->input->post('isi_dis');
+	 	//$catatan_dis = $this->input->post('catatan_dis');
+	 	//$file_dis = $this->input->post('file_dis');
+	 	$data = [
+			'batas_waktu_dis' => $this->input->post('batas_waktu_dis'),
+			'jenis_divisi' => $this->input->post('jenis_divisi'),
+			'isi_dis' => $this->input->post('isi_dis'),
+			'catatan_dis' => $this->input->post('catatan_dis'),
+			'file_dis' => $this->input->post('file_dis')
+		];
 
-		$data = array( //array data untuk menampung inputan data
-			'batas_waktu_dis' => $batas_waktu_dis,
-			'jenis_divisi' => $jenis_divisi,
-	 		'isi_dis' => $isi_dis,
-	 		'catatan_dis' => $catatan_dis
-		);
+		if ($data['file_dis']='') {
+
+		}else{
+			$config['upload_path']          = './assets/upload/file_dis/';
+			$config['allowed_types']        = 'gif|jpg|png|pdf';
+			$config['file_name']            = $data['file_dis'].'-'.time();
+			$config['overwrite']            = TRUE;
+
+			$this->load->library('upload', $config);
+			if(!$this->upload->do_upload('file_dis')){
+				echo "Gagal";
+			}else{
+				$data['file_dis'] = $this->upload->data('file_dis');
+			}
+		}
 		$this->Disposisi_model->input_data($data, 'disposisi'); 
 		//untuk mengakses file model 'Grup_model' dan data tersimpan pada tabel tm_user
 		redirect('Disposisi');

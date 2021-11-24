@@ -30,11 +30,23 @@ class Data_arsip_model extends CI_Model
     	$query = $this->db->get();
     	return $query;
     }
+   
 	function getByDate($data_from, $date_to){ //membuat function getAll
 		$this->db->select('*'); //memilih semua
 		$this->db->from('data_arsip');
 		$where = "tgl_upload BETWEEN '".$data_from."'AND'".$date_to."'";
 		$this->db->where($where);
+		$query = $this->db->get();
+		return $query;
+		
+	}
+
+	function getByDateAndJenis($id_jenis, $date_from, $date_to){ //function buat filter by date and id jenis
+		$this->db->select('*'); //memilih semua
+		$this->db->from('data_arsip');
+		$where = "id_jenis = '" . $id_jenis . "' AND tgl_upload BETWEEN '".$date_from."'AND'".$date_to."'";
+		$this->db->where($where);
+
 		$query = $this->db->get();
 		return $query;
 		
@@ -67,5 +79,12 @@ class Data_arsip_model extends CI_Model
 	function detail_data($where,$table) {
 		return $this->db->get_where($table, $where);
 	}
+	function jumlah_data_perarsip()
+    {
+		 $this->db->select('id_jenis, COUNT(id_arsip)');
+		 $this->db->group_by('id_jenis'); 
+		 $this->db->order_by('id_jenis'); 
+		 $this->db->get('data_arsip')->num_rows;
+    }
 }
 ?>

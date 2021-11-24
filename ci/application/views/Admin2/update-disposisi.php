@@ -38,13 +38,13 @@
                         <div class="form-group row">
                             <label for="example-text-input" class="col-sm-2 col-form-label">Isi</label>
                             <div class="col-sm-5">
-                                <input class="form-control" type="text" value="<?php echo $baris->isi_dis; ?>" id="isi_dis" name="isi_dis">
+                                <input class="form-control" type="text" value="<?php echo $baris->isi_dis; ?>" id="isi_dis" name="isi_dis" required="">
                             </div>
                         </div>
                         <div class="form-group row">
                             <label for="example-text-input" class="col-sm-2 col-form-label">Catatan</label>
                             <div class="col-sm-5">
-                                <input class="form-control" type="text" value="<?php echo $baris->catatan_dis; ?>" id="catatan_dis" name="catatan_dis">
+                                <input class="form-control" type="text" value="<?php echo $baris->catatan_dis; ?>" id="catatan_dis" name="catatan_dis" required="">
                             </div>
                         </div>
                         <div class="form-group row">
