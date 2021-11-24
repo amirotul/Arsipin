@@ -62,7 +62,7 @@
                                     </div> &nbsp &nbsp
                                     <div class="input-group-append">
 
-                                        <a href=<?php echo base_url('Data_Arsip')?>>
+                                        <a href=<?php echo base_url('Data_Arsip/data_per_arsip/' . $id_jenis)?>>
                                             <button class="btn btn-danger btn-sm" type="button">Batal</button></a>
                                         </div>
                                     </div>
