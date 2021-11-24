@@ -161,6 +161,7 @@ $getGrup = $this->session->userdata('session_grup');
         title: {
             text: 'Jumlah dokumen pertahun'
         },
+        
 
         xAxis: {
             categories: [
@@ -195,17 +196,20 @@ $getGrup = $this->session->userdata('session_grup');
             fillOpacity: 0.5
         }
     },
+
     series: [{
+      
         name: 'Surat Masuk',
         
-        data: [<?php echo $data_sm_pertahun; ?>]
+        data: [<?php echo json_encode ($data_sm_pertahun); ?>]
     }, {
         name: 'Surat Keluar',
-        data: [<?php echo $data_sk_pertahun; ?>]
+        data: [<?php echo json_encode ($data_sk_pertahun); ?>]
     }, {
         name: 'Disposisi',
         
-        data: [<?php echo $data_dis_pertahun; ?>]
+        data: [<?php echo json_encode($data_dis_pertahun); ?>]
+        
     }] 
 });
 
