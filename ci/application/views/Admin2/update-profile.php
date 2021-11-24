@@ -22,26 +22,26 @@
                                 <div class="form-group row">
                                     <label for="nama_pengguna" class="col-sm-2 col-form-label">Nama</label>
                                     <div class="col-sm-5">
-                                        <input class="form-control" type="text" value="<?= $user['nama_pengguna'];?>" id="nama_pengguna" name="nama_pengguna" required="">
+                                        <input class="form-control" type="text" value="<?= $user['nama_pengguna'];?>" id="nama_pengguna" name="nama_pengguna">
                                     </div>
                                 </div>
                                 <div class="form-group row">
                                     <label for="email_pengguna" class="col-sm-2 col-form-label">Email</label>
                                     <div class="col-sm-5">
-                                        <input class="form-control" type="text" value="<?= $user['email_pengguna'];?>" id="email_pengguna" name="email_pengguna" required="">
+                                        <input class="form-control" type="text" value="<?= $user['email_pengguna'];?>" id="email_pengguna" name="email_pengguna" >
                                     </div>
                                 </div>
                                 <div class="form-group row">
                                     <label for="username" class="col-sm-2 col-form-label">Username</label>
                                     <div class="col-sm-5">
-                                        <input class="form-control" type="text" value="<?= $user['username'];?>" id="username" name="username" required="">
+                                        <input class="form-control" type="text" value="<?= $user['username'];?>" id="username" name="username" >
 
                                     </div>
                                 </div>
                                 <div class="form-group row">
                                     <label for="password" class="col-sm-2 col-form-label">Password</label>
                                     <div class="col-sm-5">
-                                        <input class="form-control" type="text" value="<?= $user['password'];?>" id="password" name="password" required="">
+                                        <input class="form-control" type="text" value="<?= $user['password'];?>" id="password" name="password">
                                     </div>
                                 </div>
                                 <div class="form-group row">
@@ -64,7 +64,7 @@
                                         <img src="<?php echo base_url('./assets/upload/fotopengguna/') .$user['foto'];?>" class="preview-foto" alt="" height="190" onerror="this.onerror = null; this.src = '<?= base_url('assets/images/avatar.png') ?>'">
                                     </figure>
                                     <div class="mt-3">
-                                        <input type="file" hidden class="custom-file-input btn-upload-foto" id="foto" name="foto" accept="image/jpeg, image/png" required="">
+                                        <input type="file" hidden class="custom-file-input btn-upload-foto" id="foto" name="foto" accept="image/jpeg, image/png">
                                         <label class="btn btn-block btn-primary" for="foto">Pilih foto</label>
                                     </div>
                                 </div>
