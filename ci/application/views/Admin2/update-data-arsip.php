@@ -1,4 +1,4 @@
-<form class="user" action="<?php echo base_url('Data_Arsip/update');?>" method="post" enctype="multipart/form-data">
+<form class="user" action="<?php echo base_url('Data_Arsip/update/' . $id_jenis);?>" method="post" enctype="multipart/form-data">
 <div class="page-content-wrapper">
 
     <div class="container-fluid">
@@ -62,7 +62,7 @@
                                     </div> &nbsp &nbsp
                                     <div class="input-group-append">
 
-                                        <a href=<?php echo base_url('Data_Arsip')?>>
+                                        <a href=<?php echo base_url('Data_Arsip/data_per_arsip/' . $id_jenis)?>>
                                             <button class="btn btn-danger btn-sm" type="button">Batal</button></a>
                                         </div>
                                     </div>
