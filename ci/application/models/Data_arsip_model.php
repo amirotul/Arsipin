@@ -30,6 +30,7 @@ class Data_arsip_model extends CI_Model
     	$query = $this->db->get();
     	return $query;
     }
+   
 	function getByDate($data_from, $date_to){ //membuat function getAll
 		$this->db->select('*'); //memilih semua
 		$this->db->from('data_arsip');
