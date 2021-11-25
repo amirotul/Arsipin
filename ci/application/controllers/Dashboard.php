@@ -10,10 +10,13 @@ class Dashboard extends CI_Controller{ //membuat controller Mahasiswa
 		$this->load->model('Data_arsip_model');
 		$this->load->model('Datadivisi_model');
 		$this->load->model('Datapengguna_model');
+
+		$this->load->helper('date');
 		//untuk mengakses file model 'Mahasiswa_model'
 	}
 
 	public function index(){ //function untuk menampilkan halaman awal yang ditampilkan
+
 		$data['user'] = $this->Admin_model->getAll()->result();
 		$data['data_tahun'] = $this->Surat_masuk_model-> tampil_tahun();
 		$data['data_sm_pertahun'] = $this->Surat_masuk_model-> tampil_data_pertahun();
@@ -27,8 +30,14 @@ class Dashboard extends CI_Controller{ //membuat controller Mahasiswa
 		$data['total_data_pengguna'] = $this->Datapengguna_model-> count_all_pengguna();
 		$data['total_data_perbulan'] = $this->Surat_keluar_model-> tampil_data_perbulan();
 		$data['total_data_sm'] = $this->Surat_masuk_model-> tampil_data_perbulan();
+		
+		$this->load->helper('date'); 
+        $dates = '%Y'; 
+        $data ['dates'] = $dates;
+
 		$this->template->views('Admin2/dashboard',$data);
 			//untuk mengakses file views 'crud/home_mahasiswa' pada halaman template
 	}
+
 }
 ?>
