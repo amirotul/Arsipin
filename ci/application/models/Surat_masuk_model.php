@@ -95,7 +95,7 @@ class Surat_masuk_model extends CI_Model
 	function tampil_data_pertahun(){
 		$this->db->select('*'); 
 		$this->db->from('surat_masuk'); 
-		$this->db->where('year(tgl_sm)=',date('Y')); 
+		$this->db->where('year(tgl_sm)=',date(' Y')); 
 		$query = $this->db->get(); 
 		return $query->num_rows();
 	} 
@@ -115,7 +115,8 @@ class Surat_masuk_model extends CI_Model
 		$this->db->order_by("tgl_sm", "DESC");
 		$this->db->where('id_sm', 1);
 		$this->db->distinct();
-		$this->db->get();
+		$query = $this->db->get(); 
+		return $query->num_rows();
 	} 
 	
 }
