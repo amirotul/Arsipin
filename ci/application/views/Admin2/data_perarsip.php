@@ -65,7 +65,6 @@
 
                                         <th>No</th>
                                         <th>Nama Arsip</th>
-                                        <th>Jenis Arsip</th>
                                         <th>Tanggal Upload</th>
                                         <th>Aksi</th>
                                     </tr>
@@ -80,7 +79,6 @@
                                             <td><?php echo $no++; ?></td>
                                             <!-- nomor user otomatis bertambah pada saatn menambah data -->
                                             <td><?php echo $baris->nama_arsip; ?></td>
-                                            <td><?php echo $baris->id_jenis; ?></td>
                                             <td><?php echo $baris->tgl_upload; ?></td>
                                             <td>
 

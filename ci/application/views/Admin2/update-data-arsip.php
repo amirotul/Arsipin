@@ -28,7 +28,7 @@
                         <div class="form-group row">
                             <label for="nama_arsip" class="col-sm-2 col-form-label">Jenis Arsip</label>
                             <div class="col-sm-5">
-                                <input class="form-control" type="text" value="<?php echo $baris->id_jenis; ?>" id="id_jenis" name="id_jenis" disabled="">
+                                <input class="form-control" type="text" value="<?php echo $baris->jenis_arsip; ?>" id="id_jenis" name="id_jenis" disabled="">
                             </div>
                         </div>
 
@@ -38,18 +38,7 @@
                                 <input class="form-control" type="date" value="<?php echo $baris->tgl_upload; ?>" id="tgl_upload" name="tgl_upload" required="">
                             </div>
                         </div>
-                        <!--<div class="form-group row">
-                                <label for="file_arsip" class="col-sm-2 col-form-label">File</label>
-                                <div class="col-sm-3">
-                                    <div class="input-group">
-                                        <div class="input-group-prepend">
-                                            <input type="file" value="<?php echo $baris->file_arsip; ?>" class="form-control" name="file_arsip" id="file_arsip">
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>-->
 
-                            <?php } ?>
                             <div class="form-group row">
                                 <div class="col-md-10 offset-md-2">
                                     <div class="input-group mt-2">
@@ -65,6 +54,7 @@
                                         <a href=<?php echo base_url('Data_Arsip/data_per_arsip/' . $id_jenis)?>>
                                             <button class="btn btn-danger btn-sm" type="button">Batal</button></a>
                                         </div>
+                                        </form><?php } ?>
                                     </div>
                                 </div>
                             </div>

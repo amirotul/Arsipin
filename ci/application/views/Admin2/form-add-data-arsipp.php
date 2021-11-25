@@ -22,7 +22,7 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="example-date-input" class="col-sm-2 col-form-label">Jenis Divisi</label>
+                            <label for="example-date-input" class="col-sm-2 col-form-label">Jenis Arsip</label>
                             <div class="col-sm-5">
                                 <select class="form-control" id="id_jenis" name="id_jenis" required="">
                                     <option value="" hidden disabled selected>Pilih Jenis Arsip</option>
