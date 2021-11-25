@@ -33,7 +33,7 @@
                                                 <div class="form-group row">
                                                     <label for="example-text-input" class="col-sm-4 col-form-label">Jenis Arsip</label>
                                                     <div class="col-sm-8">
-                                                        <input class="form-control" type="text" value="<?php echo $baris->id_jenis; ?>" id="id_jenis" name="id_jenis" disabled>
+                                                        <input class="form-control" type="text" value="<?php echo $baris->jenis_arsip; ?>" id="jenis_arsip" name="jenis_arsip" disabled>
                                                     </div>
                                                 </div>
 
