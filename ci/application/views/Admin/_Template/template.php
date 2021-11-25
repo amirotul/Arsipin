@@ -115,6 +115,7 @@ $getGrup = $this->session->userdata('session_grup');
 <script src="<?php echo base_url();?>assets/highcharts/js.js"></script>
 <script src="<?php echo base_url();?>assets/highcharts/data.js"></script>
 <script src="<?php echo base_url();?>assets/highcharts/drilldown.js"></script>
+<script src="<?php echo base_url();?>assets/js/notif.js"></script>
 
 </body>
 </html>

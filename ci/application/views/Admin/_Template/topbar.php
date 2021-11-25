@@ -44,21 +44,15 @@ $getGrup = $this->session->userdata('session_grup');
                                 </li>
                                 <?php 
                                 $notif = $this->db->get_where('tbl_notif',['is_read'=> 0])->result_array();
-                                $notif_count = count($notif);
                                 ?>
                                 <li class="list-inline-item dropdown notification-list">
                                     <a class="nav-link dropdown-toggle arrow-none waves-effect waves-light" data-toggle="dropdown" href="#" role="button"
                                        aria-haspopup="false" aria-expanded="false">
                                         <i class="ti-bell noti-icon"></i>
-                                        <span class="badge badge-success noti-icon-badge"><?=$notif_count?></span>
+                                        <span class="badge badge-success noti-icon-badge"></span>
                                     </a>
-                                    <div class="dropdown-menu dropdown-menu-right dropdown-arrow dropdown-menu-lg overflow-scroll" style="height: 50vh; overflow-y: auto;">
-                                        <?php foreach($notif as $data): ?>
-                                            <a class="dropdown-item text-wrap" href="">
-                                                <strong><?=$data['judul']?></strong><br>
-                                                <?= $data['pengirim']. ' <br>pada ' . date_format(date_create($data['tgl_notif']), 'd M Y')?>
-                                            </a>
-                                            <?php endforeach; ?>
+                                    <div class="dropdown-menu dropdown-menu-right dropdown-arrow dropdown-menu-lg overflow-scroll" style="max-height: 50vh; overflow-y: auto;" id="notif-list" data-auto-close="false">
+                                        
                                         <!-- <div class="dropdown-item noti-title">
                                             <h5><span class="badge badge-success float-right">9</span>Notification</h5>
                                         </div> -->
