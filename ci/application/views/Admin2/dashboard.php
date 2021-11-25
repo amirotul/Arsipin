@@ -165,13 +165,13 @@ $getGrup = $this->session->userdata('session_grup');
 
         xAxis: {
             categories: [
-             '2021',
-             '2022',
-             '2023',
-             '2024',
-             '2025'
-             ],
-            //<?php echo $data_tahun; ?>
+             //'2021',
+             //'2022',
+             //'2023',
+             //'2024',
+             //'2025'
+             //],
+            <?php echo mdate($dates); ?>
             ],
         plotBands: [{ // visualize the weekend
             from: 4.5,
