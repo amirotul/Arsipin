@@ -32,8 +32,8 @@ $getGrup = $this->session->userdata('session_grup');
                         <i class="mdi mdi-email"></i>
                     </div>
                     <div class="p-4">
-                        <h6 class="text-uppercase mb-3">Surat Masuk</h6>
-                        <h4 class="mb-0"><?php echo $total_data_sm; ?><small class="ml-2"></small></h4>
+                        <h6 class="text-uppercase mb-3">Disposisi</h6>                                  
+                        <h4 class="mb-0"><?php echo $total_data_dis; ?><small class="ml-2"></small></h4>
                     </div>
                 </div>
             </div>
@@ -44,8 +44,8 @@ $getGrup = $this->session->userdata('session_grup');
                         <i class="mdi mdi-email-open"></i>
                     </div>
                     <div class="p-4">
-                        <h6 class="text-uppercase mb-3">Surat Keluar</h6>
-                        <h4 class="mb-0"><?php echo $total_data_sk; ?><small class="ml-2"></small></h4>
+                        <h6 class="text-uppercase mb-3">Data Arsip</h6>
+                        <h4 class="mb-0"><?php echo $total_data_arsip; ?><small class="ml-2"></small></h4>
                     </div>
                 </div>
             </div>
@@ -56,8 +56,8 @@ $getGrup = $this->session->userdata('session_grup');
                         <i class="mdi mdi-tag-text-outline"></i>
                     </div>
                     <div class="p-4">
-                        <h6 class="text-uppercase mb-3">Disposisi</h6>                                  
-                        <h4 class="mb-0"><?php echo $total_data_dis; ?><small class="ml-2"></small></h4>
+                        <h6 class="text-uppercase mb-3">Data Divisi</h6>
+                        <h4 class="mb-0"><?php echo $total_data_divisi; ?><small class="ml-2"></small></h4>
                     </div>
                 </div>
             </div>
@@ -68,8 +68,8 @@ $getGrup = $this->session->userdata('session_grup');
                         <i class="mdi mdi-file-document-box"></i>
                     </div>
                     <div class="p-4">
-                        <h6 class="text-uppercase mb-3">Data Arsip</h6>
-                        <h4 class="mb-0"><?php echo $total_data_arsip; ?><small class="ml-2"></small></h4>
+                        <h6 class="text-uppercase mb-3">Data Pengguna</h6>
+                        <h4 class="mb-0"><?php echo $total_data_pengguna; ?><small class="ml-2"></small></h4>
                     </div>
                 </div>
 
@@ -82,30 +82,6 @@ $getGrup = $this->session->userdata('session_grup');
                         <i class="mdi mdi-division-box"></i>
                     </div>
                     <div class="p-4">
-                        <h6 class="text-uppercase mb-3">Data Divisi</h6>
-                        <h4 class="mb-0"><?php echo $total_data_divisi; ?><small class="ml-2"></small></h4>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-12 col-xl-3">
-                <div class="card mini-stat">
-                    <div class="mini-stat-icon text-right">
-                        <i class="mdi mdi-folder-account"></i>
-                    </div>
-                    <div class="p-4">
-                        <h6 class="text-uppercase mb-3">Data Pengguna</h6>
-                        <h4 class="mb-0"><?php echo $total_data_pengguna; ?><small class="ml-2"></small></h4>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-12 col-xl-3">
-                <div class="card mini-stat">
-                    <div class="mini-stat-icon text-right">
-                        <i class="mdi mdi-email"></i>
-                    </div>
-                    <div class="p-4">
                         <h6 class="text-uppercase mb-3">Surat Masuk Bulan Ini</h6>
                         <h4 class="mb-0"><?php echo $total_data_sm; ?><small class="ml-2"></small></h4>
                     </div>
@@ -115,7 +91,7 @@ $getGrup = $this->session->userdata('session_grup');
             <div class="col-md-12 col-xl-3">
                 <div class="card mini-stat">
                     <div class="mini-stat-icon text-right">
-                        <i class="mdi mdi-email-open"></i>
+                        <i class="mdi mdi-folder-account"></i>
                     </div>
                     <div class="p-4">
                         <h6 class="text-uppercase mb-3">Surat Keluar Bulan Ini</h6>
