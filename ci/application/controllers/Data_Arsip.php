@@ -12,6 +12,7 @@ class Data_Arsip extends CI_Controller{ //membuat controller Mahasiswa
 		$this->load->model('Rolejenisarsip_model');
 		$this->load->model('Jenisarsip_model');
 		$data['role'] = $this->Rolejenisarsip_model->getAll()->result();
+		$data['id_jenis'] = $this->input->get('id_jenis');
 		foreach($data ['role'] as $key => $value){
 			$data['role'][$key]->count = $this->Rolejenisarsip_model->count_by_jenis($value->id_jenis_arsip);
 		}
@@ -48,6 +49,8 @@ class Data_Arsip extends CI_Controller{ //membuat controller Mahasiswa
 		$this->template->views('Admin2/lihat_arsip',$data);
 	}
 	public function data_per_arsip($id_jenis) { //function untuk tambah data
+		$this->load->model('Rolejenisarsip_model');
+		$this->load->model('Jenisarsip_model');
 		if (isset($_GET['mulai_tanggal']) && isset($_GET['sampai_tanggal'])) {
 			$data = [
 				'date_from'=>$this->input->get('mulai_tanggal'),
@@ -58,6 +61,9 @@ class Data_Arsip extends CI_Controller{ //membuat controller Mahasiswa
 			$data['user'] = $this->Data_arsip_model->getByDateAndJenis($id_jenis, $data['date_from'], $data['date_to'])->result();
 		} else {
 			$data['id_jenis'] = $id_jenis;
+			//$data['title'] = $this->input->get('id_jenis');
+			$data['title'] = $this->Rolejenisarsip_model->getAll($id_jenis)->result();
+			//$params['title'] = 'Order #'. $data->jenis_arsip;
 			$data['user'] = $this->Data_arsip_model->lihat_arsip_jenis($id_jenis)->result();
 		}
 		//$user['user'] = $data;

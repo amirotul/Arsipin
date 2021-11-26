@@ -20,6 +20,7 @@ class Data_arsip_model extends CI_Model
     function lihat_semua_arsip(){
     	$this->db->select('*');
     	$this->db->from('data_arsip');
+    	$this->db->join('jenis_arsip', 'jenis_arsip.id_jenis_arsip = data_arsip.id_jenis');
     	$query = $this->db->get();
     	return $query;
     }
@@ -30,6 +31,7 @@ class Data_arsip_model extends CI_Model
     	$query = $this->db->get();
     	return $query;
     }
+   
 	function getByDate($data_from, $date_to){ //membuat function getAll
 		$this->db->select('*'); //memilih semua
 		$this->db->from('data_arsip');
@@ -54,6 +56,7 @@ class Data_arsip_model extends CI_Model
     {
     	$this->db->select('*'); //memilih semua
 		$this->db->from('data_arsip');
+		$this->db->join('jenis_arsip', 'jenis_arsip.id_jenis_arsip = data_arsip.id_jenis');
         $this->db->order_by('id_arsip','DESC');
 		$this->db->limit(3);
 		$query = $this->db->get();
@@ -65,6 +68,7 @@ class Data_arsip_model extends CI_Model
 		//untuk proses insert data ke database
 	}
 	function edit_data($where,$table) {
+		$this->db->join('jenis_arsip', 'jenis_arsip.id_jenis_arsip = data_arsip.id_jenis');
 		return $this->db->get_where($table, $where);
 	}
 	function update_data($where,$data,$table) {
@@ -75,9 +79,15 @@ class Data_arsip_model extends CI_Model
 	    $this->db->where($where);
 	    $this->db->delete($table);
 	}
+	// function detail_data($where,$table) {
+	// 	return $this->db->get_where($table, $where);
+
+	// }
 	function detail_data($where,$table) {
+		$this->db->join('jenis_arsip', 'jenis_arsip.id_jenis_arsip = data_arsip.id_jenis');
 		return $this->db->get_where($table, $where);
 	}
+
 	function jumlah_data_perarsip()
     {
 		 $this->db->select('id_jenis, COUNT(id_arsip)');
