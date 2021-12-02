@@ -40,5 +40,10 @@ class Roledivisi_model extends CI_Model
 		$query = $this->db->get();
 		return $query;
 	}
+
+	function detail_jenis($jenis) {
+		$query = $this->db->get_where('jenis_divisi', ['id' => $jenis]);
+		return $query->row_array();
+	}
 }
 ?>

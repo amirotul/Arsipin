@@ -62,7 +62,7 @@ class Data_Arsip extends CI_Controller{ //membuat controller Mahasiswa
 		} else {
 			$data['id_jenis'] = $id_jenis;
 			//$data['title'] = $this->input->get('id_jenis');
-			$data['title'] = $this->Rolejenisarsip_model->getAll($id_jenis)->result();
+			//$data['title'] = $this->Rolejenisarsip_model->getAll($id_jenis)->result();
 			//$params['title'] = 'Order #'. $data->jenis_arsip;
 			$data['user'] = $this->Data_arsip_model->lihat_arsip_jenis($id_jenis)->result();
 		}
@@ -76,11 +76,14 @@ class Data_Arsip extends CI_Controller{ //membuat controller Mahasiswa
 		$data['role'] = $this->Rolejenisarsip_model->getAll()->result();
 		$data['id_jenis'] = $this->input->get('id_jenis');
 
+		$data['user'] = $this->db->get_where('data_pengguna',['id_role'=>$this->session->userdata('session_id_role')])->row_array();
+
 		$this->template->views('Admin2/form-add-data-arsipp', $data);
 	}
 	public function input($id_jenis)
 	{
 		$data = [
+			'id_pengguna' => $this->input->post('id_pengguna'),
 			'nama_arsip' => $this->input->post('nama_arsip'),
 			'id_jenis' => $this->input->post('id_jenis'),
 			'tgl_upload' => $this->input->post('tgl_upload'),

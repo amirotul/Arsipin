@@ -28,6 +28,8 @@ class Login extends CI_Controller
 				$nama_pengguna = $row->nama_pengguna;
 				$email_pengguna = $row->email_pengguna;
 				$password = $row->password;
+				$id_pengguna = $row->id_pengguna;
+				$id_role = $row->id_role;
 			}
 			$this->session->set_userdata('session_user', $user);
 			$this->session->set_userdata('session_grup', $grup);
@@ -35,6 +37,8 @@ class Login extends CI_Controller
 			$this->session->set_userdata('session_nama_pengguna', $nama_pengguna);
 			$this->session->set_userdata('session_email_pengguna', $email_pengguna);
 			$this->session->set_userdata('session_password', $password);
+			$this->session->set_userdata('session_id_pengguna', $id_pengguna);
+			$this->session->set_userdata('session_id_role', $id_role);
 			redirect('Dashboard');
 		} else {
 			$this->load->view('Admin2/pages-login');

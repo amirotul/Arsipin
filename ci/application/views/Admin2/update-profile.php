@@ -19,6 +19,7 @@
                             <div class="col-8">
 
                                 <input type="hidden" name="fotolama" value="<?= $user['foto'] ?>">
+                                 <input type="hidden" name="id_role" value="<?= $user['id_role'] ?>">
                                 <div class="form-group row">
                                     <label for="nama_pengguna" class="col-sm-2 col-form-label">Nama</label>
                                     <div class="col-sm-5">
