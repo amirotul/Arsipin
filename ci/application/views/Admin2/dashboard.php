@@ -130,31 +130,30 @@ $getGrup = $this->session->userdata('session_grup');
 
 
 <script type="text/javascript">
-  Highcharts.chart('data_dokumen', {
-    chart: {
-      type: 'areaspline'
-    },
-    title: {
-      text: 'Jumlah dokumen pertahun'
-    },
 
+    Highcharts.chart('data_dokumen', {
+        chart: {
+            type: 'areaspline'
+        },
+        title: {
+            text: 'Jumlah dokumen pertahun'
+        },
+        
 
-    xAxis: {
-      categories: [
-        //'2021',
-        //'2022',
-        //'2023',
-        //'2024',
-        //'2025'
-        //],
-        <?php echo mdate($dates); ?>
-
-      ],
-      plotBands: [{ // visualize the weekend
-        from: 4.5,
-        to: 6.5,
-        color: 'rgba(68, 170, 213, .2)'
-      }]
+        xAxis: {
+            categories: [
+             //'2021',
+             //'2022',
+             //'2023',
+             //'2024',
+             //'2025'
+             <?php echo mdate($dates); ?>
+            ],
+        plotBands: [{ // visualize the weekend
+            from: 4.5,
+            to: 6.5,
+            color: 'rgba(68, 170, 213, .2)'
+        }]
     },
     yAxis: {
       title: {

@@ -101,11 +101,19 @@ class Surat_Masuk extends CI_Controller{ //membuat controller Mahasiswa
 		redirect('Disposisi');
 	}
 
-	public function edit($id_sm) {
+	// public function edit($id_sm) {
+	// 	$where = array('id_sm' => $id_sm);
+	// 	$data['user'] = $this->Surat_masuk_model->edit_data($where, 'surat_masuk')->result();
+	// 	$this->template->views('Admin2/update-surat-masuk', $data);
+	// }
+
+	public function edit($id_sm)
+	{
 		$where = array('id_sm' => $id_sm);
 		$data['user'] = $this->Surat_masuk_model->edit_data($where, 'surat_masuk')->result();
 		$this->template->views('Admin2/update-surat-masuk', $data);
 	}
+
 	public function update() {
 		$id_sm = $this->input->post('id_sm');
 		$no_sm = $this->input->post('no_sm');
@@ -113,20 +121,65 @@ class Surat_Masuk extends CI_Controller{ //membuat controller Mahasiswa
 		$tgl_terima_sm = $this->input->post('tgl_terima_sm');
 		$asal_sm = $this->input->post('asal_sm');
 		$perihal_sm = $this->input->post('perihal_sm');
+		$idFile = $this->Surat_masuk_model->edit_data($where, 'surat_masuk')->result();
+		$data = './assets/upload/file_sm/'. $idFile->file_sm;
 
-		$data = array(
-			'no_sm' => $no_sm,
-			'tgl_sm' => $tgl_sm,
-			'tgl_terima_sm' => $tgl_terima_sm,
-			'asal_sm' => $asal_sm,
-			'perihal_sm' => $perihal_sm,
-		);
+		// ($where, 'surat_masuk')->result();
 
-		$where = array(
-			'id_sm' => $id_sm
-		);
-		$this->Surat_masuk_model->update_data($where,$data, 'surat_masuk');
-		redirect('Surat_Masuk');
+		if(is_readable($data)){
+			$config['upload_path']          = './assets/upload/file_sm/';
+			$config['allowed_types']        = 'gif|jpg|png|pdf';
+			$config['file_name']            = $perihal_sm.'-'.time();
+
+			$this->load->library('upload', $config);
+
+			if($this->upload->do_upload('file_sm')) {
+        // eidt gambar dan judul, maka unlink gambar lama
+				$upload_data = $this->upload->data();
+				$name = $upload_data['file_name'];
+				$data = [
+					'id_sm' => $this->input->post('id_sm'),
+					'no_sm' => $this->input->post('no_sm'),
+					'tgl_sm' => $this->input->post('tgl_sm'),
+					'tgl_terima_sm' => $this->input->post('tgl_terima_sm'),
+					'asal_sm' => $this->input->post('asal_sm'),
+					'perihal_sm' => $this->input->post('perihal_sm'),
+					'file_sm' => $name
+				];
+				unlink('./assets/upload/file_sm/'.$this->input->post('fileLama',true));
+        // update file di database
+
+				$update = $this->Surat_masuk_model->update_file($id_sm,$data);
+				if ($update) {
+					$this->session->set_flashdata('pesan','Data berhasil di update');
+					redirect('Surat_Masuk');
+				} else {
+					echo "gagal";
+				}        
+			}else{
+
+				$data = [
+					'id_sm' => $this->input->post('id_sm'),
+					'no_sm' => $this->input->post('no_sm'),
+					'tgl_sm' => $this->input->post('tgl_sm'),
+					'tgl_terima_sm' => $this->input->post('tgl_terima_sm'),
+					'asal_sm' => $this->input->post('asal_sm'),
+					'perihal_sm' => $this->input->post('perihal_sm'),
+				];
+
+        // update file di database
+				$update = $this->Surat_masuk_model->update_file($id_sm,$data);
+				if ($update) {
+					$this->session->set_flashdata('pesan','Data berhasil di update');
+					redirect('Surat_Masuk');
+				} else {
+					echo "gagal";
+				}        
+			}    
+		}else{
+			echo "gagal";
+		}
+
 	}
 
 	public function hapus_surat_masuk($id_sm) {
