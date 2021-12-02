@@ -15,17 +15,23 @@ class Disposisi extends CI_Controller{ //membuat controller Mahasiswa
 	}
 
 	public function input_dis() { 
-		//$batas_waktu_dis = $this->input->post('batas_waktu_dis');
-		//$jenis_divisi = $this->input->post('jenis_divisi');
-	 	//$isi_dis = $this->input->post('isi_dis');
-	 	//$catatan_dis = $this->input->post('catatan_dis');
-	 	//$file_dis = $this->input->post('file_dis');
-	 	$data = [
+		$this->load->model('Notif_model');
+		$this->load->model('Roledivisi_model');
+		$data = [
 			'batas_waktu_dis' => $this->input->post('batas_waktu_dis'),
 			'jenis_divisi' => $this->input->post('jenis_divisi'),
 			'isi_dis' => $this->input->post('isi_dis'),
 			'catatan_dis' => $this->input->post('catatan_dis'),
-			'file_dis' => $this->input->post('file_dis')
+			'file_dis' => $this->input->post('file_dis') 
+		];
+
+		$data_divisi = $this->Roledivisi_model->detail_jenis($data['jenis_divisi']);
+
+		$notif = [
+			'judul' => 'Disposisi',
+			'pengirim' => 'Divisi ' . $data_divisi['jenis_divisi'],
+			'tgl_notif' => $data['batas_waktu_dis'],
+			'is_read' => 0,
 		];
 
 		if ($data['file_dis']='') {
@@ -44,6 +50,7 @@ class Disposisi extends CI_Controller{ //membuat controller Mahasiswa
 			}
 		}
 		$this->Disposisi_model->input_data($data, 'disposisi'); 
+		$this->Notif_model->insert($notif);
 		//untuk mengakses file model 'Grup_model' dan data tersimpan pada tabel tm_user
 		redirect('Disposisi');
 		//setelah data berhasil tersimpan, halaman web otomatis beralih ke halaman pada function index
