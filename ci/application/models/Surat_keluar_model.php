@@ -60,5 +60,17 @@ class Surat_keluar_model extends CI_Model
       	$query = $this->db->get(); 
       	return $query->num_rows();
   }
+  public function get_id($id_sk)
+  {
+    $this->db->where('id_sk',$id_sk);
+    return $this->db->get('surat_keluar');
+  }
+
+  public function update_file($id_sk,$data, $table, $where)
+  {
+    $this->db->where('id_sk',$id_sk);
+    return $this->db->update('surat_keluar',$data, $table, $where);
+  }
+
 }
 ?>
