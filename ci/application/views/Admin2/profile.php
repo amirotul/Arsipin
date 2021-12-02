@@ -18,6 +18,7 @@
                         <div class="row">
                             <div class="col-8">
                                 <input type="hidden" name="fotolama" value="<?= $user['foto'] ?>">
+                                <input type="hidden" name="id_role" value="<?= $user['id_role'] ?>">
                                 <div class="form-group row">
                                     <label for="example-text-input" class="col-sm-2 col-form-label">Nama</label>
                                     <div class="col-sm-5">

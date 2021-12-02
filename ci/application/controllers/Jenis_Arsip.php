@@ -9,8 +9,13 @@ class Jenis_Arsip extends CI_Controller{ //membuat controller Mahasiswa
 	}
 
 	public function index(){ //function untuk menampilkan halaman awal yang ditampilkan
-		$data['user'] = $this->Jenis_arsip_model->getAll()->result();
+
+		//$data['user'] = $this->Jenis_arsip_model->getAll()->result();
+
+		$data['user'] = $this->Jenis_arsip_model->jenis_arsip_perid();
+
 		$config['total_rows'] = $this->Jenis_arsip_model->count_all_jenis_arsip();
+
 		$this->template->views('Admin2/jenis-arsip',$data);
 			//untuk mengakses file views 'crud/home_mahasiswa' pada halaman template
 	}
@@ -18,16 +23,22 @@ class Jenis_Arsip extends CI_Controller{ //membuat controller Mahasiswa
 	public function tambah() { //function untuk tambah data
 		$this->load->model('Datapengguna_model');
 		$this->load->model('Jenis_arsip_model');
+
+		$data['user'] = $this->db->get_where('data_pengguna',['id_role'=>$this->session->userdata('session_id_role')])->row_array();
+
 		$data['role'] = $this->Datapengguna_model->getAll()->result();
 		$this->template->views('Admin2/form-add-jenis-arsip', $data);
 		//untuk mengakses file views 'crud/tambah_Grup' pada halaman template
 	}
 
+
 	public function input() { //function input untuk memasukkan proses inputan data ke database
 		$jenis_arsip = $this->input->post('jenis_arsip');
+		$id_pengguna = $this->input->post('id_pengguna');
 
 		$data = array( //array data untuk menampung inputan data
-			'jenis_arsip' => $jenis_arsip
+			'jenis_arsip' => $jenis_arsip,
+			'id_pengguna' => $id_pengguna
 		);
 		$this->Jenis_arsip_model->input_data($data, 'jenis_arsip'); 
 		//untuk mengakses file model 'Grup_model' dan data tersimpan pada tabel tm_user
