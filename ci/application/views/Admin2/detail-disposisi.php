@@ -74,7 +74,7 @@
                                 <div class="row">
                                     <div class="col-lg-12">
                                         <div class="btn-toolbar mb-3" role="toolbar">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-                                            <iframe type="application/pdf" src="<?php echo base_url();?>assets/upload/file_dis/<?= $user['file_dis'] ?>" id="file_dis" name="file_dis" width="520" height="370"></iframe>
+                                            <iframe type="application/pdf" src="<?php echo base_url();?>assets/upload/file_sm/<?= $user['file_dis'] ?>" id="file_dis" name="file_dis" width="520" height="370"></iframe>
                                             </div>
                                         </div>
                                         <div class="form-group row">

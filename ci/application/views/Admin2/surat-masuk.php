@@ -93,7 +93,7 @@
                                                 ?></td>
                                     <td>
                                    <?php
-                                   echo '<a href="'.base_url('Surat_Masuk/tambah_disposisi/'.$baris->id_sm).'"><button type="button" class="btn-success">Disposisikan</button></a>';
+                                   echo '<a href="'.base_url('Surat_Masuk/tambah_disposisi/'.$baris->id_sm . '?filename=' . $baris->file_sm).'"><button type="button" class="btn-success">Disposisikan</button></a>';
                                    ?>
                                     </td>
                                             </tr>

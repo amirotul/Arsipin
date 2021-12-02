@@ -5,6 +5,7 @@ class Disposisi extends CI_Controller{ //membuat controller Mahasiswa
 		parent:: __construct();
 		$this->load->model('Disposisi_model');
 		//untuk mengakses file model 'Mahasiswa_model'
+		$this->load->library('fileuploader');
 	}
 
 	public function index(){ //function untuk menampilkan halaman awal yang ditampilkan
@@ -22,7 +23,8 @@ class Disposisi extends CI_Controller{ //membuat controller Mahasiswa
 			'jenis_divisi' => $this->input->post('jenis_divisi'),
 			'isi_dis' => $this->input->post('isi_dis'),
 			'catatan_dis' => $this->input->post('catatan_dis'),
-			'file_dis' => $this->input->post('file_dis') 
+			'file_dis' => $this->input->post('file_dis')
+			
 		];
 
 		$data_divisi = $this->Roledivisi_model->detail_jenis($data['jenis_divisi']);
@@ -34,21 +36,21 @@ class Disposisi extends CI_Controller{ //membuat controller Mahasiswa
 			'is_read' => 0,
 		];
 
-		if ($data['file_dis']='') {
+		// if ($data['file_dis']='') {
 
-		}else{
-			$config['upload_path']          = './assets/upload/file_dis/';
-			$config['allowed_types']        = 'gif|jpg|png|pdf';
-			$config['file_name']            = $data['file_dis'].'-'.time();
-			$config['overwrite']            = TRUE;
+		// }else{
+		// 	$config['upload_path']          = './assets/upload/file_dis/';
+		// 	$config['allowed_types']        = 'gif|jpg|png|pdf';
+		// 	$config['file_name']            = $data['file_dis'].'-'.time();
+		// 	$config['overwrite']            = TRUE;
 
-			$this->load->library('upload', $config);
-			if(!$this->upload->do_upload('file_dis')){
-				echo "Gagal";
-			}else{
-				$data['file_dis'] = $this->upload->data('file_dis');
-			}
-		}
+		// 	$this->load->library('upload', $config);
+		// 	if(!$this->upload->do_upload('file_dis')){
+		// 		echo "Gagal";
+		// 	}else{
+		// 		$data['file_dis'] = $this->upload->data('file_name');
+		// 	}
+		// }
 		$this->Disposisi_model->input_data($data, 'disposisi'); 
 		$this->Notif_model->insert($notif);
 		//untuk mengakses file model 'Grup_model' dan data tersimpan pada tabel tm_user
@@ -65,11 +67,27 @@ class Disposisi extends CI_Controller{ //membuat controller Mahasiswa
 		$this->template->views('Admin2/update-disposisi', $data);
 	}
 	public function update() {
+		// if ($data['file_dis']='') {
+
+		// }else{
+		// 	$config['upload_path']          = './assets/upload/file_dis/';
+		// 	$config['allowed_types']        = 'gif|jpg|png|pdf';
+		// 	$config['file_name']            = $data['file_dis'].'-'.time();
+		// 	$config['overwrite']            = TRUE;
+
+		// 	$this->load->library('upload', $config);
+		// 	if(!$this->upload->do_upload('file_dis')){
+		// 		echo "Gagal";
+		// 	}else{
+		// 		$data['file_dis'] = $this->upload->data('file_name');
+		// 	}
+		// }
 		$id_disposisi = $this->input->post('id_disposisi');
 		$batas_waktu_dis = $this->input->post('batas_waktu_dis');
 		$jenis_divisi = $this->input->post('jenis_divisi');
 		$isi_dis = $this->input->post('isi_dis');
 		$catatan_dis = $this->input->post('catatan_dis');
+		//$file_dis = $this->input->post('file_dis');
 
 		$data = array(
 			'id_disposisi' => $id_disposisi,
@@ -77,6 +95,7 @@ class Disposisi extends CI_Controller{ //membuat controller Mahasiswa
 			'jenis_divisi' => $jenis_divisi,
 			'isi_dis' => $isi_dis,
 			'catatan_dis' => $catatan_dis,
+			//'file_dis' => $file_dis
 		);
 
 		$where = array(
