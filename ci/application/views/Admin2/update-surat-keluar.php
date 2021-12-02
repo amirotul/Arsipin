@@ -1,4 +1,4 @@
-<form class="user" action="<?php echo base_url('Surat_Keluar/update');?>" method="post" enctype="multipart/form-data">
+  <form class="user" action="<?php echo base_url('Surat_Keluar/edit_aksi');?>" method="post" enctype="multipart/form-data">
 <div class="page-content-wrapper">
 
     <div class="container-fluid">
@@ -43,23 +43,29 @@
                                 <input class="form-control" type="text" value="<?php echo $baris->perihal_sk; ?>" id="perihal_sk" name="perihal_sk" required="">
                             </div>
                         </div>
+
+                        <div class="form-group row">
+                            <label for="example-text-input" class="col-sm-2 col-form-label">File</label>
+                            <div class="col-sm-5">
+                                <iframe src="<?php echo base_url();?>assets/upload/file_sk/<?php echo $baris->file_sk; ?>" width="390"  height="300" type="application/pdf" onerror="this.onerror = null; this.src = '<?= base_url('assets/images/avatar.png') ?>'"></iframe>
+                                 <input type="file" class="form-control" name="file_sk">
+                            <input type="hidden" class="form-control" name="gambarLama" value="<?= $baris->file_sk?>">
+                                    </div>
+                                </div>
+
                         
+
                         <!--<div class="form-group row">
-                                            <label for="example-date-input" class="col-sm-2 col-form-label">File/pdf</label>
-                                            <div class="col-sm-3">
-                                                <div class="input-group">
-                                                    <div class="input-group-prepend">
-                                                        <div class="custom-file">
-                                                <input type="file" class="custom-file-input" id="file_sk" name="file_sk" accept="pdf" value="../assets/upload/fotopengguna/<?php echo $baris->file_sk; ?>">
-                                                <label class="custom-file-label" for="foto">Pilih file...</label>
-                                                    </div>
-
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>-->
-
-                                        <div class="form-group row">
+                            <label for="example-text-input" class="col-sm-2 col-form-label">File</label>
+                            <div class="col-sm-5">
+                            <iframe src="<?php echo base_url();?>assets/upload/file_sk/<?php echo $baris->file_sk; ?>" width="390"  height="300" type="application/pdf" onerror="this.onerror = null; this.src = '<?= base_url('assets/images/avatar.png') ?>'"></iframe>
+                          
+                            <div class="mt-3">
+                                        <input type="file" hidden class="custom-file-input btn-upload-foto" id="file_sk" name="file_sk" accept="image/pdf">
+                                        <label class="btn btn-block btn-primary" for="file_sk">Pilih file</label>
+                                    </div>-->
+             
+                                      <div class="form-group row">
                                             <div class="col-md-10 offset-md-2">
                                                 <div class="input-group mt-2">
                                                     <div class="custom">
@@ -78,3 +84,5 @@
                                                         </div>
                                                     </div>
                                                 </div>
+
+                                                <script src="<?= base_url('assets/js/previewfoto.js') ?>"></script>
