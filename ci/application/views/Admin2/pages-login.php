@@ -9,8 +9,8 @@
         <meta content="themesdesign" name="author" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
-        <link rel="shortcut icon" href="<?php echo base_url()?>assets/images/favicon.ico">
-
+        <link rel="shortcut icon" href="<?php echo base_url();?>assets/images/Am.png" >
+        
         <link href="<?php echo base_url()?>/assets/css/bootstrap.min.css" rel="stylesheet" type="text/css">
         <link href="<?php echo base_url()?>/assets/plugins/animate/animate.css" rel="stylesheet" type="text/css">
         <link href="<?php echo base_url()?>/assets/css/icons.css" rel="stylesheet" type="text/css">
@@ -70,9 +70,9 @@
                                 <div class="col-sm-7 m-t-20">
                                     <a href="pages-recoverpw.html" class="text-muted"><i class="mdi mdi-lock"></i> Forgot your password ?</a>
                                 </div>
-                                <div class="col-sm-5 m-t-20">
+                                <!-- <div class="col-sm-5 m-t-20">
                                     <a href="pages-register.html" class="text-muted"><i class="mdi mdi-account-circle"></i> Create an account ?</a>
-                                </div>
+                                </div> -->
                             </div>
                         </form>
                     </div>
