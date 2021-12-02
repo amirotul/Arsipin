@@ -121,7 +121,8 @@ class Surat_Masuk extends CI_Controller{ //membuat controller Mahasiswa
 		$tgl_terima_sm = $this->input->post('tgl_terima_sm');
 		$asal_sm = $this->input->post('asal_sm');
 		$perihal_sm = $this->input->post('perihal_sm');
-		$idFile = $this->Surat_masuk_model->edit_data($where, 'surat_masuk')->result();
+		$idFile = $this->Surat_masuk_model->get_id($id_sm)->row();
+		// edit_data($where, 'surat_masuk')->result();
 		$data = './assets/upload/file_sm/'. $idFile->file_sm;
 
 		// ($where, 'surat_masuk')->result();
@@ -146,17 +147,19 @@ class Surat_Masuk extends CI_Controller{ //membuat controller Mahasiswa
 					'perihal_sm' => $this->input->post('perihal_sm'),
 					'file_sm' => $name
 				];
+
 				unlink('./assets/upload/file_sm/'.$this->input->post('fileLama',true));
         // update file di database
 
-				$update = $this->Surat_masuk_model->update_file($id_sm,$data);
+				$update = $this->Surat_masuk_model->update_file($id_sm, $data);
 				if ($update) {
-					$this->session->set_flashdata('pesan','Data berhasil di update');
+					// $this->session->set_flashdata('pesan','Data berhasil di update');
 					redirect('Surat_Masuk');
 				} else {
 					echo "gagal";
 				}        
-			}else{
+			}
+			else{
 
 				$data = [
 					'id_sm' => $this->input->post('id_sm'),
@@ -168,9 +171,9 @@ class Surat_Masuk extends CI_Controller{ //membuat controller Mahasiswa
 				];
 
         // update file di database
-				$update = $this->Surat_masuk_model->update_file($id_sm,$data);
+				$update = $this->Surat_masuk_model->update_file($id_sm, $data);
 				if ($update) {
-					$this->session->set_flashdata('pesan','Data berhasil di update');
+					// $this->session->set_flashdata('pesan','Data berhasil di update');
 					redirect('Surat_Masuk');
 				} else {
 					echo "gagal";
