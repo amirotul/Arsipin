@@ -20,6 +20,7 @@ class Data_arsip_model extends CI_Model
     function lihat_semua_arsip(){
     	$this->db->select('*');
     	$this->db->from('data_arsip');
+    	$this->db->where('data_arsip.id_pengguna', $this->session->userdata('session_id_role'));
     	$this->db->join('jenis_arsip', 'jenis_arsip.id_jenis_arsip = data_arsip.id_jenis');
     	$query = $this->db->get();
     	return $query;
@@ -36,6 +37,8 @@ class Data_arsip_model extends CI_Model
 		$this->db->select('*'); //memilih semua
 		$this->db->from('data_arsip');
 		$where = "tgl_upload BETWEEN '".$data_from."'AND'".$date_to."'";
+		$this->db->where('data_arsip.id_pengguna', $this->session->userdata('session_id_role'));
+		$this->db->join('jenis_arsip', 'jenis_arsip.id_jenis_arsip = data_arsip.id_jenis');
 		$this->db->where($where);
 		$query = $this->db->get();
 		return $query;
@@ -46,6 +49,7 @@ class Data_arsip_model extends CI_Model
 		$this->db->select('*'); //memilih semua
 		$this->db->from('data_arsip');
 		$where = "id_jenis = '" . $id_jenis . "' AND tgl_upload BETWEEN '".$date_from."'AND'".$date_to."'";
+		$this->db->where('data_arsip.id_pengguna', $this->session->userdata('session_id_role'));
 		$this->db->where($where);
 
 		$query = $this->db->get();
@@ -56,6 +60,7 @@ class Data_arsip_model extends CI_Model
     {
     	$this->db->select('*'); //memilih semua
 		$this->db->from('data_arsip');
+		$this->db->where('data_arsip.id_pengguna', $this->session->userdata('session_id_role'));
 		$this->db->join('jenis_arsip', 'jenis_arsip.id_jenis_arsip = data_arsip.id_jenis');
         $this->db->order_by('id_arsip','DESC');
 		$this->db->limit(3);
@@ -95,5 +100,10 @@ class Data_arsip_model extends CI_Model
 		 $this->db->order_by('id_jenis'); 
 		 $this->db->get('data_arsip')->num_rows;
     }
+    function data_arsip_perid (){
+
+		$this->db->where('data_arsip.id_pengguna', $this->session->userdata('session_id_role'));
+		return $this->db->get('data_arsip')->result();
+	}
 }
 ?>

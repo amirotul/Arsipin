@@ -8,6 +8,7 @@ class Jenis_arsip_model extends CI_Model
 	function getAll(){ //membuat function getAll
 		$this->db->select('*'); //memilih semua
 		$this->db->from('jenis_arsip');// dari tabel tm_user
+		
 		// $this->db->join('data_pengguna', 'data_pengguna.id_pengguna = jenis_arsip.id_pengguna');
 		$query = $this->db->get();
 		return $query;
@@ -55,6 +56,10 @@ class Jenis_arsip_model extends CI_Model
 		$this->db->where('password', $pass);
 		$query = $this->db->get();
 		return $query;
+	}
+	function jenis_arsip_perid (){
+		$this->db->where('jenis_arsip.id_pengguna', $this->session->userdata('session_id_role'));
+		return $this->db->get('jenis_arsip')->result();
 	}
 }
 ?>

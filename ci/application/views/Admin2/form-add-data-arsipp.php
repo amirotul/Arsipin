@@ -14,6 +14,10 @@
             <div class="col-12">
                 <div class="card m-b-30">
                     <div class="card-body">
+
+                        <input type="hidden" id="id_pengguna" name="id_pengguna" value="<?= $user['id_role'] ?>">
+                        <input type="hidden" id="id_jenis" name="id_jenis" value="<?= $id_jenis ?>">
+
                         <div class="form-group row">
                             <label for="nama_arsip" class="col-sm-2 col-form-label">Nama Arsip</label>
                             <div class="col-sm-5">
@@ -21,7 +25,7 @@
                             </div>
                         </div>
 
-                        <div class="form-group row">
+                        <!--<div class="form-group row">
                             <label for="example-date-input" class="col-sm-2 col-form-label">Jenis Arsip</label>
                             <div class="col-sm-5">
                                 <select class="form-control" id="id_jenis" name="id_jenis" required="">
@@ -31,7 +35,7 @@
                                     <?php endforeach ?>
                                 </select>
                             </div>
-                        </div>
+                        </div>-->
 
                         <div class="form-group row">
                             <label for="example-date-input" class="col-sm-2 col-form-label">Tanggal Upload</label>

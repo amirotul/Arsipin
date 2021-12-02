@@ -8,7 +8,7 @@ class Rolejenisarsip_model extends CI_Model
 	function getAll(){ //membuat function getAll
 		$this->db->select('*'); //memilih semua
 		$this->db->from('jenis_arsip');// dari tabel tm_user
-		
+		$this->db->where('jenis_arsip.id_pengguna', $this->session->userdata('session_id_role'));
 		$query = $this->db->get();
 		return $query;
 		//untuk proses selecy data dari database
