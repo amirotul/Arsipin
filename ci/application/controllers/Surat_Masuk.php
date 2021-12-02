@@ -109,8 +109,7 @@ class Surat_Masuk extends CI_Controller{ //membuat controller Mahasiswa
 
 	public function edit($id_sm)
 	{
-		$where = array('id_sm' => $id_sm);
-		$data['user'] = $this->Surat_masuk_model->edit_data($where, 'surat_masuk')->result();
+		$data['user'] = $this->Surat_masuk_model->get_id($id_sm)->row();
 		$this->template->views('Admin2/update-surat-masuk', $data);
 	}
 

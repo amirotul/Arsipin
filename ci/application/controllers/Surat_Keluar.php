@@ -121,5 +121,71 @@ class Surat_Keluar extends CI_Controller{ //membuat controller Mahasiswa
 		$this->template->views('Admin2/surat-keluar',$data);
 	}
 
+	public function edit_data($id)
+  	{
+    $data['user'] = $this->Surat_keluar_model->get_id($id_sk)->row();
+    $this->template->views('Admin2/update-surat-keluar', $data);
+  	}
+
+	public function edit_aksi()
+  	{
+    $id_sk = $this->input->post('id_sk');
+    $no_sk = $this->input->post('no_sk');
+	$tgl_sk = $this->input->post('tgl_sk');
+	$tujuan_sk = $this->input->post('tujuan_sk');
+	$perihal_sk = $this->input->post('perihal_sk');
+    // tampung data gambar dari id
+    $idGambar = $this->Surat_keluar_model->get_id($id_sk)->row();
+    $data = './assets/upload/file_sk/'. $idGambar->file_sk;
+
+    if(is_readable($data)){
+      $config['upload_path']          = './assets/upload/file_sk/';
+      $config['allowed_types']        = 'gif|jpg|png|pdf';
+      $config['file_name']            = $no_sk.'-'.time();
+
+      $this->load->library('upload', $config);
+
+      if($this->upload->do_upload('file_sk')) {
+        // eidt gambar dan judul, maka unlink gambar lama
+        $upload_data = $this->upload->data();
+        $name = $upload_data['file_name'];
+        $data = [
+          'no_sk' => $this->input->post('no_sk'),
+          'file_sk' => $name
+        ];
+        unlink('./assets/upload/file_sk/'.$this->input->post('gambarLama',true));
+        // update file di database
+        
+        $update = $this->Surat_keluar_model->update_file($id_sk,$data);
+        if ($update) {
+          $this->session->set_flashdata('pesan','Data berhasil di update');
+          redirect('Surat_Keluar');
+        } else {
+          echo "gagal";
+        }        
+      }else{
+
+        $data = [
+          'no_sk' => $this->input->post('no_sk'),
+          'tgl_sk' => $tgl_sk,
+		  'tujuan_sk' => $tujuan_sk,
+		  'perihal_sk' => $perihal_sk,
+          
+        ];
+        
+        // update file di database
+        $update = $this->Surat_keluar_model->update_file($id_sk,$data);
+        if ($update) {
+          $this->session->set_flashdata('pesan','Data berhasil di update');
+          redirect('Surat_Keluar');
+        } else {
+          echo "gagal";
+        }        
+      }    
+    }else{
+      echo "gagal";
+    }
+    
+  }
 }
 ?>
