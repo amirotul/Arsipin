@@ -38,7 +38,7 @@ class Surat_masuk_model extends CI_Model
 		return $this->db->get('surat_masuk');
 	}
 
-	function edit_data($where, $table)
+	public function edit_data($where, $table)
 	{
 		return $this->db->get_where($table, $where);
 	}

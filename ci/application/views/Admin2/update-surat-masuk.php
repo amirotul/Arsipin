@@ -53,7 +53,8 @@
                                 <div class="col-sm-3">
                                     <div class="input-group">
                                         <div class="input-group-prepend">
-                                            <input type="file" class="form-control" value="<?php echo $baris->file_sm; ?>" name="fileLama"  required="">
+                                            <input type="file" class="form-control" name="file_sm">
+                                            <input type="hidden" class="form-control" name="fileLama" value="<?php echo $baris->file_sm; ?>" id="file_sm" required="">
                                         </div>
                                     </div>
                                 </div>
