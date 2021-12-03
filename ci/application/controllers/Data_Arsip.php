@@ -115,22 +115,82 @@ class Data_Arsip extends CI_Controller{ //membuat controller Mahasiswa
 		$data['id_jenis'] = $this->input->get('id_jenis');
 		$this->template->views('Admin2/update-data-arsip', $data);
 	}
-	public function update($id_jenis) {
+
+	// public function update($id_jenis) {
+	// 	$id_arsip = $this->input->post('id_arsip');
+	// 	$nama_arsip = $this->input->post('nama_arsip');
+	// 	$tgl_upload = $this->input->post('tgl_upload');
+
+	// 	$data = array(
+	// 		'nama_arsip' => $nama_arsip,
+	// 		'tgl_upload' => $tgl_upload,
+			
+	// 	);
+
+	// 	$where = array(
+	// 		'id_arsip' => $id_arsip
+	// 	);
+	// 	$this->Data_arsip_model->update_data($where,$data, 'data_arsip');
+	// 	redirect('Data_Arsip/data_per_arsip/' . $id_jenis);
+	// }
+
+	public function update() {
 		$id_arsip = $this->input->post('id_arsip');
 		$nama_arsip = $this->input->post('nama_arsip');
 		$tgl_upload = $this->input->post('tgl_upload');
+		$idFile = $this->Data_arsip_model->get_id($id_arsip)->row();
+		// edit_data($where, 'surat_masuk')->result();
+		$data = './assets/upload/file_arsip/'. $idFile->file_arsip;
 
-		$data = array(
-			'nama_arsip' => $nama_arsip,
-			'tgl_upload' => $tgl_upload,
-			
-		);
+		// ($where, 'surat_masuk')->result();
 
-		$where = array(
-			'id_arsip' => $id_arsip
-		);
-		$this->Data_arsip_model->update_data($where,$data, 'data_arsip');
-		redirect('Data_Arsip/data_per_arsip/' . $id_jenis);
+		if(is_readable($data)){
+			$config['upload_path']          = './assets/upload/file_arsip/';
+			$config['allowed_types']        = 'gif|jpg|png|pdf';
+			$config['file_name']            = $nama_arsip.'-'.time();
+
+			$this->load->library('upload', $config);
+
+			if($this->upload->do_upload('file_arsip')) {
+        // eidt gambar dan judul, maka unlink gambar lama
+				$upload_data = $this->upload->data();
+				$name = $upload_data['file_name'];
+				$data = [
+					'nama_arsip' => $this->input->post('nama_arsip'),
+					'file_arsip' => $name
+				];
+
+				unlink('./assets/upload/file_arsip/'.$this->input->post('fileLama',true));
+        // update file di database
+
+				$update = $this->Data_arsip_model->update_file($id_arsip, $data);
+				if ($update) {
+					$this->session->set_flashdata('pesan','Data berhasil di update');
+					redirect('Data_Arsip');
+				} else {
+					echo "gagal";
+				}        
+			}
+			else{
+
+				$data = [
+					'nama_arsip' => $this->input->post('nama_arsip'),
+					'tgl_upload' => $tgl_upload,
+				];
+
+        // update file di database
+				$update = $this->Data_arsip_model->update_file($id_arsip, $data);
+				if ($update) {
+					$this->session->set_flashdata('pesan','Data berhasil di update');
+					redirect('Data_Arsip');
+				} else {
+					echo "gagal";
+				}        
+			}    
+		}else{
+			echo "gagal";
+		}
+
 	}
 
 	public function hapus_data_arsip($id_arsip) {
