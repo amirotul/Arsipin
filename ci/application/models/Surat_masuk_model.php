@@ -43,11 +43,11 @@ class Surat_masuk_model extends CI_Model
 		return $this->db->get_where($table, $where);
 	}
 
-	function update_data($where, $data, $table)
-	{
-		$this->db->where($where);
-		$this->db->update($table, $data);
-	}
+	// function update_data($where, $data, $table)
+	// {
+	// 	$this->db->where($where);
+	// 	$this->db->update($table, $data);
+	// }
 
 	 public function update_file($id_sm,$where, $data, $table)
   {
@@ -60,6 +60,12 @@ class Surat_masuk_model extends CI_Model
 		$this->db->where($where);
 		$this->db->delete($table);
 	}
+
+	public function hapus_file($id_sm)
+  {
+    $this->db->where('id_sm',$id_sm);
+    return $this->db->delete('surat_masuk');
+  }
 
 	function login($user, $pass, $table)
 	{
