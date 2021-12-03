@@ -109,7 +109,8 @@ class Surat_Masuk extends CI_Controller{ //membuat controller Mahasiswa
 
 	public function edit($id_sm)
 	{
-		$data['user'] = $this->Surat_masuk_model->get_id($id_sm)->row();
+		$where = array('id_sm' => $id_sm);
+		$data['user'] = $this->Surat_masuk_model->edit_data($where, 'surat_masuk')->result();
 		$this->template->views('Admin2/update-surat-masuk', $data);
 	}
 
@@ -138,11 +139,6 @@ class Surat_Masuk extends CI_Controller{ //membuat controller Mahasiswa
 				$upload_data = $this->upload->data();
 				$name = $upload_data['file_name'];
 				$data = [
-					'id_sm' => $this->input->post('id_sm'),
-					'no_sm' => $this->input->post('no_sm'),
-					'tgl_sm' => $this->input->post('tgl_sm'),
-					'tgl_terima_sm' => $this->input->post('tgl_terima_sm'),
-					'asal_sm' => $this->input->post('asal_sm'),
 					'perihal_sm' => $this->input->post('perihal_sm'),
 					'file_sm' => $name
 				];
@@ -152,7 +148,7 @@ class Surat_Masuk extends CI_Controller{ //membuat controller Mahasiswa
 
 				$update = $this->Surat_masuk_model->update_file($id_sm, $data);
 				if ($update) {
-					// $this->session->set_flashdata('pesan','Data berhasil di update');
+					$this->session->set_flashdata('pesan','Data berhasil di update');
 					redirect('Surat_Masuk');
 				} else {
 					echo "gagal";
@@ -161,18 +157,17 @@ class Surat_Masuk extends CI_Controller{ //membuat controller Mahasiswa
 			else{
 
 				$data = [
-					'id_sm' => $this->input->post('id_sm'),
 					'no_sm' => $this->input->post('no_sm'),
-					'tgl_sm' => $this->input->post('tgl_sm'),
-					'tgl_terima_sm' => $this->input->post('tgl_terima_sm'),
-					'asal_sm' => $this->input->post('asal_sm'),
-					'perihal_sm' => $this->input->post('perihal_sm'),
+					'tgl_sm' => $tgl_sm,
+					'tgl_terima_sm' => $tgl_terima_sm,
+					'asal_sm' => $asal_sm,
+					'perihal_sm' => $perihal_sm,
 				];
 
         // update file di database
 				$update = $this->Surat_masuk_model->update_file($id_sm, $data);
 				if ($update) {
-					// $this->session->set_flashdata('pesan','Data berhasil di update');
+					$this->session->set_flashdata('pesan','Data berhasil di update');
 					redirect('Surat_Masuk');
 				} else {
 					echo "gagal";

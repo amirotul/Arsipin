@@ -1,22 +1,20 @@
+<form class="user" action="<?php echo base_url('Surat_Masuk/update');?>" method="post" enctype="multipart/form-data">
+    <div class="page-content-wrapper">
 
-<div class="page-content-wrapper">
-
-    <div class="container-fluid">
-        <!-- end page title end breadcrumb -->
-        <div class="row">
-            <div class="col-sm-12">
-                <div class="page-title-box">
-                    <h4 class="page-title">Edit Surat Masuk</h4>
+        <div class="container-fluid">
+            <!-- end page title end breadcrumb -->
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="page-title-box">
+                        <h4 class="page-title">Edit Surat Masuk</h4>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="row">
-            <div class="col-12">
-                <div class="card m-b-30">
-                    <div class="card-body">
-                       <?php foreach($user as $baris){ ?>
-                          <form class="user" action="<?php echo base_url('Surat_Masuk/update');?>"
-                            method="post">
+            <div class="row">
+                <div class="col-12">
+                    <div class="card m-b-30">
+                        <div class="card-body">
+                         <?php foreach($user as $baris){ ?>
                             <div class="form-group row">
                                 <input type="hidden" class="form-control" id="id_sm" name="id_sm" value="<?php echo $baris->id_sm; ?>">
                                 <label for="example-number-input" class="col-sm-2 col-form-label">No. Surat</label>
@@ -50,11 +48,10 @@
                             </div>
                             <div class="form-group row">
                                 <label for="example-date-input" class="col-sm-2 col-form-label">File</label>
-                                <div class="col-sm-3">
-                                    <div class="input-group">
-                                        <div class="input-group-prepend">
+                                <div class="col-sm-5">
+                                            <iframe src="<?php echo base_url();?>assets/upload/file_sm/<?php echo $baris->file_sm; ?>" width="390"  height="300" type="application/pdf" onerror="this.onerror = null; this.src = '<?= base_url('assets/images/avatar.png') ?>'"></iframe>
                                             <input type="file" class="form-control" name="file_sm">
-                                            <input type="hidden" class="form-control" name="fileLama" value="<?php echo $baris->file_sm; ?>" id="file_sm" required="">
+                                            <input type="hidden" class="form-control" name="fileLama" value="<?= $baris->file_sm?>">
                                         </div>
                                     </div>
                                 </div>
