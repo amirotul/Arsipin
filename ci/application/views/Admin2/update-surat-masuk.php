@@ -54,17 +54,9 @@
                                             <input type="hidden" class="form-control" name="fileLama" value="<?= $baris->file_sm?>">
                                         </div>
                                     </div>
-                                </div>
-                            </div>
-                        </div>
 
                         <div class="form-group row">
-
                             <div class="col-sm-5">
-
-                            </div>
-                            <div class="col-sm-5">
-                            </div>
                             <div class="col-md-10 offset-md-2">
                                 <div class="input-group mt-2">
                                     <div class="custom">

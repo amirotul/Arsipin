@@ -1,4 +1,4 @@
-<form class="user" action="<?php echo base_url('Disposisi/update');?>" method="post" >
+<form class="user" action="<?php echo base_url('Disposisi/update');?>" method="post" enctype="multipart/form-data">
 <div class="page-content-wrapper">
 
     <div class="container-fluid">
@@ -24,17 +24,12 @@
                                 <input class="form-control" type="date" value="<?php echo $baris->batas_waktu_dis; ?>" id="batas_waktu_dis" name="batas_waktu_dis">
                             </div>
                         </div>
-                        <div class="form-group row">
-                            <label for="example-date-input" class="col-sm-2 col-form-label">Tujuan Divisi</label>
+                        <!--<div class="form-group row">
+                            <label for="example-date-input" class="col-sm-2 col-form-label">Jenis Divisi</label>
                             <div class="col-sm-5">
-                                <select class="form-control" id="jenis_divisi" name="jenis_divisi" required="">
-                                    <option value=""hidden disabled selected>Pilih Jenis Divisi</option>
-                                    <?php foreach ($role as $item) : ?>
-                                                    <option value="<?= $item->id ?>"><?= $item->jenis_divisi ?></option>
-                                                <?php endforeach ?>
-                                </select>
+                                <input class="form-control" type="text" value="<?php echo $baris->jenis_divisi; ?>" id="jenis_divisi" name="jenis_divisi" >
                             </div>
-                        </div>
+                        </div>-->
                         <div class="form-group row">
                             <label for="example-text-input" class="col-sm-2 col-form-label">Isi</label>
                             <div class="col-sm-5">
@@ -47,6 +42,16 @@
                                 <input class="form-control" type="text" value="<?php echo $baris->catatan_dis; ?>" id="catatan_dis" name="catatan_dis" required="">
                             </div>
                         </div>
+
+                        <div class="form-group row">
+                            <label for="example-text-input" class="col-sm-2 col-form-label">File</label>
+                            <div class="col-sm-5">
+                                <iframe src="<?php echo base_url();?>assets/upload/file_sm/<?= $baris->file_dis?>" width="390"  height="300" type="application/pdf" onerror="this.onerror = null; this.src = '<?= base_url('assets/images/avatar.png') ?>'"></iframe>
+                                 <input type="file" class="form-control" name="file_dis">
+                            <input type="hidden" class="form-control" name="gambarLama" value="<?= $baris->file_dis?>">
+                                    </div>
+                                </div>
+
                         <div class="form-group row">
                             <div class="col-sm-3">
                                 <div class="input-group">
