@@ -94,15 +94,17 @@ class Data_arsip_model extends CI_Model
     	$this->db->where($where);
     	$this->db->delete($table);
     }
+
 	// function detail_data($where,$table) {
 	// 	return $this->db->get_where($table, $where);
 
 	// }
- 
+
+    function detail_data($where,$table) {
     	$this->db->join('jenis_arsip', 'jenis_arsip.id_jenis_arsip = data_arsip.id_jenis');
     	return $this->db->get_where($table, $where);
     }
-
+    
     function jumlah_data_perarsip()
     {
     	$this->db->select('id_jenis, COUNT(id_arsip)');
