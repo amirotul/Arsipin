@@ -17,10 +17,10 @@ class Master_User extends CI_Controller{ //membuat controller Mahasiswa
 			//untuk mengakses file views 'crud/tambah_mahasiswa' pada halaman template
 		}
 		public function input_master() { //function input untuk memasukkan proses inputan data ke database
-			$master_user = $this->input->post('nama_role');
-	
+			$nama_role = $this->input->post('nama_role');
+
 			$data = array( //array data untuk menampung inputan data
-				'nama_role' => $master_user
+				'nama_role' => $nama_role
 			);
 			$this->Master_model->input_data($data, 'master_user'); 
 			//untuk mengakses file model 'Grup_model' dan data tersimpan pada tabel tm_user
