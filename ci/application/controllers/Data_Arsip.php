@@ -116,25 +116,7 @@ class Data_Arsip extends CI_Controller{ //membuat controller Mahasiswa
 		$this->template->views('Admin2/update-data-arsip', $data);
 	}
 
-	// public function update($id_jenis) {
-	// 	$id_arsip = $this->input->post('id_arsip');
-	// 	$nama_arsip = $this->input->post('nama_arsip');
-	// 	$tgl_upload = $this->input->post('tgl_upload');
-
-	// 	$data = array(
-	// 		'nama_arsip' => $nama_arsip,
-	// 		'tgl_upload' => $tgl_upload,
-			
-	// 	);
-
-	// 	$where = array(
-	// 		'id_arsip' => $id_arsip
-	// 	);
-	// 	$this->Data_arsip_model->update_data($where,$data, 'data_arsip');
-	// 	redirect('Data_Arsip/data_per_arsip/' . $id_jenis);
-	// }
-
-	public function update() {
+	public function update($id_jenis) {
 		$id_arsip = $this->input->post('id_arsip');
 		$nama_arsip = $this->input->post('nama_arsip');
 		$tgl_upload = $this->input->post('tgl_upload');
@@ -166,7 +148,7 @@ class Data_Arsip extends CI_Controller{ //membuat controller Mahasiswa
 				$update = $this->Data_arsip_model->update_file($id_arsip, $data);
 				if ($update) {
 					$this->session->set_flashdata('pesan','Data berhasil di update');
-					redirect('Data_Arsip');
+					redirect('Data_Arsip/data_per_arsip/' . $id_jenis);
 				} else {
 					echo "gagal";
 				}        
@@ -182,7 +164,7 @@ class Data_Arsip extends CI_Controller{ //membuat controller Mahasiswa
 				$update = $this->Data_arsip_model->update_file($id_arsip, $data);
 				if ($update) {
 					$this->session->set_flashdata('pesan','Data berhasil di update');
-					redirect('Data_Arsip');
+					redirect('Data_Arsip/data_per_arsip/' . $id_jenis);
 				} else {
 					echo "gagal";
 				}        

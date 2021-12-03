@@ -49,10 +49,10 @@ class Surat_masuk_model extends CI_Model
 	// 	$this->db->update($table, $data);
 	// }
 
-	 public function update_file($id_sm,$where, $data, $table)
+	 public function update_file($id_sm, $data)
   {
     $this->db->where('id_sm',$id_sm);
-    return $this->db->update('surat_masuk',$where, $data, $table);
+    return $this->db->update('surat_masuk', $data);
   }
 
 	function hapus_data($where, $table)
