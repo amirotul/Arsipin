@@ -39,6 +39,15 @@
                             </div>
                         </div>
 
+                        <div class="form-group row">
+                                <label for="example-date-input" class="col-sm-2 col-form-label">File</label>
+                                <div class="col-sm-5">
+                                            <iframe src="<?php echo base_url();?>assets/upload/file_arsip/<?php echo $baris->file_arsip; ?>" width="390"  height="300" type="application/pdf" onerror="this.onerror = null; this.src = '<?= base_url('assets/images/avatar.png') ?>'"></iframe>
+                                            <input type="file" class="form-control" name="file_arsip">
+                                            <input type="hidden" class="form-control" name="fileLama" value="<?= $baris->file_arsip?>">
+                                        </div>
+                                    </div>
+
                             <div class="form-group row">
                                 <div class="col-md-10 offset-md-2">
                                     <div class="input-group mt-2">
