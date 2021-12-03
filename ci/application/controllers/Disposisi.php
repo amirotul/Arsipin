@@ -61,12 +61,75 @@ class Disposisi extends CI_Controller{ //membuat controller Mahasiswa
 	public function edit($id_disposisi) {
 		$where = array('id_disposisi' => $id_disposisi);
 		$data['user'] = $this->Disposisi_model->edit_data($where, 'disposisi')->result();
-		$this->load->model('Roledivisi_model');
-		$this->load->model('Divisi_model');
-		$data['role'] = $this->Roledivisi_model->getAll()->result();
+		//$this->load->model('Roledivisi_model');
+		//$this->load->model('Divisi_model');
+		//$data['role'] = $this->Roledivisi_model->getAll()->result();
 		$this->template->views('Admin2/update-disposisi', $data);
 	}
-	public function update() {
+	public function update()
+  	{
+    $id_disposisi = $this->input->post('id_disposisi');
+	$batas_waktu_dis = $this->input->post('batas_waktu_dis');
+	$jenis_divisi = $this->input->post('jenis_divisi');
+	$isi_dis = $this->input->post('isi_dis');
+	$catatan_dis = $this->input->post('catatan_dis');
+    // tampung data gambar dari id
+    $idGambar = $this->Disposisi_model->get_id($id_disposisi)->row();
+    $data = './assets/upload/file_sm/'. $idGambar->file_dis;
+
+    if(is_readable($data)){
+      $config['upload_path']          = './assets/upload/file_sm/';
+      $config['allowed_types']        = 'gif|jpg|png|pdf';
+      $config['file_name']            = $isi_dis.'-'.time();
+
+      $this->load->library('upload', $config);
+
+      if($this->upload->do_upload('file_dis')) {
+        // eidt gambar dan judul, maka unlink gambar lama
+        $upload_data = $this->upload->data();
+        $name = $upload_data['file_name'];
+        $data = [
+          'isi_dis' => $this->input->post('isi_dis'),
+          'file_dis' => $name
+        ];
+        unlink('./assets/upload/file_sm/'.$this->input->post('gambarLama',true));
+        // update file di database
+        
+        $update = $this->Disposisi_model->update_file($id_disposisi,$data);
+        if ($update) {
+          $this->session->set_flashdata('pesan','Data berhasil di update');
+          redirect('Disposisi');
+        } else {
+          echo "gagal";
+        }        
+      }else{
+
+        $data = [
+          'isi_dis' => $this->input->post('isi_dis'),
+			'batas_waktu_dis' => $batas_waktu_dis,
+			'catatan_dis' => $catatan_dis,
+          
+        ];
+        
+        // update file di database
+        $update = $this->Disposisi_model->update_file($id_disposisi,$data);
+        if ($update) {
+          $this->session->set_flashdata('pesan','Data berhasil di update');
+          redirect('Disposisi');
+        } else {
+          echo "gagal";
+        }        
+      }    
+    }else{
+      echo "gagal";
+    }
+    
+  }
+
+
+
+
+	public function updateee() {
 		// if ($data['file_dis']='') {
 
 		// }else{

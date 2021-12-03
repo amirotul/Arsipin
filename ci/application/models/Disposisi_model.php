@@ -78,5 +78,16 @@ class Disposisi_model extends CI_Model
       	$query = $this->db->get(); 
       	return $query->num_rows();
   }
+  public function get_id($id_disposisi)
+  {
+    $this->db->where('id_disposisi',$id_disposisi);
+    return $this->db->get('disposisi');
+  }
+
+  public function update_file($id_disposisi,$data)
+  {
+    $this->db->where('id_disposisi',$id_disposisi);
+    return $this->db->update('disposisi',$data);
+  }
 }
 ?>
