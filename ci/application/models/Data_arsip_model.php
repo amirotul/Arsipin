@@ -79,21 +79,17 @@ class Data_arsip_model extends CI_Model
     }
 
     public function get_id($id_arsip)
-	{
-		$this->db->where('id_arsip',$id_arsip);
-		return $this->db->get('data_arsip');
-	}
-
-    function update_data($where,$data,$table) {
-    	$this->db->where($where);
-    	$this->db->update($table, $data);
-    }
-
-    public function update_file($id_arsip,$where, $data, $table)
     {
     	$this->db->where('id_arsip',$id_arsip);
-    	return $this->db->update('data_arsip',$where, $data, $table);
+    	return $this->db->get('data_arsip');
     }
+
+    public function update_file($id_arsip, $data)
+    {
+    	$this->db->where('id_arsip',$id_arsip);
+    	return $this->db->update('data_arsip', $data);
+    }
+
     function hapus_data($where, $table) {
     	$this->db->where($where);
     	$this->db->delete($table);
@@ -102,7 +98,7 @@ class Data_arsip_model extends CI_Model
 	// 	return $this->db->get_where($table, $where);
 
 	// }
-    function detail_data($where,$table) {
+ 
     	$this->db->join('jenis_arsip', 'jenis_arsip.id_jenis_arsip = data_arsip.id_jenis');
     	return $this->db->get_where($table, $where);
     }
