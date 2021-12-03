@@ -62,9 +62,15 @@ class Disposisi_model extends CI_Model
 		$where = "batas_waktu_dis BETWEEN '".$data_from."'AND'".$date_to."'";
 		$this->db->where($where);
 		$query = $this->db->get();
-		return $query;
-		
+		return $query;	
 	}
+
+	function notif($table, $notif)
+	{
+		$this->db->insert($table, $notif);
+		$this->db->from('tbl_notif');
+	}
+	
 	function tampil_data_pertahun(){
       	$this->db->select('*'); 
       	$this->db->from('disposisi'); 
