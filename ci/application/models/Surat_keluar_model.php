@@ -66,10 +66,10 @@ class Surat_keluar_model extends CI_Model
     return $this->db->get('surat_keluar');
   }
 
-  public function update_file($id_sk,$data, $table, $where)
+  public function update_file($id_sk,$data)
   {
     $this->db->where('id_sk',$id_sk);
-    return $this->db->update('surat_keluar',$data, $table, $where);
+    return $this->db->update('surat_keluar',$data);
   }
 
 }
