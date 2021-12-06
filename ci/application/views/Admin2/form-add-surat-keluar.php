@@ -63,29 +63,15 @@
                                             </a>
                                         </div>
                                     </div>
-
-
+                                    </div>
+                                        <div class="form-group row">
+                                            <label for="email_pengguna" class="col-sm-2 col-form-label"></label>
+                                            <div class="col-sm-5">
+                                                <input class="form-control" type="text" value="<?= $user['id_role'];?>" id="id_pengguna" name="id_pengguna" hidden >
+                                            </div>
+                                        </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    </div>
 
-                </div><!-- container -->
-
-            </div> <!-- Page content Wrapper -->
-
-        </div><!-- container -->
-
-    </div> <!-- Page content Wrapper -->
-
-</div> <!-- content -->
-
-<footer class="footer">
-    © 2018 - 2020 Dashor by Themesdesign.
-</footer>
-
-</div>
-<!-- End Right content here -->
-
-</div>
-                        <!-- END wrapper -->
