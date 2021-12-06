@@ -1,4 +1,3 @@
-
 <?php
 defined ('BASEPATH') OR exit ('No direct script access allowed');
 class Surat_Masuk extends CI_Controller{ //membuat controller Mahasiswa
