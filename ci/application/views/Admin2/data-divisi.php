@@ -78,18 +78,18 @@
                                             <td><?php echo $no++; ?></td>
                                             <!-- nomor user otomatis bertambah pada saatn menambah data -->
                                             <td><?php echo $baris->jenis_divisi; ?></td>
-                                            <td><?php echo $baris->nama_divisi; ?></td>
-                                            <td><?php echo $baris->email_divisi; ?></td>
+                                            <td><?php echo $baris->nama_pengguna; ?></td>
+                                            <td><?php echo $baris->email_pengguna; ?></td>
                                             <td><?php echo $baris->username; ?></td>
                                             <td><?php echo $baris->password; ?></td>
-                                            <td><img src="<?php echo base_url('../assets/upload/fotodivisi/') . $baris->foto; ?>" alt="" width="50" height="50" onerror="this.onerror = null; this.src = '<?= base_url('assets/images/avatar.png') ?>'"></td>
+                                            <td><img src="<?php echo base_url('assets/upload/fotopengguna/') . $baris->foto; ?>" alt="" width="50" height="50" onerror="this.onerror = null; this.src = '<?= base_url('assets/images/avatar.png') ?>'"></td>
                                                 <td>
                                                 <?php
-                                                echo '<a href="'.base_url('Data_Divisi/edit_data_divisi/'.$baris->id_divisi).'"><button type="button" class="btn-primary">Edit</button></a>';
+                                                echo '<a href="'.base_url('Data_Divisi/edit_data_divisi/'.$baris->id_pengguna).'"><button type="button" class="btn-primary">Edit</button></a>';
                                                 echo " ";
-                                                echo '<button type="button" class="btn-danger" data-toggle="modal" data-target="#deleteModal" data-id-datadivisi="' . $baris->id_divisi . '">Hapus</button>';
+                                                echo '<button type="button" class="btn-danger" data-toggle="modal" data-target="#deleteModal" data-id-datadivisi="' . $baris->id_pengguna . '">Hapus</button>';
                                                 echo " ";
-                                                echo '<a href="'.base_url('Data_Divisi/detail_data_divisi/'.$baris->id_divisi).'"><button type="button" class="btn-warning">Detail</button></a>';
+                                                echo '<a href="'.base_url('Data_Divisi/detail_data_divisi/'.$baris->id_pengguna).'"><button type="button" class="btn-warning">Detail</button></a>';
                                                 ?></td>
                                             </tr>
                                             <?php

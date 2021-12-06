@@ -90,7 +90,8 @@ class Data_arsip_model extends CI_Model
     	return $this->db->update('data_arsip', $data);
     }
 
-    function hapus_data($where, $table) {
+    function hapus_data($where, $table, $id_arsip) {
+    	$this->db->where('id_arsip',$id_arsip);
     	$this->db->where($where);
     	$this->db->delete($table);
     }
@@ -117,5 +118,12 @@ class Data_arsip_model extends CI_Model
     	$this->db->where('data_arsip.id_pengguna', $this->session->userdata('session_id_role'));
     	return $this->db->get('data_arsip')->result();
     }
+
+    public function hapus_file($id_arsip, $where, $table)
+  {
+    $this->db->where('id_arsip',$id_arsip);
+    $this->db->where($where);
+    return $this->db->delete($table);
+  }
 }
 ?>

@@ -19,7 +19,7 @@
                                            <div class="form-group row">
                                         <label for="example-date-input" class="col-sm-2 col-form-label">Jenis Divisi</label>
                                         <div class="col-sm-5">
-                                            <select class="form-control" id="jenis_divisi" name="jenis_divisi" required="">
+                                            <select class="form-control" id="id_role" name="id_role" required="">
                                                 <option value="" hidden disabled selected>Pilih Jenis Divisi</option>
                                                 <?php foreach ($role as $item) : ?>
                                                     <option value="<?= $item->id ?>"><?= $item->jenis_divisi ?></option>
@@ -32,14 +32,14 @@
                                             <div class="form-group row">
                                                 <label for="example-date-input" class="col-sm-2 col-form-label">Nama</label>
                                                 <div class="col-sm-5">
-                                                    <input class="form-control" type="text" value="" id="nama_divisi" name="nama_divisi" required="">
+                                                    <input class="form-control" type="text" value="" id="nama_pengguna" name="nama_pengguna" required="">
                                                 </div>
                                             </div>
 
                                             <div class="form-group row">
                                                 <label for="example-date-input" class="col-sm-2 col-form-label">Email</label>
                                                 <div class="col-sm-5">
-                                                    <input class="form-control" type="text" value="" id="email_divisi" name="email_divisi" required="">
+                                                    <input class="form-control" type="text" value="" id="email_pengguna" name="email_pengguna" required="">
                                                 </div>
                                             </div>
 

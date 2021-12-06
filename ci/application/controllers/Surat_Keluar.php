@@ -145,11 +145,22 @@ class Surat_Keluar extends CI_Controller{ //membuat controller Mahasiswa
     }
     
   }
-	public function hapus_surat_keluar($id_sk) {
-		$where = array('id_sk' => $id_sk);
-		$this->Surat_keluar_model->hapus_data($where, 'surat_keluar');
-		redirect('Surat_Keluar');
-	}
+	public function hapus_surat_keluar($id_sk)
+	  {
+	  	$where = array('id_sk' => $id_sk);
+	    // tampung data gambar dari id
+	    $idFile = $this->Surat_keluar_model->get_id($id_sk)->row();
+	    $data = './assets/upload/file_sk/'. $idFile->file_sk;
+	    // hapus file dulu di dalam folder, jika berhasil hapus di databasenya
+	    if(is_readable($data) && unlink($data)){
+	       // hapus file di database
+	      $hapus_surat_keluar = $this->Surat_keluar_model->hapus_file($id_sk, $where, 'surat_keluar');
+	      redirect('Surat_Keluar');
+	    }else{
+	      echo "gagal hapus";
+	    }
+	    
+	  }
 
 	public function detail_surat_keluar($id_sk) {
 		$where = array('id_sk' => $id_sk);

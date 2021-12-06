@@ -23,14 +23,14 @@
                                             <br>
                                             </a>
                                             <br></a>
-                                    <input type="hidden" name="id" value="<?= $user['id_divisi'] ?>">
+                                    <input type="hidden" name="id" value="<?= $user['id_pengguna'] ?>">
                                     <input type="hidden" name="fotolama" value="<?= $user['foto'] ?>">
 
                                     <div class="form-group row">
                                                 <label for="example-date-input" class="col-sm-2 col-form-label">Jenis Divisi</label>
                                                 <div class="col-sm-5">
                                                     
-                                                    <input class="form-control" type="text" value="<?= $user['jenis_divisi'] ?>" id="jenis_divisi" name="jenis_divisi" disabled>
+                                                    <input class="form-control" type="text" value="<?= $user['jenis_divisi'] ?>" id="id_role" name="id_role" disabled>
                                                 </div>
                                             </div>
 
@@ -38,14 +38,14 @@
                                                 <label for="example-date-input" class="col-sm-2 col-form-label">Nama</label>
                                                 <div class="col-sm-5">
                                                     
-                                                    <input class="form-control" type="text" value="<?= $user['nama_divisi'] ?>" id="nama_divisi" name="nama_divisi" disabled>
+                                                    <input class="form-control" type="text" value="<?= $user['nama_pengguna'] ?>" id="nama_pengguna" name="nama_pengguna" disabled>
                                                 </div>
                                             </div>
 
                                             <div class="form-group row">
                                                 <label for="example-date-input" class="col-sm-2 col-form-label">Email</label>
                                                 <div class="col-sm-5">
-                                                    <input class="form-control" type="text" value="<?= $user['email_divisi'] ?>" id="email_divisi" name="email_divisi" disabled>
+                                                    <input class="form-control" type="text" value="<?= $user['email_pengguna'] ?>" id="email_pengguna" name="email_pengguna" disabled>
                                                 </div>
                                             </div>
 
@@ -68,7 +68,7 @@
                                     <figure class="img-fluid">
                                         <br>
                                         <br>
-                                        <img src="<?php echo base_url('../assets/upload/fotodivisi/') . $user['foto'] ?>" class="preview-foto" alt="" height="200" onerror="this.onerror = null; this.src = '<?= base_url('assets/images/avatar.png') ?>'">
+                                        <img src="<?php echo base_url('assets/upload/fotopengguna/') . $user['foto'] ?>" class="preview-foto" alt="" height="200" onerror="this.onerror = null; this.src = '<?= base_url('assets/images/avatar.png') ?>'">
                                     </figure>
                                     
                                 </div>
