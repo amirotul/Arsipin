@@ -219,5 +219,22 @@ class Surat_Masuk extends CI_Controller{ //membuat controller Mahasiswa
 		$data['user'] = $this->Surat_masuk_model->getByDate($data['date_from'], $data['date_to'])->result();
 		$this->template->views('Admin2/surat-masuk',$data);
 	}
+
+	public function hapus_surat_masukk($id_sm)
+	  {
+	  	$where = array('id_sm' => $id_sm);
+	    // tampung data gambar dari id
+	    $idFile = $this->Surat_masuk_model->get_id($id_sm)->row();
+	    $data = './assets/upload/file_sm/'. $idFile->file_sm;
+	    // hapus file dulu di dalam folder, jika berhasil hapus di databasenya
+	    if(is_readable($data) && unlink($data)){
+	       // hapus file di database
+	      $hapus_surat_masukk = $this->Surat_masuk_model->hapus_filee($id_sm, $where, 'surat_masuk');
+	      redirect('Surat_Masuk');
+	    }else{
+	      echo "gagal hapus";
+	    }
+	    
+	  }
 }
 ?>

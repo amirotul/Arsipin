@@ -30,10 +30,14 @@ class Surat_keluar_model extends CI_Model
 		$this->db->where($where);
 		$this->db->update($table, $data);
 	}
-	function hapus_data($where, $table) {
-		$this->db->where($where);
-		$this->db->delete($table);
-	}
+
+	public function hapus_file($id_sk, $where, $table)
+  {
+    $this->db->where('id_sk',$id_sk);
+    $this->db->where($where);
+    return $this->db->delete($table);
+  }
+
 	function detail_data($where,$table) {
 		return $this->db->get_where($table, $where);
 	}
