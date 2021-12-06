@@ -187,26 +187,6 @@ class Surat_Masuk extends CI_Controller{ //membuat controller Mahasiswa
 
 	}
 
-	// public function hapus_surat_masuk($id_sm) {
-	// 	$where = array('id_sm' => $id_sm);
-	// 	$this->Surat_masuk_model->hapus_data($where, 'surat_masuk');
-	// 	redirect('Surat_Masuk');
-	// }
-
-	public function hapus_surat_masuk($id_sm) {
-		 // tampung data gambar dari id
-    $idFile = $this->Surat_masuk_model->get_id($id_sm)->row();
-    $data = './assets/upload/file_sm'. $idFile->file_sm;
-    // hapus file dulu di dalam folder, jika berhasil hapus di databasenya
-    if(is_readable($data) && unlink($data)){
-       // hapus file di database
-      $hapus = $this->Surat_masuk_model->hapus_file($id_sm, $where, 'surat_masuk');
-      redirect('Surat_Masuk');
-    }else{
-      echo "gagal hapus";
-    }
-	}
-
 	public function detail($id_sm) {
 		$where = array('id_sm' => $id_sm);
 		$data['user'] = $this->Surat_masuk_model->detail_data($where, 'surat_masuk')->row_array();
@@ -228,7 +208,7 @@ class Surat_Masuk extends CI_Controller{ //membuat controller Mahasiswa
 		$this->template->views('Admin2/surat-masuk',$data);
 	}
 
-	public function hapus_surat_masukk($id_sm)
+	public function hapus_surat_masuk($id_sm)
 	  {
 	  	$where = array('id_sm' => $id_sm);
 	    // tampung data gambar dari id
@@ -237,7 +217,7 @@ class Surat_Masuk extends CI_Controller{ //membuat controller Mahasiswa
 	    // hapus file dulu di dalam folder, jika berhasil hapus di databasenya
 	    if(is_readable($data) && unlink($data)){
 	       // hapus file di database
-	      $hapus_surat_masukk = $this->Surat_masuk_model->hapus_filee($id_sm, $where, 'surat_masuk');
+	      $hapus_surat_masuk = $this->Surat_masuk_model->hapus_filee($id_sm, $where, 'surat_masuk');
 	      redirect('Surat_Masuk');
 	    }else{
 	      echo "gagal hapus";
