@@ -175,11 +175,22 @@ class Data_Arsip extends CI_Controller{ //membuat controller Mahasiswa
 
 	}
 
-	public function hapus_data_arsip($id_arsip) {
-		$where = array('id_arsip' => $id_arsip);
-		$this->Data_arsip_model->hapus_data($where, 'data_arsip');
-		redirect('Data_Arsip/data_per_arsip/'. $this->input->get('id_jenis'));
-	}
+	public function hapus_data_arsip($id_arsip)
+	  {
+	  	$where = array('id_arsip' => $id_arsip);
+	    // tampung data gambar dari id
+	    $idFile = $this->Data_arsip_model->get_id($id_arsip)->row();
+	    $data = './assets/upload/file_arsip/'. $idFile->file_arsip;
+	    // hapus file dulu di dalam folder, jika berhasil hapus di databasenya
+	    if(is_readable($data) && unlink($data)){
+	       // hapus file di database
+	      $hapus_data_arsip = $this->Data_arsip_model->hapus_file($id_arsip, $where, 'data_arsip');
+	      redirect('Data_Arsip/data_per_arsip/'. $this->input->get('id_jenis'));
+	    }else{
+	      echo "gagal hapus";
+	    }
+	    
+	  }
 
 	public function detail_data($id_arsip){
 		$where = array('id_arsip' => $id_arsip);

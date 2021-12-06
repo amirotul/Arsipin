@@ -64,48 +64,6 @@ class Surat_Keluar extends CI_Controller{ //membuat controller Mahasiswa
 		$data['user'] = $this->Surat_keluar_model->edit_data($where, 'surat_keluar')->result();
 		$this->template->views('Admin2/update-surat-keluar', $data);
 	}
-	public function update() {
-		$id_sk = $this->input->post('id_sk');
-		$no_sk = $this->input->post('no_sk');
-		$tgl_sk = $this->input->post('tgl_sk');
-		$tujuan_sk = $this->input->post('tujuan_sk');
-		$perihal_sk = $this->input->post('perihal_sk');
-		//$file_sk = $this->fileuploader->checkAndUploadImage($_FILES['file_sk'], '../assets/upload/fotopengguna/');
-		
-		$data = array( //array data untuk menampung inputan data
-			'no_sk' => $no_sk,
-			'tgl_sk' => $tgl_sk,
-			'tujuan_sk' => $tujuan_sk,
-			'perihal_sk' => $perihal_sk,
-			//'file_sk' => $file_sk
-		);
-
-		$where = array(
-			'id_sk' => $id_sk
-		);
-		$this->Surat_keluar_model->update_data($where,$data, 'surat_keluar');
-		redirect('Surat_Keluar');
-	}
-	public function hapus_surat_keluar($id_sk) {
-		$where = array('id_sk' => $id_sk);
-		$this->Surat_keluar_model->hapus_data($where, 'surat_keluar');
-		redirect('Surat_Keluar');
-	}
-
-	public function detail_surat_keluar($id_sk) {
-		$where = array('id_sk' => $id_sk);
-		$data['user'] = $this->Surat_keluar_model->detail_data($where, 'surat_keluar')->result();
-		$this->template->views('Admin2/detail-surat-keluar', $data);
-	}
-	public function filter(){ 
-		$data = [
-			'date_from'=>$this->input->get('mulai_tanggal'),
-			'date_to'=>$this->input->get('sampai_tanggal'),
-		];
-		$data['user'] = $this->Surat_keluar_model->getByDate($data['date_from'], $data['date_to'])->result();
-		$this->template->views('Admin2/surat-keluar',$data);
-	}
-
 	public function edit_data($id)
   	{
     $data['user'] = $this->Surat_keluar_model->get_id($id_sk)->row();
@@ -172,5 +130,37 @@ class Surat_Keluar extends CI_Controller{ //membuat controller Mahasiswa
     }
     
   }
+	public function hapus_surat_keluar($id_sk)
+	  {
+	  	$where = array('id_sk' => $id_sk);
+	    // tampung data gambar dari id
+	    $idFile = $this->Surat_keluar_model->get_id($id_sk)->row();
+	    $data = './assets/upload/file_sk/'. $idFile->file_sk;
+	    // hapus file dulu di dalam folder, jika berhasil hapus di databasenya
+	    if(is_readable($data) && unlink($data)){
+	       // hapus file di database
+	      $hapus_surat_keluar = $this->Surat_keluar_model->hapus_file($id_sk, $where, 'surat_keluar');
+	      redirect('Surat_Keluar');
+	    }else{
+	      echo "gagal hapus";
+	    }
+	    
+	  }
+
+	public function detail_surat_keluar($id_sk) {
+		$where = array('id_sk' => $id_sk);
+		$data['user'] = $this->Surat_keluar_model->detail_data($where, 'surat_keluar')->result();
+		$this->template->views('Admin2/detail-surat-keluar', $data);
+	}
+	public function filter(){ 
+		$data = [
+			'date_from'=>$this->input->get('mulai_tanggal'),
+			'date_to'=>$this->input->get('sampai_tanggal'),
+		];
+		$data['user'] = $this->Surat_keluar_model->getByDate($data['date_from'], $data['date_to'])->result();
+		$this->template->views('Admin2/surat-keluar',$data);
+	}
+
+	
 }
 ?>

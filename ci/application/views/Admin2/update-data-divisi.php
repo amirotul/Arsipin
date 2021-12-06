@@ -16,7 +16,7 @@
                         <div class="card-body">
                             <div class="row">
                                 <div class="col-8">
-                                    <input type="hidden" name="id" value="<?= $user['id_divisi'] ?>">
+                                    <input type="hidden" name="id" value="<?= $user['id_pengguna'] ?>">
                                     <input type="hidden" name="fotolama" value="<?= $user['foto'] ?>">
 
                                     <!--<div class="form-group row">
@@ -36,14 +36,14 @@
                                                 <label for="example-date-input" class="col-sm-2 col-form-label">Nama</label>
                                                 <div class="col-sm-5">
                                                     
-                                                    <input class="form-control" type="text" value="<?= $user['nama_divisi'] ?>" id="nama_divisi" name="nama_divisi" required="">
+                                                    <input class="form-control" type="text" value="<?= $user['nama_pengguna'] ?>" id="nama_pengguna" name="nama_pengguna" required="">
                                                 </div>
                                             </div>
 
                                             <div class="form-group row">
                                                 <label for="example-date-input" class="col-sm-2 col-form-label">Email</label>
                                                 <div class="col-sm-5">
-                                                    <input class="form-control" type="text" value="<?= $user['email_divisi'] ?>" id="email_divisi" name="email_divisi" required="">
+                                                    <input class="form-control" type="text" value="<?= $user['email_pengguna'] ?>" id="email_pengguna" name="email_pengguna" required="">
                                                 </div>
                                             </div>
 
@@ -80,7 +80,7 @@
                                 </div>
                                 <div class="col-auto">
                                     <figure class="img-fluid">
-                                        <img src="<?php echo base_url('../../assets/upload/fotodivisi/') . $user['foto'] ?>" class="preview-foto" alt="" height="150" onerror="this.onerror = null; this.src = '<?= base_url('assets/images/avatar.png') ?>'">
+                                        <img src="<?php echo base_url('assets/upload/fotopengguna/') . $user['foto'] ?>" class="preview-foto" alt="" height="150" onerror="this.onerror = null; this.src = '<?= base_url('assets/images/avatar.png') ?>'">
                                     </figure>
                                     <div class="mt-3">
                                         <input type="file" hidden class="custom-file-input btn-upload-foto" id="foto" name="foto" accept="image/jpeg, image/png">
