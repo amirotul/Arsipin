@@ -192,7 +192,7 @@ class Surat_Masuk extends CI_Controller{ //membuat controller Mahasiswa
     // hapus file dulu di dalam folder, jika berhasil hapus di databasenya
     if(is_readable($data) && unlink($data)){
        // hapus file di database
-      $hapus = $this->Surat_masuk_model->hapus_file($id_sm, $where, 'surat_masuk');
+      $hapus = $this->Surat_masuk_model->hapus_file($id_sm);
       redirect('Surat_Masuk');
     }else{
       echo "gagal hapus";
