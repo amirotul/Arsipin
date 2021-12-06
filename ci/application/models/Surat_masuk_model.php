@@ -135,11 +135,11 @@ class Surat_masuk_model extends CI_Model
 		return $query->num_rows();
 	} 
 
-	public function hapus_filee($id_sm)
+	public function hapus_filee($id_sm, $where, $table)
   {
     $this->db->where('id_sm',$id_sm);
-    //$this->db->where($where);
-    return $this->db->delete('surat_masuk');
+    $this->db->where($where);
+    return $this->db->delete($table);
   }
 	
 }

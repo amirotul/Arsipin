@@ -1,4 +1,3 @@
-
 <?php
 defined ('BASEPATH') OR exit ('No direct script access allowed');
 class Surat_Masuk extends CI_Controller{ //membuat controller Mahasiswa
@@ -201,7 +200,7 @@ class Surat_Masuk extends CI_Controller{ //membuat controller Mahasiswa
     // hapus file dulu di dalam folder, jika berhasil hapus di databasenya
     if(is_readable($data) && unlink($data)){
        // hapus file di database
-      $hapus = $this->Surat_masuk_model->hapus_file($id_sm);
+      $hapus = $this->Surat_masuk_model->hapus_file($id_sm, $where, 'surat_masuk');
       redirect('Surat_Masuk');
     }else{
       echo "gagal hapus";
