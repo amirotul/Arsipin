@@ -15,8 +15,10 @@ class Data_arsip_model extends CI_Model
 	}
 	function count_all_arsip()
 	{
+		$this->db->where('data_arsip.id_pengguna', $this->session->userdata('session_id_role'));
 		return $this->db->get('data_arsip')->num_rows();
 	}
+
 	function lihat_semua_arsip(){
 		$this->db->select('*');
 		$this->db->from('data_arsip');

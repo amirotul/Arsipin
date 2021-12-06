@@ -49,10 +49,17 @@ class Surat_keluar_model extends CI_Model
 	function tampil_data_perbulan(){
       	$this->db->select('*'); 
       	$this->db->from('surat_keluar'); 
-      	$this->db->where('month(tgl_sk)=',date('m')); 
+      	$this->db->where('month(tgl_sk)=',date('m'));
+      	$this->db->where('surat_keluar.id_pengguna', $this->session->userdata('session_id_role'));
       	$query = $this->db->get(); 
       	return $query->num_rows();
   } 
+
+  function surat_masuk_perid (){
+		$this->db->where('surat_keluar.id_pengguna', $this->session->userdata('session_id_role'));
+		return $this->db->get('surat_keluar')->result();
+	}
+
   function tampil_data_pertahun(){
       	$this->db->select('*'); 
       	$this->db->from('surat_keluar'); 

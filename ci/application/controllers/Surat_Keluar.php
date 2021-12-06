@@ -12,37 +12,21 @@ class Surat_Keluar extends CI_Controller{ //membuat controller Mahasiswa
 		$config['total_rows'] = $this->Surat_keluar_model->count_all_sk();
 		$config['total_rows'] = $this->Surat_keluar_model->tampil_data_perbulan();
 
-		$data['user'] = $this->Surat_keluar_model->getAll()->result();
+		// $data['user'] = $this->Surat_keluar_model->getAll()->result();
+		$data['user'] = $this->Surat_keluar_model->surat_masuk_perid();
 		$this->template->views('Admin2/surat-keluar',$data);
 			//untuk mengakses file views 'crud/home_mahasiswa' pada halaman template
 	}
 	public function tambah_surat_keluar() { //function untuk tambah data
-		$this->template->views('Admin2/form-add-surat-keluar');
+		$this->load->model('Datapengguna_model');
+		$this->load->model('Surat_keluar_model');
+
+		$data['user'] = $this->db->get_where('data_pengguna',['id_role'=>$this->session->userdata('session_id_role')])->row_array();
+
+		$data['role'] = $this->Datapengguna_model->getAll()->result();
+		$this->template->views('Admin2/form-add-surat-keluar', $data);
 		//untuk mengakses file views 'crud/tambah_mahasiswa' pada halaman template
 	}
-
-	// public function input_surat_keluar() { //function input untuk memasukkan proses inputan data ke database
-		
-
-
-	// 	$no_sk = $this->input->post('no_sk');
-	// 	$tgl_sk = $this->input->post('tgl_sk');
-	// 	$tujuan_sk = $this->input->post('tujuan_sk');
-	// 	$perihal_sk = $this->input->post('perihal_sk');
-	// 	$file = $this->fileuploader->checkAndUploadImage($_FILES['file'], '../assets/upload/fotodivisi/');
-
-	// 	$data = array( //array data untuk menampung inputan data
-	// 		'no_sk' => $no_sk,
-	// 		'tgl_sk' => $tgl_sk,
-	// 		'tujuan_sk' => $tujuan_sk,
-	// 		'perihal_sk' => $perihal_sk,
-	// 		'file' => $file
-	// 	);
-	// 	$this->Surat_keluar_model->input_data($data, 'surat_keluar'); 
-	// 	//untuk mengakses file model 'Grup_model' dan data tersimpan pada tabel tm_user
-	// 	redirect('Surat_Keluar');
-	// 	//setelah data berhasil tersimpan, halaman web otomatis beralih ke halaman pada function index
-	// }
 
 	public function input_surat_keluar()
 	{
@@ -51,6 +35,7 @@ class Surat_Keluar extends CI_Controller{ //membuat controller Mahasiswa
 			'tgl_sk' => $this->input->post('tgl_sk'),
 			'tujuan_sk' => $this->input->post('tujuan_sk'),
 			'perihal_sk' => $this->input->post('perihal_sk'),
+			'id_pengguna' => $this->input->post('id_pengguna'),
 			'file_sk' => $_FILES['file_sk']
 		];
 		if ($data['file_sk']='') {
