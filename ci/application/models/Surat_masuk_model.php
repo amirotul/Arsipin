@@ -107,16 +107,9 @@ class Surat_masuk_model extends CI_Model
 		$this->db->select('*'); 
 		$this->db->from('surat_masuk'); 
 		$this->db->where('month(tgl_sm)=',date('m')); 
-		$this->db->where('surat_masuk.id_pengguna', $this->session->userdata('session_id_role'));
 		$query = $this->db->get(); 
 		return $query->num_rows();
 	} 
-
-	function surat_masuk_perid (){
-		$this->db->where('surat_masuk.id_pengguna', $this->session->userdata('session_id_role'));
-		return $this->db->get('surat_masuk')->result();
-	}
-
 	function tampil_data_pertahun(){
 		$this->db->select('*'); 
 		$this->db->from('surat_masuk'); 
@@ -135,11 +128,11 @@ class Surat_masuk_model extends CI_Model
 		return $query->num_rows();
 	} 
 
-	public function hapus_filee($id_sm)
+	public function hapus_filee($id_sm, $where, $table)
   {
     $this->db->where('id_sm',$id_sm);
-    //$this->db->where($where);
-    return $this->db->delete('surat_masuk');
+    $this->db->where($where);
+    return $this->db->delete($table);
   }
 	
 }
