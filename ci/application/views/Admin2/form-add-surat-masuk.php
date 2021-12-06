@@ -68,8 +68,13 @@
                                         <a href=<?php echo base_url('Surat_Masuk')?>>
                                             <button class="btn btn-danger btn-sm" type="button">Batal</button></a>
                                         </div>
+
+                                        <div class="form-group row">
+                                            <label for="email_pengguna" class="col-sm-2 col-form-label"></label>
+                                            <div class="col-sm-5">
+                                                <input class="form-control" type="text" value="<?= $user['id_role'];?>" id="id_pengguna" name="id_pengguna" hidden >
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                    </div>
