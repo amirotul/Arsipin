@@ -51,7 +51,7 @@
         </div>
         </div>
         </div>';}?>
-        
+
         <?php
         if($getGrup==1)
         {
@@ -82,7 +82,7 @@
                 </div>
                 </div>';}?>
 
-                
+
                 <div class="row">
                   <?php
                   if($getGrup==1)
@@ -117,7 +117,7 @@
                       </div>
                       </div>';}?>
 
-                      
+
                       <div class="row">
                         <div class="col-md-12 col-xl-8">
                           <div class="card">
@@ -156,17 +156,16 @@
                       title: {
                         text: 'Jumlah dokumen pertahun'
                       },
-                      
+
 
                       xAxis: {
                         categories: [
-             //'2021',
-             //'2022',
-             //'2023',
-             //'2024',
-             //'2025'
-             <?php echo mdate($dates); ?>
-             ],
+                        '2021',
+                        '2022',
+                        '2023',
+                        '2024',
+                        '2025'
+                        ],
         plotBands: [{ // visualize the weekend
           from: 4.5,
           to: 6.5,
@@ -194,14 +193,33 @@
       series: [{
 
         name: 'Surat Masuk',
-        data: [<?php echo json_encode($data_sm_pertahun); ?>]
+        data: [
+        <?php echo json_encode($data_sm_pertahun_21); ?>, 
+        <?php echo json_encode($data_sm_pertahun_22); ?>,
+        <?php echo json_encode($data_sm_pertahun_23); ?>,
+        <?php echo json_encode($data_sm_pertahun_24); ?>,
+        <?php echo json_encode($data_sm_pertahun_25); ?>,
+        ]
       }, {
         name: 'Surat Keluar',
-        data: [<?php echo json_encode($data_sk_pertahun); ?>]
+        data: [
+        <?php echo json_encode($data_sk_pertahun_21); ?>, 
+        <?php echo json_encode($data_sk_pertahun_22); ?>,
+        <?php echo json_encode($data_sk_pertahun_23); ?>,
+        <?php echo json_encode($data_sk_pertahun_24); ?>,
+        <?php echo json_encode($data_sk_pertahun_25); ?>
+        ]
       }, {
         name: 'Disposisi',
 
-        data: [<?php echo json_encode($data_dis_pertahun); ?>]
+        data: [ 
+        <?php echo json_encode($data_dis_pertahun_21); ?>,
+        <?php echo json_encode($data_dis_pertahun_22);
+        ?>,
+        <?php echo json_encode($data_dis_pertahun_23); ?>,
+        <?php echo json_encode($data_dis_pertahun_24); ?>,
+        <?php echo json_encode($data_dis_pertahun_25); ?> 
+        ]
 
       }]
     });

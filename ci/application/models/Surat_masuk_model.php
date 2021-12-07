@@ -117,13 +117,53 @@ class Surat_masuk_model extends CI_Model
 		return $this->db->get('surat_masuk')->result();
 	}
 
-	function tampil_data_pertahun(){
+	// function tampil_data_pertahun(){
+	// 	$this->db->select('*'); 
+	// 	$this->db->from('surat_masuk'); 
+	// 	$this->db->where('year(tgl_sm)=',date(' Y')); 
+	// 	$query = $this->db->get(); 
+	// 	return $query->num_rows();
+	// } 
+
+	function tampil_data_pertahun21(){
 		$this->db->select('*'); 
 		$this->db->from('surat_masuk'); 
-		$this->db->where('year(tgl_sm)=',date(' Y')); 
+		$this->db->where('year(tgl_sm)=',date('2021')); 
 		$query = $this->db->get(); 
 		return $query->num_rows();
-	} 
+	}
+
+	function tampil_data_pertahun22(){
+		$this->db->select('*'); 
+		$this->db->from('surat_masuk'); 
+		$this->db->where('year(tgl_sm)=',date('2022')); 
+		$query = $this->db->get(); 
+		return $query->num_rows();
+	}
+
+	function tampil_data_pertahun23(){
+		$this->db->select('*'); 
+		$this->db->from('surat_masuk'); 
+		$this->db->where('year(tgl_sm)=',date('2023')); 
+		$query = $this->db->get(); 
+		return $query->num_rows();
+	}
+
+	function tampil_data_pertahun24(){
+		$this->db->select('*'); 
+		$this->db->from('surat_masuk'); 
+		$this->db->where('year(tgl_sm)=',date('2024')); 
+		$query = $this->db->get(); 
+		return $query->num_rows();
+	}
+
+	function tampil_data_pertahun25(){
+		$this->db->select('*'); 
+		$this->db->from('surat_masuk'); 
+		$this->db->where('year(tgl_sm)=',date('2025')); 
+		$query = $this->db->get(); 
+		return $query->num_rows();
+	}
 
 	function tampil_tahun(){
 		$this->db->select('YEAR(tgl_sm)');
