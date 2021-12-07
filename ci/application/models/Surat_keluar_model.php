@@ -64,13 +64,54 @@ class Surat_keluar_model extends CI_Model
 		return $this->db->get('surat_keluar')->result();
 	}
 
-  function tampil_data_pertahun(){
+  // function tampil_data_pertahun(){
+  //     	$this->db->select('*'); 
+  //     	$this->db->from('surat_keluar'); 
+  //     	$this->db->where('year(tgl_sk)=',date('Y')); 
+  //     	$query = $this->db->get(); 
+  //     	return $query->num_rows();
+  // }
+
+  function tampil_data_pertahun21(){
       	$this->db->select('*'); 
       	$this->db->from('surat_keluar'); 
-      	$this->db->where('year(tgl_sk)=',date('Y')); 
+      	$this->db->where('year(tgl_sk)=',date('2021')); 
       	$query = $this->db->get(); 
       	return $query->num_rows();
   }
+
+  function tampil_data_pertahun22(){
+      	$this->db->select('*'); 
+      	$this->db->from('surat_keluar'); 
+      	$this->db->where('year(tgl_sk)=',date('2022')); 
+      	$query = $this->db->get(); 
+      	return $query->num_rows();
+  }
+
+  function tampil_data_pertahun23(){
+      	$this->db->select('*'); 
+      	$this->db->from('surat_keluar'); 
+      	$this->db->where('year(tgl_sk)=',date('2023')); 
+      	$query = $this->db->get(); 
+      	return $query->num_rows();
+  }
+
+  function tampil_data_pertahun24(){
+      	$this->db->select('*'); 
+      	$this->db->from('surat_keluar'); 
+      	$this->db->where('year(tgl_sk)=',date('2024')); 
+      	$query = $this->db->get(); 
+      	return $query->num_rows();
+  }
+
+  function tampil_data_pertahun25(){
+      	$this->db->select('*'); 
+      	$this->db->from('surat_keluar'); 
+      	$this->db->where('year(tgl_sk)=',date('2025')); 
+      	$query = $this->db->get(); 
+      	return $query->num_rows();
+  }
+
   public function get_id($id_sk)
   {
     $this->db->where('id_sk',$id_sk);
