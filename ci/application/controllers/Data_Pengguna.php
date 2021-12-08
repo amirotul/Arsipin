@@ -10,6 +10,7 @@ class Data_Pengguna extends CI_Controller{ //membuat controller Mahasiswa
 	}
 
 	public function index(){ //function untuk menampilkan halaman awal yang ditampilkan
+		$config['base_url'] = site_url('Data_Pengguna');
 		$config['total_rows'] = $this->Datapengguna_model->count_all_pengguna();
 		$data['user'] = $this->Datapengguna_model->getAll()->result();
 		// echo json_encode($data['user']); die;

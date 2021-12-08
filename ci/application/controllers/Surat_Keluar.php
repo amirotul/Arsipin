@@ -9,6 +9,7 @@ class Surat_Keluar extends CI_Controller{ //membuat controller Mahasiswa
 	}
 
 	public function index(){ //function untuk menampilkan halaman awal yang ditampilkan
+		$config['base_url'] = site_url('Surat_Keluar');
 		$config['total_rows'] = $this->Surat_keluar_model->count_all_sk();
 		$config['total_rows'] = $this->Surat_keluar_model->tampil_data_perbulan();
 
