@@ -8,6 +8,7 @@ class Master_User extends CI_Controller{ //membuat controller Mahasiswa
 	}
 
 	public function index(){ //function untuk menampilkan halaman awal yang ditampilkan
+		$config['base_url'] = site_url('Master_User');
 		$data['user'] = $this->Master_model->getAll()->result();
 		$this->template->views('Admin2/master-user',$data);
 			//untuk mengakses file views 'crud/home_mahasiswa' pada halaman template

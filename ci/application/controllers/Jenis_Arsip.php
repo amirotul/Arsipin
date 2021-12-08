@@ -11,6 +11,7 @@ class Jenis_Arsip extends CI_Controller{ //membuat controller Mahasiswa
 	public function index(){ //function untuk menampilkan halaman awal yang ditampilkan
 
 		//$data['user'] = $this->Jenis_arsip_model->getAll()->result();
+		$config['base_url'] = site_url('Jenis_Arsip');
 
 		$data['user'] = $this->Jenis_arsip_model->jenis_arsip_perid();
 

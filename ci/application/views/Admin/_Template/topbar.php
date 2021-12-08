@@ -92,7 +92,7 @@ $getGrup = $this->session->userdata('session_grup');
                                         <div class="dropdown-item noti-title">
                                             <h5>Welcome</h5>
                                         </div>
-                                        <a class="dropdown-item" href="Profile"><i class="mdi mdi-account-circle "></i> Profile</a>
+                                        <a class="dropdown-item" href="<?php echo site_url('Profile'); ?>"><i class="mdi mdi-account-circle "></i> Profile</a>
                                         
                                         <a class="dropdown-item" href="#"><i class="mdi mdi-lock-open-outline"></i> Lock screen</a>
                                         <div class="dropdown-divider"></div>
