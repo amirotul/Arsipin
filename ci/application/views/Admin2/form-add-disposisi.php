@@ -104,7 +104,7 @@
                                      </form>
                                  </hr>
 
-                                 <input type="submit" onclick="this.disabled=false;document.getElementById('btn-dis').disabled=true;" class="btn btn-primary btn-sm" name="simpan-dis" id="simpan-dis" value="Simpan"></a>
+                                 <input type="submit" class="btn btn-primary btn-sm" value="Simpan"></a>
                              </div>
 
                          </div> &nbsp &nbsp

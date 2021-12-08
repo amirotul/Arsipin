@@ -92,15 +92,9 @@
                                     echo '<a href="'.base_url('Surat_Masuk/detail/'.$baris->id_sm).'"><button type="button" class="btn-warning">Detail</button></a>';
                                 ?></td>
                                 <td>
-                                 <?php
-                                 echo '<a href="'.base_url('Surat_Masuk/tambah_disposisi/'.$baris->id_sm . '?filename=' . $baris->file_sm).'"><button onclick="this.disabled=true;document.getElementById'.('simpan-dis').'.disabled=true;" type="button" class="btn-success" name="btn-dis" id="btn-dis">Disposisikan</button></a>';?>
-                             </td>
-                             <td>
-                                <a href=<?php echo base_url('Surat_Masuk/tambah_disposisi/'.$baris->id_sm . '?filename=' . $baris->file_sm) ?>>
-
-                                    <button type="button" onclick="this.disabled=true;document.getElementById('simpan-dis').disabled=true;" class="btn-success" name="btn-dis" id="btn-dis">Disposisikan</button></a>
-                                    <!--  <input type="submit" onclick="this.disabled=false;document.getElementById('btn-dis').disabled=true;" class="btn btn-primary btn-sm" name="is" id="simpan-dis" value="Simpan"></a> -->
-                                </td>
+                                   <?php
+                                   echo '<a href="'.base_url('Surat_Masuk/tambah_disposisi/'.$baris->id_sm . '?filename=' . $baris->file_sm).'"><button type="button" class="btn-success">Disposisikan</button></a>';?>
+                               </td>
                             </tr>
                             <?php
                         }?>
