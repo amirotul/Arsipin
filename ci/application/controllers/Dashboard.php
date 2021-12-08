@@ -11,7 +11,7 @@ class Dashboard extends CI_Controller{ //membuat controller Mahasiswa
 		$this->load->model('Datadivisi_model');
 		$this->load->model('Datapengguna_model');
 
-		$this->load->helper('date');
+		// $this->load->helper('date');
 		//untuk mengakses file model 'Mahasiswa_model'
 	}
 
@@ -19,21 +19,42 @@ class Dashboard extends CI_Controller{ //membuat controller Mahasiswa
 
 		$data['user'] = $this->Admin_model->getAll()->result();
 		$data['data_tahun'] = $this->Surat_masuk_model-> tampil_tahun();
-		$data['data_sm_pertahun'] = $this->Surat_masuk_model-> tampil_data_pertahun();
-		$data['data_sk_pertahun'] = $this->Surat_keluar_model-> tampil_data_pertahun();
-		$data['data_dis_pertahun'] = $this->Disposisi_model-> tampil_data_pertahun();
-		$data['total_data_sm'] = $this->Surat_masuk_model-> count_all_sm();
+
+		//line chart
+		$data['data_sm_pertahun_21'] = $this->Surat_masuk_model-> tampil_data_pertahun21();
+		$data['data_sm_pertahun_22'] = $this->Surat_masuk_model-> tampil_data_pertahun22();
+		$data['data_sm_pertahun_23'] = $this->Surat_masuk_model-> tampil_data_pertahun23();
+		$data['data_sm_pertahun_24'] = $this->Surat_masuk_model-> tampil_data_pertahun24();
+		$data['data_sm_pertahun_25'] = $this->Surat_masuk_model-> tampil_data_pertahun25();
+
+		$data['data_sk_pertahun_21'] = $this->Surat_keluar_model-> tampil_data_pertahun21();
+		$data['data_sk_pertahun_22'] = $this->Surat_keluar_model-> tampil_data_pertahun22();
+		$data['data_sk_pertahun_23'] = $this->Surat_keluar_model-> tampil_data_pertahun23();
+		$data['data_sk_pertahun_24'] = $this->Surat_keluar_model-> tampil_data_pertahun24();
+		$data['data_sk_pertahun_25'] = $this->Surat_keluar_model-> tampil_data_pertahun25();
+
+		$data['data_dis_pertahun_21'] = $this->Disposisi_model-> tampil_data_pertahun21();
+		$data['data_dis_pertahun_22'] = $this->Disposisi_model-> tampil_data_pertahun22();
+		$data['data_dis_pertahun_23'] = $this->Disposisi_model-> tampil_data_pertahun23();
+		$data['data_dis_pertahun_24'] = $this->Disposisi_model-> tampil_data_pertahun24();
+		$data['data_dis_pertahun_25'] = $this->Disposisi_model-> tampil_data_pertahun25();
+
+		//card
+		$data['total_belum_didisposisi'] = $this->Surat_masuk_model-> belum_didisposisi();
 		$data['total_data_sk'] = $this->Surat_keluar_model-> count_all_sk();
 		$data['total_data_dis'] = $this->Disposisi_model-> count_all_dis();
 		$data['total_data_arsip'] = $this->Data_arsip_model-> count_all_arsip();
 		$data['total_data_divisi'] = $this->Datadivisi_model-> count_all_divisi();
 		$data['total_data_pengguna'] = $this->Datapengguna_model-> count_all_pengguna();
+
+		
 		$data['total_data_sk_perbulan'] = $this->Surat_keluar_model-> tampil_data_perbulan();
 		$data['total_data_sm_perbulan'] = $this->Surat_masuk_model-> tampil_data_perbulan();
+		$data['total_data_dis_perbulan'] = $this->Disposisi_model-> tampil_data_perbulan();
 		
-		$this->load->helper('date'); 
-        $dates = '%Y'; 
-        $data ['dates'] = $dates;
+		// $this->load->helper('date'); 
+  //       $dates = '%Y'; 
+  //       $data ['dates'] = $dates;
 
 		$this->template->views('Admin2/dashboard',$data);
 			//untuk mengakses file views 'crud/home_mahasiswa' pada halaman template

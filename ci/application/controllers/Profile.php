@@ -21,8 +21,9 @@ class Profile extends CI_Controller{ //membuat controller Mahasiswa
 	}
 	public function update() {
 		//$id_role = $this->input->post('id_role');
+		
+		$nama_pengguna = $this->input->post('nama_pengguna');
 		$email_pengguna = $this->input->post('email_pengguna');
-		$nama_divisi = $this->input->post('nama_divisi');
 		$username = $this->input->post('username');
 		$password = $this->input->post('password');
 		$foto = $this->imageuploader->checkAndUploadImage($_FILES['foto'], './assets/upload/fotopengguna/');

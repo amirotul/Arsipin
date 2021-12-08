@@ -70,11 +70,60 @@ class Disposisi_model extends CI_Model
 		$this->db->insert($table, $notif);
 		$this->db->from('tbl_notif');
 	}
+
+	function tampil_data_perbulan(){
+		$this->db->select('*'); 
+		$this->db->from('disposisi'); 
+		$this->db->where('month(batas_waktu_dis)=',date('m')); 
+		$this->db->where('disposisi.id_pengguna', $this->session->userdata('session_id_role'));
+		$query = $this->db->get(); 
+		return $query->num_rows();
+	}
 	
-	function tampil_data_pertahun(){
+	// function tampil_data_pertahun(){
+ //      	$this->db->select('*'); 
+ //      	$this->db->from('disposisi'); 
+ //      	$this->db->where('year(batas_waktu_dis)=',date('Y')); 
+ //      	$query = $this->db->get(); 
+ //      	return $query->num_rows();
+ //  }
+
+  function tampil_data_pertahun21(){
       	$this->db->select('*'); 
       	$this->db->from('disposisi'); 
-      	$this->db->where('year(batas_waktu_dis)=',date('Y')); 
+      	$this->db->where('year(batas_waktu_dis)=',date('2021')); 
+      	$query = $this->db->get(); 
+      	return $query->num_rows();
+  }
+
+  function tampil_data_pertahun22(){
+      	$this->db->select('*'); 
+      	$this->db->from('disposisi'); 
+      	$this->db->where('year(batas_waktu_dis)=',date('2022')); 
+      	$query = $this->db->get(); 
+      	return $query->num_rows();
+  }
+
+  function tampil_data_pertahun23(){
+      	$this->db->select('*'); 
+      	$this->db->from('disposisi'); 
+      	$this->db->where('year(batas_waktu_dis)=',date('2023')); 
+      	$query = $this->db->get(); 
+      	return $query->num_rows();
+  }
+
+  function tampil_data_pertahun24(){
+      	$this->db->select('*'); 
+      	$this->db->from('disposisi'); 
+      	$this->db->where('year(batas_waktu_dis)=',date('2024')); 
+      	$query = $this->db->get(); 
+      	return $query->num_rows();
+  }
+
+  function tampil_data_pertahun25(){
+      	$this->db->select('*'); 
+      	$this->db->from('disposisi'); 
+      	$this->db->where('year(batas_waktu_dis)=',date('2025')); 
       	$query = $this->db->get(); 
       	return $query->num_rows();
   }

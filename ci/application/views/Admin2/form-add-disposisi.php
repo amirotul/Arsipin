@@ -1,4 +1,4 @@
- <form class="user" action="<?php echo base_url('Disposisi/input_dis'); ?>" method="post">
+<form class="user" action="<?php echo base_url('Disposisi/input_dis'); ?>" method="post">
      <div class="page-content-wrapper">
          <div class="container-fluid">
              <!-- end page title end breadcrumb -->

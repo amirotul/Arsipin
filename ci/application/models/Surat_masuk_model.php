@@ -16,10 +16,21 @@ class Surat_masuk_model extends CI_Model
 	}
 
 
-	function count_all_sm()
+	function belum_didisposisi()
 	{
-		return $this->db->get('surat_masuk')->num_rows();
+		$this->db->select('*'); //memilih semua
+		$this->db->from('disposisi');// dari tabel tm_user
+		// $this->db->where('id_disposisi');
+		$this->db->join('surat_masuk', 'surat_masuk.id_sm = disposisi.id_disposisi');
+		$this->db->distinct('disposisi');
+		$query = $this->db->get(); 
+		return $query->num_rows();
 	}
+
+	function count_all_sm()
+    {
+        return $this->db->get('surat_masuk')->num_rows();
+    }
 
 	function tampil_jumlah_sm()
 	{
@@ -49,11 +60,11 @@ class Surat_masuk_model extends CI_Model
 	// 	$this->db->update($table, $data);
 	// }
 
-	 public function update_file($id_sm, $data)
-  {
-    $this->db->where('id_sm',$id_sm);
-    return $this->db->update('surat_masuk', $data);
-  }
+	public function update_file($id_sm, $data)
+	{
+		$this->db->where('id_sm',$id_sm);
+		return $this->db->update('surat_masuk', $data);
+	}
 
 	function hapus_data($where, $table)
 	{
@@ -62,10 +73,10 @@ class Surat_masuk_model extends CI_Model
 	}
 
 	public function hapus_file($id_sm)
-  {
-    $this->db->where('id_sm',$id_sm);
-    return $this->db->delete('surat_masuk');
-  }
+	{
+		$this->db->where('id_sm',$id_sm);
+		return $this->db->delete('surat_masuk');
+	}
 
 	function login($user, $pass, $table)
 	{
@@ -117,13 +128,53 @@ class Surat_masuk_model extends CI_Model
 		return $this->db->get('surat_masuk')->result();
 	}
 
-	function tampil_data_pertahun(){
+	// function tampil_data_pertahun(){
+	// 	$this->db->select('*'); 
+	// 	$this->db->from('surat_masuk'); 
+	// 	$this->db->where('year(tgl_sm)=',date(' Y')); 
+	// 	$query = $this->db->get(); 
+	// 	return $query->num_rows();
+	// } 
+
+	function tampil_data_pertahun21(){
 		$this->db->select('*'); 
 		$this->db->from('surat_masuk'); 
-		$this->db->where('year(tgl_sm)=',date(' Y')); 
+		$this->db->where('year(tgl_sm)=',date('2021')); 
 		$query = $this->db->get(); 
 		return $query->num_rows();
-	} 
+	}
+
+	function tampil_data_pertahun22(){
+		$this->db->select('*'); 
+		$this->db->from('surat_masuk'); 
+		$this->db->where('year(tgl_sm)=',date('2022')); 
+		$query = $this->db->get(); 
+		return $query->num_rows();
+	}
+
+	function tampil_data_pertahun23(){
+		$this->db->select('*'); 
+		$this->db->from('surat_masuk'); 
+		$this->db->where('year(tgl_sm)=',date('2023')); 
+		$query = $this->db->get(); 
+		return $query->num_rows();
+	}
+
+	function tampil_data_pertahun24(){
+		$this->db->select('*'); 
+		$this->db->from('surat_masuk'); 
+		$this->db->where('year(tgl_sm)=',date('2024')); 
+		$query = $this->db->get(); 
+		return $query->num_rows();
+	}
+
+	function tampil_data_pertahun25(){
+		$this->db->select('*'); 
+		$this->db->from('surat_masuk'); 
+		$this->db->where('year(tgl_sm)=',date('2025')); 
+		$query = $this->db->get(); 
+		return $query->num_rows();
+	}
 
 	function tampil_tahun(){
 		$this->db->select('YEAR(tgl_sm)');
@@ -136,10 +187,10 @@ class Surat_masuk_model extends CI_Model
 	} 
 
 	public function hapus_filee($id_sm, $where, $table)
-  {
-    $this->db->where('id_sm',$id_sm);
-    $this->db->where($where);
-    return $this->db->delete($table);
-  }
+	{
+		$this->db->where('id_sm',$id_sm);
+		$this->db->where($where);
+		return $this->db->delete($table);
+	}
 	
 }
