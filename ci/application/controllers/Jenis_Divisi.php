@@ -8,6 +8,7 @@ class Jenis_Divisi extends CI_Controller{ //membuat controller Mahasiswa
 	}
 
 	public function index(){ //function untuk menampilkan halaman awal yang ditampilkan
+		$config['base_url'] = site_url('Jenis_Divisi');
 		$data['user'] = $this->Divisi_model->getAll()->result();
 		$this->template->views('Admin2/jenis-divisi',$data);
 			//untuk mengakses file views 'crud/home_mahasiswa' pada halaman template

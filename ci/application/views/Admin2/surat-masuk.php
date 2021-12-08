@@ -148,7 +148,7 @@
                                         <div class="modal-footer">
 
                                             <?php
-                                            echo '<a class="btn-hapus"><button type="button" class="btn btn-danger">Hapus</button></a>';
+                                            echo '<a id="btn-hapus-modal"><button type="button" class="btn btn-danger">Hapus</button></a>';
                                             echo " ";
                                             echo '<a><button class="btn btn-secondary" type="button" data-dismiss="modal">Batal</button></a>';
                                             ?>
