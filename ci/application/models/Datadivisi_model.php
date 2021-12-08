@@ -17,6 +17,7 @@ class Datadivisi_model extends CI_Model
     {
     	$this->db->select('*'); //memilih semua
 		$this->db->from('data_pengguna');// dari tabel tm_user
+		$this->db->where('data_pengguna.id_pengguna', $this->session->userdata('session_id_role'));
 		$this->db->join('jenis_divisi', 'jenis_divisi.id = data_pengguna.id_role');
         $query = $this->db->get(); 
 		return $query->num_rows();
