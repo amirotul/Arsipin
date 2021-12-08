@@ -10,6 +10,7 @@ class Dashboard extends CI_Controller{ //membuat controller Mahasiswa
 		$this->load->model('Data_arsip_model');
 		$this->load->model('Datadivisi_model');
 		$this->load->model('Datapengguna_model');
+		$this->load->model('Jenis_divisi_model');
 
 		// $this->load->helper('date');
 		//untuk mengakses file model 'Mahasiswa_model'
@@ -45,7 +46,7 @@ class Dashboard extends CI_Controller{ //membuat controller Mahasiswa
 		$data['total_data_sk'] = $this->Surat_keluar_model-> count_all_sk();
 		$data['total_data_dis'] = $this->Disposisi_model-> count_all_dis();
 		$data['total_data_arsip'] = $this->Data_arsip_model-> count_all_arsip();
-		$data['total_data_divisi'] = $this->Datadivisi_model-> count_all_divisi();
+		$data['total_data_divisi'] = $this->Jenis_divisi_model-> count_all_divisi();
 		$data['total_data_pengguna'] = $this->Datapengguna_model-> count_all_pengguna();
 
 		
