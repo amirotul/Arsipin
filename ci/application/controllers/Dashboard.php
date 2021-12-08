@@ -20,6 +20,7 @@ class Dashboard extends CI_Controller{ //membuat controller Mahasiswa
 		$data['user'] = $this->Admin_model->getAll()->result();
 		$data['data_tahun'] = $this->Surat_masuk_model-> tampil_tahun();
 
+		//line chart
 		$data['data_sm_pertahun_21'] = $this->Surat_masuk_model-> tampil_data_pertahun21();
 		$data['data_sm_pertahun_22'] = $this->Surat_masuk_model-> tampil_data_pertahun22();
 		$data['data_sm_pertahun_23'] = $this->Surat_masuk_model-> tampil_data_pertahun23();
@@ -38,13 +39,15 @@ class Dashboard extends CI_Controller{ //membuat controller Mahasiswa
 		$data['data_dis_pertahun_24'] = $this->Disposisi_model-> tampil_data_pertahun24();
 		$data['data_dis_pertahun_25'] = $this->Disposisi_model-> tampil_data_pertahun25();
 
-		$data['total_data_sm'] = $this->Surat_masuk_model-> count_all_sm();
+		//card
+		$data['total_belum_didisposisi'] = $this->Surat_masuk_model-> belum_didisposisi();
 		$data['total_data_sk'] = $this->Surat_keluar_model-> count_all_sk();
 		$data['total_data_dis'] = $this->Disposisi_model-> count_all_dis();
 		$data['total_data_arsip'] = $this->Data_arsip_model-> count_all_arsip();
 		$data['total_data_divisi'] = $this->Datadivisi_model-> count_all_divisi();
 		$data['total_data_pengguna'] = $this->Datapengguna_model-> count_all_pengguna();
 
+		
 		$data['total_data_sk_perbulan'] = $this->Surat_keluar_model-> tampil_data_perbulan();
 		$data['total_data_sm_perbulan'] = $this->Surat_masuk_model-> tampil_data_perbulan();
 		$data['total_data_dis_perbulan'] = $this->Disposisi_model-> tampil_data_perbulan();
