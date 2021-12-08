@@ -30,6 +30,7 @@ class Surat_Masuk extends CI_Controller{ //membuat controller Mahasiswa
 	public function tambah_disposisi($id_sm) { //function untuk tambah data
 		$where = array('id_sm' => $id_sm);
 		$data['user'] = $this->Surat_masuk_model->edit_data($where, 'surat_masuk')->result();
+		// echo json_encode($data['user']); die;
 		$this->load->model('Roledivisi_model');
 		$this->load->model('Divisi_model');
 		$data['role'] = $this->Roledivisi_model->getAll()->result();
@@ -59,6 +60,7 @@ class Surat_Masuk extends CI_Controller{ //membuat controller Mahasiswa
 			'asal_sm' => $this->input->post('asal_sm'),
 			'perihal_sm' => $this->input->post('perihal_sm'),
 			'id_pengguna' => $this->input->post('id_pengguna'),
+			'status_disposisi' => 'belum didisposisi',
 			'file_sm' => $_FILES['file_sm']
 		];
 
@@ -170,6 +172,7 @@ class Surat_Masuk extends CI_Controller{ //membuat controller Mahasiswa
 					'tgl_terima_sm' => $tgl_terima_sm,
 					'asal_sm' => $asal_sm,
 					'perihal_sm' => $perihal_sm,
+					'status_disposisi' => 'belum didisposisi',
 				];
 
         // update file di database
@@ -224,5 +227,30 @@ class Surat_Masuk extends CI_Controller{ //membuat controller Mahasiswa
 	    }
 	    
 	  }
+
+	public function do_accept($type, $id_sm)
+	{
+		if ($type == 'divisi') {
+			$data['status_divisi'] = 'laksanakan';
+			$data['id_pengguna'] = '1';
+		} else if ($type == 'pimpinan') {
+			$data['status_pimpinan'] = 'setujui';
+			$data['id_pengguna'] = '2';
+		}
+		$this->Surat_masuk_model->update_file($id_sm, $data);
+		redirect('Surat_masuk/index');
+	}
+
+	public function do_reject($type, $id_sm)
+	{
+		if ($type == 'divisi') {
+			$data['status_divisi'] = 'abaikan';
+			$data['id_pengguna'] = '1';
+		} else if ($type == 'pimpinan') {
+			$data['status_pimpinan'] = 'abaikan';
+			$data['id_pengguna'] = '2';
+		}
+		$this->Surat_masuk_model->update_file($id_sm, $data);
+		redirect('Surat_masuk/index');
+	}
 }
-?>
