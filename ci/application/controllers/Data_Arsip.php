@@ -9,6 +9,7 @@ class Data_Arsip extends CI_Controller{ //membuat controller Mahasiswa
 	}
 
 	public function index(){ //function untuk menampilkan halaman awal yang ditampilkan
+		$config['base_url'] = site_url('Data_Arsip');
 		$this->load->model('Rolejenisarsip_model');
 		$this->load->model('Jenisarsip_model');
 		$data['role'] = $this->Rolejenisarsip_model->getAll()->result();

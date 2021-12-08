@@ -16,6 +16,7 @@ class Dashboard extends CI_Controller{ //membuat controller Mahasiswa
 	}
 
 	public function index(){ //function untuk menampilkan halaman awal yang ditampilkan
+		$config['base_url'] = site_url('Dashboard');
 
 		$data['user'] = $this->Admin_model->getAll()->result();
 		$data['data_tahun'] = $this->Surat_masuk_model-> tampil_tahun();

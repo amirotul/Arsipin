@@ -30,7 +30,8 @@ $getGrup = $this->session->userdata('session_grup');
             </li>
            
                 <li>
-                <a href="Dashboard" class="waves-effect waves-light"><i
+                <a href="<?php echo site_url('Dashboard
+                '); ?>" class="waves-effect waves-light"><i
                 class="mdi mdi-view-dashboard"></i><span> Dashboard </span></a>
                 </li>
 
@@ -39,15 +40,15 @@ $getGrup = $this->session->userdata('session_grup');
                 class="mdi mdi-file-document-box"></i><span> Data Arsip </span><span
                 class="float-right"><i class="mdi mdi-chevron-right"></i></span></a>
                 <ul class="list-unstyled">
-                <li><a href="Jenis_Arsip">Jenis Arsip</a></li>
-                <li><a href="Data_Arsip">Data Arsip</a></li>
+                <li><a href="<?php echo site_url('Jenis_Arsip'); ?>">Jenis Arsip</a></li>
+                <li><a href="<?php echo site_url('Data_Arsip'); ?>">Data Arsip</a></li>
                 </ul>
                 </li>
 
                 <li class="has_sub">
                 <a href="#" class="waves-effect waves-light"><i class="mdi mdi-file-document"></i><span> Data Dokumen </span><span class="float-right"><i class="mdi mdi-chevron-right"></i></span></a>
                 <ul class="list-unstyled">
-                <li><a href="Surat_Masuk">Surat Masuk</a></li>
+                <li><a href="<?php echo site_url('Surat_Masuk'); ?>">Surat Masuk</a></li>
                 <?php
                 if($getGrup==1)
                 {
