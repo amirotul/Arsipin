@@ -44,8 +44,10 @@ class Dashboard extends CI_Controller{ //membuat controller Mahasiswa
 		$data['total_data_arsip'] = $this->Data_arsip_model-> count_all_arsip();
 		$data['total_data_divisi'] = $this->Datadivisi_model-> count_all_divisi();
 		$data['total_data_pengguna'] = $this->Datapengguna_model-> count_all_pengguna();
+
 		$data['total_data_sk_perbulan'] = $this->Surat_keluar_model-> tampil_data_perbulan();
 		$data['total_data_sm_perbulan'] = $this->Surat_masuk_model-> tampil_data_perbulan();
+		$data['total_data_dis_perbulan'] = $this->Disposisi_model-> tampil_data_perbulan();
 		
 		// $this->load->helper('date'); 
   //       $dates = '%Y'; 
