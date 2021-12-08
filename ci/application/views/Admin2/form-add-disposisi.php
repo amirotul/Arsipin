@@ -93,7 +93,7 @@
  <div class="form-group row">
 
      <div class="col-sm-5">
-
+                <input type="hidden" name="status_disposisi" id="status_disposisi" value="<?= $baris->status_disposisi ?>">
      </div>
      <div class="col-sm-5">
      </div>
