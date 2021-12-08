@@ -15,7 +15,19 @@ class Datapengguna_model extends CI_Model
 	}
 	function count_all_pengguna()
     {
-        return $this->db->get('data_pengguna')->num_rows();
+        $this->db->select('*'); //memilih semua
+		$this->db->from('master_user');// dari tabel tm_user
+        $query = $this->db->get(); 
+		return $query->num_rows();
+    }
+
+    function count_all_divisi()
+    {
+    	$this->db->select('*'); //memilih semua
+		$this->db->from('data_pengguna');// dari tabel tm_user
+		$this->db->join('jenis_divisi', 'jenis_divisi.id = data_pengguna.id_role');
+        $query = $this->db->get(); 
+		return $query->num_rows();
     }
 
 	function input_data($data, $table) { //membuat function input_data
