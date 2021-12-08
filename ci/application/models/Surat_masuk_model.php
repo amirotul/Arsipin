@@ -16,10 +16,21 @@ class Surat_masuk_model extends CI_Model
 	}
 
 
-	function count_all_sm()
+	function belum_didisposisi()
 	{
-		return $this->db->get('surat_masuk')->num_rows();
+		$this->db->select('*'); //memilih semua
+		$this->db->from('disposisi');// dari tabel tm_user
+		// $this->db->where('id_disposisi');
+		$this->db->join('surat_masuk', 'surat_masuk.id_sm = disposisi.id_disposisi');
+		$this->db->distinct('disposisi');
+		$query = $this->db->get(); 
+		return $query->num_rows();
 	}
+
+	function count_all_sm()
+    {
+        return $this->db->get('surat_masuk')->num_rows();
+    }
 
 	function tampil_jumlah_sm()
 	{
@@ -49,11 +60,11 @@ class Surat_masuk_model extends CI_Model
 	// 	$this->db->update($table, $data);
 	// }
 
-	 public function update_file($id_sm, $data)
-  {
-    $this->db->where('id_sm',$id_sm);
-    return $this->db->update('surat_masuk', $data);
-  }
+	public function update_file($id_sm, $data)
+	{
+		$this->db->where('id_sm',$id_sm);
+		return $this->db->update('surat_masuk', $data);
+	}
 
 	function hapus_data($where, $table)
 	{
@@ -62,10 +73,10 @@ class Surat_masuk_model extends CI_Model
 	}
 
 	public function hapus_file($id_sm)
-  {
-    $this->db->where('id_sm',$id_sm);
-    return $this->db->delete('surat_masuk');
-  }
+	{
+		$this->db->where('id_sm',$id_sm);
+		return $this->db->delete('surat_masuk');
+	}
 
 	function login($user, $pass, $table)
 	{
@@ -176,10 +187,10 @@ class Surat_masuk_model extends CI_Model
 	} 
 
 	public function hapus_filee($id_sm, $where, $table)
-  {
-    $this->db->where('id_sm',$id_sm);
-    $this->db->where($where);
-    return $this->db->delete($table);
-  }
+	{
+		$this->db->where('id_sm',$id_sm);
+		$this->db->where($where);
+		return $this->db->delete($table);
+	}
 	
 }

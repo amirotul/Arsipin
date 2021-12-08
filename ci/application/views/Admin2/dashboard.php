@@ -269,7 +269,7 @@
       selected: true
     }, {
       name: 'Belum Didisposisi',
-      y:  <?php echo json_encode($total_data_sm); ?>
+      y:  <?php echo json_encode($total_belum_didisposisi); ?>
     }]
   }]
 });
