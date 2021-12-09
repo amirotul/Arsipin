@@ -50,7 +50,7 @@ class Data_Pengguna extends CI_Controller{ //membuat controller Mahasiswa
 	public function edit_pengguna($id) {
 		$this->load->model('Role_model');  //Copy line iki ng tambah_pengguna
 		$this->load->model('Pengguna_model');
-		$where = array('id_pengguna' => $id);
+		$where = array('id_user' => $id);
 		$data['user'] = $this->Datapengguna_model->edit_data($where, 'data_pengguna')->row_array();
 		$data['role'] = $this->Role_model->getAll()->result();   //Copy line iki ng tambah_pengguna
 		// echo json_encode($data['user']); die;
@@ -61,7 +61,7 @@ class Data_Pengguna extends CI_Controller{ //membuat controller Mahasiswa
 		$data = array( //array data untuk menampung inputan data
 			'nama_pengguna' => $this->input->post('nama_pengguna'),
 			'email_pengguna' => $this->input->post('email_pengguna'),
-			'id_role' => $this->input->post('id_role'),
+			//'id_role' => $this->input->post('id_role'),
 			'username' => $this->input->post('username'),
 			'password' => $this->input->post('password'),
 			'foto' => '',
@@ -78,19 +78,19 @@ class Data_Pengguna extends CI_Controller{ //membuat controller Mahasiswa
 		// echo json_encode($data); die;
 
 		$where = array(
-			'id_pengguna' => $id
+			'id_user' => $id
 		);
 		$this->Datapengguna_model->update_data($where,$data, 'data_pengguna');
 		redirect('Data_Pengguna');
 	}
 	public function hapus_pengguna($id) {
-		$where = array('id_pengguna' => $id);
+		$where = array('id_user' => $id);
 		$this->Datapengguna_model->hapus_data($where, 'data_pengguna');
 		redirect('Data_Pengguna');
 	}
 	public function detail_data_pengguna($id) {
-		$id_pengguna = $id;
-		$data['user'] = $this->Datapengguna_model->detail_data($id_pengguna, 'data_pengguna')->row_array();
+		$id_user = $id;
+		$data['user'] = $this->Datapengguna_model->detail_data($id_user, 'data_pengguna')->row_array();
 		//$data['role'] = $this->Role_model->getAll()->result();   //Copy line iki ng tambah_pengguna
 		// echo json_encode($data['user']); die;
 		$this->template->views('Admin2/lihat-data-pengguna', $data);

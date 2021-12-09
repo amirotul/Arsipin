@@ -38,21 +38,18 @@
         </div>
       </div>
 
-      <?php
-      if($getGrup==1|2)
-      {
-        echo'<div class="col-md-12 col-xl-3">
+      <?php if ($getGrup == 1 || $getGrup == 2) : ?><div class="col-md-12 col-xl-3">
         <div class="card mini-stat">
         <div class="mini-stat-icon text-right">
         <i class="mdi mdi-folder-account"></i>
         </div>
         <div class="p-4">
         <h6 class="text-uppercase mb-3">Surat Keluar Bulan Ini</h6>
-        <h4 class="mb-0">';}?> <?php echo $total_data_sk_perbulan; ?> 
-        <?php {echo '<small class="ml-2"></small></h4>
+        <h4 class="mb-0"><?php echo $total_data_sk_perbulan; ?> 
+        <small class="ml-2"></small></h4>
         </div>
         </div>
-        </div>';}?>
+        </div><?php endif ?>
 
         <div class="col-md-12 col-xl-3">
             <div class="card mini-stat">

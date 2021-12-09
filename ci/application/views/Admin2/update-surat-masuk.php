@@ -56,11 +56,10 @@
                                     </div>
 
                         <div class="form-group row">
-                            <div class="col-sm-5">
-                            <div class="col-md-10 offset-md-2">
-                                <div class="input-group mt-2">
-                                    <div class="custom">
-                                        <div class="input-group-append">
+                                            <div class="col-md-10 offset-md-2">
+                                                <div class="input-group mt-2">
+                                                    <div class="custom">
+                                                        <div class="input-group-append">
 
                                             <a><input type="submit" class="btn btn-primary btn-sm" name="submit" value="Simpan"></a>
                                         </div>

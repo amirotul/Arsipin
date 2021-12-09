@@ -21,10 +21,10 @@ class Surat_masuk_model extends CI_Model
 	function belum_didisposisi()
 	{
 		$this->db->select('*'); //memilih semua
-		$this->db->from('disposisi');// dari tabel tm_user
-		// $this->db->where('id_disposisi');
-		$this->db->join('surat_masuk', 'surat_masuk.id_sm = disposisi.id_disposisi');
-		$this->db->distinct('disposisi');
+		$this->db->from('surat_masuk');// dari tabel tm_user
+		// $this->db->where('id_sm');
+		$this->db->join('disposisi', 'disposisi.id_disposisi = surat_masuk.id_sm');
+		$this->db->distinct('id_sm');
 		$query = $this->db->get(); 
 		return $query->num_rows();
 	}
@@ -33,11 +33,6 @@ class Surat_masuk_model extends CI_Model
     {
         return $this->db->get('surat_masuk')->num_rows();
     }
-
-	function tampil_jumlah_sm()
-	{
-		return $this->db->get('surat_masuk')->num_rows();
-	}
 
 	function input_data($data, $table)
 	{ //membuat function input_data

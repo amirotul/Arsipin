@@ -14,7 +14,6 @@ class Surat_Masuk extends CI_Controller{ //membuat controller Mahasiswa
 		
 		$config['total_rows'] = $this->Surat_masuk_model->count_all_sm();
 		$config['total_rows'] = $this->Surat_masuk_model->tampil_data_perbulan();
-		$config['total_rows'] = $this->Surat_masuk_model->tampil_jumlah_sm();
 		
 		$data['user'] = $this->Surat_masuk_model->getAll($role);
 		// $data['user'] = $this->Surat_masuk_model->getAll()->result();

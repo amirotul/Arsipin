@@ -16,7 +16,7 @@
                         <div class="card-body">
                             <div class="row">
                                 <div class="col-8">
-                                    <input type="hidden" name="id" value="<?= $user['id_pengguna'] ?>">
+                                    <input type="hidden" name="id_user" value="<?= $user['id_user'] ?>">
                                     <input type="hidden" name="fotolama" value="<?= $user['foto'] ?>">
 
                                     <!--<div class="form-group row">
