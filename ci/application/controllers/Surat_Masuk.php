@@ -9,11 +9,13 @@ class Surat_Masuk extends CI_Controller{ //membuat controller Mahasiswa
 
 	public function index(){ //function untuk menampilkan halaman awal yang ditampilkan
 		$config['base_url'] = site_url('Surat_Masuk');
+
+		$role= $this->session->userdata('session_id_pengguna');
 		
 		$config['total_rows'] = $this->Surat_masuk_model->count_all_sm();
 		$config['total_rows'] = $this->Surat_masuk_model->tampil_data_perbulan();
 		
-		$data['user'] = $this->Surat_masuk_model->surat_masuk_perid();
+		$data['user'] = $this->Surat_masuk_model->getAll($role);
 		// $data['user'] = $this->Surat_masuk_model->getAll()->result();
 
 		$this->template->views('Admin2/surat-masuk',$data);
@@ -43,10 +45,11 @@ class Surat_Masuk extends CI_Controller{ //membuat controller Mahasiswa
 	public function tambah_data() { //function untuk tambah data
 		$this->load->model('Datapengguna_model');
 		$this->load->model('Surat_masuk_model');
+		$id_pengguna= $this->session->userdata('session_id_pengguna');
 
 		$data['user'] = $this->db->get_where('data_pengguna',['id_role'=>$this->session->userdata('session_id_role')])->row_array();
-
 		$data['role'] = $this->Datapengguna_model->getAll()->result();
+		$data['idpeng'] = $id_pengguna;
 		$this->template->views('Admin2/form-add-surat-masuk', $data);
 		//untuk mengakses file views 'crud/tambah_Grup' pada halaman template
 	}
