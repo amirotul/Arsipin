@@ -10,7 +10,7 @@ class Surat_masuk_model extends CI_Model
 	{ //membuat function getAll
 		$this->db->select('*'); //memilih semua
 		$this->db->from('surat_masuk'); // dari tabel tm_user
-		$this->db->join('data_pengguna', 'surat_masuk.id_pengguna = data_pengguna.id_pengguna');
+		$this->db->join('data_pengguna', 'surat_masuk.id_pengguna = data_pengguna.id_user');
 		$this->db->where('surat_masuk.id_pengguna',$role);
 		$query = $this->db->get();
 		return $query->result();
