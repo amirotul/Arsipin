@@ -10,7 +10,7 @@ class Data_Divisi extends CI_Controller{ //membuat controller Mahasiswa
 
 	public function index(){ //function untuk menampilkan halaman awal yang ditampilkan
 		$config['base_url'] = site_url('Data_Divisi');
-		$config['total_rows'] = $this->Datadivisi_model->count_all_divisi();
+		//$config['total_rows'] = $this->Datadivisi_model->count_all_divisi();
 		$data['user'] = $this->Datadivisi_model->getAll()->result();
 		$this->template->views('Admin2/data-divisi',$data);
 			//untuk mengakses file views 'crud/home_mahasiswa' pada halaman template
@@ -43,18 +43,18 @@ class Data_Divisi extends CI_Controller{ //membuat controller Mahasiswa
 		redirect('Data_Divisi');
 		//setelah data berhasil tersimpan, halaman web otomatis beralih ke halaman pada function index
 	}
-	public function edit_data_divisi($id) {
+	public function edit_data_divisi($id_user) {
 		//$this->load->model('Roledivisi_model');
 		//$this->load->model('Divisi_model');
 		//$data['role'] = $this->Roledivisi_model->getAll()->result();
-		$where = array('id_pengguna' => $id);
+		$where = array('id_user' => $id_user);
 		$data['user'] = $this->Datadivisi_model->edit_data($where, 'data_pengguna')->row_array();
 		//$data['role'] = $this->Role_model->getAll()->result();   //Copy line iki ng tambah_pengguna
 		// echo json_encode($data['user']); die;
 		$this->template->views('Admin2/update-data-divisi', $data);
 	}
 	public function update() {
-		$id = $this->input->post('id');
+		$id_user = $this->input->post('id_user');
 		//$jenis_divisi = $this->input->post('jenis_divisi');
 		$nama_pengguna = $this->input->post('nama_pengguna');
 		$email_pengguna = $this->input->post('email_pengguna');
@@ -82,20 +82,20 @@ class Data_Divisi extends CI_Controller{ //membuat controller Mahasiswa
 		// echo json_encode($data); die;
 
 		$where = array(
-			'id_pengguna' => $id
+			'id_user' => $id_user
 		);
 		$this->Datadivisi_model->update_data($where,$data, 'data_pengguna');
 		redirect('Data_Divisi');
 	}
-	public function hapus_data_divisi($id_pengguna) {
-		$where = array('id_pengguna' => $id_pengguna);
+	public function hapus_data_divisi($id_user) {
+		$where = array('id_user' => $id_user);
 		$this->Datadivisi_model->hapus_data($where, 'data_pengguna');
 		redirect('Data_Divisi');
 	}
 
-	public function detail_data_divisi($id) {
-		$id_pengguna = $id;
-		$data['user'] = $this->Datadivisi_model->detail_data($id_pengguna, 'data_pengguna')->row_array();
+	public function detail_data_divisi($id_user) {
+		$id_user = $id_user;
+		$data['user'] = $this->Datadivisi_model->detail_data($id_user, 'data_pengguna')->row_array();
 		//$data['role'] = $this->Role_model->getAll()->result();   //Copy line iki ng tambah_pengguna
 		// echo json_encode($data['user']); die;
 		$this->template->views('Admin2/lihat-data-divisi', $data);

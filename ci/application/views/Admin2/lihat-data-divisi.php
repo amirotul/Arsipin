@@ -18,12 +18,12 @@
                             <div class="row">
                                 <div class="col-8">
 
-                                                <a href="<?php echo base_url('Data_Divisi'); ?>">
+                                                <!--<a href="<?php echo base_url('Data_Divisi'); ?>">
                                                 <i class="far fa-arrow-alt-circle-left fa-2x" ></i>
                                             <br>
                                             </a>
-                                            <br></a>
-                                    <input type="hidden" name="id" value="<?= $user['id_pengguna'] ?>">
+                                            <br></a>-->
+                                    <input type="hidden" name="id" value="<?= $user['id'] ?>">
                                     <input type="hidden" name="fotolama" value="<?= $user['foto'] ?>">
 
                                     <div class="form-group row">

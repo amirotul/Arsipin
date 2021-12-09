@@ -16,9 +16,9 @@
                         <div class="card-body">
                             <div class="row">
                                 <div class="col-8">
-                                    <a href="<?php echo base_url('Data_Pengguna'); ?>">
+                                    <!--<a href="<?php echo base_url('Data_Pengguna'); ?>">
                                         <i class="far fa-arrow-alt-circle-left fa-2x"></i>
-                                        <br>
+                                        <br>-->
                                     </a>
                                     <br></a>
                                     <input type="hidden" name="id" value="<?= $user['id_pengguna'] ?>">

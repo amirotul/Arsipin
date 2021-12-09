@@ -14,10 +14,10 @@
                 <div class="card m-b-30">
                     <div class="card-body">
 
-                        <a href="<?php echo base_url('Data_Arsip'); ?>">
+                        <!--<a href="<?php echo base_url('Data_Arsip'); ?>">
                             <i class="far fa-arrow-alt-circle-left fa-2x"></i>
                             <br>
-                        </a>
+                        </a>-->
 
                         <p>
                             <a href="<?php echo base_url('Data_Arsip/tambah_data_arsip?id_jenis=' . $id_jenis) ?>">
