@@ -83,7 +83,7 @@
                                                                     
                                                                 </div> &nbsp &nbsp
                                                                 <div class="input-group-append">
-                                                                    <a class="small" href="<?php echo base_url('Data_Divisi/index')?>"><button class="btn btn-danger btn-sm" type="button">Batal</button>
+                                                                    <a class="small" href="<?php echo base_url('Data_Divisi')?>"><button class="btn btn-danger btn-sm" type="button">Batal</button>
                                                                     </a>
                                                                 </div>
                                                             </div>
