@@ -8,6 +8,8 @@ class Surat_Masuk extends CI_Controller{ //membuat controller Mahasiswa
 	}
 
 	public function index(){ //function untuk menampilkan halaman awal yang ditampilkan
+		$config['base_url'] = site_url('Surat_Masuk');
+		
 		$config['total_rows'] = $this->Surat_masuk_model->count_all_sm();
 		$config['total_rows'] = $this->Surat_masuk_model->tampil_data_perbulan();
 		

@@ -57,11 +57,11 @@
                                             </td>
                                             <td>
                                                 <?php
-                                                echo '<a href="' . base_url('Data_Pengguna/edit_pengguna/' . $baris->id_pengguna) . '"><button type="button" class="btn-primary">Edit</button></a>';
+                                                echo '<a href="' . base_url('Data_Pengguna/edit_pengguna/' . $baris->id_user) . '"><button type="button" class="btn-primary">Edit</button></a>';
                                                 echo " ";
-                                                echo '<button type="button" class="btn-danger" data-toggle="modal" data-target="#deleteModal" data-id-pengguna="' . $baris->id_pengguna . '">Hapus</button>';
+                                                echo '<button type="button" class="btn-danger" data-toggle="modal" data-target="#deleteModal" data-id-pengguna="' . $baris->id_user . '">Hapus</button>';
                                                 echo " ";
-                                                echo '<a href="' . base_url('Data_Pengguna/detail_data_pengguna/' . $baris->id_pengguna) . '"><button type="button" class="btn-warning">Detail</button></a>';
+                                                echo '<a href="' . base_url('Data_Pengguna/detail_data_pengguna/' . $baris->id_user) . '"><button type="button" class="btn-warning">Detail</button></a>';
                                                 ?></td>
 
                         </div>

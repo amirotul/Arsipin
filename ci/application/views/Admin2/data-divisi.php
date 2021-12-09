@@ -85,11 +85,11 @@
                                             <td><img src="<?php echo base_url('assets/upload/fotopengguna/') . $baris->foto; ?>" alt="" width="50" height="50" onerror="this.onerror = null; this.src = '<?= base_url('assets/images/avatar.png') ?>'"></td>
                                                 <td>
                                                 <?php
-                                                echo '<a href="'.base_url('Data_Divisi/edit_data_divisi/'.$baris->id_pengguna).'"><button type="button" class="btn-primary">Edit</button></a>';
+                                                echo '<a href="'.base_url('Data_Divisi/edit_data_divisi/'.$baris->id_user).'"><button type="button" class="btn-primary">Edit</button></a>';
                                                 echo " ";
-                                                echo '<button type="button" class="btn-danger" data-toggle="modal" data-target="#deleteModal" data-id-datadivisi="' . $baris->id_pengguna . '">Hapus</button>';
+                                                echo '<button type="button" class="btn-danger" data-toggle="modal" data-target="#deleteModal" data-id-datadivisi="' . $baris->id_user . '">Hapus</button>';
                                                 echo " ";
-                                                echo '<a href="'.base_url('Data_Divisi/detail_data_divisi/'.$baris->id_pengguna).'"><button type="button" class="btn-warning">Detail</button></a>';
+                                                echo '<a href="'.base_url('Data_Divisi/detail_data_divisi/'.$baris->id_user).'"><button type="button" class="btn-warning">Detail</button></a>';
                                                 ?></td>
                                             </tr>
                                             <?php

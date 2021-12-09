@@ -16,7 +16,7 @@
                         <div class="card-body">
                             <div class="row">
                                 <div class="col-8">
-                                    <input type="hidden" name="id" value="<?= $user['id_pengguna'] ?>">
+                                    <input type="hidden" name="id" value="<?= $user['id_user'] ?>">
                                     <input type="hidden" name="fotolama" value="<?= $user['foto'] ?>">
                                     <div class="form-group row">
                                         <label for="example-text-input" class="col-sm-2 col-form-label">Nama</label>
@@ -31,7 +31,7 @@
                                         </div>
                                     </div>
 
-                                    <div class="form-group row">
+                                    <!--<div class="form-group row">
                                         <label for="example-date-input" class="col-sm-2 col-form-label">Role</label>
                                         <div class="col-sm-5">
                                             <select class="form-control" name="id_role" required="">
@@ -41,7 +41,7 @@
                                                 <?php endforeach ?>
                                             </select>
                                         </div>
-                                    </div>
+                                    </div>-->
                                     <div class="form-group row">
                                         <label for="example-text-input" class="col-sm-2 col-form-label">Username</label>
                                         <div class="col-sm-5">

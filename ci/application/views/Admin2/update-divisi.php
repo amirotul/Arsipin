@@ -11,6 +11,10 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="row">
+            <div class="col-12">
+                <div class="card m-b-30">
+                    <div class="card-body">
 
                         <?php foreach($user as $baris){ ?>
                         <form class="user" action="<?php echo base_url('Jenis_Divisi/update');?>" method="post">

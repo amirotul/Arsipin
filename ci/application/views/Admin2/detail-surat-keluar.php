@@ -14,9 +14,9 @@
                 <div class="col-12">
                     <div class="card ">
                         <div class="card-body">
-                            <a href="<?php echo base_url('Surat_Keluar')?>">
+                            <!--<a href="<?php echo base_url('Surat_Keluar')?>">
                                 <i class="far fa-arrow-alt-circle-left fa-2x" ></i>
-                                <br>
+                                <br>-->
                             </a>
                             <div class="float-left">
                                 

@@ -10,6 +10,7 @@ class Profile extends CI_Controller{ //membuat controller Mahasiswa
 	}
 
 	public function index(){ //function untuk menampilkan halaman awal yang ditampilkan
+		$config['base_url'] = site_url('Profile');
 		$data['user'] = $this->db->get_where('data_pengguna',['id_role'=>$this->session->userdata('session_id_role')])->row_array();
 		$this->template->views('Admin2/profile',$data);
 			//untuk mengakses file views 'crud/home_mahasiswa' pada halaman template

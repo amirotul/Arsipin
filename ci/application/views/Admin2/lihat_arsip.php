@@ -19,9 +19,9 @@
                          <div class="row">
                                 <div class="col-8">
 
-                                                <a href="<?php echo base_url('Data_Arsip'); ?>">
+                                                <!--<a href="<?php echo base_url('Data_Arsip'); ?>">
                                                 <i class="far fa-arrow-alt-circle-left fa-2x" ></i>
-                                            <br>
+                                            <br>-->
                                             </a>
                                             <br></a>
                                         </div>

@@ -1,4 +1,5 @@
-<?php
+
+ <?php
  $getUser = $this->session->userdata('session_user');
  $getGrup = $this->session->userdata('session_grup');
  ?>
@@ -24,6 +25,7 @@
     
 
     <div class="row">
+      
       <div class="col-md-12 col-xl-3">
         <div class="card mini-stat">
           <div class="mini-stat-icon text-right">
@@ -36,21 +38,18 @@
         </div>
       </div>
 
-      <?php
-      if($getGrup==1|2)
-      {
-        echo'<div class="col-md-12 col-xl-3">
+      <?php if ($getGrup == 1 || $getGrup == 2) : ?><div class="col-md-12 col-xl-3">
         <div class="card mini-stat">
         <div class="mini-stat-icon text-right">
         <i class="mdi mdi-folder-account"></i>
         </div>
         <div class="p-4">
         <h6 class="text-uppercase mb-3">Surat Keluar Bulan Ini</h6>
-        <h4 class="mb-0">';}?> <?php echo $total_data_sk_perbulan; ?> 
-        <?php {echo '<small class="ml-2"></small></h4>
+        <h4 class="mb-0"><?php echo $total_data_sk_perbulan; ?> 
+        <small class="ml-2"></small></h4>
         </div>
         </div>
-        </div>';}?>
+        </div><?php endif ?>
 
         <div class="col-md-12 col-xl-3">
             <div class="card mini-stat">
@@ -59,64 +58,61 @@
               </div>
               <div class="p-4">
                 <h6 class="text-uppercase mb-3">Data Arsip</h6>
-                <h4 class="mb-0"><?php echo $total_data_arsip; ?>
-                <?php {echo '<small class="ml-2"></small></h4>
+                <h4 class="mb-0"><?php echo $total_data_arsip;
+              ?><small class="ml-2"></small></h4>
                 </div>
                 </div>
                 
-                </div>';}?>
+                </div>
 
-        <?php
-        if($getGrup==1)
-        {
-          echo '<div class="col-md-12 col-xl-3">
-          <div class="card mini-stat">
-          <div class="mini-stat-icon text-right">
-          <i class="mdi mdi-email"></i>
-          </div>
-          <div class="p-4">
-          <h6 class="text-uppercase mb-3">Disposisi</h6>
-          <h4 class="mb-0">';}?><?php echo $total_data_dis; ?>
-          <?php {echo '<small class="ml-2"></small></h4>
-          </div>
-          </div>
-          </div>
-          </div>';}?>
+
+
+            <?php if ($getGrup == 1) : ?><div class="col-md-12 col-xl-3">
+                    <div class="card mini-stat">
+                    <div class="mini-stat-icon text-right">
+                    <i class="mdi mdi-tag-text-outline"></i>
+                    </div>
+                    <div class="p-4">
+                    <h6 class="text-uppercase mb-3">Disposisi</h6>
+                    <h4 class="mb-0"> <?php echo $total_data_dis; ?></div>                    
+                    <small class="ml-2"></small></h4>
+                    </div>
+                    </div>
+                    </div><?php endif ?>
+                    </div>
 
 
                 <div class="row">
-                  <?php
-                  if($getGrup==1)
-                  {
-                    echo '<div class="col-md-12 col-xl-3">
+                  <?php if ($getGrup == 1) : ?>
+                    <div class="col-md-12 col-xl-3">
                     <div class="card mini-stat">
                     <div class="mini-stat-icon text-right">
                     <i class="mdi mdi-tag-text-outline"></i>
                     </div>
                     <div class="p-4">
                     <h6 class="text-uppercase mb-3">Data Divisi</h6>
-                    <h4 class="mb-0">';}?> <?php echo $total_data_divisi; ?>
-                    <?php {echo '<small class="ml-2"></small></h4>
+                    <h4 class="mb-0"> <?php echo $total_data_divisi; ?>
+                    <small class="ml-2"></small></h4>
                     </div>
                     </div>
-                    </div>';}?>
+                    </div><?php endif ?>
 
-                    <?php
-                    if($getGrup==1)
-                    {
-                      echo '<div class="col-md-12 col-xl-3">
+                    <?php if ($getGrup == 1) : ?>
+                      <div class="col-md-12 col-xl-3">
                       <div class="card mini-stat">
                       <div class="mini-stat-icon text-right">
                       <i class="mdi mdi-file-document-box"></i>
                       </div>
                       <div class="p-4">
                       <h6 class="text-uppercase mb-3">Data Pengguna</h6>
-                      <h4 class="mb-0">';}?> <?php echo $total_data_pengguna; ?>
-                      <?php {echo '<small class="ml-2"></small></h4>
+                      <h4 class="mb-0"> <?php echo $total_data_pengguna; ?>
+                      <small class="ml-2"></small></h4>
                       </div>
                       </div>
+                      </div><?php endif ?>
                       </div>
-                      </div>';}?>
+
+
 
                       <div class="row">
                         <div class="col-md-12 col-xl-8">
