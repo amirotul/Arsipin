@@ -59,6 +59,7 @@ class Surat_keluar_model extends CI_Model
       	return $query->num_rows();
   } 
 
+
   function surat_keluar_perid ($where){
 		$this->db->where($where);
 		return $this->db->get('surat_keluar')->result();
@@ -72,42 +73,49 @@ class Surat_keluar_model extends CI_Model
   //     	return $query->num_rows();
   // }
 
-  function tampil_data_pertahun21(){
+
+  function tampil_data_pertahun21_perid(){
+
       	$this->db->select('*'); 
       	$this->db->from('surat_keluar'); 
       	$this->db->where('year(tgl_sk)=',date('2021')); 
+      	$this->db->where('surat_keluar.id_pengguna', $this->session->userdata('session_id_role'));
       	$query = $this->db->get(); 
       	return $query->num_rows();
   }
 
-  function tampil_data_pertahun22(){
+  function tampil_data_pertahun22_perid(){
       	$this->db->select('*'); 
       	$this->db->from('surat_keluar'); 
       	$this->db->where('year(tgl_sk)=',date('2022')); 
+      	$this->db->where('surat_keluar.id_pengguna', $this->session->userdata('session_id_role'));
       	$query = $this->db->get(); 
       	return $query->num_rows();
   }
 
-  function tampil_data_pertahun23(){
+  function tampil_data_pertahun23_perid(){
       	$this->db->select('*'); 
       	$this->db->from('surat_keluar'); 
       	$this->db->where('year(tgl_sk)=',date('2023')); 
+      	$this->db->where('surat_keluar.id_pengguna', $this->session->userdata('session_id_role'));
       	$query = $this->db->get(); 
       	return $query->num_rows();
   }
 
-  function tampil_data_pertahun24(){
+  function tampil_data_pertahun24_perid(){
       	$this->db->select('*'); 
       	$this->db->from('surat_keluar'); 
       	$this->db->where('year(tgl_sk)=',date('2024')); 
+      	$this->db->where('surat_keluar.id_pengguna', $this->session->userdata('session_id_role'));
       	$query = $this->db->get(); 
       	return $query->num_rows();
   }
 
-  function tampil_data_pertahun25(){
+  function tampil_data_pertahun25_perid(){
       	$this->db->select('*'); 
       	$this->db->from('surat_keluar'); 
       	$this->db->where('year(tgl_sk)=',date('2025')); 
+      	$this->db->where('surat_keluar.id_pengguna', $this->session->userdata('session_id_role'));
       	$query = $this->db->get(); 
       	return $query->num_rows();
   }
