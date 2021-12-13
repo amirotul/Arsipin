@@ -72,7 +72,7 @@
                                         <div class="form-group row">
                                             <label for="email_pengguna" class="col-sm-2 col-form-label"></label>
                                             <div class="col-sm-5">
-                                                <input class="form-control" type="text" value="1" id="id_pengguna" name="id_pengguna" hidden >
+                                                <input class="form-control" type="hidden" value="<?= $idpeng ?>" id="id_pengguna" name="id_pengguna" >
                                             </div>
                                         </div>
                                     </div>
