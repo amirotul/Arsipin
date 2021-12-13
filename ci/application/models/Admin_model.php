@@ -11,6 +11,11 @@ class Admin_model extends CI_Model
 		//untuk proses selecy data dari database
 	}
 
+	function dashboard_perid (){
+		$this->db->where('surat_masuk.id_pengguna', $this->session->userdata('session_id_role'));
+		return $this->db->get('surat_masuk')->result();
+	}
+
 	function input_data($data, $table) { //membuat function input_data
 		$this->db->insert($table,$data);
 		//untuk proses insert data ke database
