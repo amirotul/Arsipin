@@ -38,7 +38,6 @@ class Disposisi extends CI_Controller{ //membuat controller Mahasiswa
 
 		$data_sm = [
 			'status_disposisi' => 'didisposisi',
-			'id_pengguna' => $data['jenis_divisi'],
 			'divisi_tujuan' => $data['jenis_divisi']
 		];
 
