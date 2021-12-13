@@ -112,8 +112,6 @@
                       </div><?php endif ?>
                       </div>
 
-
-
                       <div class="row">
                         <div class="col-md-12 col-xl-8">
                           <div class="card">
@@ -123,6 +121,8 @@
                             </div>
                           </div>
                         </div>
+                         
+                        <?php if ($getGrup == 1 || $getGrup == 2) : ?>
                         <div class="col-md-12 col-xl-4">
                           <div class="card">
                             <div class="card-body">
@@ -131,6 +131,7 @@
                             </div>
                           </div>
                         </div>
+                        <?php endif ?>
                       </div>
                     </div>
                   </form>
@@ -219,8 +220,8 @@
       }]
     });
 
-  // pie chart
-  // Create the chart
+//didisposisi dan belum didisposisi
+  <?php if ($getGrup == 1) : ?>
   Highcharts.chart('container', {
     chart: {
      plotBackgroundColor: null,
@@ -266,6 +267,57 @@
     }]
   }]
 });
+  <?php endif ?>
+
+
+//disetujui dan belum disetujui
+  <?php if ($getGrup == 2) : ?>
+  Highcharts.chart('container', {
+    chart: {
+     plotBackgroundColor: null,
+     plotBorderWidth: null,
+     plotShadow: false,
+     type: 'pie'
+   },
+   title: {
+    text: 'Persetujuan Surat Keluar'
+  },
+  tooltip: {
+    pointFormat: '<b>{point.percentage:.1f}%</b>'
+  },
+  credits: {
+    enabled: false
+  },
+  accessibility: {
+    point: {
+      valueSuffix: '%'
+    }
+  },
+  plotOptions: {
+    pie: {
+      allowPointSelect: true,
+      cursor: 'pointer',
+      dataLabels: {
+        enabled: true,
+        format: '<b>{point.name}</b>: {point.percentage:.1f} %'
+      }
+    }
+  },
+  series: [{
+    name: 'Brands',
+    colorByPoint: true,
+    data: [{
+      name: 'Disetujui',
+      y:  <?php echo json_encode($sk_disetujui); ?>,
+      sliced: true,
+      selected: true
+    }, {
+      name: 'Belum Disetujui',
+      y:  <?php echo json_encode($sk_belum_disetujui); ?>
+    }]
+  }]
+});
+  <?php endif ?>
 </script>
 
 <style type="text/css">

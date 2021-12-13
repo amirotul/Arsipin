@@ -6,15 +6,21 @@
 class Surat_masuk_model extends CI_Model
 {
 
-	function getAll($role)
+	// function getAll($role)
+	// { //membuat function getAll
+	// 	$this->db->select('*'); //memilih semua
+	// 	$this->db->from('surat_masuk'); // dari tabel tm_user
+	// 	$this->db->join('data_pengguna', 'surat_masuk.id_pengguna = data_pengguna.id_user');
+	// 	$this->db->where('surat_masuk.id_pengguna',$role);
+	// 	$query = $this->db->get();
+	// 	return $query->result();
+	// }
+
+	function getAll()
 	{ //membuat function getAll
 		$this->db->select('*'); //memilih semua
 		$this->db->from('surat_masuk'); // dari tabel tm_user
-		$this->db->join('data_pengguna', 'surat_masuk.id_pengguna = data_pengguna.id_user');
-		$this->db->where('surat_masuk.id_pengguna',$role);
 		$query = $this->db->get();
-		return $query->result();
-		//untuk proses selecy data dari database
 	}
 
 
@@ -133,42 +139,47 @@ class Surat_masuk_model extends CI_Model
 	// 	return $query->num_rows();
 	// } 
 
-	function tampil_data_pertahun21(){
+	function tampil_data_pertahun21_perid(){
 		$this->db->select('*'); 
 		$this->db->from('surat_masuk'); 
 		$this->db->where('year(tgl_sm)=',date('2021')); 
+		$this->db->where('surat_masuk.id_pengguna', $this->session->userdata('session_id_role'));
 		$query = $this->db->get(); 
 		return $query->num_rows();
 	}
 
-	function tampil_data_pertahun22(){
+	function tampil_data_pertahun22_perid(){
 		$this->db->select('*'); 
 		$this->db->from('surat_masuk'); 
 		$this->db->where('year(tgl_sm)=',date('2022')); 
+		$this->db->where('surat_masuk.id_pengguna', $this->session->userdata('session_id_role'));
 		$query = $this->db->get(); 
 		return $query->num_rows();
 	}
 
-	function tampil_data_pertahun23(){
+	function tampil_data_pertahun23_perid(){
 		$this->db->select('*'); 
 		$this->db->from('surat_masuk'); 
 		$this->db->where('year(tgl_sm)=',date('2023')); 
+		$this->db->where('surat_masuk.id_pengguna', $this->session->userdata('session_id_role'));
 		$query = $this->db->get(); 
 		return $query->num_rows();
 	}
 
-	function tampil_data_pertahun24(){
+	function tampil_data_pertahun24_perid(){
 		$this->db->select('*'); 
 		$this->db->from('surat_masuk'); 
 		$this->db->where('year(tgl_sm)=',date('2024')); 
+		$this->db->where('surat_masuk.id_pengguna', $this->session->userdata('session_id_role'));
 		$query = $this->db->get(); 
 		return $query->num_rows();
 	}
 
-	function tampil_data_pertahun25(){
+	function tampil_data_pertahun25_perid(){
 		$this->db->select('*'); 
 		$this->db->from('surat_masuk'); 
 		$this->db->where('year(tgl_sm)=',date('2025')); 
+		$this->db->where('surat_masuk.id_pengguna', $this->session->userdata('session_id_role'));
 		$query = $this->db->get(); 
 		return $query->num_rows();
 	}
