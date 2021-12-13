@@ -19,9 +19,11 @@
                 <div class="card m-b-30">
                     <div class="card-body">
                         <p>
+                            <?php if($getGrup == 3) : ?>
                             <a href="<?php echo base_url('Surat_Masuk/tambah_data') ?>">
                                 <button type="button" class="btn btn-info btn-sm float-right">+ Tambah Data</button>
                             </a>
+                            <?php endif ?>
                         </p>
                         <br>
                         <form action="" method=""></form>
@@ -31,13 +33,13 @@
                                     <div class="row">
                                         <div class="form-group">
                                             <label for="inputMulaiTanggal" class="font-weight-bold">Mulai
-                                            Tanggal :</label>
+                                                Tanggal :</label>
                                             <input type="date" id="inputMulaiTanggal" name="mulai_tanggal" class="form-control" required>
                                         </div>
                                         &nbsp&nbsp&nbsp&nbsp
                                         <div class="form-group">
                                             <label for="inputSampaiTanggal" class="font-weight-bold">Sampai
-                                            Tanggal :</label>
+                                                Tanggal :</label>
                                             <input type="date" id="inputSampaiTanggal" name="sampai_tanggal" class="form-control" required>
                                         </div>
                                         <div class="col-sm-1 form-group">
@@ -69,6 +71,7 @@
                                                     <th>Oleh Pimpinan</th>
                                                     <th>Disposisi</th>
                                                 <?php elseif ($getGrup == 2) : ?>
+                                                    <th>Dari Divisi</th>
                                                     <th>Oleh Pimpinan</th>
                                                 <?php elseif ($getGrup == 3) : ?>
                                                     <th>Status</th>
@@ -103,6 +106,7 @@
                                                         </td>
 
                                                     <?php elseif ($getGrup == 2) : ?>
+                                                        <td><?php echo $baris->dari_divisi; ?></td>
                                                         <td><?php echo $baris->status_pimpinan; ?></td>
                                                     <?php elseif ($getGrup == 3) : ?>
                                                         <td><?php echo $baris->status_disposisi; ?></td>
@@ -114,14 +118,20 @@
                                                             <a href="<?= base_url('Surat_Masuk/edit/' . $baris->id_sm) ?>"><button type="button" class="btn-primary">Edit</button></a>
                                                             <button type="button" class="btn-danger" data-toggle="modal" data-target="#deleteModal" data-id-suratmasuk="<?= $baris->id_sm ?>">Hapus</button>
                                                         <?php elseif ($getGrup == 2) : ?>
-                                                            <a href="<?= base_url('Surat_Masuk/do_accept/pimpinan/' . $baris->id_sm) ?>"><button class="btn-primary">Setujui</button></a>
-                                                            <a href="<?= base_url('Surat_Masuk/do_reject/pimpinan/' . $baris->id_sm) ?>"><button class="btn-danger">Abaikan</button></a>
+                                                            <?php if ($baris->status_pimpinan == 'disetujui') : ?>
+                                                                <span class="text-success">Disetujui</span>
+                                                            <?php elseif ($baris->status_pimpinan == 'diabaikan') : ?>
+                                                                <span class="text-danger">Diabaikan</span>
+                                                            <?php else : ?>
+                                                                <a href="<?= base_url('Surat_Masuk/do_accept/pimpinan/' . $baris->id_sm) ?>"><button class="btn-primary">Setujui</button></a>
+                                                                <a href="<?= base_url('Surat_Masuk/do_reject/pimpinan/' . $baris->id_sm) ?>"><button class="btn-danger">Abaikan</button></a>
+                                                            <?php endif ?>
                                                         <?php elseif ($getGrup == 3) : ?>
                                                             <a href="<?= base_url('Surat_Masuk/edit/' . $baris->id_sm) ?>"><button type="button" class="btn-primary">Edit</button></a>
                                                         <?php elseif ($getGrup != 1 && $getGrup != 2 && $getGrup != 3) : ?>
-                                                            <?php if ($baris->status_divisi == 'laksanakan') : ?>
+                                                            <?php if ($baris->status_divisi == 'dilaksanakan') : ?>
                                                                 <span class="text-success">Dilaksanakan</span>
-                                                            <?php elseif ($baris->status_divisi == 'abaikan') : ?>
+                                                            <?php elseif ($baris->status_divisi == 'diabaikan') : ?>
                                                                 <span class="text-danger">Diabaikan</span>
                                                             <?php else : ?>
                                                                 <a href="<?= base_url('Surat_Masuk/do_accept/divisi/' . $baris->id_sm) ?>"><button class="btn-info">Laksanakan</button></a>

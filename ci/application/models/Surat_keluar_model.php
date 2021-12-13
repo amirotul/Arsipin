@@ -9,7 +9,7 @@ class Surat_keluar_model extends CI_Model
 		$this->db->select('*'); //memilih semua
 		$this->db->from('surat_keluar');// dari tabel tm_user
 		$query = $this->db->get();
-		return $query;
+		return $query->result();
 		//untuk proses selecy data dari database
 	}
 
@@ -59,8 +59,8 @@ class Surat_keluar_model extends CI_Model
       	return $query->num_rows();
   } 
 
-  function surat_masuk_perid (){
-		$this->db->where('surat_keluar.id_pengguna', $this->session->userdata('session_id_role'));
+  function surat_keluar_perid ($where){
+		$this->db->where($where);
 		return $this->db->get('surat_keluar')->result();
 	}
 

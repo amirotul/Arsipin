@@ -6,14 +6,14 @@
 class Surat_masuk_model extends CI_Model
 {
 
-	function getAll($role)
+	function getAll()
 	{ //membuat function getAll
 		$this->db->select('*'); //memilih semua
 		$this->db->from('surat_masuk'); // dari tabel tm_user
-		$this->db->join('data_pengguna', 'surat_masuk.id_pengguna = data_pengguna.id_user');
-		$this->db->where('surat_masuk.id_pengguna',$role);
+		// $this->db->join('data_pengguna', 'surat_masuk.id_pengguna = data_pengguna.id_user');
+		// $this->db->where('surat_masuk.id_pengguna');
 		$query = $this->db->get();
-		return $query->result();
+		return $query;
 		//untuk proses selecy data dari database
 	}
 
@@ -120,8 +120,8 @@ class Surat_masuk_model extends CI_Model
 		return $query->num_rows();
 	} 
 
-	function surat_masuk_perid (){
-		$this->db->where('surat_masuk.id_pengguna', $this->session->userdata('session_id_role'));
+	function surat_masuk_perid ($where){
+		$this->db->where($where);
 		return $this->db->get('surat_masuk')->result();
 	}
 

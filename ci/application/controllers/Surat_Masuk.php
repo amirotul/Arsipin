@@ -9,16 +9,36 @@ class Surat_Masuk extends CI_Controller{ //membuat controller Mahasiswa
 
 	public function index(){ //function untuk menampilkan halaman awal yang ditampilkan
 		$config['base_url'] = site_url('Surat_Masuk');
+		$role= $this->session->userdata('session_grup');
 
-		$role= $this->session->userdata('session_id_pengguna');
-		
+		if ($role == "3") {
+			$where = [
+				'id_pengguna' => $role
+			];
+			$data['user'] = $this->Surat_masuk_model->surat_masuk_perid($where);
+		} else if ($role == "1") {
+			$data['user'] = $this->Surat_masuk_model->getAll()->result();
+		} else if ($role == "2") {
+			// Nanti buat pimpinan
+			$this->load->model('Roledivisi_model');
+			$where = [
+				'status_divisi !=' => ''
+			];
+			$data_sm = $this->Surat_masuk_model->surat_masuk_perid($where);
+			foreach ($data_sm as $key => $value) {
+				$data['user'][$key] = $value;
+				$data['user'][$key]->dari_divisi = $this->Roledivisi_model->detail_jenis($data_sm[$key]->divisi_tujuan)['jenis_divisi'];
+			}
+		} else {
+			$where = [
+				'divisi_tujuan' => $role
+			];
+			$data['user'] = $this->Surat_masuk_model->surat_masuk_perid($where);
+		}
+		// echo json_encode($data['user']); die;
 		$config['total_rows'] = $this->Surat_masuk_model->count_all_sm();
 		$config['total_rows'] = $this->Surat_masuk_model->tampil_data_perbulan();
-		
-		$data['user'] = $this->Surat_masuk_model->getAll($role);
-		// $data['user'] = $this->Surat_masuk_model->getAll()->result();
-
-		$this->template->views('Admin2/surat-masuk',$data);
+		$this->template->views('Admin2/surat-masuk', $data);
 			//untuk mengakses file views 'crud/home_mahasiswa' pada halaman template
 	}
 
@@ -45,11 +65,9 @@ class Surat_Masuk extends CI_Controller{ //membuat controller Mahasiswa
 	public function tambah_data() { //function untuk tambah data
 		$this->load->model('Datapengguna_model');
 		$this->load->model('Surat_masuk_model');
-		$id_pengguna= $this->session->userdata('session_id_pengguna');
-
+		$data['idpeng']= $this->session->userdata('session_grup');
 		$data['user'] = $this->db->get_where('data_pengguna',['id_role'=>$this->session->userdata('session_id_role')])->row_array();
 		$data['role'] = $this->Datapengguna_model->getAll()->result();
-		$data['idpeng'] = $id_pengguna;
 		$this->template->views('Admin2/form-add-surat-masuk', $data);
 		//untuk mengakses file views 'crud/tambah_Grup' pada halaman template
 	}
@@ -64,6 +82,8 @@ class Surat_Masuk extends CI_Controller{ //membuat controller Mahasiswa
 			'asal_sm' => $this->input->post('asal_sm'),
 			'perihal_sm' => $this->input->post('perihal_sm'),
 			'id_pengguna' => $this->input->post('id_pengguna'),
+			'status_divisi' => 'pending',
+			'status_pimpinan' => 'pending',
 			'status_disposisi' => 'belum didisposisi',
 			'file_sm' => $_FILES['file_sm']
 		];
@@ -235,11 +255,11 @@ class Surat_Masuk extends CI_Controller{ //membuat controller Mahasiswa
 	public function do_accept($type, $id_sm)
 	{
 		if ($type == 'divisi') {
-			$data['status_divisi'] = 'laksanakan';
-			$data['id_pengguna'] = '1';
+			$data['status_divisi'] = 'dilaksanakan';
+			$data['tgl_dilaksanakan_sm'] = date('Y-m-d');
 		} else if ($type == 'pimpinan') {
-			$data['status_pimpinan'] = 'setujui';
-			$data['id_pengguna'] = '2';
+			$data['status_pimpinan'] = 'disetujui';
+			$data['tgl_disetujui_sm'] = date('Y-m-d');
 		}
 		$this->Surat_masuk_model->update_file($id_sm, $data);
 		redirect('Surat_masuk/index');
@@ -248,11 +268,9 @@ class Surat_Masuk extends CI_Controller{ //membuat controller Mahasiswa
 	public function do_reject($type, $id_sm)
 	{
 		if ($type == 'divisi') {
-			$data['status_divisi'] = 'abaikan';
-			$data['id_pengguna'] = '1';
+			$data['status_divisi'] = 'diabaikan';
 		} else if ($type == 'pimpinan') {
-			$data['status_pimpinan'] = 'abaikan';
-			$data['id_pengguna'] = '2';
+			$data['status_pimpinan'] = 'diabaikan';
 		}
 		$this->Surat_masuk_model->update_file($id_sm, $data);
 		redirect('Surat_masuk/index');

@@ -13,7 +13,6 @@
                 <div class="col-12">
                     <div class="card m-b-30">
                         <div class="card-body">
-                        <input class="form-control" type="text" value="<?php echo $idpeng?>" id="id_peng" name="id_peng">
                             <div class="form-group row">
                                 <label for="example-number-input" class="col-sm-2 col-form-label">No. Surat</label>
                                 <div class="col-sm-5">
@@ -73,7 +72,7 @@
                                         <div class="form-group row">
                                             <label for="email_pengguna" class="col-sm-2 col-form-label"></label>
                                             <div class="col-sm-5">
-                                                <input class="form-control" type="text" value="1" id="id_pengguna" name="id_pengguna" hidden >
+                                                <input class="form-control" type="hidden" value="<?= $idpeng ?>" id="id_pengguna" name="id_pengguna" >
                                             </div>
                                         </div>
                                     </div>
