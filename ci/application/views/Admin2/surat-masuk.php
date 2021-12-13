@@ -59,6 +59,7 @@
                                 </div>
                                 <table id="datatable" class="table table-bordered dt-responsive nowrap" style="border-collapse: collapse; border-spacing: 0; width: 100%;">
                                     <thead>
+                                        
                                         <tr>
                                             <th>No</th>
                                             <th>No. Surat</th>
@@ -132,9 +133,9 @@
                                                         <td><?php echo $baris->status_pimpinan; ?></td>
                                                     <?php endif ?>
                                                     <td>
-                                                        <?php if ($getGrup == 1) : ?>
+                                                        <!--<?php if ($getGrup == 1) : ?>
                                                             <a href="<?= base_url('Surat_Masuk/edit/' . $baris->id_sm) ?>"><button type="button" class="btn-primary">Edit</button></a>
-                                                            <button type="button" class="btn-danger" data-toggle="modal" data-target="#deleteModal" data-id-suratmasuk="<?= $baris->id_sm ?>">Hapus</button>
+                                                            <button type="button" class="btn-danger" data-toggle="modal" data-target="#deleteModal" data-id-suratmasuk="<?= $baris->id_sm ?>">Hapus</button>-->
                                                         <?php elseif ($getGrup == 2) : ?>
                                                             <?php if ($baris->status_pimpinan == 'disetujui') : ?>
                                                                 <span class="text-success">Disetujui</span>
@@ -157,7 +158,6 @@
                                                             <?php endif ?>
 
                          
-                                                        <?php endif ?>
                                                     <?php endif ?>
                                                     <a href="<?= base_url('Surat_Masuk/detail/' . $baris->id_sm) ?>"><button type="button" class="btn-warning">Detail</button></a>
                                                 </td>
