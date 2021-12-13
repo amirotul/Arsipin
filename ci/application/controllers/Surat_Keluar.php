@@ -12,9 +12,15 @@ class Surat_Keluar extends CI_Controller{ //membuat controller Mahasiswa
 		$config['base_url'] = site_url('Surat_Keluar');
 		$config['total_rows'] = $this->Surat_keluar_model->count_all_sk();
 		$config['total_rows'] = $this->Surat_keluar_model->tampil_data_perbulan();
+		$role= $this->session->userdata('session_grup');
 
-		// $data['user'] = $this->Surat_keluar_model->getAll()->result();
-		$data['user'] = $this->Surat_keluar_model->surat_masuk_perid();
+		if ($role == "3") {
+			$data['user'] = $this->Surat_keluar_model->surat_keluar_perid(['status' => 'teruskan']);
+		} else {
+			$data['user'] = $this->Surat_keluar_model->getAll();
+
+		}
+		// echo json_encode($data['user']); die;
 		$this->template->views('Admin2/surat-keluar',$data);
 			//untuk mengakses file views 'crud/home_mahasiswa' pada halaman template
 	}
@@ -22,7 +28,7 @@ class Surat_Keluar extends CI_Controller{ //membuat controller Mahasiswa
 		$this->load->model('Datapengguna_model');
 		$this->load->model('Surat_keluar_model');
 
-		$data['user'] = $this->db->get_where('data_pengguna',['id_role'=>$this->session->userdata('session_id_role')])->row_array();
+		$data['user'] = $this->session->userdata('session_grup');
 
 		$data['role'] = $this->Datapengguna_model->getAll()->result();
 		$this->template->views('Admin2/form-add-surat-keluar', $data);
@@ -37,6 +43,8 @@ class Surat_Keluar extends CI_Controller{ //membuat controller Mahasiswa
 			'tujuan_sk' => $this->input->post('tujuan_sk'),
 			'perihal_sk' => $this->input->post('perihal_sk'),
 			'id_pengguna' => $this->input->post('id_pengguna'),
+			'status' => 'pending',
+			'oleh_pimpinan' => 'pending',
 			'file_sk' => $_FILES['file_sk']
 		];
 		if ($data['file_sk']='') {
@@ -160,6 +168,34 @@ class Surat_Keluar extends CI_Controller{ //membuat controller Mahasiswa
 		];
 		$data['user'] = $this->Surat_keluar_model->getByDate($data['date_from'], $data['date_to'])->result();
 		$this->template->views('Admin2/surat-keluar',$data);
+	}
+
+	public function action_pimpinan($action, $id)
+	{
+		$id = $id;
+		if ($action == 'approve') {
+			$data = [
+				'oleh_pimpinan' => 'disetujui',
+				'tgl_disetujui_sk' => date('Y-m-d')
+			];
+		} else if ($action == 'reject') {
+			$data = [
+				'oleh_pimpinan' => 'diabaikan',
+				'tgl_disetujui_sk' => date('Y-m-d')
+			];
+		}
+		$this->Surat_keluar_model->update_file($id, $data);
+		redirect('Surat_keluar');
+	}
+
+	public function forward($id)
+	{
+		$id = $id;
+		$data = [
+			'status' => 'teruskan'
+		];
+		$this->Surat_keluar_model->update_file($id, $data);
+		redirect('Surat_keluar');
 	}
 
 	

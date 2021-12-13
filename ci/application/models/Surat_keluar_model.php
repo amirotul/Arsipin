@@ -9,7 +9,7 @@ class Surat_keluar_model extends CI_Model
 		$this->db->select('*'); //memilih semua
 		$this->db->from('surat_keluar');// dari tabel tm_user
 		$query = $this->db->get();
-		return $query;
+		return $query->result();
 		//untuk proses selecy data dari database
 	}
 
@@ -59,7 +59,23 @@ class Surat_keluar_model extends CI_Model
       	return $query->num_rows();
   } 
 
+
+  function surat_keluar_perid ($where){
+		$this->db->where($where);
+		return $this->db->get('surat_keluar')->result();
+	}
+
+  // function tampil_data_pertahun(){
+  //     	$this->db->select('*'); 
+  //     	$this->db->from('surat_keluar'); 
+  //     	$this->db->where('year(tgl_sk)=',date('Y')); 
+  //     	$query = $this->db->get(); 
+  //     	return $query->num_rows();
+  // }
+
+
   function tampil_data_pertahun21_perid(){
+
       	$this->db->select('*'); 
       	$this->db->from('surat_keluar'); 
       	$this->db->where('year(tgl_sk)=',date('2021')); 

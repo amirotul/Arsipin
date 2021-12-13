@@ -46,7 +46,7 @@
                                 <a href="#" class="waves-effect waves-light"><i class="mdi mdi-file-document"></i><span> Data Dokumen </span><span class="float-right"><i class="mdi mdi-chevron-right"></i></span></a>
                                 <ul class="list-unstyled">
                                     <li><a href="<?php echo site_url('Surat_Masuk'); ?>">Surat Masuk</a></li>
-                                    <?php if ($getGrup == 1 || $getGrup == 2 || $getGrup == 3) : ?>
+                                    <?php if ($getGrup == 1 || $getGrup == 2) : ?>
                                         <li><a href="<?= site_url('Surat_Keluar') ?>">Surat Keluar</a></li>
                                     <?php endif ?>
 
