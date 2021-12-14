@@ -18,11 +18,11 @@ $getGrup = $this->session->userdata('session_grup');
             <div class="card m-b-30">
                 <div class="card-body">
                     <p>
-                    <?php if($getGrup == 1) : ?>
-                        <a href=<?php echo base_url('Surat_Keluar/tambah_surat_keluar'); ?>>
-                            <button type="button" class="btn btn-info btn-sm float-right">+ Tambah Data</button>
-                        </a>
-                    <?php endif ?>
+                        <?php if ($getGrup == 1) : ?>
+                            <a href=<?php echo base_url('Surat_Keluar/tambah_surat_keluar'); ?>>
+                                <button type="button" class="btn btn-info btn-sm float-right">+ Tambah Data</button>
+                            </a>
+                        <?php endif ?>
                     </p>
                     <br>
                     <div class="container align-items-center">
@@ -59,9 +59,6 @@ $getGrup = $this->session->userdata('session_grup');
                                     <th>No. Surat</th>
                                     <th>Tanggal Surat</th>
                                     <th>Tujuan Surat</th>
-                                    <?php if ($getGrup == 3) : ?>
-                                        <th>Status</th>
-                                    <?php endif ?>
                                     <?php if ($getGrup == 1) : ?>
                                         <th>Oleh Pimpinan</th>
                                         <th>Teruskan</th>
@@ -80,22 +77,15 @@ $getGrup = $this->session->userdata('session_grup');
                                         <td><?php echo $baris->no_sk; ?></td>
                                         <td><?php echo $baris->tgl_sk; ?></td>
                                         <td><?php echo $baris->tujuan_sk; ?></td>
-                                        <?php if ($getGrup == 3) : ?>
-                                            <td><?php echo $baris->status; ?></td>
-                                        <?php endif ?>
                                         <?php if ($getGrup == 1) : ?>
                                             <td>
                                                 <?= $baris->oleh_pimpinan ?>
                                             </td>
                                             <td>
-                                                <?php if ($baris->oleh_pimpinan == 'pending') : ?>
-                                                    <span>pending</span>
-                                                <?php else : ?>
-                                                    <?php if ($baris->status == 'teruskan') : ?>
-                                                        <span class="text-success">Diteruskan</span>
-                                                    <?php elseif ($baris->status == 'pending') : ?>
-                                                        <a href="<?= base_url('Surat_Keluar/forward/' . $baris->id_sk) ?>"><button type="button" class="btn-success">Teruskan</button></a>
-                                                    <?php endif ?>
+                                                <?php if ($baris->status == 'teruskan') : ?>
+                                                    <span class="text-success">Diteruskan</span>
+                                                <?php elseif ($baris->status == 'pending') : ?>
+                                                    <a href="<?= base_url('Surat_Keluar/forward/' . $baris->id_sk) ?>"><button type="button" class="btn-success">Teruskan</button></a>
                                                 <?php endif ?>
                                             </td>
                                         <?php endif ?>
