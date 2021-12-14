@@ -9,7 +9,6 @@ class Surat_Masuk extends CI_Controller{ //membuat controller Mahasiswa
 
 	public function index(){ //function untuk menampilkan halaman awal yang ditampilkan
 		$config['base_url'] = site_url('Surat_Masuk');
-
 		$role= $this->session->userdata('session_grup');
 
 		if ($role == "3") {
@@ -40,7 +39,6 @@ class Surat_Masuk extends CI_Controller{ //membuat controller Mahasiswa
 		$config['total_rows'] = $this->Surat_masuk_model->count_all_sm();
 		$config['total_rows'] = $this->Surat_masuk_model->tampil_data_perbulan();
 		$this->template->views('Admin2/surat-masuk', $data);
-
 			//untuk mengakses file views 'crud/home_mahasiswa' pada halaman template
 	}
 
@@ -259,13 +257,8 @@ class Surat_Masuk extends CI_Controller{ //membuat controller Mahasiswa
 	public function do_accept($type, $id_sm)
 	{
 		if ($type == 'divisi') {
-
 			$data['status_divisi'] = 'dilaksanakan';
 			$data['tgl_dilaksanakan_sm'] = date('Y-m-d');
-
-			$data['status_divisi'] = 'laksanakan';
-			$data['id_pengguna'] = '2';
-
 		} else if ($type == 'pimpinan') {
 			$data['status_pimpinan'] = 'disetujui';
 			$data['tgl_disetujui_sm'] = date('Y-m-d');
