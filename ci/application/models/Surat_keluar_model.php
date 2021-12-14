@@ -59,7 +59,6 @@ class Surat_keluar_model extends CI_Model
       	return $query->num_rows();
   } 
 
-
   function surat_keluar_perid ($where){
 		$this->db->where($where);
 		return $this->db->get('surat_keluar')->result();
@@ -73,9 +72,7 @@ class Surat_keluar_model extends CI_Model
   //     	return $query->num_rows();
   // }
 
-
   function tampil_data_pertahun21_perid(){
-
       	$this->db->select('*'); 
       	$this->db->from('surat_keluar'); 
       	$this->db->where('year(tgl_sk)=',date('2021')); 

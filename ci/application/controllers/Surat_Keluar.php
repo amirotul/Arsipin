@@ -14,7 +14,7 @@ class Surat_Keluar extends CI_Controller{ //membuat controller Mahasiswa
 		$config['total_rows'] = $this->Surat_keluar_model->tampil_data_perbulan();
 		$role= $this->session->userdata('session_grup');
 
-		if ($role == "3") {
+		if ($role == "2") {
 			$data['user'] = $this->Surat_keluar_model->surat_keluar_perid(['status' => 'teruskan']);
 		} else {
 			$data['user'] = $this->Surat_keluar_model->getAll();
