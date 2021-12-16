@@ -14,9 +14,11 @@ class Disposisi_model extends CI_Model
 		//untuk proses selecy data dari database
 	}
 
-	function count_all_dis()
+	function count_all_dis($status)
     {
-        return $this->db->get('disposisi')->num_rows();
+		$this->db->from('surat_masuk');
+		$this->db->where('status_disposisi', $status);
+		return $this->db->count_all_results();
     }
 
 	function input_data($data, $table) { //membuat function input_data
@@ -80,13 +82,13 @@ class Disposisi_model extends CI_Model
 		return $query->num_rows();
 	}
 	
-	// function tampil_data_pertahun(){
- //      	$this->db->select('*'); 
- //      	$this->db->from('disposisi'); 
- //      	$this->db->where('year(batas_waktu_dis)=',date('Y')); 
- //      	$query = $this->db->get(); 
- //      	return $query->num_rows();
- //  }
+	function tampil_data_pertahun($tahun){
+      	$this->db->select('*'); 
+      	$this->db->from('disposisi'); 
+      	$this->db->where('year(batas_waktu_dis)=',date($tahun)); 
+      	$query = $this->db->get(); 
+      	return $query->num_rows();
+  }
 
   function tampil_data_pertahun21_perid(){
       	$this->db->select('*'); 
@@ -144,4 +146,3 @@ class Disposisi_model extends CI_Model
     return $this->db->update('disposisi',$data);
   }
 }
-?>

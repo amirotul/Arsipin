@@ -24,42 +24,45 @@ class Dashboard extends CI_Controller{ //membuat controller Mahasiswa
 		$data['data_tahun'] = $this->Surat_masuk_model-> tampil_tahun();
 
 		//line chart
-		$data['data_sm_pertahun_21'] = $this->Surat_masuk_model-> tampil_data_pertahun21_perid();
-		$data['data_sm_pertahun_22'] = $this->Surat_masuk_model-> tampil_data_pertahun22_perid();
-		$data['data_sm_pertahun_23'] = $this->Surat_masuk_model-> tampil_data_pertahun23_perid();
-		$data['data_sm_pertahun_24'] = $this->Surat_masuk_model-> tampil_data_pertahun24_perid();
-		$data['data_sm_pertahun_25'] = $this->Surat_masuk_model-> tampil_data_pertahun25_perid();
+		$data['data_sm_pertahun_21'] = $this->Surat_masuk_model-> tampil_data_pertahun("2021");
+		$data['data_sm_pertahun_22'] = $this->Surat_masuk_model-> tampil_data_pertahun("2022");
+		$data['data_sm_pertahun_23'] = $this->Surat_masuk_model-> tampil_data_pertahun("2023");
+		$data['data_sm_pertahun_24'] = $this->Surat_masuk_model-> tampil_data_pertahun("2024");
+		$data['data_sm_pertahun_25'] = $this->Surat_masuk_model-> tampil_data_pertahun("2025");
 
-		$data['data_sk_pertahun_21'] = $this->Surat_keluar_model-> tampil_data_pertahun21_perid();
-		$data['data_sk_pertahun_22'] = $this->Surat_keluar_model-> tampil_data_pertahun22_perid();
-		$data['data_sk_pertahun_23'] = $this->Surat_keluar_model-> tampil_data_pertahun23_perid();
-		$data['data_sk_pertahun_24'] = $this->Surat_keluar_model-> tampil_data_pertahun24_perid();
-		$data['data_sk_pertahun_25'] = $this->Surat_keluar_model-> tampil_data_pertahun25_perid();
+		$data['data_sk_pertahun_21'] = $this->Surat_keluar_model-> tampil_data_pertahun("2021");
+		$data['data_sk_pertahun_22'] = $this->Surat_keluar_model-> tampil_data_pertahun("2022");
+		$data['data_sk_pertahun_23'] = $this->Surat_keluar_model-> tampil_data_pertahun("2023");
+		$data['data_sk_pertahun_24'] = $this->Surat_keluar_model-> tampil_data_pertahun("2024");
+		$data['data_sk_pertahun_25'] = $this->Surat_keluar_model-> tampil_data_pertahun("2025");
 
-		$data['data_dis_pertahun_21'] = $this->Disposisi_model-> tampil_data_pertahun21_perid();
-		$data['data_dis_pertahun_22'] = $this->Disposisi_model-> tampil_data_pertahun22_perid();
-		$data['data_dis_pertahun_23'] = $this->Disposisi_model-> tampil_data_pertahun23_perid();
-		$data['data_dis_pertahun_24'] = $this->Disposisi_model-> tampil_data_pertahun24_perid();
-		$data['data_dis_pertahun_25'] = $this->Disposisi_model-> tampil_data_pertahun25_perid();
+		$data['data_dis_pertahun_21'] = $this->Disposisi_model-> tampil_data_pertahun("2021");
+		$data['data_dis_pertahun_22'] = $this->Disposisi_model-> tampil_data_pertahun("2022");
+		$data['data_dis_pertahun_23'] = $this->Disposisi_model-> tampil_data_pertahun("2023");
+		$data['data_dis_pertahun_24'] = $this->Disposisi_model-> tampil_data_pertahun("2024");
+		$data['data_dis_pertahun_25'] = $this->Disposisi_model-> tampil_data_pertahun("2025");
 
 		//card
 		$data['total_data_sk'] = $this->Surat_keluar_model-> count_all_sk();
-		$data['total_data_dis'] = $this->Disposisi_model-> count_all_dis();
+		$data['total_data_dis'] = $this->Disposisi_model-> count_all_dis("didisposisi");
 		$data['total_data_arsip'] = $this->Data_arsip_model-> count_all_arsip();
 		$data['total_data_divisi'] = $this->Jenis_divisi_model-> count_all_divisi();
 		$data['total_data_pengguna'] = $this->Datapengguna_model-> count_all_pengguna();
 
 		//pie chart admin
-		$data['total_belum_didisposisi'] = $this->Surat_masuk_model-> belum_didisposisi();
+		$data['total_belum_didisposisi'] = $this->Disposisi_model-> count_all_dis("belum didisposisi");
 
 		//pie chart pimpinan
-		$data['sk_disetujui'] = $this->Surat_keluar_model-> count_all_sk();
-		$data['sk_belum_disetujui'] = $this->Surat_keluar_model-> count_all_sk();
+		$data['sk_disetujui'] = $this->Surat_keluar_model-> count_sk_by_status('disetujui');
+		$data['sk_belum_disetujui'] = $this->Surat_keluar_model-> count_sk_by_status('pending');
+		$data['sk_diabaikan'] = $this->Surat_keluar_model-> count_sk_by_status('diabaikan');
 
-		
+
 		$data['total_data_sk_perbulan'] = $this->Surat_keluar_model-> tampil_data_perbulan();
 		$data['total_data_sm_perbulan'] = $this->Surat_masuk_model-> tampil_data_perbulan();
 		$data['total_data_dis_perbulan'] = $this->Disposisi_model-> tampil_data_perbulan();
+
+		// echo json_encode($data['total_data_sm_perbulan']); die;
 		
 		// $this->load->helper('date'); 
   //       $dates = '%Y'; 
