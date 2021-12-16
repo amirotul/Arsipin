@@ -259,7 +259,6 @@
     data: [{
       name: 'Didisposisi',
       y:  <?php echo json_encode($total_data_dis); ?>,
-      sliced: true,
       selected: true
     }, {
       name: 'Belum Didisposisi',
@@ -309,12 +308,15 @@
     data: [{
       name: 'Disetujui',
       y:  <?php echo json_encode($sk_disetujui); ?>,
-      sliced: true,
       selected: true
     }, {
       name: 'Belum Disetujui',
       y:  <?php echo json_encode($sk_belum_disetujui); ?>
-    }]
+    }, {
+      name: 'Diabaikan',
+      y:  <?php echo json_encode($sk_diabaikan); ?>
+    }
+  ]
   }]
 });
   <?php endif ?>

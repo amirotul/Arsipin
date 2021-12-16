@@ -18,6 +18,13 @@ class Surat_keluar_model extends CI_Model
         return $this->db->get('surat_keluar')->num_rows();
     }
 
+	function count_sk_by_status($status)
+	{
+		$this->db->where('oleh_pimpinan', $status);
+		$this->db->from('surat_keluar');
+		return $this->db->count_all_results();
+	}
+
 	function input_data($data, $table) { //membuat function input_data
 		$this->db->insert($table,$data);
 		//untuk proses insert data ke database
@@ -51,12 +58,8 @@ class Surat_keluar_model extends CI_Model
 		
 	}
 	function tampil_data_perbulan(){
-      	$this->db->select('*'); 
-      	$this->db->from('surat_keluar'); 
-      	$this->db->where('month(tgl_sk)=',date('m'));
-      	$this->db->where('surat_keluar.id_pengguna', $this->session->userdata('session_id_role'));
-      	$query = $this->db->get(); 
-      	return $query->num_rows();
+		$this->db->where('month(tgl_sk)=',date('m')); 
+		return $this->db->count_all_results('surat_keluar');
   } 
 
   function surat_keluar_perid ($where){
@@ -64,13 +67,13 @@ class Surat_keluar_model extends CI_Model
 		return $this->db->get('surat_keluar')->result();
 	}
 
-  // function tampil_data_pertahun(){
-  //     	$this->db->select('*'); 
-  //     	$this->db->from('surat_keluar'); 
-  //     	$this->db->where('year(tgl_sk)=',date('Y')); 
-  //     	$query = $this->db->get(); 
-  //     	return $query->num_rows();
-  // }
+  function tampil_data_pertahun($tahun){
+      	$this->db->select('*'); 
+      	$this->db->from('surat_keluar'); 
+      	$this->db->where('year(tgl_sk)=',date($tahun)); 
+      	$query = $this->db->get(); 
+      	return $query->num_rows();
+  }
 
   function tampil_data_pertahun21_perid(){
       	$this->db->select('*'); 
