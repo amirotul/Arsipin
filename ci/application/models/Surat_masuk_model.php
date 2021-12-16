@@ -112,12 +112,8 @@ class Surat_masuk_model extends CI_Model
 	}
 
 	function tampil_data_perbulan(){
-		$this->db->select('*'); 
-		$this->db->from('surat_masuk'); 
 		$this->db->where('month(tgl_sm)=',date('m')); 
-		$this->db->where('surat_masuk.id_pengguna', $this->session->userdata('session_id_role'));
-		$query = $this->db->get(); 
-		return $query->num_rows();
+		return $this->db->count_all_results('surat_masuk');
 	} 
 
 	function surat_masuk_perid ($where){
@@ -125,13 +121,13 @@ class Surat_masuk_model extends CI_Model
 		return $this->db->get('surat_masuk')->result();
 	}
 
-	// function tampil_data_pertahun(){
-	// 	$this->db->select('*'); 
-	// 	$this->db->from('surat_masuk'); 
-	// 	$this->db->where('year(tgl_sm)=',date(' Y')); 
-	// 	$query = $this->db->get(); 
-	// 	return $query->num_rows();
-	// } 
+	function tampil_data_pertahun($tahun){
+		$this->db->select('*'); 
+		$this->db->from('surat_masuk'); 
+		$this->db->where('year(tgl_sm)=',date($tahun)); 
+		$query = $this->db->get(); 
+		return $query->num_rows();
+	} 
 
 	function tampil_data_pertahun21_perid(){
 		$this->db->select('*'); 
