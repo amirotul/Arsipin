@@ -10,7 +10,7 @@ class Disposisi extends CI_Controller{ //membuat controller Mahasiswa
 
 	public function index(){ //function untuk menampilkan halaman awal yang ditampilkan
 		$config['base_url'] = site_url('Disposisi');
-		$config['total_rows'] = $this->Disposisi_model->count_all_dis();
+		$config['total_rows'] = $this->Disposisi_model->count_all_dispo();
 		$data['user'] = $this->Disposisi_model->getAll()->result();
 		$this->template->views('Admin2/disposisi',$data);
 			//untuk mengakses file views 'crud/home_mahasiswa' pada halaman template

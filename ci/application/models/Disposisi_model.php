@@ -21,6 +21,11 @@ class Disposisi_model extends CI_Model
 		return $this->db->count_all_results();
     }
 
+    function count_all_dispo()
+    {
+        return $this->db->get('disposisi')->num_rows();
+    }
+
 	function input_data($data, $table) { //membuat function input_data
 		$this->db->insert($table,$data);
 		//untuk proses insert data ke database
